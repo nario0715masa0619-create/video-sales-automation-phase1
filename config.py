@@ -165,7 +165,6 @@ def validate_config(strict: bool = False) -> list[str]:
     required_vars = {
         "SPREADSHEET_ID": SPREADSHEET_ID,
         "GEMINI_API_KEY": GEMINI_API_KEY,
-        "GMAIL_SENDER_ADDRESS": GMAIL_SENDER_ADDRESS,
     }
     missing = [k for k, v in required_vars.items() if not v]
 
@@ -188,4 +187,5 @@ if __name__ == "__main__":
     print(f"   GEMINI_MODEL: {GEMINI_MODEL}")
     print(f"   EMAIL_MAX_SEQUENCE: {EMAIL_MAX_SEQUENCE}通")
     print(f"   EMAIL_TARGET_RANKS: {EMAIL_TARGET_RANKS}")
+
 
