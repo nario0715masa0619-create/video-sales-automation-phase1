@@ -8,7 +8,7 @@ load_dotenv()
 SMTP_HOST = os.getenv('SMTP_HOST')
 SMTP_PORT = int(os.getenv('SMTP_PORT', 587))
 SMTP_USER = os.getenv('SMTP_USER')
-SMTP_PASS = os.getenv('SMTP_PASS')
+SMTP_PASS = os.getenv('SMTP_PASSWORD')
 TO = 'nari.o.0715.masa.0619@gmail.com'
 
 print(f"送信先: {TO}")
