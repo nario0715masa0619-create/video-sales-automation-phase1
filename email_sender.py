@@ -23,26 +23,9 @@ from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from datetime import datetime, timedelta, timezone
 from email.mime.multipart import MIMEMultipart
-
-def _write_email_log(company_name: str, to: str, count: int, subject: str, body: str) -> None:
-    os.makedirs("logs", exist_ok=True)
-    now_str = datetime.now(JST).strftime("%Y-%m-%d %H:%M")
-    count_str = f"{count}通目" if count else "不明"
-    company_str = company_name if company_name else "不明"
-    
-    log_content = f"""============================================================
-[SEND] {now_str}
-会社名: {company_str}
-宛先: {to}
-通数: {count_str}
-件名: {subject}
-本文:
-{body}
-"""
-    with open("logs/email.log", "a", encoding="utf-8") as f:
-        f.write(log_content)
-
 from email.mime.text import MIMEText
+from email.header import Header
+from email.utils import formataddr
 from typing import Optional
 from loguru import logger
 
@@ -62,6 +45,30 @@ GMAIL_SCOPES = ["https://www.googleapis.com/auth/gmail.send"]
 
 # バウンスエラーと見なす HTTP ステータスコード
 BOUNCE_STATUS_CODES = [550, 551, 552, 553, 554]
+
+
+# ==================================================
+# ユーティリティ関数
+# ==================================================
+
+def _write_email_log(company_name: str, to: str, count: int, subject: str, body: str) -> None:
+    """メール送信ログをファイルに記録する"""
+    os.makedirs("logs", exist_ok=True)
+    now_str = datetime.now(JST).strftime("%Y-%m-%d %H:%M")
+    count_str = f"{count}通目" if count else "不明"
+    company_str = company_name if company_name else "不明"
+    
+    log_content = f"""============================================================
+[SEND] {now_str}
+会社名: {company_str}
+宛先: {to}
+通数: {count_str}
+件名: {subject}
+本文:
+{body}
+"""
+    with open("logs/email.log", "a", encoding="utf-8") as f:
+        f.write(log_content)
 
 
 # ==================================================
@@ -112,6 +119,8 @@ class EmailSenderBase(ABC):
             subject: 件名
             body: 本文（プレーンテキスト）
             from_name: 送信者名（省略時は config.MY_NAME を使用）
+            company_name: 企業名（ログ記録用）
+            email_count: メール通数（ログ記録用）
 
         Returns:
             SendResult: 送信結果
@@ -252,6 +261,8 @@ class GmailSender(EmailSenderBase):
             subject: 件名
             body: 本文（プレーンテキスト）
             from_name: 送信者名
+            company_name: 企業名（ログ記録用）
+            email_count: メール通数（ログ記録用）
 
         Returns:
             SendResult: 送信結果
@@ -269,7 +280,7 @@ class GmailSender(EmailSenderBase):
             logger.error(result.error_message)
             return result
 
-        # 実際の送信処理の直前でログに保存
+        # ログに保存
         _write_email_log(company_name, to, email_count, subject, body)
 
         try:
@@ -362,9 +373,9 @@ class SendGridSender(EmailSenderBase):
         """
         SendGrid API を使ったメール送信。
         TODO: sendgrid パッケージのインストール後に実装
-              `pip install sendgrid`
+              pip install sendgrid
         """
-        # 実際の送信処理の直前でログに保存
+        # ログに保存
         _write_email_log(company_name, to, email_count, subject, body)
 
         # TODO: SendGrid 実装
@@ -379,7 +390,129 @@ class SendGridSender(EmailSenderBase):
 
 
 # ==================================================
-# ファクトリ関数（環境によって実装を切り替える）
+# Xserver SMTP 実装
+# ==================================================
+
+class XserverSMTPSender(EmailSenderBase):
+    """
+    Xserver SMTP を使ったメール送信クラス。
+    
+    【設定要件】
+    以下の環境変数が必要です（.env）:
+      SMTP_HOST=mail.xserver.jp
+      SMTP_PORT=587
+      SMTP_USER=your-email@example.com
+      SMTP_PASSWORD=your-smtp-password
+      MAIL_FROM=your-email@example.com
+    """
+
+    def __init__(self):
+        self.smtp_host = os.getenv("SMTP_HOST", "")
+        self.smtp_port = int(os.getenv("SMTP_PORT", 587))
+        self.smtp_user = os.getenv("SMTP_USER", "")
+        self.smtp_password = os.getenv("SMTP_PASSWORD", "")
+        self.mail_from = os.getenv("MAIL_FROM", self.smtp_user)
+
+    def send_email(
+        self,
+        to: str,
+        subject: str,
+        body: str,
+        from_name: str = "",
+        company_name: str = "",
+        email_count: int = 0,
+    ) -> SendResult:
+        """
+        Xserver SMTP を使ってメールを送信する。
+
+        Args:
+            to: 送信先メールアドレス
+            subject: 件名
+            body: 本文（プレーンテキスト）
+            from_name: 送信者名
+            company_name: 企業名（ログ記録用）
+            email_count: メール通数（ログ記録用）
+
+        Returns:
+            SendResult: 送信結果
+        """
+        import smtplib
+
+        result = SendResult(
+            success=False,
+            to_address=to,
+            subject=subject,
+            sent_at=datetime.now(JST),
+        )
+
+        # バリデーション
+        if not to or "@" not in to:
+            result.error_message = f"無効なメールアドレス: {to}"
+            logger.error(result.error_message)
+            return result
+
+        if not self.smtp_host or not self.smtp_user or not self.smtp_password:
+            result.error_message = "SMTP設定が不完全です（SMTP_HOST, SMTP_USER, SMTP_PASSWORD を確認）"
+            logger.error(result.error_message)
+            return result
+
+        # ログに保存
+        _write_email_log(company_name, to, email_count, subject, body)
+
+        try:
+            # メッセージの構築
+            sender_name = from_name or config.MY_NAME
+            msg = MIMEMultipart()
+            
+            # ✅ FIX: formataddr() を使用して From ヘッダーを正規化
+            # これにより Gmail 等のメールサーバーが拒否しない形式に統一される
+            msg["From"] = formataddr((str(Header(sender_name, 'utf-8')), self.mail_from))
+            msg["To"] = to
+            msg["Subject"] = Header(subject, "utf-8")
+            msg.attach(MIMEText(body, "plain", "utf-8"))
+
+            # SMTP 送信
+            with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=20) as server:
+                server.ehlo()
+                server.starttls()
+                server.login(self.smtp_user, self.smtp_password)
+                server.sendmail(self.mail_from, to, msg.as_string())
+
+            result.success = True
+            logger.info(f"メール送信成功 (SMTP): {to}")
+
+        except smtplib.SMTPAuthenticationError as e:
+            result.error_message = f"SMTP認証失敗: {e}"
+            logger.error(f"SMTP認証エラー [{to}]: {e}")
+
+        except smtplib.SMTPException as e:
+            result.error_message = f"SMTP エラー: {e}"
+            logger.error(f"SMTP エラー [{to}]: {e}")
+
+        except Exception as e:
+            result.error_message = str(e)
+            logger.error(f"メール送信エラー [{to}]: {e}")
+
+        return result
+
+    def check_connection(self) -> bool:
+        """Xserver SMTP への接続確認"""
+        import smtplib
+        
+        try:
+            with smtplib.SMTP(self.smtp_host, self.smtp_port, timeout=20) as server:
+                server.ehlo()
+                server.starttls()
+                server.login(self.smtp_user, self.smtp_password)
+            logger.info("Xserver SMTP 接続確認OK")
+            return True
+        except Exception as e:
+            logger.error(f"SMTP 接続確認失敗: {e}")
+            return False
+
+
+# ==================================================
+# ファクトリ関数（プロバイダ選択）
 # ==================================================
 
 def get_email_sender(provider: str = "gmail") -> EmailSenderBase:
@@ -387,10 +520,13 @@ def get_email_sender(provider: str = "gmail") -> EmailSenderBase:
     メール送信プロバイダを選択してインスタンスを返す。
 
     Args:
-        provider: "gmail" または "sendgrid"
+        provider: "gmail" / "sendgrid" / "xserver"
 
     Returns:
         EmailSenderBase: 指定したプロバイダの送信クラス
+
+    Raises:
+        ValueError: 未対応のプロバイダが指定された場合
     """
     providers = {
         "gmail": GmailSender,
@@ -410,102 +546,50 @@ def get_email_sender(provider: str = "gmail") -> EmailSenderBase:
 # ==================================================
 # メイン処理（単体テスト用）
 # ==================================================
-# ==================================================
-# XserverSMTP 実装
-# ==================================================
-
-class XserverSMTPSender(EmailSenderBase):
-    """Xserver SMTPを使ったメール送信クラス"""
-
-    def __init__(self):
-        self.smtp_host = os.getenv("SMTP_HOST", "")
-        self.smtp_port = int(os.getenv("SMTP_PORT", 587))
-        self.smtp_user = os.getenv("SMTP_USER", "")
-        self.smtp_password = os.getenv("SMTP_PASSWORD", "")
-        self.mail_from = os.getenv("MAIL_FROM", self.smtp_user)
-
-    def send_email(self, to: str, subject: str, body: str, from_name: str = "", company_name: str = "", email_count: int = 0) -> SendResult:
-        import smtplib
-        from email.mime.multipart import MIMEMultipart
-        from email.mime.text import MIMEText
-        from email.header import Header
-
-        result = SendResult(
-            success=False,
-            to_address=to,
-            subject=subject,
-            sent_at=datetime.now(JST),
-        )
-
-        if not to or "@" not in to:
-            result.error_message = f"無効なメールアドレス: {to}"
-            return result
-
-        # 実際の送信処理の直前でログに保存
-        _write_email_log(company_name, to, email_count, subject, body)
-
-        try:
-            sender_name = from_name or config.MY_NAME
-            msg = MIMEMultipart()
-            msg["From"] = f"{sender_name} <{self.mail_from}>"
-            msg["To"] = to
-            msg["Subject"] = Header(subject, "utf-8")
-            msg.attach(MIMEText(body, "plain", "utf-8"))
-
-            with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
-                server.ehlo()
-                server.starttls()
-                server.login(self.smtp_user, self.smtp_password)
-                server.sendmail(self.mail_from, to, msg.as_string())
-
-            result.success = True
-            logger.info(f"メール送信成功: {to}")
-
-        except Exception as e:
-            result.error_message = str(e)
-            logger.error(f"メール送信エラー: {to} - {e}")
-
-        return result
-
-    def check_connection(self) -> bool:
-        import smtplib
-        try:
-            with smtplib.SMTP(self.smtp_host, self.smtp_port) as server:
-                server.ehlo()
-                server.starttls()
-                server.login(self.smtp_user, self.smtp_password)
-            logger.info("Xserver SMTP接続OK")
-            return True
-        except Exception as e:
-            logger.error(f"SMTP接続エラー: {e}")
-            return False
-
 
 if __name__ == "__main__":
     import sys
 
     logger.info("=== email_sender.py 単体テスト ===")
-    logger.info("※ Gmail OAuth2 認証が必要です")
 
-    sender = GmailSender()
+    # Gmail テスト
+    try:
+        logger.info("\n--- Gmail Sender テスト ---")
+        sender = GmailSender()
 
-    # 接続確認
-    print("1. Gmail 接続確認...")
-    if sender.check_connection():
-        print("   → 接続OK")
-    else:
-        print("   → 接続失敗（認証設定を確認してください）")
-        sys.exit(1)
+        print("1. Gmail 接続確認...")
+        if sender.check_connection():
+            print("   → 接続OK")
 
-    # テスト送信（自分自身に送信）
-    if len(sys.argv) > 1 and sys.argv[1] == "--send-test":
-        test_to = config.GMAIL_SENDER_ADDRESS
-        print(f"2. テスト送信: {test_to}")
-        result = sender.send_email(
-            to=test_to,
-            subject="【テスト】動画営業自動化システム 動作確認",
-            body="このメールはシステムの動作確認テストです。\n正常に受信できていれば設定は完了しています。",
-        )
-        print(f"   → {result}")
-    else:
-        print("2. テスト送信をスキップ（`python email_sender.py --send-test` で実行可能）")
+            # テスト送信（オプション）
+            if len(sys.argv) > 1 and sys.argv[1] == "--send-test":
+                test_to = config.GMAIL_SENDER_ADDRESS
+                print(f"2. テスト送信: {test_to}")
+                result = sender.send_email(
+                    to=test_to,
+                    subject="【テスト】動画営業自動化システム 動作確認",
+                    body="このメールはシステムの動作確認テストです。\n正常に受信できていれば設定は完了しています。",
+                    company_name="テスト",
+                    email_count=1,
+                )
+                print(f"   → {result}")
+            else:
+                print("2. テスト送信をスキップ（python email_sender.py --send-test で実行可能）")
+        else:
+            print("   → 接続失敗（認証設定を確認してください）")
+
+    except Exception as e:
+        logger.error(f"Gmail テスト失敗: {e}")
+
+    # Xserver SMTP テスト（オプション）
+    try:
+        if os.getenv("SMTP_HOST"):
+            logger.info("\n--- Xserver SMTP Sender テスト ---")
+            xserver = XserverSMTPSender()
+            print("3. SMTP 接続確認...")
+            if xserver.check_connection():
+                print("   → 接続OK")
+            else:
+                print("   → 接続失敗（SMTP設定を確認してください）")
+    except Exception as e:
+        logger.info(f"SMTP テストスキップ: {e}")
