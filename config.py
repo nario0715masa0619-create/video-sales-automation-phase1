@@ -188,3 +188,4 @@ if __name__ == "__main__":
     print(f"   GEMINI_MODEL: {GEMINI_MODEL}")
     print(f"   EMAIL_MAX_SEQUENCE: {EMAIL_MAX_SEQUENCE}通")
     print(f"   EMAIL_TARGET_RANKS: {EMAIL_TARGET_RANKS}")
+
