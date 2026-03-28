@@ -1,0 +1,46 @@
+# ===================================================
+# 動画スクレイピング×自動営業フロー Phase 1
+# 必要ライブラリ一覧
+# ===================================================
+
+# --- YouTube スクレイピング ---
+yt-dlp==2024.4.9
+beautifulsoup4==4.12.3
+lxml==5.2.1
+
+# --- HTTP クライアント ---
+requests==2.31.0
+httpx==0.27.0
+
+# --- Google Sheets（CRM）---
+gspread==6.1.2
+google-auth==2.29.0
+google-auth-oauthlib==1.2.0
+google-auth-httplib2==0.2.0
+
+# --- Gmail API ---
+google-api-python-client==2.128.0
+
+# --- Gemini API ---
+google-generativeai==0.5.4
+
+# --- 環境変数管理 ---
+python-dotenv==1.0.1
+
+# --- データクラス・型ヒント ---
+pydantic==2.7.1
+
+# --- 日付・時刻処理 ---
+python-dateutil==2.9.0
+
+# --- Flask（n8n/Make向け REST API）---
+flask==3.0.3
+flask-cors==4.0.1
+
+# --- ロギング ---
+loguru==0.7.2
+
+# --- ユーティリティ ---
+tenacity==8.3.0       # リトライ処理
+tqdm==4.66.4          # プログレスバー
+pandas==2.2.2         # データ操作（任意）
