@@ -44,6 +44,8 @@ class ChannelData:
     latest_video_title: str     # 最新動画タイトル（メール生成用）
     latest_video_url: str       # 最新動画URL
     fetched_at: str             # 取得日時
+    contact_email: str = ""
+    contact_form_url: str = ""
     icp_pass: bool = False
     icp_reject_reason: str = ""
     fetch_error: str = ""
@@ -180,37 +182,47 @@ def _get_subscriber_count_from_html(base_url: str) -> int:
     return 0
 
 
-def _resolve_subscriber_count(
-    yt_dlp_count: int,
-    base_url: str,
-    channel_name: str,
-) -> int:
+
+
+def _extract_contact_info(description: str, channel_url: str) -> tuple[str, str]:
     """
-    登録者数を3段階で取得する。
-    ① yt-dlp の channel_follower_count（/videos URL 取得時）
-    ② yt-dlp の channel_follower_count（ベースURL で再取得）
-    ③ HTML スクレイピング
+    チャンネル説明文からメールアドレスとお問い合わせフォームURLを抽出する。
+    
+    Args:
+        description: チャンネル説明文
+        channel_url: チャンネルURL（ログ用）
+        
+    Returns:
+        tuple[str, str]: (メールアドレス, お問い合わせフォームURL)
     """
-    # ① yt-dlp /videos URL からすでに取れていればそのまま使う
-    if yt_dlp_count > 0:
-        return yt_dlp_count
-
-    logger.info(f"登録者数フォールバック開始: {channel_name}")
-
-    # ② ベースURLで再取得
-    count = _get_subscriber_count_direct(base_url)
-    if count > 0:
-        logger.info(f"  フォールバック①成功: {count:,}人")
-        return count
-
-    # ③ HTML スクレイピング
-    count = _get_subscriber_count_from_html(base_url)
-    if count > 0:
-        logger.info(f"  フォールバック②成功: {count:,}人")
-        return count
-
-    logger.warning(f"  登録者数の取得に全て失敗: {channel_name}")
-    return 0
+    email = ""
+    contact_form_url = ""
+    
+    if not description:
+        return email, contact_form_url
+    
+    # メールアドレス抽出
+    email_pattern = r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}'
+    email_matches = re.findall(email_pattern, description)
+    exclude_domains = ['youtube.com', 'google.com', 'gmail.com', 'example.com']
+    
+    for m in email_matches:
+        if not any(d in m.lower() for d in exclude_domains):
+            email = m
+            break
+    
+    # お問い合わせフォームURL抽出
+    contact_patterns = [
+        r'https?://[^\s\u3000-\u9fff]+(?:contact|inquiry|inquire|form|toiawase)[^\s\u3000-\u9fff]*',
+    ]
+    
+    for pattern in contact_patterns:
+        m = re.search(pattern, description, re.IGNORECASE)
+        if m:
+            contact_form_url = m.group(0).rstrip('.,)')
+            break
+    
+    return email, contact_form_url
 
 
 # ─────────────────────────────────────────────
@@ -388,6 +400,10 @@ def get_channel_stats(channel_url: str) -> Optional[ChannelData]:
         else:
             recent_3m_count = min(len(entries), 3)
             logger.warning(f"RSS失敗のため推定値使用: {channel_name} → {recent_3m_count}件")
+    # 連絡先情報の抽出
+    description = info.get('description') or ''
+    contact_email, contact_form_url = _extract_contact_info(description, base_url)
+
 
     return ChannelData(
         channel_url=base_url,
@@ -402,6 +418,8 @@ def get_channel_stats(channel_url: str) -> Optional[ChannelData]:
         latest_video_title=latest_video_title,
         latest_video_url=latest_video_url,
         fetched_at=fetched_at,
+        contact_email=contact_email,
+        contact_form_url=contact_form_url,
     )
 
 
@@ -599,3 +617,4 @@ if __name__ == '__main__':
     print(f"\n❌ 除外: {len(rejected)}件")
     for ch in rejected:
         print(f"  - {ch.channel_name}: {ch.icp_reject_reason}")
+

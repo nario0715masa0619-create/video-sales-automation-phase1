@@ -66,6 +66,8 @@ class ScoredChannel:
         return {
             "チャンネルURL": self.channel_url,
             "チャンネル名": self.channel_name,
+            "メールアドレス": self.channel.contact_email,
+            "問い合わせフォームURL": self.channel.contact_form_url,
             "チャンネル登録者数": self.channel.subscriber_count,
             # ✅ FIX 1: videos_3m_count → recent_3m_count
             "投稿数（直近3ヶ月）": self.channel.recent_3m_count,
@@ -362,3 +364,4 @@ if __name__ == "__main__":
         print(f"\n【{r.rank}ランク】{r.channel_name}")
         print(f"  総合スコア: {r.total_score:.1f}点")
         print(f"  根拠: {r.score_reason}")
+
