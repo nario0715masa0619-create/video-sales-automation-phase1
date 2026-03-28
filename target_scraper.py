@@ -179,7 +179,10 @@ def _get_subscriber_count_from_html(base_url: str) -> int:
                     return count
     except Exception as e:
         logger.debug(f"フォールバック② 失敗 ({base_url}): {e}")
-    return 0def _resolve_subscriber_count(
+    return 0
+
+
+def _resolve_subscriber_count(
     yt_dlp_count: int,
     base_url: str,
     channel_name: str,
@@ -649,5 +652,6 @@ if __name__ == '__main__':
     print(f"\n❌ 除外: {len(rejected)}件")
     for ch in rejected:
         print(f"  - {ch.channel_name}: {ch.icp_reject_reason}")
+
 
 
