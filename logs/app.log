@@ -1,0 +1,2172 @@
+2026-03-17 18:05:20 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-17 18:05:20 | INFO | ============================================================
+2026-03-17 18:05:20 | INFO | 週次フロー開始
+2026-03-17 18:05:20 | INFO |   skip_scraping: False
+2026-03-17 18:05:20 | INFO |   dry_run: True
+2026-03-17 18:05:20 | INFO | ============================================================
+2026-03-17 18:05:20 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-17 18:05:20 | INFO | キーワード 'YouTube 企業チャンネル 商品紹介' でチャンネルを検索中...
+2026-03-17 18:05:30 | INFO | SerpAPI検索 'YouTube 企業チャンネル 商品紹介': 8件のチャンネルを発見
+2026-03-17 18:05:33 | INFO | キーワード 'YouTube 会社 ビジネス チャンネル' でチャンネルを検索中...
+2026-03-17 18:05:35 | INFO | SerpAPI検索 'YouTube 会社 ビジネス チャンネル': 6件のチャンネルを発見
+2026-03-17 18:05:38 | INFO | キーワード 'YouTube D2C ブランド 動画' でチャンネルを検索中...
+2026-03-17 18:05:41 | INFO | SerpAPI検索 'YouTube D2C ブランド 動画': 9件のチャンネルを発見
+2026-03-17 18:05:44 | INFO | キーワード 'YouTube オンライン講座 スクール' でチャンネルを検索中...
+2026-03-17 18:05:52 | INFO | SerpAPI検索 'YouTube オンライン講座 スクール': 7件のチャンネルを発見
+2026-03-17 18:05:55 | INFO | キーワード 'YouTube BtoB サービス 紹介' でチャンネルを検索中...
+2026-03-17 18:05:57 | INFO | SerpAPI検索 'YouTube BtoB サービス 紹介': 6件のチャンネルを発見
+2026-03-17 18:06:00 | INFO | 検索完了: 計36件のユニークなチャンネルURL
+2026-03-17 18:06:00 | INFO | チャンネル候補: 36件
+2026-03-17 18:06:00 | INFO | チャンネル取得 [1/36]: https://www.youtube.com/@takagi1866
+2026-03-17 18:06:02 | INFO | チャンネル取得完了: 髙儀 (TAKAGI) 公式 企業チャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:05 | INFO | チャンネル取得 [2/36]: https://www.youtube.com/@HitachiSystemsCh
+2026-03-17 18:06:05 | INFO | チャンネル取得完了: 日立システムズ ブランドチャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:08 | INFO | チャンネル取得 [3/36]: https://www.youtube.com/c/msinsurance
+2026-03-17 18:06:09 | INFO | チャンネル取得完了: 三井住友海上公式チャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:12 | INFO | チャンネル取得 [4/36]: https://m.youtube.com/@takagi1866/featured
+2026-03-17 18:06:12 | INFO | チャンネル取得完了: 髙儀 (TAKAGI) 公式 企業チャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:15 | INFO | チャンネル取得 [5/36]: https://www.youtube.com/@user-ASKUL
+2026-03-17 18:06:16 | INFO | チャンネル取得完了: アスクル公式チャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:19 | INFO | チャンネル取得 [6/36]: https://www.youtube.com/@Manufacturing.channel
+2026-03-17 18:06:20 | INFO | チャンネル取得完了: ものづくりチャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:23 | INFO | チャンネル取得 [7/36]: https://www.youtube.com/@pola1697/featured
+2026-03-17 18:06:23 | INFO | チャンネル取得完了: ポーラ公式チャンネル（POLA） | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:26 | INFO | チャンネル取得 [8/36]: https://www.youtube.com/@granire
+2026-03-17 18:06:26 | INFO | チャンネル取得完了: グラニーレ公式チャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:29 | INFO | チャンネル取得 [9/36]: https://www.youtube.com/@SoftBankBiz
+2026-03-17 18:06:30 | INFO | チャンネル取得完了: ソフトバンク公式 ビジネスチャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:33 | INFO | チャンネル取得 [10/36]: https://www.youtube.com/@aokimoviecreation
+2026-03-17 18:06:33 | INFO | チャンネル取得完了: おりゅうのビジネスチャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:36 | INFO | チャンネル取得 [11/36]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-17 18:06:38 | INFO | チャンネル取得完了: AIビジネスチャンネル (ABC) / AI Business Channel | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:41 | INFO | チャンネル取得 [12/36]: https://www.youtube.com/@BBT757program
+2026-03-17 18:06:41 | INFO | チャンネル取得完了: Aoba-BBT ビジネスチャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:44 | INFO | チャンネル取得 [13/36]: https://www.youtube.com/@hiro_smallbusiness
+2026-03-17 18:06:45 | INFO | チャンネル取得完了: はせひろ スモールビジネス経営者の日常 | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:48 | INFO | チャンネル取得 [14/36]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-17 18:06:48 | INFO | チャンネル取得完了: 三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」 | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:51 | INFO | チャンネル取得 [15/36]: https://www.youtube.com/@d2cstation331
+2026-03-17 18:06:52 | INFO | チャンネル取得完了: D2C STATION | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:55 | INFO | チャンネル取得 [16/36]: https://www.youtube.com/@omotvit6039
+2026-03-17 18:06:55 | INFO | チャンネル取得完了: オムニチャネル・OMO　TV　物流とITシステムで「顧客購買体験」をデザインする | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:06:58 | INFO | チャンネル取得 [17/36]: https://www.youtube.com/@yutoriinc
+2026-03-17 18:06:59 | INFO | チャンネル取得完了: ゆとらない日々 アパレル企業の裏側 | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:02 | INFO | チャンネル取得 [18/36]: https://www.youtube.com/@anymindjapan1245
+2026-03-17 18:07:03 | INFO | チャンネル取得完了: AnyMind Japan | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:06 | INFO | チャンネル取得 [19/36]: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5
+2026-03-17 18:07:06 | INFO | チャンネル取得完了: ECの未来® | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:09 | INFO | チャンネル取得 [20/36]: https://www.youtube.com/@ch-bw1kn
+2026-03-17 18:07:10 | INFO | チャンネル取得完了: Spike Yamamoto's Business Marketing ch | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:13 | INFO | チャンネル取得 [21/36]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-17 18:07:14 | INFO | チャンネル取得完了: 越境EC・海外WEBマーケティング_世界へボカン | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:17 | INFO | チャンネル取得 [22/36]: https://m.youtube.com/@letrostudio2676
+2026-03-17 18:07:17 | INFO | チャンネル取得完了: LetroStudio | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:20 | INFO | チャンネル取得 [23/36]: https://www.youtube.com/@findjapaninc
+2026-03-17 18:07:21 | INFO | チャンネル取得完了: FindJapan | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:24 | INFO | チャンネル取得 [24/36]: https://www.youtube.com/@netschoolcorp
+2026-03-17 18:07:24 | INFO | チャンネル取得完了: ネットスクール  公式チャンネル. | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:27 | INFO | チャンネル取得 [25/36]: https://www.youtube.com/@-win1293
+2026-03-17 18:07:28 | INFO | チャンネル取得完了: パソコン教室 - Winスクール【公式】 | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:31 | INFO | チャンネル取得 [26/36]: https://www.youtube.com/@schooltakt/featured
+2026-03-17 18:07:32 | INFO | チャンネル取得完了: スクールタクト 学び合いチャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:35 | INFO | チャンネル取得 [27/36]: https://www.youtube.com/@graceacademyofartclasschan2762/shorts
+2026-03-17 18:07:35 | INFO | チャンネル取得完了: オンライン美術教室 Grace academy of ART class channel | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:38 | INFO | チャンネル取得 [28/36]: https://www.youtube.com/c/JapaneseOnlineLesson
+2026-03-17 18:07:39 | INFO | チャンネル取得完了: Nihongo Online School 日本語オンラインスクール | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:42 | INFO | チャンネル取得 [29/36]: https://www.youtube.com/@selectone2376
+2026-03-17 18:07:42 | INFO | チャンネル取得完了: SelecToneミュージックスクール | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:45 | INFO | チャンネル取得 [30/36]: https://www.youtube.com/@lettuceclub_Webwriting
+2026-03-17 18:07:45 | INFO | チャンネル取得完了: レタスクラブWebライティング教室 | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:48 | INFO | チャンネル取得 [31/36]: https://www.youtube.com/@BcartJp
+2026-03-17 18:07:49 | INFO | チャンネル取得完了: BtoB EC・Web受発注システム「Bカート」 | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:52 | INFO | チャンネル取得 [32/36]: https://www.youtube.com/@btob_marketing_lab
+2026-03-17 18:07:52 | INFO | チャンネル取得完了: BtoBマーケ研究所 | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:55 | INFO | チャンネル取得 [33/36]: https://www.youtube.com/@btob3449
+2026-03-17 18:07:56 | INFO | チャンネル取得完了: アイリスオーヤマ BtoB事業グループ | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:07:59 | INFO | チャンネル取得 [34/36]: https://www.youtube.com/@infomartchannel
+2026-03-17 18:07:59 | INFO | チャンネル取得完了: Info Mart Corporation | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:08:02 | INFO | チャンネル取得 [35/36]: https://www.youtube.com/@EC-ft4kc
+2026-03-17 18:08:03 | INFO | チャンネル取得完了: アラジンEC | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:08:06 | INFO | チャンネル取得 [36/36]: https://www.youtube.com/@sairu-seminar
+2026-03-17 18:08:06 | INFO | チャンネル取得完了: 才流のセミナーチャンネル | 登録者: 0 | 3ヶ月投稿: 0本
+2026-03-17 18:08:09 | INFO | ICP フィルタ結果: 0件通過 / 36件除外
+2026-03-17 18:08:09 | INFO | Step 1 完了: 0件がICP通過
+2026-03-17 18:08:09 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-17 18:08:09 | ERROR | NGリスト取得エラー: [Errno 2] No such file or directory: 'credentials/service_account.json'
+2026-03-17 18:08:09 | INFO | NGリスト: 0件
+2026-03-17 18:08:09 | ERROR | Step 4 エラー: Traceback (most recent call last):
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\orchestrator.py", line 288, in _step4_get_pending
+    pending_leads = get_pending_leads(config.EMAIL_TARGET_RANKS)
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\crm_manager.py", line 567, in get_pending_leads
+    return get_crm().get_pending_leads(rank_filter)
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\crm_manager.py", line 309, in get_pending_leads
+    all_leads = self.get_all_leads()
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\crm_manager.py", line 168, in get_all_leads
+    sheet = self._get_sheet(config.SHEET_LEADS)
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\crm_manager.py", line 147, in _get_sheet
+    return self._get_spreadsheet().worksheet(sheet_name)
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\crm_manager.py", line 140, in _get_spreadsheet
+    client = self._get_client()
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\crm_manager.py", line 129, in _get_client
+    creds = Credentials.from_service_account_file(
+  File "C:\Users\nario\AppData\Local\Programs\Python\Python310\lib\site-packages\google\oauth2\service_account.py", line 258, in from_service_account_file
+    info, signer = _service_account_info.from_filename(
+  File "C:\Users\nario\AppData\Local\Programs\Python\Python310\lib\site-packages\google\auth\_service_account_info.py", line 78, in from_filename
+    with io.open(filename, "r", encoding="utf-8") as json_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'credentials/service_account.json'
+
+2026-03-17 18:08:09 | INFO | [DRY RUN] メール送信対象: 0件
+2026-03-17 18:08:09 | INFO | 
+=== 週次フロー実行結果 [2026-03-17 18:05] ===
+ステータス: ✅ 成功
+実行時間: 169秒
+
+【スクレイピング】
+  チャンネル候補数: 36件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 0件
+  メール生成数: 0件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - Step4エラー: [Errno 2] No such file or directory: 'credentials/service_account.json'
+2026-03-17 22:48:18 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-17 22:48:18 | INFO | ============================================================
+2026-03-17 22:48:18 | INFO | 週次フロー開始
+2026-03-17 22:48:18 | INFO |   skip_scraping: False
+2026-03-17 22:48:18 | INFO |   dry_run: True
+2026-03-17 22:48:18 | INFO | ============================================================
+2026-03-17 22:48:18 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-17 22:48:18 | ERROR | Step 1 エラー: Traceback (most recent call last):
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\orchestrator.py", line 177, in _step1_scrape_targets
+    channel_urls = search_company_channels(keywords)
+TypeError: search_company_channels() missing 1 required positional argument: 'serp_api_key'
+
+2026-03-17 22:48:18 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-17 22:48:18 | INFO | Google Sheets クライアント初期化完了
+2026-03-17 22:48:19 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-17 22:48:19 | INFO | NGリスト: 1件
+2026-03-17 22:48:20 | INFO | 送信対象リード: 2件
+2026-03-17 22:48:20 | INFO | Step 4 完了: 2件を送信対象として抽出 （NGで 0件除外）
+2026-03-17 22:48:20 | INFO | [DRY RUN] メール送信対象: 2件
+2026-03-17 22:48:20 | INFO |   [DRY RUN] 株式会社テックビデオ → 1通目 / tanaka@techvideo.co.jp
+2026-03-17 22:48:20 | INFO |   [DRY RUN] 合同会社クリエイトスクール → 1通目 / sato@createschool.jp
+2026-03-17 22:48:20 | INFO | 
+=== 週次フロー実行結果 [2026-03-17 22:48] ===
+ステータス: ✅ 成功
+実行時間: 2秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 2件
+  メール生成数: 2件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - Step1エラー: search_company_channels() missing 1 required positional argument: 'serp_api_key'
+2026-03-18 00:00:09 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-18 00:00:09 | INFO | ============================================================
+2026-03-18 00:00:09 | INFO | 週次フロー開始
+2026-03-18 00:00:09 | INFO |   skip_scraping: False
+2026-03-18 00:00:09 | INFO |   dry_run: True
+2026-03-18 00:00:09 | INFO | ============================================================
+2026-03-18 00:00:09 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 00:00:09 | ERROR | Step 1 エラー: Traceback (most recent call last):
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\orchestrator.py", line 179, in _step1_scrape_targets
+    channel_urls = search_company_channels(keywords, serp_api_key)
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\target_scraper.py", line 457, in search_company_channels
+    for keyword in keywords:
+TypeError: 'NoneType' object is not iterable
+
+2026-03-18 00:00:09 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 00:00:09 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 00:00:10 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 00:00:11 | INFO | NGリスト: 1件
+2026-03-18 00:00:11 | INFO | 送信対象リード: 2件
+2026-03-18 00:00:11 | INFO | Step 4 完了: 2件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 00:00:11 | INFO | [DRY RUN] メール送信対象: 2件
+2026-03-18 00:00:11 | INFO |   [DRY RUN] 株式会社テックビデオ → 1通目 / tanaka@techvideo.co.jp
+2026-03-18 00:00:11 | INFO |   [DRY RUN] 合同会社クリエイトスクール → 1通目 / sato@createschool.jp
+2026-03-18 00:00:11 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 00:00] ===
+ステータス: ✅ 成功
+実行時間: 3秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 2件
+  メール生成数: 2件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - Step1エラー: 'NoneType' object is not iterable
+2026-03-18 07:45:30 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-18 07:45:30 | INFO | ============================================================
+2026-03-18 07:45:30 | INFO | 週次フロー開始
+2026-03-18 07:45:30 | INFO |   skip_scraping: False
+2026-03-18 07:45:30 | INFO |   dry_run: True
+2026-03-18 07:45:30 | INFO | ============================================================
+2026-03-18 07:45:30 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 07:45:30 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 07:45:50 | INFO | チャンネル候補: 42件
+2026-03-18 07:45:50 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@selectone2376/videos
+2026-03-18 07:45:54 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@HitachiSystemsCh
+2026-03-18 07:45:57 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5
+2026-03-18 07:46:01 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@omotvit6039
+2026-03-18 07:46:04 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@ItoBusinessChannel
+2026-03-18 07:46:08 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@hiro_smallbusiness
+2026-03-18 07:46:11 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@business-otaku
+2026-03-18 07:46:15 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-18 07:46:18 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-18 07:46:22 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@pola1697/featured
+2026-03-18 07:46:26 | INFO | チャンネル取得 [11/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 07:46:29 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@valipla_channel
+2026-03-18 07:46:33 | INFO | チャンネル取得 [13/42]: https://youtube.com/@watanabe-piano?si=4QmAyyZdwSVZJHZK
+2026-03-18 07:46:36 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-18 07:46:40 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 07:46:44 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@netschoolcorp
+2026-03-18 07:46:47 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 07:46:51 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-18 07:46:54 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@Wakarutodekiru
+2026-03-18 07:46:58 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@BcartJp
+2026-03-18 07:47:01 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@takagi1866/videos
+2026-03-18 07:47:05 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@d2cstation331
+2026-03-18 07:47:08 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-18 07:47:12 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@NipponhamGroup
+2026-03-18 07:47:15 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 07:47:19 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@user-ASKUL
+2026-03-18 07:47:23 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 07:47:26 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 07:47:30 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-18 07:47:33 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-18 07:47:37 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@aokimoviecreation
+2026-03-18 07:47:40 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 07:47:44 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@JBSOfficial/videos
+2026-03-18 07:47:47 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@netschoolcorp/videos
+2026-03-18 07:47:51 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@-win1293
+2026-03-18 07:47:55 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 07:47:58 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-18 07:48:02 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/@findjapaninc
+2026-03-18 07:48:05 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/@HitachiSystemsCh/about
+2026-03-18 07:48:09 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@granire
+2026-03-18 07:48:12 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-18 07:48:16 | INFO | チャンネル取得 [42/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 07:48:19 | INFO | Step 1 完了: 10件がICP通過 / 32件除外
+2026-03-18 07:48:19 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-18 07:48:19 | ERROR | Step 2+3 エラー: Traceback (most recent call last):
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\orchestrator.py", line 247, in _step2_3_score_and_upsert
+    scored_channels = score_channels(channels)
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\scorer.py", line 273, in score_channels
+    scored = calculate_score(channel)
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\scorer.py", line 218, in calculate_score
+    channel.videos_3m_count
+AttributeError: 'ChannelData' object has no attribute 'videos_3m_count'. Did you mean: 'recent_3m_count'?
+
+2026-03-18 07:48:19 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 07:48:20 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 07:48:20 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 07:48:21 | INFO | NGリスト: 1件
+2026-03-18 07:48:22 | INFO | 送信対象リード: 2件
+2026-03-18 07:48:22 | INFO | Step 4 完了: 2件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 07:48:22 | INFO | [DRY RUN] メール送信対象: 2件
+2026-03-18 07:48:22 | INFO |   [DRY RUN] 株式会社テックビデオ → 1通目 / tanaka@techvideo.co.jp
+2026-03-18 07:48:22 | INFO |   [DRY RUN] 合同会社クリエイトスクール → 1通目 / sato@createschool.jp
+2026-03-18 07:48:22 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 07:45] ===
+ステータス: ✅ 成功
+実行時間: 172秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 10件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 2件
+  メール生成数: 2件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - Step2+3エラー: 'ChannelData' object has no attribute 'videos_3m_count'
+2026-03-18 07:55:53 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-18 07:55:53 | INFO | ============================================================
+2026-03-18 07:55:53 | INFO | 週次フロー開始
+2026-03-18 07:55:53 | INFO |   skip_scraping: False
+2026-03-18 07:55:53 | INFO |   dry_run: True
+2026-03-18 07:55:53 | INFO | ============================================================
+2026-03-18 07:55:53 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 07:55:53 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 07:55:59 | INFO | チャンネル候補: 42件
+2026-03-18 07:55:59 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-18 07:56:02 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 07:56:06 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@granire
+2026-03-18 07:56:09 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@netschoolcorp
+2026-03-18 07:56:13 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@d2cstation331
+2026-03-18 07:56:16 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 07:56:20 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 07:56:23 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@JBSOfficial/videos
+2026-03-18 07:56:27 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-18 07:56:30 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@HitachiSystemsCh
+2026-03-18 07:56:34 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/@pola1697/featured
+2026-03-18 07:56:38 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-18 07:56:41 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 07:56:45 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@user-ASKUL
+2026-03-18 07:56:48 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 07:56:52 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@-win1293
+2026-03-18 07:56:56 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/@selectone2376/videos
+2026-03-18 07:56:59 | INFO | チャンネル取得 [18/42]: https://youtube.com/@watanabe-piano?si=4QmAyyZdwSVZJHZK
+2026-03-18 07:57:02 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@ItoBusinessChannel
+2026-03-18 07:57:06 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@Wakarutodekiru
+2026-03-18 07:57:10 | INFO | チャンネル取得 [21/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 07:57:13 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 07:57:17 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@takagi1866/videos
+2026-03-18 07:57:20 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-18 07:57:24 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-18 07:57:28 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@netschoolcorp/videos
+2026-03-18 07:57:31 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@BcartJp
+2026-03-18 07:57:34 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-18 07:57:38 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@business-otaku
+2026-03-18 07:57:42 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@valipla_channel
+2026-03-18 07:57:45 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 07:57:49 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/@HitachiSystemsCh/about
+2026-03-18 07:57:52 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@aokimoviecreation
+2026-03-18 07:57:56 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@findjapaninc
+2026-03-18 07:57:59 | INFO | チャンネル取得 [35/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 07:58:03 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5
+2026-03-18 07:58:06 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@hiro_smallbusiness
+2026-03-18 07:58:10 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/@omotvit6039
+2026-03-18 07:58:13 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-18 07:58:17 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-18 07:58:20 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-18 07:58:24 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@NipponhamGroup
+2026-03-18 07:58:27 | INFO | Step 1 完了: 10件がICP通過 / 32件除外
+2026-03-18 07:58:27 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-18 07:58:27 | INFO | スコアリング完了: Aランク 1件 / Bランク 7件 / Cランク 2件
+2026-03-18 07:58:27 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 07:58:28 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 07:58:29 | INFO | リード新規追加: ECの未来®
+2026-03-18 07:58:31 | INFO | リード新規追加: Info Mart Corporation
+2026-03-18 07:58:36 | INFO | リード更新: Info Mart Corporation (行6)
+2026-03-18 07:58:38 | INFO | リード新規追加: ネットスクール  公式チャンネル.
+2026-03-18 07:58:43 | INFO | リード更新: ネットスクール  公式チャンネル. (行7)
+2026-03-18 07:58:45 | INFO | リード新規追加: ポーラ公式チャンネル（POLA）
+2026-03-18 07:58:47 | INFO | リード新規追加: アスクル公式チャンネル
+2026-03-18 07:58:49 | INFO | リード新規追加: NipponhamGroup
+2026-03-18 07:58:51 | INFO | リード新規追加: ゆとらない日々 アパレル企業の裏側
+2026-03-18 07:58:53 | INFO | リード新規追加: 越境EC・海外WEBマーケティング_世界へボカン
+2026-03-18 07:58:54 | INFO | Step 2+3 完了: 10件をCRMに更新
+2026-03-18 07:58:54 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 07:58:54 | INFO | NGリスト: 1件
+2026-03-18 07:58:55 | INFO | 送信対象リード: 8件
+2026-03-18 07:58:55 | INFO | Step 4 完了: 8件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 07:58:55 | INFO | [DRY RUN] メール送信対象: 8件
+2026-03-18 07:58:55 | INFO |   [DRY RUN] 株式会社テックビデオ → 1通目 / tanaka@techvideo.co.jp
+2026-03-18 07:58:55 | INFO |   [DRY RUN] 合同会社クリエイトスクール → 1通目 / sato@createschool.jp
+2026-03-18 07:58:55 | INFO |   [DRY RUN]  → 1通目 / 
+2026-03-18 07:58:55 | INFO |   [DRY RUN]  → 1通目 / 
+2026-03-18 07:58:55 | INFO |   [DRY RUN]  → 1通目 / 
+2026-03-18 07:58:55 | INFO |   [DRY RUN]  → 1通目 / 
+2026-03-18 07:58:55 | INFO |   [DRY RUN]  → 1通目 / 
+2026-03-18 07:58:55 | INFO |   [DRY RUN]  → 1通目 / 
+2026-03-18 07:58:55 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 07:55] ===
+ステータス: ✅ 成功
+実行時間: 181秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 10件
+  CRM更新数: 10件
+
+【メール送信】
+  送信対象リード: 8件
+  メール生成数: 8件
+  送信成功数: 0件
+  バウンス数: 0件
+2026-03-18 11:17:52 | INFO | ============================================================
+2026-03-18 11:17:52 | INFO | 週次フロー開始
+2026-03-18 11:17:52 | INFO |   skip_scraping: False
+2026-03-18 11:17:52 | INFO |   dry_run: False
+2026-03-18 11:17:52 | INFO | ============================================================
+2026-03-18 11:17:52 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 11:17:52 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 11:18:15 | INFO | チャンネル候補: 42件
+2026-03-18 11:18:15 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@-win1293
+2026-03-18 11:18:19 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@supership_corp_official/videos
+2026-03-18 11:18:22 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-18 11:18:26 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 11:18:30 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 11:18:33 | INFO | チャンネル取得 [6/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 11:18:37 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 11:18:40 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 11:18:44 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 11:18:48 | INFO | チャンネル取得 [10/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 11:18:51 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/@dipcorpration
+2026-03-18 11:18:55 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 11:18:58 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-18 11:19:02 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@graceacademyofartclasschan2762/shorts
+2026-03-18 11:19:05 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 11:19:09 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 11:17] ===
+ステータス: ❌ 失敗
+実行時間: 76秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 0件
+  メール生成数: 0件
+  送信成功数: 0件
+  バウンス数: 0件
+2026-03-18 11:24:13 | INFO | ============================================================
+2026-03-18 11:24:13 | INFO | 週次フロー開始
+2026-03-18 11:24:13 | INFO |   skip_scraping: False
+2026-03-18 11:24:13 | INFO |   dry_run: False
+2026-03-18 11:24:13 | INFO | ============================================================
+2026-03-18 11:24:13 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 11:24:13 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 11:24:19 | INFO | チャンネル候補: 42件
+2026-03-18 11:24:19 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@findjapaninc
+2026-03-18 11:24:23 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@graceacademyofartclasschan2762/shorts
+2026-03-18 11:24:26 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@netschoolcorp
+2026-03-18 11:24:30 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@lettuceclub_Webwriting/videos
+2026-03-18 11:24:34 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-18 11:24:37 | INFO | チャンネル取得 [6/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 11:24:41 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 11:24:44 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@business-otaku
+2026-03-18 11:24:48 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@d2cstation331
+2026-03-18 11:24:51 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@ch-bw1kn
+2026-03-18 11:24:55 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-18 11:24:58 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-18 11:25:02 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 11:25:05 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@dipcorpration
+2026-03-18 11:25:09 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-18 11:25:12 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@DaiwaLease/videos
+2026-03-18 11:25:16 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/@aokimoviecreation
+2026-03-18 11:25:20 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 11:25:23 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@-win1293
+2026-03-18 11:25:27 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-18 11:25:30 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 11:25:34 | INFO | チャンネル取得 [22/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 11:25:37 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-18 11:25:41 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-18 11:25:45 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@omotvit6039
+2026-03-18 11:25:48 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@supership_corp_official/videos
+2026-03-18 11:25:52 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@JBSOfficial/videos
+2026-03-18 11:25:56 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@in5535/channels
+2026-03-18 11:25:56 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@in5535/channels
+2026-03-18 11:25:59 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@ntt6474/featured
+2026-03-18 11:26:03 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-18 11:26:06 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@schooltakt/featured
+2026-03-18 11:26:10 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/@hiroshima_zukan
+2026-03-18 11:26:14 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-18 11:26:17 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 11:26:21 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@DIDdaidokogyo
+2026-03-18 11:26:24 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 11:26:28 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@mikimikiweb
+2026-03-18 11:26:31 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-18 11:26:35 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/@BcartJp
+2026-03-18 11:26:38 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-18 11:26:42 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@Wakarutodekiru
+2026-03-18 11:26:45 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 11:26:49 | INFO | Step 1 完了: 9件がICP通過 / 32件除外
+2026-03-18 11:26:49 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-18 11:26:49 | INFO | スコアリング完了: Aランク 1件 / Bランク 5件 / Cランク 3件
+2026-03-18 11:26:49 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 11:26:50 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 11:26:51 | INFO | リード新規追加: ディップ株式会社
+2026-03-18 11:26:56 | INFO | リード更新: Info Mart Corporation (行6)
+2026-03-18 11:27:01 | INFO | リード更新: Info Mart Corporation (行6)
+2026-03-18 11:27:06 | INFO | リード更新: ネットスクール  公式チャンネル. (行7)
+2026-03-18 11:27:08 | INFO | リード新規追加: NTTファイナンス公式チャンネル
+2026-03-18 11:27:10 | INFO | リード新規追加: スクールタクト 学び合いチャンネル
+2026-03-18 11:27:15 | INFO | リード更新: ゆとらない日々 アパレル企業の裏側 (行11)
+2026-03-18 11:27:17 | INFO | リード新規追加: 三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」
+2026-03-18 11:27:21 | ERROR | CRM更新エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-18 11:27:21 | INFO | Step 2+3 完了: 8件をCRMに更新
+2026-03-18 11:27:21 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 11:27:21 | INFO | NGリスト: 1件
+2026-03-18 11:27:22 | INFO | 送信対象リード: 11件
+2026-03-18 11:27:22 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 11:27:22 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-18 11:27:22 | INFO | 処理中 [1/1]: 株式会社テックビデオ (1通目 / nari.o.0715.masa.0619@gmail.com )
+2026-03-18 11:27:22 | ERROR | メール生成エラー [株式会社テックビデオ]: could not convert string to float: '4.20%'
+2026-03-18 11:27:22 | INFO | Step 5+6+7 完了: 生成0件 / 送信成功0件 / バウンス0件
+2026-03-18 11:27:22 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 11:24] ===
+ステータス: ✅ 成功
+実行時間: 189秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 9件
+  CRM更新数: 8件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 0件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - CRM更新エラー: 越境EC・海外WEBマーケティング_世界へボカン - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - メール生成エラー: 株式会社テックビデオ - could not convert string to float: '4.20%'
+2026-03-18 12:01:45 | INFO | ============================================================
+2026-03-18 12:01:45 | INFO | 週次フロー開始
+2026-03-18 12:01:45 | INFO |   skip_scraping: False
+2026-03-18 12:01:45 | INFO |   dry_run: False
+2026-03-18 12:01:45 | INFO | ============================================================
+2026-03-18 12:01:45 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 12:01:45 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 12:01:50 | INFO | チャンネル候補: 42件
+2026-03-18 12:01:50 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@ch-bw1kn
+2026-03-18 12:01:54 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-18 12:01:57 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@DIDdaidokogyo
+2026-03-18 12:02:01 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 12:02:04 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-18 12:02:08 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@schooltakt/featured
+2026-03-18 12:02:12 | INFO | チャンネル取得 [7/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 12:02:15 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@BcartJp
+2026-03-18 12:02:19 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-18 12:02:22 | INFO | チャンネル取得 [10/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 12:02:26 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-18 12:02:29 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 12:02:33 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@aokimoviecreation
+2026-03-18 12:02:36 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@mikimikiweb
+2026-03-18 12:02:40 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-18 12:02:44 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@Wakarutodekiru
+2026-03-18 12:02:47 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/@DaiwaLease/videos
+2026-03-18 12:02:51 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-18 12:02:54 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 12:02:58 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@graceacademyofartclasschan2762/shorts
+2026-03-18 12:03:01 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 12:03:05 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@in5535/channels
+2026-03-18 12:03:05 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@in5535/channels
+2026-03-18 12:03:08 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@-win1293
+2026-03-18 12:03:12 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@omotvit6039
+2026-03-18 12:03:16 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@lettuceclub_Webwriting/videos
+2026-03-18 12:03:19 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 12:03:23 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@ntt6474/featured
+2026-03-18 12:03:26 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-18 12:03:30 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@business-otaku
+2026-03-18 12:03:33 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@JBSOfficial/videos
+2026-03-18 12:03:37 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@d2cstation331
+2026-03-18 12:03:40 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-18 12:03:44 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@dipcorpration
+2026-03-18 12:03:47 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-18 12:03:51 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 12:03:54 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-18 12:03:58 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@netschoolcorp
+2026-03-18 12:04:01 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/@hiroshima_zukan
+2026-03-18 12:04:05 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 12:04:09 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@findjapaninc
+2026-03-18 12:04:12 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-18 12:04:16 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@supership_corp_official/videos
+2026-03-18 12:04:19 | INFO | Step 1 完了: 9件がICP通過 / 32件除外
+2026-03-18 12:04:19 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-18 12:04:19 | INFO | スコアリング完了: Aランク 1件 / Bランク 5件 / Cランク 3件
+2026-03-18 12:04:19 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 12:04:20 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 12:04:25 | INFO | リード更新: ディップ株式会社 (行13)
+2026-03-18 12:04:30 | INFO | リード更新: Info Mart Corporation (行6)
+2026-03-18 12:04:35 | INFO | リード更新: Info Mart Corporation (行6)
+2026-03-18 12:04:40 | INFO | リード更新: ネットスクール  公式チャンネル. (行7)
+2026-03-18 12:04:45 | INFO | リード更新: NTTファイナンス公式チャンネル (行14)
+2026-03-18 12:04:50 | ERROR | CRM更新エラー [スクールタクト 学び合いチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-18 12:04:51 | ERROR | CRM更新エラー [ゆとらない日々 アパレル企業の裏側]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-18 12:04:52 | ERROR | CRM更新エラー [三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-18 12:04:53 | ERROR | CRM更新エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-18 12:04:53 | INFO | Step 2+3 完了: 5件をCRMに更新
+2026-03-18 12:04:53 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 12:04:54 | INFO | NGリスト: 1件
+2026-03-18 12:04:54 | INFO | 送信対象リード: 11件
+2026-03-18 12:04:54 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 12:04:54 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-18 12:04:54 | INFO | 処理中 [1/1]: 株式会社テックビデオ (1通目 / nari.o.0715.masa.0619@gmail.com )
+2026-03-18 12:04:54 | INFO | メール生成開始: 株式会社テックビデオ - 1通目
+2026-03-18 12:04:59 | WARNING | 動画コメント生成失敗: RetryError[<Future at 0x20323256500 state=finished raised NotFound>]
+2026-03-18 12:05:03 | WARNING | 改善ポイント生成失敗: RetryError[<Future at 0x20322bd2260 state=finished raised NotFound>]
+2026-03-18 12:05:03 | INFO | メール生成完了: [1通目] 件名: 株式会社テックビデオ様の「YouTube動画」を拝見しました...
+2026-03-18 12:05:04 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com  | MessageID: 19cfee76f6a62fd9
+2026-03-18 12:05:04 | INFO | 送信成功: 株式会社テックビデオ (1通目)
+2026-03-18 12:05:04 | ERROR | CRM反映エラー [株式会社テックビデオ]: update_email_status() takes 2 positional arguments but 3 were given
+2026-03-18 12:05:06 | INFO | Step 5+6+7 完了: 生成1件 / 送信成功1件 / バウンス0件
+2026-03-18 12:05:06 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 12:01] ===
+ステータス: ✅ 成功
+実行時間: 201秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 9件
+  CRM更新数: 5件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 1件
+  送信成功数: 1件
+  バウンス数: 0件
+
+【エラー】
+  - CRM更新エラー: スクールタクト 学び合いチャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: ゆとらない日々 アパレル企業の裏側 - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: 三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」 - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: 越境EC・海外WEBマーケティング_世界へボカン - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM反映エラー: 株式会社テックビデオ - update_email_status() takes 2 positional arguments but 3 were given
+2026-03-18 13:49:42 | INFO | ============================================================
+2026-03-18 13:49:42 | INFO | 週次フロー開始
+2026-03-18 13:49:42 | INFO |   skip_scraping: False
+2026-03-18 13:49:42 | INFO |   dry_run: False
+2026-03-18 13:49:42 | INFO | ============================================================
+2026-03-18 13:49:42 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 13:49:42 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 13:50:04 | INFO | チャンネル候補: 42件
+2026-03-18 13:50:04 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@kakureyuryokigyo/videos
+2026-03-18 13:50:08 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@Wakarutodekiru
+2026-03-18 13:50:12 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@schooltakt/featured
+2026-03-18 13:50:15 | INFO | チャンネル取得 [4/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 13:50:19 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@netschoolcorp/videos
+2026-03-18 13:50:22 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/c/DaigasGroup
+2026-03-18 13:50:26 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 13:50:30 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@kobe2221/videos
+2026-03-18 13:50:33 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-18 13:50:37 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@supership_corp_official/videos
+2026-03-18 13:50:40 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/@findjapaninc
+2026-03-18 13:50:44 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@netschoolcorp
+2026-03-18 13:50:47 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@business-otaku
+2026-03-18 13:50:51 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@DIDdaidokogyo
+2026-03-18 13:50:54 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-18 13:50:58 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 13:51:02 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/@aokimoviecreation
+2026-03-18 13:51:05 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@d2cstation331
+2026-03-18 13:51:09 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 13:51:12 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-18 13:51:16 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-18 13:51:19 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@pivot00
+2026-03-18 13:51:23 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-18 13:51:27 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-18 13:51:30 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@moritani-drum/videos
+2026-03-18 13:51:34 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 13:51:37 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 13:51:41 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@BcartJp
+2026-03-18 13:51:44 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-18 13:51:48 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 13:51:51 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@mercari_school
+2026-03-18 13:51:52 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-18 13:51:55 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/@-win1293
+2026-03-18 13:51:59 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-18 13:52:02 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-18 13:52:06 | INFO | チャンネル取得 [35/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 13:52:09 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-18 13:52:13 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@JBSOfficial/videos
+2026-03-18 13:52:16 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-18 13:52:20 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 13:52:24 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@omotvit6039
+2026-03-18 13:52:27 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@granire
+2026-03-18 13:52:31 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5
+2026-03-18 13:52:34 | INFO | Step 1 完了: 0件がICP通過 / 41件除外
+2026-03-18 13:52:34 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 13:52:34 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 13:52:35 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 13:52:36 | INFO | NGリスト: 1件
+2026-03-18 13:52:36 | INFO | 送信対象リード: 11件
+2026-03-18 13:52:36 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 13:52:36 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-18 13:52:36 | INFO | 処理中 [1/1]: 株式会社テックビデオ (1通目 / nari.o.0715.masa.0619@gmail.com )
+2026-03-18 13:52:36 | INFO | メール生成開始: 株式会社テックビデオ - 1通目
+2026-03-18 13:52:41 | WARNING | 動画コメント生成失敗: RetryError[<Future at 0x2b542028250 state=finished raised NotFound>]
+2026-03-18 13:52:45 | WARNING | 改善ポイント生成失敗: RetryError[<Future at 0x2b54202a1d0 state=finished raised NotFound>]
+2026-03-18 13:52:45 | INFO | メール生成完了: [1通目] 件名: 株式会社テックビデオ様の「YouTube動画」を拝見しました...
+2026-03-18 13:52:45 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com 
+2026-03-18 13:52:45 | INFO | 送信成功: 株式会社テックビデオ (1通目)
+2026-03-18 13:52:45 | ERROR | CRM反映エラー [株式会社テックビデオ]: update_email_status() takes 2 positional arguments but 3 were given
+2026-03-18 13:52:47 | INFO | Step 5+6+7 完了: 生成1件 / 送信成功1件 / バウンス0件
+2026-03-18 13:52:47 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 13:49] ===
+ステータス: ✅ 成功
+実行時間: 185秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 1件
+  送信成功数: 1件
+  バウンス数: 0件
+
+【エラー】
+  - CRM反映エラー: 株式会社テックビデオ - update_email_status() takes 2 positional arguments but 3 were given
+2026-03-18 14:01:46 | INFO | ============================================================
+2026-03-18 14:01:46 | INFO | 週次フロー開始
+2026-03-18 14:01:46 | INFO |   skip_scraping: False
+2026-03-18 14:01:46 | INFO |   dry_run: False
+2026-03-18 14:01:46 | INFO | ============================================================
+2026-03-18 14:01:46 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 14:01:46 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 14:01:51 | INFO | チャンネル候補: 42件
+2026-03-18 14:01:51 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@kakureyuryokigyo/videos
+2026-03-18 14:01:55 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5
+2026-03-18 14:01:58 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-18 14:02:02 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@BcartJp
+2026-03-18 14:02:05 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-18 14:02:09 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@-win1293
+2026-03-18 14:02:12 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@business-otaku
+2026-03-18 14:02:16 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 14:02:19 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-18 14:02:23 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@aokimoviecreation
+2026-03-18 14:02:27 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-18 14:02:30 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@supership_corp_official/videos
+2026-03-18 14:02:34 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@JBSOfficial/videos
+2026-03-18 14:02:37 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 14:02:41 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 14:02:45 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@granire
+2026-03-18 14:02:48 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/c/DaigasGroup
+2026-03-18 14:02:52 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 14:02:55 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@schooltakt/featured
+2026-03-18 14:02:59 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@DIDdaidokogyo
+2026-03-18 14:03:02 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@d2cstation331
+2026-03-18 14:03:06 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 14:03:09 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@pivot00
+2026-03-18 14:03:13 | INFO | チャンネル取得 [24/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 14:03:16 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@netschoolcorp
+2026-03-18 14:03:20 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-18 14:03:23 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 14:03:27 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-18 14:03:30 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-18 14:03:34 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-18 14:03:38 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@mercari_school
+2026-03-18 14:03:38 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-18 14:03:41 | INFO | チャンネル取得 [32/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 14:03:44 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@omotvit6039
+2026-03-18 14:03:48 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@Wakarutodekiru
+2026-03-18 14:03:52 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@kobe2221/videos
+2026-03-18 14:03:55 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-18 14:03:59 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-18 14:04:02 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/@netschoolcorp/videos
+2026-03-18 14:04:06 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-18 14:04:09 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@findjapaninc
+2026-03-18 14:04:13 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 14:04:16 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@moritani-drum/videos
+2026-03-18 14:04:20 | INFO | Step 1 完了: 1件がICP通過 / 40件除外
+2026-03-18 14:04:20 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-18 14:04:20 | INFO | スコアリング完了: Aランク 0件 / Bランク 0件 / Cランク 1件
+2026-03-18 14:04:20 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 14:04:21 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 14:04:26 | INFO | リード更新: 三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」 (行16)
+2026-03-18 14:04:27 | INFO | Step 2+3 完了: 1件をCRMに更新
+2026-03-18 14:04:27 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 14:04:28 | INFO | NGリスト: 1件
+2026-03-18 14:04:28 | INFO | 送信対象リード: 11件
+2026-03-18 14:04:28 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 14:04:28 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-18 14:04:28 | INFO | 処理中 [1/1]: 株式会社テックビデオ (1通目 / nari.o.0715.masa.0619@gmail.com )
+2026-03-18 14:04:28 | INFO | メール生成開始: 株式会社テックビデオ - 1通目
+2026-03-18 14:04:32 | WARNING | 動画コメント生成失敗: RetryError[<Future at 0x1d71507d6f0 state=finished raised NotFound>]
+2026-03-18 14:04:37 | WARNING | 改善ポイント生成失敗: RetryError[<Future at 0x1d714cf6f80 state=finished raised NotFound>]
+2026-03-18 14:04:37 | INFO | メール生成完了: [1通目] 件名: 株式会社テックビデオ様の「YouTube動画」を拝見しました...
+2026-03-18 14:04:37 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com 
+2026-03-18 14:04:37 | INFO | 送信成功: 株式会社テックビデオ (1通目)
+2026-03-18 14:04:40 | INFO | メールステータス更新: https://youtube.com/@techvideo → 1通目送信済み
+2026-03-18 14:04:43 | INFO | Step 5+6+7 完了: 生成1件 / 送信成功1件 / バウンス0件
+2026-03-18 14:04:43 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 14:01] ===
+ステータス: ✅ 成功
+実行時間: 178秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 1件
+  CRM更新数: 1件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 1件
+  送信成功数: 1件
+  バウンス数: 0件
+2026-03-18 14:52:59 | INFO | ============================================================
+2026-03-18 14:52:59 | INFO | 週次フロー開始
+2026-03-18 14:52:59 | INFO |   skip_scraping: False
+2026-03-18 14:52:59 | INFO |   dry_run: False
+2026-03-18 14:52:59 | INFO | ============================================================
+2026-03-18 14:52:59 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-18 14:52:59 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-18 14:53:22 | INFO | チャンネル候補: 42件
+2026-03-18 14:53:22 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-18 14:53:26 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-18 14:53:29 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-18 14:53:33 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@valipla_channel
+2026-03-18 14:53:36 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-18 14:53:40 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@netschoolcorp/videos
+2026-03-18 14:53:43 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@yutoriinc/videos
+2026-03-18 14:53:47 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@takagi1866/videos
+2026-03-18 14:53:50 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-18 14:53:54 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@HitachiSystemsCh
+2026-03-18 14:53:57 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-18 14:54:01 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-18 14:54:04 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@d2cstation331
+2026-03-18 14:54:08 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@BcartJp
+2026-03-18 14:54:11 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@Manufacturing.channel/videos
+2026-03-18 14:54:15 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@pola1697/featured
+2026-03-18 14:54:18 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/@omotvit6039
+2026-03-18 14:54:22 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@stocksun-web-1082/playlists
+2026-03-18 14:54:26 | INFO | チャンネル取得 [19/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-18 14:54:29 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@user-ASKUL
+2026-03-18 14:54:33 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@JBSOfficial/videos
+2026-03-18 14:54:36 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@DIDdaidokogyo
+2026-03-18 14:54:40 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@mikimikiweb
+2026-03-18 14:54:43 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-18 14:54:47 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-18 14:54:51 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@netschoolcorp/streams
+2026-03-18 14:54:54 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/c/onsokupc/videos
+2026-03-18 14:54:58 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@selectone2376/videos
+2026-03-18 14:55:01 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-18 14:55:05 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@HitachiSystemsCh/about
+2026-03-18 14:55:08 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-18 14:55:12 | INFO | チャンネル取得 [32/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-18 14:55:16 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-18 14:55:20 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@findjapaninc
+2026-03-18 14:55:23 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-18 14:55:27 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/@business-otaku
+2026-03-18 14:55:30 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-18 14:55:34 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/@infomartchannel
+2026-03-18 14:55:37 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-18 14:55:41 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@netschoolcorp
+2026-03-18 14:55:44 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@aokimoviecreation
+2026-03-18 14:55:48 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@granire
+2026-03-18 14:55:51 | INFO | Step 1 完了: 1件がICP通過 / 41件除外
+2026-03-18 14:55:51 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-18 14:55:51 | INFO | スコアリング完了: Aランク 0件 / Bランク 1件 / Cランク 0件
+2026-03-18 14:55:51 | INFO | Google Sheets クライアント初期化完了
+2026-03-18 14:55:53 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-18 14:55:59 | INFO | リード更新: アスクル公式チャンネル (行9)
+2026-03-18 14:56:00 | INFO | Step 2+3 完了: 1件をCRMに更新
+2026-03-18 14:56:00 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-18 14:56:00 | INFO | NGリスト: 1件
+2026-03-18 14:56:01 | INFO | 送信対象リード: 11件
+2026-03-18 14:56:01 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-18 14:56:01 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-18 14:56:01 | INFO | 処理中 [1/1]: 株式会社テックビデオ (1通目 / nari.o.0715.masa.0619@gmail.com )
+2026-03-18 14:56:01 | INFO | メール生成開始: 株式会社テックビデオ - 1通目
+2026-03-18 14:56:04 | INFO | メール生成完了: [1通目] 件名: 株式会社テックビデオ様の「YouTube動画」を拝見しました...
+2026-03-18 14:56:05 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com 
+2026-03-18 14:56:05 | INFO | 送信成功: 株式会社テックビデオ (1通目)
+2026-03-18 14:56:08 | INFO | メールステータス更新: https://youtube.com/@techvideo → 1通目送信済み
+2026-03-18 14:56:11 | INFO | Step 5+6+7 完了: 生成1件 / 送信成功1件 / バウンス0件
+2026-03-18 14:56:11 | INFO | 
+=== 週次フロー実行結果 [2026-03-18 14:52] ===
+ステータス: ✅ 成功
+実行時間: 192秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 1件
+  CRM更新数: 1件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 1件
+  送信成功数: 1件
+  バウンス数: 0件
+2026-03-19 13:06:52 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-19 13:06:52 | INFO | ============================================================
+2026-03-19 13:06:52 | INFO | 週次フロー開始
+2026-03-19 13:06:52 | INFO |   skip_scraping: False
+2026-03-19 13:06:52 | INFO |   dry_run: True
+2026-03-19 13:06:52 | INFO | ============================================================
+2026-03-19 13:06:52 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-19 13:06:52 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-19 13:07:14 | INFO | チャンネル候補: 42件
+2026-03-19 13:07:14 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/c/tofoodsJP
+2026-03-19 13:07:18 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@findjapaninc
+2026-03-19 13:07:22 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-19 13:07:25 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@YAMADA_1973
+2026-03-19 13:07:29 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-19 13:07:33 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-19 13:07:36 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@netschoolcorp
+2026-03-19 13:07:40 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-19 13:07:43 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-19 13:07:47 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-19 13:07:51 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/@mercari_school
+2026-03-19 13:07:51 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-19 13:07:54 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@BBT757program
+2026-03-19 13:07:57 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-19 13:08:01 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-19 13:08:05 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@infomartchannel
+2026-03-19 13:08:08 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@DaifukuChannel
+2026-03-19 13:08:12 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/@user-ASKUL
+2026-03-19 13:08:15 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-19 13:08:19 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@d2cstation331
+2026-03-19 13:08:23 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@-win1293
+2026-03-19 13:08:26 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-19 13:08:30 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@graceacademyofartclasschan2762/shorts
+2026-03-19 13:08:33 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@tateyama-advance
+2026-03-19 13:08:37 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@business-otaku
+2026-03-19 13:08:40 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@yutoriinc
+2026-03-19 13:08:44 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@omotvit6039
+2026-03-19 13:08:47 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@kingjimpr
+2026-03-19 13:08:51 | INFO | チャンネル取得 [28/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-19 13:08:54 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-19 13:08:58 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-19 13:09:02 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-19 13:09:05 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/@BcartJp
+2026-03-19 13:09:09 | INFO | チャンネル取得 [33/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-19 13:09:12 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-19 13:09:16 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@lettuceclub_Webwriting/videos
+2026-03-19 13:09:19 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-19 13:09:23 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@hikarijs
+2026-03-19 13:09:27 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/@LITHONchannel
+2026-03-19 13:09:30 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-19 13:09:34 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@ch-bw1kn
+2026-03-19 13:09:37 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@ecforce6824
+2026-03-19 13:09:41 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@valipla_channel
+2026-03-19 13:09:44 | INFO | Step 1 完了: 6件がICP通過 / 35件除外
+2026-03-19 13:09:44 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-19 13:09:44 | INFO | スコアリング完了: Aランク 0件 / Bランク 2件 / Cランク 4件
+2026-03-19 13:09:44 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 13:09:45 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 13:09:50 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 13:09:56 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 13:10:01 | INFO | リード更新: ゆとらない日々 アパレル企業の裏側 (行8)
+2026-03-19 13:10:03 | INFO | リード新規追加: 光 HIKARI JS 日本語オンラインスクール
+2026-03-19 13:10:08 | INFO | リード更新: 三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」 (行13)
+2026-03-19 13:10:10 | INFO | リード新規追加: Aoba-BBT ビジネスチャンネル
+2026-03-19 13:10:11 | INFO | Step 2+3 完了: 6件をCRMに更新
+2026-03-19 13:10:11 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 13:10:11 | INFO | NGリスト: 1件
+2026-03-19 13:10:12 | INFO | 送信対象リード: 9件
+2026-03-19 13:10:12 | INFO | Step 4 完了: 3件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 13:10:12 | INFO | [DRY RUN] メール送信対象: 3件
+2026-03-19 13:10:12 | INFO |   [DRY RUN] ECの未来® → 1通目 / 
+2026-03-19 13:10:12 | INFO |   [DRY RUN] Info Mart Corporation → 1通目 / ×取得失敗
+2026-03-19 13:10:12 | INFO |   [DRY RUN] ネットスクール  公式チャンネル. → 1通目 / 
+2026-03-19 13:10:12 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 13:06] ===
+ステータス: ✅ 成功
+実行時間: 200秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 6件
+  CRM更新数: 6件
+
+【メール送信】
+  送信対象リード: 3件
+  メール生成数: 3件
+  送信成功数: 0件
+  バウンス数: 0件
+2026-03-19 14:59:21 | INFO | ============================================================
+2026-03-19 14:59:21 | INFO | 週次フロー開始
+2026-03-19 14:59:21 | INFO |   skip_scraping: False
+2026-03-19 14:59:21 | INFO |   dry_run: False
+2026-03-19 14:59:21 | INFO | ============================================================
+2026-03-19 14:59:21 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-19 14:59:21 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-19 14:59:46 | INFO | チャンネル候補: 42件
+2026-03-19 14:59:46 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@LITHONchannel
+2026-03-19 14:59:49 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-19 14:59:53 | INFO | チャンネル取得 [3/42]: https://www.youtube.com/@ItoBusinessChannel
+2026-03-19 14:59:56 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@infomartchannel
+2026-03-19 15:00:00 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@graceacademyofartclasschan2762/shorts
+2026-03-19 15:00:03 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@mercari_school
+2026-03-19 15:00:03 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-19 15:00:06 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-19 15:00:10 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@omotvit6039
+2026-03-19 15:00:14 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@ch-bw1kn
+2026-03-19 15:00:17 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@lettuceclub_Webwriting/videos
+2026-03-19 15:00:21 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-19 15:00:24 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@BcartJp
+2026-03-19 15:00:28 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@YAMADA_1973
+2026-03-19 15:00:31 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@BBT757program
+2026-03-19 15:00:35 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-19 15:00:39 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@-win1293
+2026-03-19 15:00:43 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/c/tofoodsJP
+2026-03-19 15:00:46 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@DaifukuChannel
+2026-03-19 15:00:50 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-19 15:00:53 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-19 15:00:57 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-19 15:01:01 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@hikarijs
+2026-03-19 15:01:04 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-19 15:01:08 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@findjapaninc
+2026-03-19 15:01:12 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-19 15:01:15 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@d2cstation331
+2026-03-19 15:01:19 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-19 15:01:23 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@user-ASKUL
+2026-03-19 15:01:26 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@valipla_channel
+2026-03-19 15:01:30 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-19 15:01:34 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@yutoriinc
+2026-03-19 15:01:37 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-19 15:01:41 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@hiro_smallbusiness
+2026-03-19 15:01:44 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@tateyama-advance
+2026-03-19 15:01:48 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-19 15:01:52 | INFO | チャンネル取得 [36/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-19 15:01:55 | INFO | チャンネル取得 [37/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-19 15:01:59 | INFO | チャンネル取得 [38/42]: https://www.youtube.com/@kingjimpr
+2026-03-19 15:02:03 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-19 15:02:06 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@netschoolcorp
+2026-03-19 15:02:10 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@JBSOfficial
+2026-03-19 15:02:13 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-19 15:02:17 | INFO | Step 1 完了: 0件がICP通過 / 41件除外
+2026-03-19 15:02:17 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 15:02:17 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 15:02:18 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 15:02:19 | INFO | NGリスト: 1件
+2026-03-19 15:02:19 | INFO | 送信対象リード: 9件
+2026-03-19 15:02:19 | INFO | Step 4 完了: 3件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 15:02:19 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-19 15:02:19 | INFO | 処理中 [1/3]: ECの未来® (1通目 / )
+2026-03-19 15:02:19 | WARNING | メールアドレス未設定のためスキップ: ECの未来®
+2026-03-19 15:02:19 | INFO | 処理中 [2/3]: Info Mart Corporation (1通目 / ×取得失敗)
+2026-03-19 15:02:19 | WARNING | メールアドレス未設定のためスキップ: Info Mart Corporation
+2026-03-19 15:02:19 | INFO | 処理中 [3/3]: ネットスクール  公式チャンネル. (1通目 / )
+2026-03-19 15:02:19 | WARNING | メールアドレス未設定のためスキップ: ネットスクール  公式チャンネル.
+2026-03-19 15:02:19 | INFO | Step 5+6+7 完了: 生成0件 / 送信成功0件 / バウンス0件
+2026-03-19 15:02:19 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 14:59] ===
+ステータス: ✅ 成功
+実行時間: 179秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 3件
+  メール生成数: 0件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - メールアドレス未設定: ECの未来®
+  - メールアドレス未設定: Info Mart Corporation
+  - メールアドレス未設定: ネットスクール  公式チャンネル.
+2026-03-19 15:08:24 | INFO | ============================================================
+2026-03-19 15:08:24 | INFO | 週次フロー開始
+2026-03-19 15:08:24 | INFO |   skip_scraping: False
+2026-03-19 15:08:24 | INFO |   dry_run: False
+2026-03-19 15:08:24 | INFO | ============================================================
+2026-03-19 15:08:24 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-19 15:08:24 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-19 15:08:29 | INFO | チャンネル候補: 42件
+2026-03-19 15:08:29 | INFO | チャンネル取得 [1/42]: https://www.youtube.com/@anymindjapan1245
+2026-03-19 15:08:33 | INFO | チャンネル取得 [2/42]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-19 15:08:37 | INFO | チャンネル取得 [3/42]: https://m.youtube.com/@takagi1866/featured
+2026-03-19 15:08:41 | INFO | チャンネル取得 [4/42]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-19 15:08:44 | INFO | チャンネル取得 [5/42]: https://www.youtube.com/@valipla_channel
+2026-03-19 15:08:47 | INFO | チャンネル取得 [6/42]: https://www.youtube.com/@BBT757program
+2026-03-19 15:08:51 | INFO | チャンネル取得 [7/42]: https://www.youtube.com/@kingjimpr
+2026-03-19 15:08:55 | INFO | チャンネル取得 [8/42]: https://www.youtube.com/@tateyama-advance
+2026-03-19 15:08:58 | INFO | チャンネル取得 [9/42]: https://www.youtube.com/@-win1293
+2026-03-19 15:09:02 | INFO | チャンネル取得 [10/42]: https://www.youtube.com/@hiro_smallbusiness
+2026-03-19 15:09:06 | INFO | チャンネル取得 [11/42]: https://www.youtube.com/c/tofoodsJP
+2026-03-19 15:09:09 | INFO | チャンネル取得 [12/42]: https://www.youtube.com/@LITHONchannel
+2026-03-19 15:09:13 | INFO | チャンネル取得 [13/42]: https://www.youtube.com/@EC-ft4kc
+2026-03-19 15:09:16 | INFO | チャンネル取得 [14/42]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-19 15:09:20 | INFO | チャンネル取得 [15/42]: https://www.youtube.com/@findjapaninc
+2026-03-19 15:09:23 | INFO | チャンネル取得 [16/42]: https://www.youtube.com/@JBSOfficial
+2026-03-19 15:09:27 | INFO | チャンネル取得 [17/42]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-19 15:09:31 | INFO | チャンネル取得 [18/42]: https://www.youtube.com/@yutoriinc
+2026-03-19 15:09:34 | INFO | チャンネル取得 [19/42]: https://www.youtube.com/@user-ASKUL
+2026-03-19 15:09:38 | INFO | チャンネル取得 [20/42]: https://www.youtube.com/@YAMADA_1973
+2026-03-19 15:09:42 | INFO | チャンネル取得 [21/42]: https://www.youtube.com/@hikarijs
+2026-03-19 15:09:45 | INFO | チャンネル取得 [22/42]: https://www.youtube.com/@ItoBusinessChannel
+2026-03-19 15:09:49 | INFO | チャンネル取得 [23/42]: https://www.youtube.com/@lettuceclub_Webwriting/videos
+2026-03-19 15:09:52 | INFO | チャンネル取得 [24/42]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-19 15:09:56 | INFO | チャンネル取得 [25/42]: https://www.youtube.com/@btob3449/playlists
+2026-03-19 15:09:59 | INFO | チャンネル取得 [26/42]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-19 15:10:03 | INFO | チャンネル取得 [27/42]: https://www.youtube.com/@graceacademyofartclasschan2762/shorts
+2026-03-19 15:10:06 | INFO | チャンネル取得 [28/42]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-19 15:10:10 | INFO | チャンネル取得 [29/42]: https://www.youtube.com/@infomartchannel/videos
+2026-03-19 15:10:13 | INFO | チャンネル取得 [30/42]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-19 15:10:17 | INFO | チャンネル取得 [31/42]: https://www.youtube.com/@SoftBankBiz
+2026-03-19 15:10:20 | INFO | チャンネル取得 [32/42]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-19 15:10:24 | INFO | チャンネル取得 [33/42]: https://www.youtube.com/@omotvit6039
+2026-03-19 15:10:27 | INFO | チャンネル取得 [34/42]: https://www.youtube.com/@mercari_school
+2026-03-19 15:10:28 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-19 15:10:31 | INFO | チャンネル取得 [35/42]: https://www.youtube.com/@DaifukuChannel
+2026-03-19 15:10:34 | INFO | チャンネル取得 [36/42]: https://www.youtube.com/@infomartchannel
+2026-03-19 15:10:38 | INFO | チャンネル取得 [37/42]: https://www.youtube.com/@d2cstation331
+2026-03-19 15:10:41 | INFO | チャンネル取得 [38/42]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-19 15:10:45 | INFO | チャンネル取得 [39/42]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-19 15:10:48 | INFO | チャンネル取得 [40/42]: https://www.youtube.com/@ch-bw1kn
+2026-03-19 15:10:52 | INFO | チャンネル取得 [41/42]: https://www.youtube.com/@netschoolcorp
+2026-03-19 15:10:55 | INFO | チャンネル取得 [42/42]: https://www.youtube.com/@BcartJp
+2026-03-19 15:10:59 | INFO | Step 1 完了: 0件がICP通過 / 41件除外
+2026-03-19 15:10:59 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 15:10:59 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 15:10:59 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 15:11:00 | INFO | NGリスト: 1件
+2026-03-19 15:11:01 | INFO | 送信対象リード: 11件
+2026-03-19 15:11:01 | INFO | Step 4 完了: 3件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 15:11:01 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-19 15:11:01 | INFO | 処理中 [1/3]: ECの未来® (1通目 / )
+2026-03-19 15:11:01 | WARNING | メールアドレス未設定のためスキップ: ECの未来®
+2026-03-19 15:11:01 | INFO | 処理中 [2/3]: Info Mart Corporation (1通目 / ×取得失敗)
+2026-03-19 15:11:01 | WARNING | メールアドレス未設定のためスキップ: Info Mart Corporation
+2026-03-19 15:11:01 | INFO | 処理中 [3/3]: ネットスクール  公式チャンネル. (1通目 / )
+2026-03-19 15:11:01 | WARNING | メールアドレス未設定のためスキップ: ネットスクール  公式チャンネル.
+2026-03-19 15:11:01 | INFO | Step 5+6+7 完了: 生成0件 / 送信成功0件 / バウンス0件
+2026-03-19 15:11:01 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 15:08] ===
+ステータス: ✅ 成功
+実行時間: 156秒
+
+【スクレイピング】
+  チャンネル候補数: 42件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 3件
+  メール生成数: 0件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - メールアドレス未設定: ECの未来®
+  - メールアドレス未設定: Info Mart Corporation
+  - メールアドレス未設定: ネットスクール  公式チャンネル.
+2026-03-19 21:13:19 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-19 21:13:19 | INFO | ============================================================
+2026-03-19 21:13:19 | INFO | 週次フロー開始
+2026-03-19 21:13:19 | INFO |   skip_scraping: False
+2026-03-19 21:13:19 | INFO |   dry_run: True
+2026-03-19 21:13:19 | INFO | ============================================================
+2026-03-19 21:13:19 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-19 21:13:19 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-19 21:13:46 | INFO | チャンネル候補: 41件
+2026-03-19 21:13:46 | INFO | チャンネル取得 [1/41]: https://www.youtube.com/@netschoolcorp
+2026-03-19 21:13:50 | INFO | チャンネル取得 [2/41]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-19 21:13:53 | INFO | チャンネル取得 [3/41]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-19 21:13:57 | INFO | チャンネル取得 [4/41]: https://www.youtube.com/@anymindjapan1245
+2026-03-19 21:14:01 | INFO | チャンネル取得 [5/41]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-19 21:14:04 | INFO | チャンネル取得 [6/41]: https://www.youtube.com/@mercari_school
+2026-03-19 21:14:04 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-19 21:14:07 | INFO | チャンネル取得 [7/41]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-19 21:14:11 | INFO | チャンネル取得 [8/41]: https://www.youtube.com/c/tofoodsJP
+2026-03-19 21:14:15 | INFO | チャンネル取得 [9/41]: https://www.youtube.com/@d2cstation331
+2026-03-19 21:14:18 | INFO | チャンネル取得 [10/41]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-19 21:14:22 | INFO | チャンネル取得 [11/41]: https://www.youtube.com/@kingjimpr
+2026-03-19 21:14:25 | INFO | チャンネル取得 [12/41]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-19 21:14:29 | INFO | チャンネル取得 [13/41]: https://www.youtube.com/@yutoriinc
+2026-03-19 21:14:33 | INFO | チャンネル取得 [14/41]: https://www.youtube.com/@LITHONchannel
+2026-03-19 21:14:36 | INFO | チャンネル取得 [15/41]: https://www.youtube.com/@omotvit6039
+2026-03-19 21:14:40 | INFO | チャンネル取得 [16/41]: https://www.youtube.com/@DaifukuChannel
+2026-03-19 21:14:44 | INFO | チャンネル取得 [17/41]: https://www.youtube.com/@cy_eigyo/videos
+2026-03-19 21:14:47 | INFO | チャンネル取得 [18/41]: https://www.youtube.com/@findjapaninc
+2026-03-19 21:14:51 | INFO | チャンネル取得 [19/41]: https://www.youtube.com/@hikarijs
+2026-03-19 21:14:55 | INFO | チャンネル取得 [20/41]: https://www.youtube.com/@SoftBankBiz
+2026-03-19 21:14:58 | INFO | チャンネル取得 [21/41]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-19 21:15:02 | INFO | チャンネル取得 [22/41]: https://www.youtube.com/@na-ch
+2026-03-19 21:15:06 | INFO | チャンネル取得 [23/41]: https://www.youtube.com/@YAMADA_1973
+2026-03-19 21:15:09 | INFO | チャンネル取得 [24/41]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-19 21:15:13 | INFO | チャンネル取得 [25/41]: https://www.youtube.com/@-win1293
+2026-03-19 21:15:16 | INFO | チャンネル取得 [26/41]: https://m.youtube.com/@3acad628/videos?view=0&sort=dd&shelf_id=7
+2026-03-19 21:15:20 | INFO | チャンネル取得 [27/41]: https://www.youtube.com/@infomartchannel/videos
+2026-03-19 21:15:24 | INFO | チャンネル取得 [28/41]: https://www.youtube.com/@DaiwaLease/videos
+2026-03-19 21:15:28 | INFO | チャンネル取得 [29/41]: https://www.youtube.com/@BcartJp
+2026-03-19 21:15:31 | INFO | チャンネル取得 [30/41]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-19 21:15:35 | INFO | チャンネル取得 [31/41]: https://www.youtube.com/@BBT757program
+2026-03-19 21:15:38 | INFO | チャンネル取得 [32/41]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-19 21:15:42 | INFO | チャンネル取得 [33/41]: https://www.youtube.com/@btob3449/playlists
+2026-03-19 21:15:45 | INFO | チャンネル取得 [34/41]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-19 21:15:49 | INFO | チャンネル取得 [35/41]: https://www.youtube.com/@infomartchannel
+2026-03-19 21:15:53 | INFO | チャンネル取得 [36/41]: https://www.youtube.com/@ch-bw1kn
+2026-03-19 21:15:56 | INFO | チャンネル取得 [37/41]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-19 21:16:00 | INFO | チャンネル取得 [38/41]: https://www.youtube.com/@EC-ft4kc
+2026-03-19 21:16:04 | INFO | チャンネル取得 [39/41]: https://www.youtube.com/@user-ASKUL
+2026-03-19 21:16:07 | INFO | チャンネル取得 [40/41]: https://www.youtube.com/@tateyama-advance
+2026-03-19 21:16:11 | INFO | チャンネル取得 [41/41]: https://www.youtube.com/@moritani-drum/videos
+2026-03-19 21:16:15 | INFO | Step 1 完了: 14件がICP通過 / 26件除外
+2026-03-19 21:16:15 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-19 21:16:15 | INFO | スコアリング完了: Aランク 1件 / Bランク 8件 / Cランク 5件
+2026-03-19 21:16:15 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 21:16:16 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 21:16:17 | INFO | リード新規追加: ヤマダデンキ【公式】チャンネル
+2026-03-19 21:16:19 | INFO | リード新規追加: キングジム公式YouTubeチャンネル
+2026-03-19 21:16:24 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 21:16:30 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 21:16:31 | INFO | リード新規追加: 森谷ドラムスクールYouTube校
+2026-03-19 21:16:37 | INFO | リード更新: ネットスクール  公式チャンネル. (行4)
+2026-03-19 21:16:39 | INFO | リード新規追加: テーオー食品公式チャンネル
+2026-03-19 21:16:44 | INFO | リード更新: アスクル公式チャンネル (行6)
+2026-03-19 21:16:46 | INFO | リード新規追加: サイボウズビジネスチャンネル
+2026-03-19 21:16:48 | INFO | リード新規追加: 積水ハウスグループ 公式チャンネル
+2026-03-19 21:16:52 | ERROR | CRM更新エラー [光 HIKARI JS 日本語オンラインスクール]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:16:53 | ERROR | CRM更新エラー [三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:16:55 | ERROR | CRM更新エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:16:56 | ERROR | CRM更新エラー [Aoba-BBT ビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:16:56 | INFO | Step 2+3 完了: 10件をCRMに更新
+2026-03-19 21:16:56 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 21:16:56 | INFO | NGリスト: 1件
+2026-03-19 21:16:57 | INFO | 送信対象リード: 16件
+2026-03-19 21:16:57 | INFO | Step 4 完了: 3件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 21:16:57 | INFO | [DRY RUN] メール送信対象: 3件
+2026-03-19 21:16:57 | INFO |   [DRY RUN] ECの未来® → 1通目 / 
+2026-03-19 21:16:57 | INFO |   [DRY RUN] Info Mart Corporation → 1通目 / ×取得失敗
+2026-03-19 21:16:57 | INFO |   [DRY RUN] ネットスクール  公式チャンネル. → 1通目 / 
+2026-03-19 21:16:57 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 21:13] ===
+ステータス: ✅ 成功
+実行時間: 218秒
+
+【スクレイピング】
+  チャンネル候補数: 41件
+  ICP通過数: 14件
+  CRM更新数: 10件
+
+【メール送信】
+  送信対象リード: 3件
+  メール生成数: 3件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - CRM更新エラー: 光 HIKARI JS 日本語オンラインスクール - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: 三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」 - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: 越境EC・海外WEBマーケティング_世界へボカン - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: Aoba-BBT ビジネスチャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:32:46 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-19 21:32:46 | INFO | ============================================================
+2026-03-19 21:32:46 | INFO | 週次フロー開始
+2026-03-19 21:32:46 | INFO |   skip_scraping: False
+2026-03-19 21:32:46 | INFO |   dry_run: True
+2026-03-19 21:32:46 | INFO | ============================================================
+2026-03-19 21:32:46 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-19 21:32:46 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-19 21:32:53 | INFO | チャンネル候補: 41件
+2026-03-19 21:32:53 | INFO | チャンネル取得 [1/41]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-19 21:32:57 | INFO | チャンネル取得 [2/41]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-19 21:33:00 | INFO | チャンネル取得 [3/41]: https://www.youtube.com/@infomartchannel/videos
+2026-03-19 21:33:04 | INFO | チャンネル取得 [4/41]: https://www.youtube.com/@DaifukuChannel
+2026-03-19 21:33:08 | INFO | チャンネル取得 [5/41]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-19 21:33:11 | INFO | チャンネル取得 [6/41]: https://www.youtube.com/@DaiwaLease/videos
+2026-03-19 21:33:15 | INFO | チャンネル取得 [7/41]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-19 21:33:19 | INFO | チャンネル取得 [8/41]: https://www.youtube.com/@YAMADA_1973
+2026-03-19 21:33:22 | INFO | チャンネル取得 [9/41]: https://www.youtube.com/@BcartJp
+2026-03-19 21:33:26 | INFO | チャンネル取得 [10/41]: https://m.youtube.com/@3acad628/videos?view=0&sort=dd&shelf_id=7
+2026-03-19 21:33:29 | INFO | チャンネル取得 [11/41]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-19 21:33:33 | INFO | チャンネル取得 [12/41]: https://www.youtube.com/@kingjimpr
+2026-03-19 21:33:37 | INFO | チャンネル取得 [13/41]: https://www.youtube.com/@-win1293
+2026-03-19 21:33:40 | INFO | チャンネル取得 [14/41]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-19 21:33:44 | INFO | チャンネル取得 [15/41]: https://www.youtube.com/@findjapaninc
+2026-03-19 21:33:48 | INFO | チャンネル取得 [16/41]: https://www.youtube.com/@user-ASKUL
+2026-03-19 21:33:51 | INFO | チャンネル取得 [17/41]: https://www.youtube.com/@na-ch
+2026-03-19 21:33:55 | INFO | チャンネル取得 [18/41]: https://www.youtube.com/@tateyama-advance
+2026-03-19 21:33:56 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 21:32] ===
+ステータス: ❌ 失敗
+実行時間: 70秒
+
+【スクレイピング】
+  チャンネル候補数: 41件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 0件
+  メール生成数: 0件
+  送信成功数: 0件
+  バウンス数: 0件
+2026-03-19 21:35:42 | INFO | ============================================================
+2026-03-19 21:35:42 | INFO | 週次フロー開始
+2026-03-19 21:35:42 | INFO |   skip_scraping: True
+2026-03-19 21:35:42 | INFO |   dry_run: True
+2026-03-19 21:35:42 | INFO | ============================================================
+2026-03-19 21:35:42 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-19 21:35:42 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 21:35:42 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 21:35:43 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 21:35:44 | INFO | NGリスト: 1件
+2026-03-19 21:35:44 | INFO | 送信対象リード: 2件
+2026-03-19 21:35:44 | INFO | Step 4 完了: 2件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 21:35:44 | INFO | [DRY RUN] メール送信対象: 2件
+2026-03-19 21:35:44 | INFO |   [DRY RUN] ゆとらない日々 アパレル企業の裏側 → 1通目 / yutorikun@yutori.tokyo
+2026-03-19 21:35:44 | INFO |   [DRY RUN] 越境EC・海外WEBマーケティング_世界へボカン → 1通目 / consulting@s-bokan.com
+2026-03-19 21:35:44 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 21:35] ===
+ステータス: ✅ 成功
+実行時間: 2秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 2件
+  メール生成数: 2件
+  送信成功数: 0件
+  バウンス数: 0件
+2026-03-19 21:49:39 | INFO | DRY RUN モード: メール送信は行いません
+2026-03-19 21:49:39 | INFO | ============================================================
+2026-03-19 21:49:39 | INFO | 週次フロー開始
+2026-03-19 21:49:39 | INFO |   skip_scraping: False
+2026-03-19 21:49:39 | INFO |   dry_run: True
+2026-03-19 21:49:39 | INFO | ============================================================
+2026-03-19 21:49:39 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-19 21:49:39 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-19 21:49:44 | INFO | チャンネル候補: 41件
+2026-03-19 21:49:44 | INFO | チャンネル取得 [1/41]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-19 21:49:48 | INFO | チャンネル取得 [2/41]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-19 21:49:52 | INFO | チャンネル取得 [3/41]: https://www.youtube.com/@LITHONchannel
+2026-03-19 21:49:55 | INFO | チャンネル取得 [4/41]: https://www.youtube.com/@cy_eigyo/videos
+2026-03-19 21:49:59 | INFO | チャンネル取得 [5/41]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-19 21:50:03 | INFO | チャンネル取得 [6/41]: https://www.youtube.com/@omotvit6039
+2026-03-19 21:50:06 | INFO | チャンネル取得 [7/41]: https://www.youtube.com/@btob3449/playlists
+2026-03-19 21:50:10 | INFO | チャンネル取得 [8/41]: https://www.youtube.com/@kingjimpr
+2026-03-19 21:50:14 | INFO | チャンネル取得 [9/41]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-19 21:50:17 | INFO | チャンネル取得 [10/41]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-19 21:50:22 | INFO | チャンネル取得 [11/41]: https://www.youtube.com/@BcartJp
+2026-03-19 21:50:26 | INFO | チャンネル取得 [12/41]: https://www.youtube.com/@yutoriinc
+2026-03-19 21:50:31 | INFO | チャンネル取得 [13/41]: https://www.youtube.com/@mercari_school
+2026-03-19 21:50:31 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-19 21:50:34 | INFO | チャンネル取得 [14/41]: https://www.youtube.com/@anymindjapan1245
+2026-03-19 21:50:38 | INFO | チャンネル取得 [15/41]: https://www.youtube.com/@YAMADA_1973
+2026-03-19 21:50:42 | INFO | チャンネル取得 [16/41]: https://www.youtube.com/@na-ch
+2026-03-19 21:50:46 | INFO | チャンネル取得 [17/41]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-19 21:50:49 | INFO | チャンネル取得 [18/41]: https://www.youtube.com/@DaiwaLease/videos
+2026-03-19 21:50:53 | INFO | チャンネル取得 [19/41]: https://www.youtube.com/@netschoolcorp
+2026-03-19 21:50:57 | INFO | チャンネル取得 [20/41]: https://www.youtube.com/@hikarijs
+2026-03-19 21:51:00 | INFO | チャンネル取得 [21/41]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-19 21:51:04 | INFO | チャンネル取得 [22/41]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-19 21:51:08 | INFO | チャンネル取得 [23/41]: https://www.youtube.com/@-win1293
+2026-03-19 21:51:12 | INFO | チャンネル取得 [24/41]: https://www.youtube.com/c/tofoodsJP
+2026-03-19 21:51:15 | INFO | チャンネル取得 [25/41]: https://www.youtube.com/@d2cstation331
+2026-03-19 21:51:19 | INFO | チャンネル取得 [26/41]: https://www.youtube.com/@moritani-drum/videos
+2026-03-19 21:51:23 | INFO | チャンネル取得 [27/41]: https://www.youtube.com/@infomartchannel/videos
+2026-03-19 21:51:26 | INFO | チャンネル取得 [28/41]: https://www.youtube.com/@ch-bw1kn
+2026-03-19 21:51:30 | INFO | チャンネル取得 [29/41]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-19 21:51:34 | INFO | チャンネル取得 [30/41]: https://www.youtube.com/@user-ASKUL
+2026-03-19 21:51:38 | INFO | チャンネル取得 [31/41]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-19 21:51:41 | INFO | チャンネル取得 [32/41]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-19 21:51:45 | INFO | チャンネル取得 [33/41]: https://www.youtube.com/@BBT757program
+2026-03-19 21:51:49 | INFO | チャンネル取得 [34/41]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-19 21:51:52 | INFO | チャンネル取得 [35/41]: https://m.youtube.com/@3acad628/videos?view=0&sort=dd&shelf_id=7
+2026-03-19 21:51:56 | INFO | チャンネル取得 [36/41]: https://www.youtube.com/@SoftBankBiz
+2026-03-19 21:51:59 | INFO | チャンネル取得 [37/41]: https://www.youtube.com/@findjapaninc
+2026-03-19 21:52:03 | INFO | チャンネル取得 [38/41]: https://www.youtube.com/@infomartchannel
+2026-03-19 21:52:07 | INFO | チャンネル取得 [39/41]: https://www.youtube.com/@DaifukuChannel
+2026-03-19 21:52:10 | INFO | チャンネル取得 [40/41]: https://www.youtube.com/@EC-ft4kc
+2026-03-19 21:52:14 | INFO | チャンネル取得 [41/41]: https://www.youtube.com/@tateyama-advance
+2026-03-19 21:52:18 | INFO | Step 1 完了: 14件がICP通過 / 26件除外
+2026-03-19 21:52:18 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-19 21:52:18 | INFO | スコアリング完了: Aランク 1件 / Bランク 8件 / Cランク 5件
+2026-03-19 21:52:18 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 21:52:19 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 21:52:24 | INFO | リード更新: ヤマダデンキ【公式】チャンネル (行16)
+2026-03-19 21:52:30 | INFO | リード更新: キングジム公式YouTubeチャンネル (行17)
+2026-03-19 21:52:35 | INFO | リード更新: 森谷ドラムスクールYouTube校 (行18)
+2026-03-19 21:52:41 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 21:52:46 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 21:52:48 | ERROR | CRM更新エラー [ネットスクール  公式チャンネル.]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:50 | ERROR | CRM更新エラー [テーオー食品公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:51 | ERROR | CRM更新エラー [アスクル公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:52 | ERROR | CRM更新エラー [サイボウズビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:53 | ERROR | CRM更新エラー [積水ハウスグループ 公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:55 | ERROR | CRM更新エラー [光 HIKARI JS 日本語オンラインスクール]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:56 | ERROR | CRM更新エラー [三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:57 | ERROR | CRM更新エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:59 | ERROR | CRM更新エラー [Aoba-BBT ビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 21:52:59 | INFO | Step 2+3 完了: 5件をCRMに更新
+2026-03-19 21:52:59 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 21:52:59 | INFO | NGリスト: 1件
+2026-03-19 21:53:00 | INFO | 送信対象リード: 3件
+2026-03-19 21:53:00 | INFO | Step 4 完了: 3件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 21:53:00 | INFO | [DRY RUN] メール送信対象: 3件
+2026-03-19 21:53:00 | INFO |   [DRY RUN] ゆとらない日々 アパレル企業の裏側 → 1通目 / yutorikun@yutori.tokyo
+2026-03-19 21:53:00 | INFO |   [DRY RUN] 越境EC・海外WEBマーケティング_世界へボカン → 1通目 / consulting@s-bokan.com
+2026-03-19 21:53:00 | INFO |   [DRY RUN] Aoba-BBT ビジネスチャンネル → 1通目 / bbtchannel@ohmae.ac.jp
+2026-03-19 21:53:00 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 21:49] ===
+ステータス: ✅ 成功
+実行時間: 201秒
+
+【スクレイピング】
+  チャンネル候補数: 41件
+  ICP通過数: 14件
+  CRM更新数: 5件
+
+【メール送信】
+  送信対象リード: 3件
+  メール生成数: 3件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - CRM更新エラー: ネットスクール  公式チャンネル. - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: テーオー食品公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: アスクル公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: サイボウズビジネスチャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: 積水ハウスグループ 公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:03:20 | INFO | ============================================================
+2026-03-19 22:03:20 | INFO | 週次フロー開始
+2026-03-19 22:03:20 | INFO |   skip_scraping: False
+2026-03-19 22:03:20 | INFO |   dry_run: False
+2026-03-19 22:03:20 | INFO | ============================================================
+2026-03-19 22:03:20 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-19 22:03:20 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-19 22:03:25 | INFO | チャンネル候補: 41件
+2026-03-19 22:03:25 | INFO | チャンネル取得 [1/41]: https://www.youtube.com/@user-ASKUL
+2026-03-19 22:03:29 | INFO | チャンネル取得 [2/41]: https://www.youtube.com/@d2cstation331
+2026-03-19 22:03:33 | INFO | チャンネル取得 [3/41]: https://www.youtube.com/@DaifukuChannel
+2026-03-19 22:03:37 | INFO | チャンネル取得 [4/41]: https://m.youtube.com/@3acad628/videos?view=0&sort=dd&shelf_id=7
+2026-03-19 22:03:41 | INFO | チャンネル取得 [5/41]: https://www.youtube.com/@EC-ft4kc
+2026-03-19 22:03:45 | INFO | チャンネル取得 [6/41]: https://www.youtube.com/@cy_eigyo/videos
+2026-03-19 22:03:49 | INFO | チャンネル取得 [7/41]: https://www.youtube.com/@BcartJp
+2026-03-19 22:03:52 | INFO | チャンネル取得 [8/41]: https://www.youtube.com/@SoftBankBiz
+2026-03-19 22:03:56 | INFO | チャンネル取得 [9/41]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-19 22:03:59 | INFO | チャンネル取得 [10/41]: https://www.youtube.com/@DaiwaLease/videos
+2026-03-19 22:04:03 | INFO | チャンネル取得 [11/41]: https://www.youtube.com/@yutoriinc
+2026-03-19 22:04:07 | INFO | チャンネル取得 [12/41]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-19 22:04:10 | INFO | チャンネル取得 [13/41]: https://www.youtube.com/@netschoolcorp
+2026-03-19 22:04:14 | INFO | チャンネル取得 [14/41]: https://www.youtube.com/@BBT757program
+2026-03-19 22:04:18 | INFO | チャンネル取得 [15/41]: https://www.youtube.com/@hikarijs
+2026-03-19 22:04:21 | INFO | チャンネル取得 [16/41]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-19 22:04:25 | INFO | チャンネル取得 [17/41]: https://www.youtube.com/@kingjimpr
+2026-03-19 22:04:29 | INFO | チャンネル取得 [18/41]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-19 22:04:32 | INFO | チャンネル取得 [19/41]: https://www.youtube.com/@LITHONchannel
+2026-03-19 22:04:36 | INFO | チャンネル取得 [20/41]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-19 22:04:40 | INFO | チャンネル取得 [21/41]: https://www.youtube.com/@tateyama-advance
+2026-03-19 22:04:44 | INFO | チャンネル取得 [22/41]: https://www.youtube.com/@YAMADA_1973
+2026-03-19 22:04:47 | INFO | チャンネル取得 [23/41]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-19 22:04:51 | INFO | チャンネル取得 [24/41]: https://www.youtube.com/@mercari_school
+2026-03-19 22:04:51 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-19 22:04:54 | INFO | チャンネル取得 [25/41]: https://www.youtube.com/@moritani-drum/videos
+2026-03-19 22:04:58 | INFO | チャンネル取得 [26/41]: https://www.youtube.com/@-win1293
+2026-03-19 22:05:02 | INFO | チャンネル取得 [27/41]: https://www.youtube.com/@SoftBankBiz/videos
+2026-03-19 22:05:05 | INFO | チャンネル取得 [28/41]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-19 22:05:09 | INFO | チャンネル取得 [29/41]: https://www.youtube.com/@btob3449/playlists
+2026-03-19 22:05:13 | INFO | チャンネル取得 [30/41]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-19 22:05:17 | INFO | チャンネル取得 [31/41]: https://www.youtube.com/@omotvit6039
+2026-03-19 22:05:20 | INFO | チャンネル取得 [32/41]: https://www.youtube.com/c/tofoodsJP
+2026-03-19 22:05:24 | INFO | チャンネル取得 [33/41]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-19 22:05:28 | INFO | チャンネル取得 [34/41]: https://www.youtube.com/@na-ch
+2026-03-19 22:05:32 | INFO | チャンネル取得 [35/41]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-19 22:05:35 | INFO | チャンネル取得 [36/41]: https://www.youtube.com/@infomartchannel/videos
+2026-03-19 22:05:39 | INFO | チャンネル取得 [37/41]: https://www.youtube.com/@findjapaninc
+2026-03-19 22:05:43 | INFO | チャンネル取得 [38/41]: https://www.youtube.com/@infomartchannel
+2026-03-19 22:05:46 | INFO | チャンネル取得 [39/41]: https://www.youtube.com/@anymindjapan1245
+2026-03-19 22:05:50 | INFO | チャンネル取得 [40/41]: https://www.youtube.com/@ch-bw1kn
+2026-03-19 22:05:53 | INFO | チャンネル取得 [41/41]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-19 22:05:57 | INFO | Step 1 完了: 14件がICP通過 / 26件除外
+2026-03-19 22:05:57 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-19 22:05:57 | INFO | スコアリング完了: Aランク 1件 / Bランク 8件 / Cランク 5件
+2026-03-19 22:05:57 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 22:05:58 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 22:06:03 | INFO | リード更新: ヤマダデンキ【公式】チャンネル (行16)
+2026-03-19 22:06:08 | INFO | リード更新: キングジム公式YouTubeチャンネル (行17)
+2026-03-19 22:06:14 | INFO | リード更新: 森谷ドラムスクールYouTube校 (行18)
+2026-03-19 22:06:19 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 22:06:24 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-19 22:06:29 | ERROR | CRM更新エラー [ネットスクール  公式チャンネル.]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:30 | ERROR | CRM更新エラー [アスクル公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:31 | ERROR | CRM更新エラー [テーオー食品公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:33 | ERROR | CRM更新エラー [サイボウズビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:34 | ERROR | CRM更新エラー [積水ハウスグループ 公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:35 | ERROR | CRM更新エラー [光 HIKARI JS 日本語オンラインスクール]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:36 | ERROR | CRM更新エラー [三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:38 | ERROR | CRM更新エラー [Aoba-BBT ビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:39 | ERROR | CRM更新エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:39 | INFO | Step 2+3 完了: 5件をCRMに更新
+2026-03-19 22:06:39 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 22:06:40 | INFO | NGリスト: 1件
+2026-03-19 22:06:40 | INFO | 送信対象リード: 4件
+2026-03-19 22:06:40 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 22:06:40 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-19 22:06:40 | INFO | 処理中 [1/1]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-19 22:06:40 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-19 22:06:44 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-19 22:06:44 | ERROR | メール送信エラー: nari.o.0715.masa.0619@gmail.com - (535, b'5.7.8 Error: authentication failed: authentication failure')
+2026-03-19 22:06:44 | WARNING | 送信失敗: ECの未来® - (535, b'5.7.8 Error: authentication failed: authentication failure')
+2026-03-19 22:06:45 | ERROR | CRM反映エラー [ECの未来®]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:06:47 | INFO | Step 5+6+7 完了: 生成1件 / 送信成功0件 / バウンス0件
+2026-03-19 22:06:47 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 22:03] ===
+ステータス: ✅ 成功
+実行時間: 207秒
+
+【スクレイピング】
+  チャンネル候補数: 41件
+  ICP通過数: 14件
+  CRM更新数: 5件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 1件
+  送信成功数: 0件
+  バウンス数: 0件
+
+【エラー】
+  - CRM更新エラー: ネットスクール  公式チャンネル. - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: アスクル公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: テーオー食品公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: サイボウズビジネスチャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: 積水ハウスグループ 公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-19 22:54:53 | INFO | ============================================================
+2026-03-19 22:54:53 | INFO | 週次フロー開始
+2026-03-19 22:54:53 | INFO |   skip_scraping: True
+2026-03-19 22:54:53 | INFO |   dry_run: False
+2026-03-19 22:54:53 | INFO | ============================================================
+2026-03-19 22:54:53 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-19 22:54:53 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 22:54:53 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 22:54:54 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 22:54:54 | INFO | NGリスト: 1件
+2026-03-19 22:54:55 | INFO | 送信対象リード: 4件
+2026-03-19 22:54:55 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 22:54:55 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-19 22:54:55 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-19 22:54:55 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-19 22:55:06 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-19 22:55:06 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-19 22:55:06 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-19 22:55:09 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-19 22:55:13 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-19 22:55:13 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-19 22:55:21 | WARNING | 改善ポイント生成失敗: RetryError[<Future at 0x18ec600b4f0 state=finished raised ResourceExhausted>]
+2026-03-19 22:55:21 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「YouTube動画」を拝見しました...
+2026-03-19 22:55:21 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-19 22:55:21 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-19 22:55:24 | INFO | メールステータス更新: https://www.youtube.com/@yutoriinc → 1通目送信済み
+2026-03-19 22:55:27 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-19 22:55:27 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-19 22:55:31 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「YouTube動画」を拝見しました...
+2026-03-19 22:55:31 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-19 22:55:31 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-19 22:55:34 | INFO | メールステータス更新: https://www.youtube.com/@globalmarketingfromjapan → 1通目送信済み
+2026-03-19 22:55:37 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-19 22:55:37 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-19 22:55:43 | WARNING | 動画コメント生成失敗: RetryError[<Future at 0x18ec600ad10 state=finished raised ResourceExhausted>]
+2026-03-19 22:55:49 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「YouTube動画」を拝見しました...
+2026-03-19 22:55:49 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-19 22:55:49 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-19 22:55:51 | INFO | メールステータス更新: https://www.youtube.com/@BBT757program → 1通目送信済み
+2026-03-19 22:55:55 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-19 22:55:55 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 22:54] ===
+ステータス: ✅ 成功
+実行時間: 62秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+2026-03-19 23:03:54 | INFO | ============================================================
+2026-03-19 23:03:54 | INFO | 週次フロー開始
+2026-03-19 23:03:54 | INFO |   skip_scraping: True
+2026-03-19 23:03:54 | INFO |   dry_run: False
+2026-03-19 23:03:54 | INFO | ============================================================
+2026-03-19 23:03:54 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-19 23:03:54 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 23:03:54 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 23:03:55 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 23:03:55 | INFO | NGリスト: 1件
+2026-03-19 23:03:56 | INFO | 送信対象リード: 4件
+2026-03-19 23:03:56 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 23:03:56 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-19 23:03:56 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-19 23:03:56 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-19 23:03:59 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-19 23:03:59 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-19 23:03:59 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-19 23:04:02 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-19 23:04:05 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-19 23:04:05 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-19 23:04:13 | WARNING | 改善ポイント生成失敗: RetryError[<Future at 0x2b710f84670 state=finished raised ResourceExhausted>]
+2026-03-19 23:04:13 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「YouTube動画」を拝見しました...
+2026-03-19 23:04:13 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-19 23:04:13 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-19 23:04:16 | INFO | メールステータス更新: https://www.youtube.com/@yutoriinc → 1通目送信済み
+2026-03-19 23:04:19 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-19 23:04:19 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-19 23:04:24 | WARNING | 動画コメント生成失敗: RetryError[<Future at 0x2b710f3beb0 state=finished raised ResourceExhausted>]
+2026-03-19 23:04:28 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「YouTube動画」を拝見しました...
+2026-03-19 23:04:29 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-19 23:04:29 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-19 23:04:31 | INFO | メールステータス更新: https://www.youtube.com/@globalmarketingfromjapan → 1通目送信済み
+2026-03-19 23:04:34 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-19 23:04:34 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-19 23:04:40 | WARNING | 動画コメント生成失敗: RetryError[<Future at 0x2b710f84e80 state=finished raised ResourceExhausted>]
+2026-03-19 23:04:45 | WARNING | 改善ポイント生成失敗: RetryError[<Future at 0x2b710f3bc10 state=finished raised ResourceExhausted>]
+2026-03-19 23:04:45 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「YouTube動画」を拝見しました...
+2026-03-19 23:04:46 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-19 23:04:46 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-19 23:04:48 | INFO | メールステータス更新: https://www.youtube.com/@BBT757program → 1通目送信済み
+2026-03-19 23:04:51 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-19 23:04:51 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 23:03] ===
+ステータス: ✅ 成功
+実行時間: 58秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+2026-03-19 23:14:39 | INFO | ============================================================
+2026-03-19 23:14:39 | INFO | 週次フロー開始
+2026-03-19 23:14:39 | INFO |   skip_scraping: True
+2026-03-19 23:14:39 | INFO |   dry_run: False
+2026-03-19 23:14:39 | INFO | ============================================================
+2026-03-19 23:14:39 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-19 23:14:39 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-19 23:14:39 | INFO | Google Sheets クライアント初期化完了
+2026-03-19 23:14:40 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-19 23:14:40 | INFO | NGリスト: 1件
+2026-03-19 23:14:41 | INFO | 送信対象リード: 4件
+2026-03-19 23:14:41 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-19 23:14:41 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-19 23:14:41 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-19 23:14:41 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-19 23:14:51 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-19 23:14:52 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-19 23:14:52 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-19 23:14:54 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-19 23:14:58 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-19 23:14:58 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-19 23:15:05 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「YouTube動画」を拝見しました...
+2026-03-19 23:15:05 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-19 23:15:05 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-19 23:15:08 | INFO | メールステータス更新: https://www.youtube.com/@yutoriinc → 1通目送信済み
+2026-03-19 23:15:11 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-19 23:15:11 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-19 23:15:14 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「YouTube動画」を拝見しました...
+2026-03-19 23:15:14 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-19 23:15:14 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-19 23:15:16 | INFO | メールステータス更新: https://www.youtube.com/@globalmarketingfromjapan → 1通目送信済み
+2026-03-19 23:15:20 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-19 23:15:20 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-19 23:15:28 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「YouTube動画」を拝見しました...
+2026-03-19 23:15:28 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-19 23:15:28 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-19 23:15:31 | INFO | メールステータス更新: https://www.youtube.com/@BBT757program → 1通目送信済み
+2026-03-19 23:15:34 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-19 23:15:34 | INFO | 
+=== 週次フロー実行結果 [2026-03-19 23:14] ===
+ステータス: ✅ 成功
+実行時間: 55秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+2026-03-20 09:02:27 | INFO | ============================================================
+2026-03-20 09:02:27 | INFO | 週次フロー開始
+2026-03-20 09:02:27 | INFO |   skip_scraping: False
+2026-03-20 09:02:27 | INFO |   dry_run: False
+2026-03-20 09:02:27 | INFO | ============================================================
+2026-03-20 09:02:27 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-20 09:02:27 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-20 09:02:49 | INFO | チャンネル候補: 44件
+2026-03-20 09:02:49 | INFO | チャンネル取得 [1/44]: https://www.youtube.com/@infomartchannel/videos
+2026-03-20 09:02:53 | INFO | チャンネル取得 [2/44]: https://www.youtube.com/@d2cstation331
+2026-03-20 09:02:56 | INFO | チャンネル取得 [3/44]: https://www.youtube.com/@tateyama-advance
+2026-03-20 09:03:00 | INFO | チャンネル取得 [4/44]: https://m.youtube.com/@takagi1866/featured
+2026-03-20 09:03:03 | INFO | チャンネル取得 [5/44]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-20 09:03:07 | INFO | チャンネル取得 [6/44]: https://www.youtube.com/@-win1293
+2026-03-20 09:03:11 | INFO | チャンネル取得 [7/44]: https://www.youtube.com/@netschoolcorp
+2026-03-20 09:03:14 | INFO | チャンネル取得 [8/44]: https://www.youtube.com/@EC-ft4kc
+2026-03-20 09:03:18 | INFO | チャンネル取得 [9/44]: https://www.youtube.com/@ItoBusinessChannel
+2026-03-20 09:03:22 | INFO | チャンネル取得 [10/44]: https://www.youtube.com/@YAMADA_1973
+2026-03-20 09:03:25 | INFO | チャンネル取得 [11/44]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-20 09:03:29 | INFO | チャンネル取得 [12/44]: https://www.youtube.com/@mercari_school
+2026-03-20 09:03:29 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-20 09:03:32 | INFO | チャンネル取得 [13/44]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-20 09:03:35 | INFO | チャンネル取得 [14/44]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-20 09:03:39 | INFO | チャンネル取得 [15/44]: https://www.youtube.com/@btob3449/playlists
+2026-03-20 09:03:43 | INFO | チャンネル取得 [16/44]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-20 09:03:46 | INFO | チャンネル取得 [17/44]: https://www.youtube.com/@BcartJp
+2026-03-20 09:03:50 | INFO | チャンネル取得 [18/44]: https://www.youtube.com/@DaifukuChannel
+2026-03-20 09:03:53 | INFO | チャンネル取得 [19/44]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-20 09:03:57 | INFO | チャンネル取得 [20/44]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-20 09:04:00 | INFO | チャンネル取得 [21/44]: https://www.youtube.com/@hikarijs
+2026-03-20 09:04:04 | INFO | チャンネル取得 [22/44]: https://www.youtube.com/@kingjimpr
+2026-03-20 09:04:07 | INFO | チャンネル取得 [23/44]: https://www.youtube.com/@BBT757program
+2026-03-20 09:04:11 | INFO | チャンネル取得 [24/44]: https://www.youtube.com/@yutoriinc
+2026-03-20 09:04:15 | INFO | チャンネル取得 [25/44]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-20 09:04:18 | INFO | チャンネル取得 [26/44]: https://www.youtube.com/@ch-uw6tw
+2026-03-20 09:04:22 | INFO | チャンネル取得 [27/44]: https://www.youtube.com/@user-ASKUL
+2026-03-20 09:04:26 | INFO | チャンネル取得 [28/44]: https://www.youtube.com/@ch-bw1kn
+2026-03-20 09:04:29 | INFO | チャンネル取得 [29/44]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-20 09:04:33 | INFO | チャンネル取得 [30/44]: https://www.youtube.com/@infomartchannel
+2026-03-20 09:04:37 | INFO | チャンネル取得 [31/44]: https://www.youtube.com/@LITHONchannel
+2026-03-20 09:04:40 | INFO | チャンネル取得 [32/44]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-20 09:04:44 | INFO | チャンネル取得 [33/44]: https://www.youtube.com/@moritani-drum/videos
+2026-03-20 09:04:48 | INFO | チャンネル取得 [34/44]: https://www.youtube.com/@schooltakt/featured
+2026-03-20 09:04:51 | INFO | チャンネル取得 [35/44]: https://www.youtube.com/c/tofoodsJP
+2026-03-20 09:04:55 | INFO | チャンネル取得 [36/44]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-20 09:04:58 | INFO | チャンネル取得 [37/44]: https://www.youtube.com/@anymindjapan1245
+2026-03-20 09:05:02 | INFO | チャンネル取得 [38/44]: https://m.youtube.com/@3acad628/videos?view=0&sort=dd&shelf_id=7
+2026-03-20 09:05:06 | INFO | チャンネル取得 [39/44]: https://www.youtube.com/@hiro_smallbusiness
+2026-03-20 09:05:09 | INFO | チャンネル取得 [40/44]: https://www.youtube.com/@findjapaninc
+2026-03-20 09:05:13 | INFO | チャンネル取得 [41/44]: https://www.youtube.com/@valipla_channel
+2026-03-20 09:05:16 | INFO | チャンネル取得 [42/44]: https://www.youtube.com/@omotvit6039
+2026-03-20 09:05:20 | INFO | チャンネル取得 [43/44]: https://www.youtube.com/@SoftBankBiz
+2026-03-20 09:05:24 | INFO | チャンネル取得 [44/44]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-20 09:05:27 | INFO | Step 1 完了: 14件がICP通過 / 29件除外
+2026-03-20 09:05:27 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-20 09:05:27 | INFO | スコアリング完了: Aランク 1件 / Bランク 8件 / Cランク 5件
+2026-03-20 09:05:27 | INFO | Google Sheets クライアント初期化完了
+2026-03-20 09:05:28 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-20 09:05:33 | INFO | リード更新: ヤマダデンキ【公式】チャンネル (行16)
+2026-03-20 09:05:38 | INFO | リード更新: キングジム公式YouTubeチャンネル (行17)
+2026-03-20 09:05:44 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-20 09:05:49 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-20 09:05:55 | INFO | リード更新: 森谷ドラムスクールYouTube校 (行18)
+2026-03-20 09:05:57 | ERROR | CRM更新エラー [ネットスクール  公式チャンネル.]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:05:58 | ERROR | CRM更新エラー [アスクル公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:00 | ERROR | CRM更新エラー [スクールタクト 学び合いチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:02 | ERROR | CRM更新エラー [テーオー食品公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:03 | ERROR | CRM更新エラー [積水ハウスグループ 公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:04 | ERROR | CRM更新エラー [光 HIKARI JS 日本語オンラインスクール]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:05 | ERROR | CRM更新エラー [三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:07 | ERROR | CRM更新エラー [Aoba-BBT ビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:08 | ERROR | CRM更新エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:08 | INFO | Step 2+3 完了: 5件をCRMに更新
+2026-03-20 09:06:08 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-20 09:06:08 | INFO | NGリスト: 1件
+2026-03-20 09:06:09 | INFO | 送信対象リード: 4件
+2026-03-20 09:06:09 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-20 09:06:09 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-20 09:06:09 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-20 09:06:09 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-20 09:06:12 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「」を拝見しました...
+2026-03-20 09:06:13 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-20 09:06:13 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-20 09:06:14 | ERROR | CRM反映エラー [ECの未来®]: module 'gspread.exceptions' has no attribute 'CellNotFound'
+2026-03-20 09:06:16 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-20 09:06:16 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-20 09:06:23 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「」を拝見しました...
+2026-03-20 09:06:23 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-20 09:06:23 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-20 09:06:23 | ERROR | CRM反映エラー [ゆとらない日々 アパレル企業の裏側]: module 'gspread.exceptions' has no attribute 'CellNotFound'
+2026-03-20 09:06:25 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-20 09:06:25 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-20 09:06:28 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「」を拝見しました...
+2026-03-20 09:06:28 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-20 09:06:28 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-20 09:06:28 | ERROR | CRM反映エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:06:30 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-20 09:06:30 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-20 09:06:32 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「」を拝見しました...
+2026-03-20 09:06:32 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-20 09:06:32 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-20 09:06:33 | ERROR | CRM反映エラー [Aoba-BBT ビジネスチャンネル]: module 'gspread.exceptions' has no attribute 'CellNotFound'
+2026-03-20 09:06:35 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-20 09:06:35 | INFO | 
+=== 週次フロー実行結果 [2026-03-20 09:02] ===
+ステータス: ✅ 成功
+実行時間: 248秒
+
+【スクレイピング】
+  チャンネル候補数: 44件
+  ICP通過数: 14件
+  CRM更新数: 5件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+
+【エラー】
+  - CRM更新エラー: ネットスクール  公式チャンネル. - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: アスクル公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: スクールタクト 学び合いチャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: テーオー食品公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: 積水ハウスグループ 公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:16:15 | INFO | ============================================================
+2026-03-20 09:16:15 | INFO | 週次フロー開始
+2026-03-20 09:16:15 | INFO |   skip_scraping: False
+2026-03-20 09:16:15 | INFO |   dry_run: False
+2026-03-20 09:16:15 | INFO | ============================================================
+2026-03-20 09:16:15 | INFO | === Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-20 09:16:15 | INFO | キーワード未指定のためデフォルトを使用: ['YouTube 企業チャンネル 商品紹介', 'YouTube 会社 ビジネス チャンネル', 'YouTube D2C ブランド 動画', 'YouTube オンライン講座 スクール', 'YouTube BtoB サービス 紹介']
+2026-03-20 09:16:20 | INFO | チャンネル候補: 44件
+2026-03-20 09:16:20 | INFO | チャンネル取得 [1/44]: https://www.youtube.com/@d2cstation331
+2026-03-20 09:16:23 | INFO | チャンネル取得 [2/44]: https://www.youtube.com/@infomartchannel/videos
+2026-03-20 09:16:27 | INFO | チャンネル取得 [3/44]: https://www.youtube.com/@ch-bw1kn
+2026-03-20 09:16:30 | INFO | チャンネル取得 [4/44]: https://www.youtube.com/@SoftBankBiz
+2026-03-20 09:16:34 | INFO | チャンネル取得 [5/44]: https://www.youtube.com/c/AIBusinessChannel?app=desktop
+2026-03-20 09:16:37 | INFO | チャンネル取得 [6/44]: https://www.youtube.com/@omotvit6039
+2026-03-20 09:16:41 | INFO | チャンネル取得 [7/44]: https://www.youtube.com/@mercari_school
+2026-03-20 09:16:41 | WARNING | 取得失敗（スキップ）: https://www.youtube.com/@mercari_school
+2026-03-20 09:16:44 | INFO | チャンネル取得 [8/44]: https://www.youtube.com/@btob_marketing_lab/videos
+2026-03-20 09:16:48 | INFO | チャンネル取得 [9/44]: https://www.youtube.com/@sairu-seminar/videos
+2026-03-20 09:16:51 | INFO | チャンネル取得 [10/44]: https://www.youtube.com/@anymindjapan1245
+2026-03-20 09:16:55 | INFO | チャンネル取得 [11/44]: https://www.youtube.com/@hikarijs
+2026-03-20 09:16:58 | INFO | チャンネル取得 [12/44]: https://www.youtube.com/@DaifukuChannel
+2026-03-20 09:17:02 | INFO | チャンネル取得 [13/44]: https://www.youtube.com/c/JapaneseOnlineLesson/videos
+2026-03-20 09:17:05 | INFO | チャンネル取得 [14/44]: https://www.youtube.com/@BBT757program
+2026-03-20 09:17:09 | INFO | チャンネル取得 [15/44]: https://www.youtube.com/@valipla_channel
+2026-03-20 09:17:13 | INFO | チャンネル取得 [16/44]: https://www.youtube.com/@TORAIZ_EnglishCoaching
+2026-03-20 09:17:16 | INFO | チャンネル取得 [17/44]: https://www.youtube.com/@YAMADA_1973
+2026-03-20 09:17:20 | INFO | チャンネル取得 [18/44]: https://www.youtube.com/@Ukulele.tutorial
+2026-03-20 09:17:23 | INFO | チャンネル取得 [19/44]: https://www.youtube.com/@ch-uw6tw
+2026-03-20 09:17:27 | INFO | チャンネル取得 [20/44]: https://www.youtube.com/c/SekisuiHouseChannel
+2026-03-20 09:17:30 | INFO | チャンネル取得 [21/44]: https://m.youtube.com/@3acad628/videos?view=0&sort=dd&shelf_id=7
+2026-03-20 09:17:34 | INFO | チャンネル取得 [22/44]: https://www.youtube.com/@btob3449/videos?view=0&sort=dd&shelf_id=0
+2026-03-20 09:17:38 | INFO | チャンネル取得 [23/44]: https://www.youtube.com/@hiro_smallbusiness
+2026-03-20 09:17:41 | INFO | チャンネル取得 [24/44]: https://www.youtube.com/@user-ASKUL
+2026-03-20 09:17:45 | INFO | チャンネル取得 [25/44]: https://www.youtube.com/@findjapaninc
+2026-03-20 09:17:48 | INFO | チャンネル取得 [26/44]: https://www.youtube.com/@infomartchannel
+2026-03-20 09:17:52 | INFO | チャンネル取得 [27/44]: https://www.youtube.com/@-win1293
+2026-03-20 09:17:55 | INFO | チャンネル取得 [28/44]: https://www.youtube.com/@ItoBusinessChannel
+2026-03-20 09:17:59 | INFO | チャンネル取得 [29/44]: https://www.youtube.com/@d2cstation331/videos?view=0&sort=dd&shelf_id=2
+2026-03-20 09:18:02 | INFO | チャンネル取得 [30/44]: https://www.youtube.com/@yutoriinc
+2026-03-20 09:18:06 | INFO | チャンネル取得 [31/44]: https://www.youtube.com/@findjapaninc/shorts
+2026-03-20 09:18:09 | INFO | チャンネル取得 [32/44]: https://www.youtube.com/@BcartJp
+2026-03-20 09:18:13 | INFO | チャンネル取得 [33/44]: https://m.youtube.com/@letrostudio2676/videos?view=0&sort=dd&shelf_id=1
+2026-03-20 09:18:16 | INFO | チャンネル取得 [34/44]: https://www.youtube.com/@netschoolcorp
+2026-03-20 09:18:20 | INFO | チャンネル取得 [35/44]: https://m.youtube.com/@takagi1866/featured
+2026-03-20 09:18:23 | INFO | チャンネル取得 [36/44]: https://www.youtube.com/@EC-ft4kc
+2026-03-20 09:18:27 | INFO | チャンネル取得 [37/44]: https://www.youtube.com/@btob3449/playlists
+2026-03-20 09:18:31 | INFO | チャンネル取得 [38/44]: https://www.youtube.com/@LITHONchannel
+2026-03-20 09:18:34 | INFO | チャンネル取得 [39/44]: https://www.youtube.com/@kingjimpr
+2026-03-20 09:18:38 | INFO | チャンネル取得 [40/44]: https://www.youtube.com/@moritani-drum/videos
+2026-03-20 09:18:41 | INFO | チャンネル取得 [41/44]: https://www.youtube.com/@globalmarketingfromjapan
+2026-03-20 09:18:45 | INFO | チャンネル取得 [42/44]: https://www.youtube.com/@schooltakt/featured
+2026-03-20 09:18:48 | INFO | チャンネル取得 [43/44]: https://www.youtube.com/@tateyama-advance
+2026-03-20 09:18:52 | INFO | チャンネル取得 [44/44]: https://www.youtube.com/c/tofoodsJP
+2026-03-20 09:18:55 | INFO | Step 1 完了: 14件がICP通過 / 29件除外
+2026-03-20 09:18:55 | INFO | === Step 2+3: スコアリングと CRM 更新 ===
+2026-03-20 09:18:55 | INFO | スコアリング完了: Aランク 1件 / Bランク 8件 / Cランク 5件
+2026-03-20 09:18:55 | INFO | Google Sheets クライアント初期化完了
+2026-03-20 09:18:56 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-20 09:19:01 | INFO | リード更新: ヤマダデンキ【公式】チャンネル (行16)
+2026-03-20 09:19:07 | INFO | リード更新: キングジム公式YouTubeチャンネル (行17)
+2026-03-20 09:19:12 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-20 09:19:17 | INFO | リード更新: Info Mart Corporation (行3)
+2026-03-20 09:19:22 | ERROR | CRM更新エラー [森谷ドラムスクールYouTube校]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:23 | ERROR | CRM更新エラー [ネットスクール  公式チャンネル.]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:24 | ERROR | CRM更新エラー [アスクル公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:26 | ERROR | CRM更新エラー [スクールタクト 学び合いチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:30 | ERROR | CRM更新エラー [テーオー食品公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:31 | ERROR | CRM更新エラー [積水ハウスグループ 公式チャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:32 | ERROR | CRM更新エラー [光 HIKARI JS 日本語オンラインスクール]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:33 | ERROR | CRM更新エラー [三木雄信 ビジネス塾「最速で人生を変えるビジネスチャンネル」]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:35 | ERROR | CRM更新エラー [Aoba-BBT ビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:36 | ERROR | CRM更新エラー [越境EC・海外WEBマーケティング_世界へボカン]: APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:36 | INFO | Step 2+3 完了: 4件をCRMに更新
+2026-03-20 09:19:36 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-20 09:19:36 | INFO | NGリスト: 1件
+2026-03-20 09:19:37 | INFO | 送信対象リード: 4件
+2026-03-20 09:19:37 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-20 09:19:37 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-20 09:19:37 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-20 09:19:37 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-20 09:19:40 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「」を拝見しました...
+2026-03-20 09:19:40 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-20 09:19:40 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-20 09:19:40 | ERROR | CRM反映エラー [ECの未来®]: module 'gspread.exceptions' has no attribute 'CellNotFound'
+2026-03-20 09:19:42 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-20 09:19:42 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-20 09:19:45 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「」を拝見しました...
+2026-03-20 09:19:45 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-20 09:19:45 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-20 09:19:45 | ERROR | CRM反映エラー [ゆとらない日々 アパレル企業の裏側]: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:47 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-20 09:19:47 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-20 09:19:50 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「」を拝見しました...
+2026-03-20 09:19:50 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-20 09:19:50 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-20 09:19:50 | ERROR | CRM反映エラー [越境EC・海外WEBマーケティング_世界へボカン]: module 'gspread.exceptions' has no attribute 'CellNotFound'
+2026-03-20 09:19:52 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-20 09:19:52 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-20 09:19:54 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「」を拝見しました...
+2026-03-20 09:19:55 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-20 09:19:55 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-20 09:19:55 | ERROR | CRM反映エラー [Aoba-BBT ビジネスチャンネル]: APIError: [429]: Quota exceeded for quota metric 'Read requests' and limit 'Read requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:19:57 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-20 09:19:57 | INFO | 
+=== 週次フロー実行結果 [2026-03-20 09:16] ===
+ステータス: ✅ 成功
+実行時間: 222秒
+
+【スクレイピング】
+  チャンネル候補数: 44件
+  ICP通過数: 14件
+  CRM更新数: 4件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+
+【エラー】
+  - CRM更新エラー: 森谷ドラムスクールYouTube校 - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: ネットスクール  公式チャンネル. - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: アスクル公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: スクールタクト 学び合いチャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+  - CRM更新エラー: テーオー食品公式チャンネル - APIError: [429]: Quota exceeded for quota metric 'Write requests' and limit 'Write requests per minute per user' of service 'sheets.googleapis.com' for consumer 'project_number:689589089549'.
+2026-03-20 09:26:39 | INFO | ============================================================
+2026-03-20 09:26:39 | INFO | 週次フロー開始
+2026-03-20 09:26:39 | INFO |   skip_scraping: True
+2026-03-20 09:26:39 | INFO |   dry_run: False
+2026-03-20 09:26:39 | INFO | ============================================================
+2026-03-20 09:26:39 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-20 09:26:39 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-20 09:26:39 | INFO | Google Sheets クライアント初期化完了
+2026-03-20 09:26:40 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-20 09:26:41 | INFO | NGリスト: 1件
+2026-03-20 09:26:41 | INFO | 送信対象リード: 4件
+2026-03-20 09:26:41 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-20 09:26:41 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-20 09:26:41 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-20 09:26:41 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-20 09:26:43 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-20 09:26:44 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-20 09:26:44 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-20 09:26:47 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-20 09:26:50 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-20 09:26:50 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-20 09:26:52 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「YouTube動画」を拝見しました...
+2026-03-20 09:26:53 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-20 09:26:53 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-20 09:26:55 | INFO | メールステータス更新: https://www.youtube.com/@yutoriinc → 1通目送信済み
+2026-03-20 09:26:58 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-20 09:26:58 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-20 09:27:01 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「YouTube動画」を拝見しました...
+2026-03-20 09:27:01 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-20 09:27:01 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-20 09:27:03 | INFO | メールステータス更新: https://www.youtube.com/@globalmarketingfromjapan → 1通目送信済み
+2026-03-20 09:27:07 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-20 09:27:07 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-20 09:27:09 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「YouTube動画」を拝見しました...
+2026-03-20 09:27:09 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-20 09:27:09 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-20 09:27:12 | INFO | メールステータス更新: https://www.youtube.com/@BBT757program → 1通目送信済み
+2026-03-20 09:27:15 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-20 09:27:15 | INFO | 
+=== 週次フロー実行結果 [2026-03-20 09:26] ===
+ステータス: ✅ 成功
+実行時間: 36秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+2026-03-20 09:33:17 | INFO | ============================================================
+2026-03-20 09:33:17 | INFO | 週次フロー開始
+2026-03-20 09:33:17 | INFO |   skip_scraping: True
+2026-03-20 09:33:17 | INFO |   dry_run: False
+2026-03-20 09:33:17 | INFO | ============================================================
+2026-03-20 09:33:17 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-20 09:33:17 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-20 09:33:17 | INFO | Google Sheets クライアント初期化完了
+2026-03-20 09:33:18 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-20 09:33:18 | INFO | NGリスト: 1件
+2026-03-20 09:33:19 | INFO | 送信対象リード: 4件
+2026-03-20 09:33:19 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-20 09:33:19 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-20 09:33:19 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-20 09:33:19 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-20 09:33:21 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-20 09:33:21 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-20 09:33:21 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-20 09:33:24 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-20 09:33:27 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-20 09:33:27 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-20 09:33:29 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「YouTube動画」を拝見しました...
+2026-03-20 09:33:30 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-20 09:33:30 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-20 09:33:32 | INFO | メールステータス更新: https://www.youtube.com/@yutoriinc → 1通目送信済み
+2026-03-20 09:33:35 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-20 09:33:35 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-20 09:33:38 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「YouTube動画」を拝見しました...
+2026-03-20 09:33:38 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-20 09:33:38 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-20 09:33:40 | INFO | メールステータス更新: https://www.youtube.com/@globalmarketingfromjapan → 1通目送信済み
+2026-03-20 09:33:44 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-20 09:33:44 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-20 09:33:46 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「YouTube動画」を拝見しました...
+2026-03-20 09:33:46 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-20 09:33:46 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-20 09:33:49 | INFO | メールステータス更新: https://www.youtube.com/@BBT757program → 1通目送信済み
+2026-03-20 09:33:52 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-20 09:33:52 | INFO | 
+=== 週次フロー実行結果 [2026-03-20 09:33] ===
+ステータス: ✅ 成功
+実行時間: 35秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+2026-03-20 09:37:45 | INFO | ============================================================
+2026-03-20 09:37:45 | INFO | 週次フロー開始
+2026-03-20 09:37:45 | INFO |   skip_scraping: True
+2026-03-20 09:37:45 | INFO |   dry_run: False
+2026-03-20 09:37:45 | INFO | ============================================================
+2026-03-20 09:37:45 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-20 09:37:45 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-20 09:37:45 | INFO | Google Sheets クライアント初期化完了
+2026-03-20 09:37:46 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-20 09:37:47 | INFO | NGリスト: 1件
+2026-03-20 09:37:47 | INFO | 送信対象リード: 4件
+2026-03-20 09:37:47 | INFO | Step 4 完了: 4件を送信対象として抽出 （NGで 0件除外）
+2026-03-20 09:37:47 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-20 09:37:47 | INFO | 処理中 [1/4]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-20 09:37:47 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-20 09:37:49 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-20 09:37:50 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-20 09:37:50 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-20 09:37:52 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-20 09:37:55 | INFO | 処理中 [2/4]: ゆとらない日々 アパレル企業の裏側 (1通目 / yutorikun@yutori.tokyo)
+2026-03-20 09:37:55 | INFO | メール生成開始: ゆとらない日々 アパレル企業の裏側 - 1通目
+2026-03-20 09:37:58 | INFO | メール生成完了: [1通目] 件名: ゆとらない日々 アパレル企業の裏側様の「YouTube動画」を拝見しました...
+2026-03-20 09:37:58 | INFO | メール送信成功: yutorikun@yutori.tokyo
+2026-03-20 09:37:58 | INFO | 送信成功: ゆとらない日々 アパレル企業の裏側 (1通目)
+2026-03-20 09:38:00 | INFO | メールステータス更新: https://www.youtube.com/@yutoriinc → 1通目送信済み
+2026-03-20 09:38:04 | INFO | 処理中 [3/4]: 越境EC・海外WEBマーケティング_世界へボカン (1通目 / consulting@s-bokan.com)
+2026-03-20 09:38:04 | INFO | メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-03-20 09:38:06 | INFO | メール生成完了: [1通目] 件名: 越境EC・海外WEBマーケティング_世界へボカン様の「YouTube動画」を拝見しました...
+2026-03-20 09:38:06 | INFO | メール送信成功: consulting@s-bokan.com
+2026-03-20 09:38:06 | INFO | 送信成功: 越境EC・海外WEBマーケティング_世界へボカン (1通目)
+2026-03-20 09:38:09 | INFO | メールステータス更新: https://www.youtube.com/@globalmarketingfromjapan → 1通目送信済み
+2026-03-20 09:38:12 | INFO | 処理中 [4/4]: Aoba-BBT ビジネスチャンネル (1通目 / bbtchannel@ohmae.ac.jp)
+2026-03-20 09:38:12 | INFO | メール生成開始: Aoba-BBT ビジネスチャンネル - 1通目
+2026-03-20 09:38:14 | INFO | メール生成完了: [1通目] 件名: Aoba-BBT ビジネスチャンネル様の「YouTube動画」を拝見しました...
+2026-03-20 09:38:15 | INFO | メール送信成功: bbtchannel@ohmae.ac.jp
+2026-03-20 09:38:15 | INFO | 送信成功: Aoba-BBT ビジネスチャンネル (1通目)
+2026-03-20 09:38:17 | INFO | メールステータス更新: https://www.youtube.com/@BBT757program → 1通目送信済み
+2026-03-20 09:38:20 | INFO | Step 5+6+7 完了: 生成4件 / 送信成功4件 / バウンス0件
+2026-03-20 09:38:20 | INFO | 
+=== 週次フロー実行結果 [2026-03-20 09:37] ===
+ステータス: ✅ 成功
+実行時間: 35秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 4件
+  メール生成数: 4件
+  送信成功数: 4件
+  バウンス数: 0件
+2026-03-20 09:50:57 | INFO | ============================================================
+2026-03-20 09:50:57 | INFO | 週次フロー開始
+2026-03-20 09:50:57 | INFO |   skip_scraping: True
+2026-03-20 09:50:57 | INFO |   dry_run: False
+2026-03-20 09:50:57 | INFO | ============================================================
+2026-03-20 09:50:57 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-20 09:50:57 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-20 09:50:57 | INFO | Google Sheets クライアント初期化完了
+2026-03-20 09:50:57 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-20 09:50:58 | INFO | NGリスト: 1件
+2026-03-20 09:50:58 | INFO | 送信対象リード: 1件
+2026-03-20 09:50:58 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-20 09:50:58 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-20 09:50:58 | INFO | 処理中 [1/1]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-20 09:50:58 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-20 09:51:07 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-20 09:51:08 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-20 09:51:08 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-20 09:51:10 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-20 09:51:14 | INFO | Step 5+6+7 完了: 生成1件 / 送信成功1件 / バウンス0件
+2026-03-20 09:51:14 | INFO | 
+=== 週次フロー実行結果 [2026-03-20 09:50] ===
+ステータス: ✅ 成功
+実行時間: 17秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 1件
+  送信成功数: 1件
+  バウンス数: 0件
+2026-03-28 12:01:24 | INFO | ============================================================
+2026-03-28 12:01:24 | INFO | 週次フロー開始
+2026-03-28 12:01:24 | INFO |   skip_scraping: True
+2026-03-28 12:01:24 | INFO |   dry_run: False
+2026-03-28 12:01:24 | INFO | ============================================================
+2026-03-28 12:01:24 | INFO | スクレイピングをスキップ（既存CRMデータを使用）
+2026-03-28 12:01:24 | INFO | === Step 4: 送信対象リードの抽出 ===
+2026-03-28 12:01:24 | INFO | Google Sheets クライアント初期化完了
+2026-03-28 12:01:25 | INFO | スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-28 12:01:26 | INFO | NGリスト: 1件
+2026-03-28 12:01:26 | INFO | 送信対象リード: 1件
+2026-03-28 12:01:26 | INFO | Step 4 完了: 1件を送信対象として抽出 （NGで 0件除外）
+2026-03-28 12:01:26 | INFO | === Step 5+6+7: メール生成・送信・CRM反映 ===
+2026-03-28 12:01:26 | INFO | 処理中 [1/1]: ECの未来® (1通目 / nari.o.0715.masa.0619@gmail.com)
+2026-03-28 12:01:26 | INFO | メール生成開始: ECの未来® - 1通目
+2026-03-28 12:01:31 | WARNING | 動画コメント生成失敗: RetryError[<Future at 0x12e36b66ad0 state=finished raised NotFound>]
+2026-03-28 12:01:36 | WARNING | 改善ポイント生成失敗: RetryError[<Future at 0x12e36bc56d0 state=finished raised NotFound>]
+2026-03-28 12:01:36 | INFO | メール生成完了: [1通目] 件名: ECの未来®様の「YouTube動画」を拝見しました...
+2026-03-28 12:01:36 | INFO | メール送信成功: nari.o.0715.masa.0619@gmail.com
+2026-03-28 12:01:36 | INFO | 送信成功: ECの未来® (1通目)
+2026-03-28 12:01:39 | INFO | メールステータス更新: https://www.youtube.com/c/ec%E3%81%AE%E6%9C%AA%E6%9D%A5 → 1通目送信済み
+2026-03-28 12:01:43 | INFO | Step 5+6+7 完了: 生成1件 / 送信成功1件 / バウンス0件
+2026-03-28 12:01:43 | INFO | 
+=== 週次フロー実行結果 [2026-03-28 12:01] ===
+ステータス: ✅ 成功
+実行時間: 19秒
+
+【スクレイピング】
+  チャンネル候補数: 0件
+  ICP通過数: 0件
+  CRM更新数: 0件
+
+【メール送信】
+  送信対象リード: 1件
+  メール生成数: 1件
+  送信成功数: 1件
+  バウンス数: 0件
