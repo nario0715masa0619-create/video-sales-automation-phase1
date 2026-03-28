@@ -179,7 +179,39 @@ def _get_subscriber_count_from_html(base_url: str) -> int:
                     return count
     except Exception as e:
         logger.debug(f"フォールバック② 失敗 ({base_url}): {e}")
+    return 0def _resolve_subscriber_count(
+    yt_dlp_count: int,
+    base_url: str,
+    channel_name: str,
+) -> int:
+    """
+    登録者数を3段階で取得する。
+    ① yt-dlp の channel_follower_count（/videos URL 取得時）
+    ② yt-dlp の channel_follower_count（ベースURL で再取得）
+    ③ HTML スクレイピング
+    """
+    # ① yt-dlp /videos URL からすでに取れていればそのまま使う
+    if yt_dlp_count > 0:
+        return yt_dlp_count
+
+    logger.info(f"登録者数フォールバック開始: {channel_name}")
+
+    # ② ベースURLで再取得
+    count = _get_subscriber_count_direct(base_url)
+    if count > 0:
+        logger.info(f"  フォールバック①成功: {count:,}人")
+        return count
+
+    # ③ HTML スクレイピング
+    count = _get_subscriber_count_from_html(base_url)
+    if count > 0:
+        logger.info(f"  フォールバック②成功: {count:,}人")
+        return count
+
+    logger.warning(f"  登録者数の取得に全て失敗: {channel_name}")
     return 0
+
+
 
 
 
@@ -617,4 +649,5 @@ if __name__ == '__main__':
     print(f"\n❌ 除外: {len(rejected)}件")
     for ch in rejected:
         print(f"  - {ch.channel_name}: {ch.icp_reject_reason}")
+
 
