@@ -253,7 +253,7 @@ def _step2_3_score_and_upsert(
             try:
                 upsert_lead(crm_data)
                 upserted_count += 1
-                time.sleep(0.3)  # Sheets API レート制限対策
+                time.sleep(2)  # Sheets API レート制限対策
             except Exception as e:
                 logger.error(f"CRM更新エラー [{scored.channel_name}]: {e}")
                 flow.errors.append(f"CRM更新エラー: {scored.channel_name} - {e}")
