@@ -144,11 +144,18 @@ SCRAPE_MAX_CHANNELS: int = int(os.getenv("SCRAPE_MAX_CHANNELS", "50"))
 
 # YouTube チャンネル検索キーワード（ICP候補を発掘するためのデフォルトキーワード）
 DEFAULT_SEARCH_KEYWORDS: list[str] = [
-    "YouTube 企業チャンネル 商品紹介",
-    "YouTube 会社 ビジネス チャンネル",
-    "YouTube D2C ブランド 動画",
-    "YouTube オンライン講座 スクール",
-    "YouTube BtoB サービス 紹介",
+    "YouTube 集客",
+    "セミナー YouTube",
+    "オンライン講座 YouTube",
+    "ウェビナー YouTube",
+    "スクール YouTube",
+    "教室 YouTube",
+    "クリニック YouTube",
+    "ジム YouTube",
+    "整体院 YouTube",
+    "学習塾 YouTube",
+    "士業 YouTube",
+    "コーチング YouTube",
 ]
 
 # ==================================================
