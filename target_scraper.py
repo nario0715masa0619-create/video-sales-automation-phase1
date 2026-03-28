@@ -257,6 +257,14 @@ def _extract_contact_info(description: str, channel_url: str) -> tuple[str, str]
             contact_form_url = m.group(0).rstrip('.,)')
             break
     
+    # フォールバック：contact_patterns でヒットしなかった場合、
+    # 概要欄に含まれる最初の https:// で始まるURLを公式サイトURLとして取得
+    if not contact_form_url:
+        url_pattern = r'https?://(?!(?:www\.youtube\.com|youtu\.be|instagram\.com|twitter\.com|x\.com|facebook\.com|tiktok\.com|lit\.link|linktr\.ee|line\.me|bit\.ly|t\.co))[^\s\u3000-\u9fff]+'
+        m = re.search(url_pattern, description)
+        if m:
+            contact_form_url = m.group(0).rstrip('.,)')
+    
     return email, contact_form_url
 
 
@@ -652,6 +660,7 @@ if __name__ == '__main__':
     print(f"\n❌ 除外: {len(rejected)}件")
     for ch in rejected:
         print(f"  - {ch.channel_name}: {ch.icp_reject_reason}")
+
 
 
 
