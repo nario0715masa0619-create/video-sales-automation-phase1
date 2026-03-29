@@ -52,6 +52,7 @@ from crm_manager import (
 )
 from email_generator import generate_email, EmailContent
 from email_sender import GmailSender, SendResult, get_email_sender
+from form_submitter import submit_form_sync
 
 # JST タイムゾーン
 JST = timezone(timedelta(hours=9))
@@ -671,6 +672,7 @@ if __name__ == "__main__":
         logger.info("DRY RUN モード: メール送信は行いません")
         result = run_weekly_flow(dry_run=True)
         sys.exit(0 if result.success else 1)
+
 
 
 
