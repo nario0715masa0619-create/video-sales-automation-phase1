@@ -23,6 +23,7 @@ from loguru import logger
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
 import gspread
+from gspread.utils import rowcol_to_a1
 from google.oauth2.service_account import Credentials
 
 import config
@@ -302,7 +303,7 @@ class CRMManager:
             logger.info(f"リード新規追加: {lead_data.get('チャンネル名', channel_url)}")
 
         # API レート制限対策
-        time.sleep(0.5)
+        time.sleep(2.0)
 
 
     @retry(
@@ -346,14 +347,14 @@ class CRMManager:
                 self.worksheet.update_cell(row_idx, 1, row_values[0])
                 for col_idx, val in enumerate(row_values[1:], 2):
                     self.worksheet.update_cell(row_idx, col_idx, val)
-                time.sleep(0.5)  # セル更新間のスリープ
+                time.sleep(2.0)  # セル更新間のスリープ
         
         # 新規追加処理
         if rows_to_append:
             for lead_data in rows_to_append:
                 row_values = [lead_data.get(col, '') for col in self.LEADS_COLUMNS]
-                self.worksheet.append_row(row_values)
-                time.sleep(0.5)
+                self.worksheet.append_row(new_row)
+        time.sleep(2.0)
         
         logger.info(f"バッチ UPSERT 完了: 更新{len(rows_to_update)}件、追加{len(rows_to_append)}件")
     def get_pending_leads(
@@ -492,7 +493,7 @@ class CRMManager:
         sheet.update_cell(row_num, LEADS_COLUMNS["最終更新日"], self._now_jst())
 
         logger.info(f"メールステータス更新: {channel_url} → {email_num}通目送信済み")
-        time.sleep(0.5)
+        time.sleep(2.0)
         return True
 
     def update_bounce_flag(self, channel_url: str) -> bool:
@@ -699,6 +700,7 @@ if __name__ == "__main__":
     print("3. NGリストの取得テスト...")
     ng_list = crm.get_ng_list()
     print(f"   → {len(ng_list)}件のNGアドレス")
+
 
 
 
