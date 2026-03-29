@@ -526,7 +526,8 @@ def run_weekly_flow(
         if not skip_scraping:
             channels = _step1_scrape_targets(flow, keywords)
             if channels:
-                _step2_3_score_and_upsert(flow, channels)
+                scored_channels = _step2_3_score_and_upsert(flow, channels)
+                _step3_5_extract_emails(flow, scored_channels)
         else:
             logger.info("スクレイピングをスキップ（既存CRMデータを使用）")
 
