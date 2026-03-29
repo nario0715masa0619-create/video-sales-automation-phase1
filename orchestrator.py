@@ -253,7 +253,7 @@ def _step2_3_score_and_upsert(
             try:
                 upsert_lead(crm_data)
                 upserted_count += 1
-                time.sleep(2)  # Sheets API レート制限対策
+                time.sleep(5)  # Sheets API レート制限対策
             except Exception as e:
                 logger.error(f"CRM更新エラー [{scored.channel_name}]: {e}")
                 flow.errors.append(f"CRM更新エラー: {scored.channel_name} - {e}")
@@ -614,3 +614,4 @@ if __name__ == "__main__":
         logger.info("DRY RUN モード: メール送信は行いません")
         result = run_weekly_flow(dry_run=True)
         sys.exit(0 if result.success else 1)
+

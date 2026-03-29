@@ -20,6 +20,8 @@ import time
 from datetime import datetime, timedelta, timezone
 from typing import Optional
 from loguru import logger
+from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
+
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -219,6 +221,12 @@ class CRMManager:
             result[col_name] = row_values[idx] if idx < len(row_values) else ""
         return result
 
+@retry(
+    stop=stop_after_attempt(3),
+    wait=wait_exponential(multiplier=1, min=5, max=30),
+    retry=retry_if_exception_type(Exception),
+    reraise=True,
+)
     def upsert_lead(self, lead_data: dict) -> None:
         """
         リードを新規追加または更新する（重複チェック込み）。
@@ -640,3 +648,4 @@ if __name__ == "__main__":
     print("3. NGリストの取得テスト...")
     ng_list = crm.get_ng_list()
     print(f"   → {len(ng_list)}件のNGアドレス")
+
