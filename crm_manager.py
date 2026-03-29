@@ -304,6 +304,58 @@ class CRMManager:
         # API レート制限対策
         time.sleep(0.5)
 
+
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=5, max=30),
+        retry=retry_if_exception_type(Exception),
+        reraise=True,
+    )
+    def batch_upsert_leads(self, leads_data: list[dict]) -> None:
+        """
+        複数のリードを1回のAPI呼び出しでバッチ UPSERT する
+        
+        Args:
+            leads_data: リード情報の辞書のリスト
+        """
+        if not leads_data:
+            return
+        
+        logger.info(f"バッチ UPSERT 開始: {len(leads_data)}件")
+        
+        # 既存リードを取得
+        existing_leads = self.get_all_leads()
+        existing_urls = {lead.get('チャンネルURL', ''): idx for idx, lead in enumerate(existing_leads)}
+        
+        # 更新行と新規行を分離
+        rows_to_update = []
+        rows_to_append = []
+        
+        for lead_data in leads_data:
+            channel_url = lead_data.get('チャンネルURL', '')
+            if channel_url in existing_urls:
+                row_idx = existing_urls[channel_url]
+                rows_to_update.append((row_idx + 2, lead_data))  # +2はヘッダ + 1-index
+            else:
+                rows_to_append.append(lead_data)
+        
+        # 更新処理（バッチで実行）
+        if rows_to_update:
+            for row_idx, lead_data in rows_to_update:
+                row_values = [lead_data.get(col, '') for col in self.LEADS_COLUMNS]
+                self.worksheet.update_cell(row_idx, 1, row_values[0])
+                for col_idx, val in enumerate(row_values[1:], 2):
+                    self.worksheet.update_cell(row_idx, col_idx, val)
+                time.sleep(0.5)  # セル更新間のスリープ
+        
+        # 新規追加処理
+        if rows_to_append:
+            for lead_data in rows_to_append:
+                row_values = [lead_data.get(col, '') for col in self.LEADS_COLUMNS]
+                self.worksheet.append_row(row_values)
+                time.sleep(0.5)
+        
+        logger.info(f"バッチ UPSERT 完了: 更新{len(rows_to_update)}件、追加{len(rows_to_append)}件")
     def get_pending_leads(
         self,
         rank_filter: list[str] | None = None
@@ -647,5 +699,6 @@ if __name__ == "__main__":
     print("3. NGリストの取得テスト...")
     ng_list = crm.get_ng_list()
     print(f"   → {len(ng_list)}件のNGアドレス")
+
 
 
