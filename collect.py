@@ -7,7 +7,8 @@ YouTube チャンネル候補のスクレイピング、スコアリング、CRM
 import os
 import sys
 from datetime import datetime
-from pytz import timezone`nimport config
+from pytz import timezone
+import config
 from loguru import logger
 
 # ローカルモジュール
@@ -87,6 +88,7 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
 
 
