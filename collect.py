@@ -12,7 +12,7 @@ import config
 from loguru import logger
 
 # ローカルモジュール
-from target_scraper import run_scraping_pipeline, filter_by_icp
+from target_scraper import search_company_channels, get_channel_stats, filter_by_icp, ChannelData
 from scorer import score_channels
 from crm_manager import upsert_lead
 from email_extractor import get_email_from_youtube_channel
@@ -44,7 +44,19 @@ def run_collect(keywords=None, dry_run=False):
     
     # Step 1: スクレイピング
     logger.info("\n=== Step 1: ターゲット候補の検索・スクレイピング ===")
-    channels = run_scraping_pipeline(keywords, config.SERPAPI_KEY)
+    all_urls = []
+    for keyword in keywords:
+        urls = search_company_channels(keyword, config.SERPAPI_KEY)
+        all_urls.extend(urls)
+    
+    channels = []
+    for url in all_urls:
+        stats = get_channel_stats(url)
+        if stats:
+            channels.append(stats)
+    
+    passed_channels, rejected_channels = filter_by_icp(channels)
+    channels = passed_channels
     logger.info(f"チャンネル候補: {len(channels)}件")
     
     if not channels:
@@ -88,6 +100,7 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
 
 
