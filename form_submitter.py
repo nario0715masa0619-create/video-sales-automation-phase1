@@ -72,8 +72,11 @@ async def submit_form(
             page = await context.new_page()
 
             # ページを開く
-            await page.goto(form_url, timeout=30000, wait_until='networkidle')
-            await page.wait_for_timeout(3000)
+            try:
+                await page.goto(form_url, timeout=30000, wait_until='networkidle')
+            except Exception:
+                await page.goto(form_url, timeout=30000, wait_until='domcontentloaded')
+            await page.wait_for_timeout(4000)
 
             filled_count = 0
 
@@ -206,4 +209,5 @@ if __name__ == '__main__':
     )
     print(f'結果: {"成功" if result.success else "失敗"}')
     print(f'エラー: {result.error_message}')
+
 
