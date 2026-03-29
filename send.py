@@ -59,7 +59,7 @@ def run_send(dry_run=False):
             if email_address and "@" in email_address:
                 logger.info(f"メール送信: {company_name} → {email_address}")
                 
-                email_content = generate_email(lead)
+                email_content = generate_email(lead, 1)
                 
                 if not dry_run:
                     sender = XserverSMTPSender()
@@ -83,7 +83,7 @@ def run_send(dry_run=False):
             elif form_url:
                 logger.info(f"フォーム送信: {company_name} → {form_url}")
                 
-                email_content = generate_email(lead)
+                email_content = generate_email(lead, 1)
                 
                 if not dry_run:
                     form_result = submit_form_sync(
@@ -135,5 +135,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     run_send(dry_run=args.dry_run)
+
 
 
