@@ -269,13 +269,20 @@ class CRMManager:
                 "最終更新日": now,
             }
 
-            # 各フィールドをセルに書き込む
+            # バッチ更新（1 API リクエスト）
+            cell_list = []
             for col_name, value in update_fields.items():
                 if col_name in LEADS_COLUMNS:
                     col_index = LEADS_COLUMNS[col_name]
-                    sheet.update_cell(row_num, col_index, value)
+                    cell_list.append(gspread.Cell(row_num, col_index, value))
 
-            logger.info(f"リード更新: {lead_data.get('チャンネル名', channel_url)} (行{row_num})")
+            if cell_list:
+                sheet.update_cells(cell_list)
+                logger.info(f"リード更新: {lead_data.get('チャンネル名', channel_url)} (行{row_num}, {len(cell_list)}セル)")
+            else:
+                logger.info(f"リード更新: {lead_data.get('チャンネル名', channel_url)} (変更なし)")
+
+            time.sleep(2.0)
 
         else:
             # 新規レコードの追加
@@ -700,6 +707,7 @@ if __name__ == "__main__":
     print("3. NGリストの取得テスト...")
     ng_list = crm.get_ng_list()
     print(f"   → {len(ng_list)}件のNGアドレス")
+
 
 
 
