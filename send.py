@@ -33,7 +33,7 @@ def run_send(dry_run=False):
     # Step 4: 送信対象リードを取得
     logger.info("\n=== Step 4: 送信対象リード取得 ===")
     crm = get_crm()
-    pending_leads = get_pending_leads(crm)
+    pending_leads = get_pending_leads()
     logger.info(f"送信対象: {len(pending_leads)}件")
     
     if not pending_leads:
@@ -135,3 +135,4 @@ if __name__ == "__main__":
     args = parser.parse_args()
     
     run_send(dry_run=args.dry_run)
+
