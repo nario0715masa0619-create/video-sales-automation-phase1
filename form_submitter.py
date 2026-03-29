@@ -149,11 +149,17 @@ async def submit_form(
             submit_selectors = [
                 'button[type="submit"]',
                 'input[type="submit"]',
+                'button[onclick*="submit"]',
+                'button[onclick*="send"]',
+                'button[onclick*="confirm"]',
                 'button:has-text("送信")',
                 'button:has-text("確認")',
                 'button:has-text("次へ")',
                 'button:has-text("問い合わせ")',
+                'button:has-text("申し込み")',
                 '*[type="submit"]',
+                'a.btn[href*="confirm"]',
+                'a.btn[href*="send"]',
             ]
 
             submitted = False
@@ -221,6 +227,7 @@ if __name__ == '__main__':
     )
     print(f'結果: {"成功" if result.success else "失敗"}')
     print(f'エラー: {result.error_message}')
+
 
 
 
