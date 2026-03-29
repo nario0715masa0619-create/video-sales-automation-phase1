@@ -28,6 +28,8 @@ from datetime import datetime, timedelta, timezone
 from typing import Optional
 
 from loguru import logger
+from collect import run_collect
+from send import run_send
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
@@ -671,6 +673,7 @@ if __name__ == "__main__":
         logger.info("DRY RUN モード: メール送信は行いません")
         result = run_weekly_flow(dry_run=True)
         sys.exit(0 if result.success else 1)
+
 
 
 
