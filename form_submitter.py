@@ -81,7 +81,19 @@ async def submit_form(
             filled_count = 0
 
             # input/textarea要素を全取得
+            # メインフレームで検索
             inputs = await page.query_selector_all('input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]), textarea, select')
+
+            # フィールドが見つからない場合はiframeの中を検索
+            if not inputs:
+                for frame in page.frames:
+                    if frame == page.main_frame:
+                        continue
+                    inputs = await frame.query_selector_all('input:not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]), textarea, select')
+                    if inputs:
+                        # iframe内のフィールドを使用するため、以降の処理もframe経由にする
+                        page = frame
+                        break
 
             for element in inputs:
                 try:
@@ -209,5 +221,6 @@ if __name__ == '__main__':
     )
     print(f'結果: {"成功" if result.success else "失敗"}')
     print(f'エラー: {result.error_message}')
+
 
 
