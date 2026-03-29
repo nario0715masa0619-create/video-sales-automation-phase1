@@ -12,7 +12,13 @@ import config
 from loguru import logger
 
 # ローカルモジュール
-from orchestrator import _step1_scrape_targets, _step2_3_score_and_upsert, _step3_5_extract_emails, FlowResult
+from target_scraper import search_company_channels, get_channel_stats, filter_by_icp, ChannelData
+from scorer import score_channels
+
+class FlowResult:
+    def __init__(self, start_time=None):
+        self.start_time = start_time
+        self.leads_upserted = 0
 from scorer import score_channels
 from crm_manager import upsert_lead
 from email_extractor import get_email_from_youtube_channel
@@ -100,6 +106,7 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
 
 
