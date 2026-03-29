@@ -44,3 +44,4 @@ loguru==0.7.2
 tenacity==8.3.0       # リトライ処理
 tqdm==4.66.4          # プログレスバー
 pandas==2.2.2         # データ操作（任意）
+playwright>=1.40.0
