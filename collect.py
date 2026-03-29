@@ -11,7 +11,7 @@ from pytz import timezone
 from loguru import logger
 
 # ローカルモジュール
-from target_scraper import scrape_youtube_channels
+from target_scraper import run_scraping_pipeline, filter_by_icp
 from scorer import score_channels, to_crm_dict
 from crm_manager import get_crm, batch_upsert_leads
 from email_extractor import get_email_from_youtube_channel
@@ -43,7 +43,7 @@ def run_collect(keywords=None, dry_run=False):
     
     # Step 1: スクレイピング
     logger.info("\n=== Step 1: ターゲット候補の検索・スクレイピング ===")
-    channels = scrape_youtube_channels(keywords)
+    channels = run_scraping_pipeline(keywords)
     logger.info(f"チャンネル候補: {len(channels)}件")
     
     if not channels:
@@ -87,3 +87,4 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
