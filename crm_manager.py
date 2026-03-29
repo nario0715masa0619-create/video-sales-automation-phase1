@@ -220,13 +220,12 @@ class CRMManager:
             idx = col_index - 1  # 0始まりに変換
             result[col_name] = row_values[idx] if idx < len(row_values) else ""
         return result
-
-@retry(
-    stop=stop_after_attempt(3),
-    wait=wait_exponential(multiplier=1, min=5, max=30),
-    retry=retry_if_exception_type(Exception),
-    reraise=True,
-)
+    @retry(
+        stop=stop_after_attempt(3),
+        wait=wait_exponential(multiplier=1, min=5, max=30),
+        retry=retry_if_exception_type(Exception),
+        reraise=True,
+    )
     def upsert_lead(self, lead_data: dict) -> None:
         """
         リードを新規追加または更新する（重複チェック込み）。
@@ -648,4 +647,5 @@ if __name__ == "__main__":
     print("3. NGリストの取得テスト...")
     ng_list = crm.get_ng_list()
     print(f"   → {len(ng_list)}件のNGアドレス")
+
 
