@@ -44,7 +44,7 @@ def run_collect(keywords=None, dry_run=False):
     
     # Step 1: スクレイピング
     logger.info("\n=== Step 1: ターゲット候補の検索・スクレイピング ===")
-    channels = run_scraping_pipeline(keywords, config.SERP_API_KEY)
+    channels = run_scraping_pipeline(keywords, config.SERPAPI_KEY)
     logger.info(f"チャンネル候補: {len(channels)}件")
     
     if not channels:
@@ -88,6 +88,7 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
 
 
