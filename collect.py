@@ -12,7 +12,7 @@ from loguru import logger
 
 # ローカルモジュール
 from target_scraper import run_scraping_pipeline, filter_by_icp
-from scorer import score_channels, to_crm_dict
+from scorer import score_channels
 from crm_manager import get_crm, batch_upsert_leads
 from email_extractor import get_email_from_youtube_channel
 
@@ -57,7 +57,7 @@ def run_collect(keywords=None, dry_run=False):
     
     # CRM に登録
     crm = get_crm()
-    leads_to_upsert = [to_crm_dict(ch) for ch in scored_channels]
+    leads_to_upsert = [ch.to_crm_dict() for ch in scored_channels]
     batch_upsert_leads(crm, leads_to_upsert)
     logger.info(f"CRM 更新: {len(leads_to_upsert)}件")
     
@@ -87,4 +87,5 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
