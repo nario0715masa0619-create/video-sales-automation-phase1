@@ -39,6 +39,8 @@ from target_scraper import (
     ChannelData,
 )
 from scorer import score_channels, ScoredChannel
+from email_extractor import get_email_from_youtube_channel
+
 from crm_manager import (
     get_crm,
     upsert_lead,
@@ -46,6 +48,7 @@ from crm_manager import (
     update_email_status,
     add_email_log,
     get_ng_list,
+    LEADS_COLUMNS,
 )
 from email_generator import generate_email, EmailContent
 from email_sender import GmailSender, SendResult, get_email_sender
@@ -272,6 +275,59 @@ def _step2_3_score_and_upsert(
     flow.steps.append(step)
     return scored_channels
 
+
+
+def _step3_5_extract_emails(
+    flow: FlowResult,
+    scored_channels: list,
+) -> None:
+    """
+    Step 3.5: メールアドレスが未取得のリードに対して
+    公式サイトからメールアドレスを取得してCRMに反映する。
+    """
+    step = StepResult(step_name="Step3.5: メールアドレス取得", success=False)
+    logger.info("=== Step 3.5: メールアドレス自動取得 ===")
+
+    if not scored_channels:
+        step.success = True
+        flow.steps.append(step)
+        return
+
+    updated_count = 0
+    for scored in scored_channels:
+        # メールアドレスが既に取得済みならスキップ
+        if scored.channel.contact_email:
+            continue
+
+        channel_url = scored.channel_url
+        channel_name = scored.channel_name
+
+        try:
+            logger.info(f"メール取得中: {channel_name}")
+            website_url, email, form_url = get_email_from_youtube_channel(channel_url)
+
+            if email or form_url:
+                crm = get_crm()
+                existing = crm.find_lead_by_channel_url(channel_url)
+                if existing:
+                    row_num, _ = existing
+                    sheet = crm._get_sheet(config.SHEET_LEADS)
+                    if email:
+                        sheet.update_cell(row_num, LEADS_COLUMNS["メールアドレス"], email)
+                        logger.info(f"メール取得成功: {channel_name} → {email}")
+                    if form_url and not scored.channel.contact_form_url:
+                        sheet.update_cell(row_num, LEADS_COLUMNS["問い合わせフォームURL"], form_url)
+                    updated_count += 1
+                    time.sleep(2)
+
+        except Exception as e:
+            logger.error(f"メール取得エラー [{channel_name}]: {e}")
+            flow.errors.append(f"メール取得エラー: {channel_name} - {e}")
+
+    step.success = True
+    step.count = updated_count
+    flow.steps.append(step)
+    logger.info(f"Step 3.5 完了: {updated_count}件のメール情報を更新")
 
 def _step4_get_pending(flow: FlowResult) -> list[dict]:
     """
@@ -614,6 +670,7 @@ if __name__ == "__main__":
         logger.info("DRY RUN モード: メール送信は行いません")
         result = run_weekly_flow(dry_run=True)
         sys.exit(0 if result.success else 1)
+
 
 
 
