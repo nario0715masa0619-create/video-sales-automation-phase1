@@ -27,6 +27,7 @@ from gspread.utils import rowcol_to_a1
 from google.oauth2.service_account import Credentials
 
 import config
+from utils import normalize_url
 
 # JST タイムゾーン
 JST = timezone(timedelta(hours=9))
@@ -238,6 +239,10 @@ class CRMManager:
                 任意キー: LEADS_COLUMNS に定義された全項目
         """
         channel_url = lead_data.get("チャンネルURL", "")
+        
+        # 問い合わせフォームURL を正規化
+        if "問い合わせフォームURL" in lead_data and lead_data["問い合わせフォームURL"]:
+            lead_data["問い合わせフォームURL"] = normalize_url(lead_data["問い合わせフォームURL"])
         if not channel_url:
             logger.warning("チャンネルURLが未設定のためスキップ")
             return
@@ -707,6 +712,7 @@ if __name__ == "__main__":
     print("3. NGリストの取得テスト...")
     ng_list = crm.get_ng_list()
     print(f"   → {len(ng_list)}件のNGアドレス")
+
 
 
 
