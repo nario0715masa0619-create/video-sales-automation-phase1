@@ -46,7 +46,7 @@ GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3-pro-preview")
 SERPAPI_KEYS: list[str] = [
     os.getenv("SERPAPI_KEY_1", ""),
     os.getenv("SERPAPI_KEY_2", ""),
-    os.getenv("SERPAPI_KEY_3", ""),
+    os.getenv("SERPAPI_KEY", ""),
 ]
 SERPAPI_KEY_INDEX: int = 0  # 現在使用中のキーインデックス
 
@@ -200,6 +200,7 @@ if __name__ == "__main__":
     print(f"   GEMINI_MODEL: {GEMINI_MODEL}")
     print(f"   EMAIL_MAX_SEQUENCE: {EMAIL_MAX_SEQUENCE}通")
     print(f"   EMAIL_TARGET_RANKS: {EMAIL_TARGET_RANKS}")
+
 
 
 
