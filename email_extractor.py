@@ -265,8 +265,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                 # Markdown形式等が含まれていないか念のためクリーニング
                 found_email = re.sub(r'\[(.*?)\]\(mailto:.*?\)', r'\1', found_email)
                 logger.info(f"メール発見 ({base}): {found_email}")
-                contact_form_url = normalize_url(contact_form_url) if contact_form_url else ""
-    return found_email, contact_form_url
+                return found_email, contact_form_url
 
             # テキストからのメール抽出 (TOP)
             emails = _extract_emails_from_text(html)
@@ -311,8 +310,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                 if found_email:
                     found_email = re.sub(r'\[(.*?)\]\(mailto:.*?\)', r'\1', found_email)
                     logger.info(f"メール発見 ({url}): {found_email}")
-                    contact_form_url = normalize_url(contact_form_url) if contact_form_url else ""
-    return found_email, contact_form_url
+                    return found_email, contact_form_url
                     
                 emails = _extract_emails_from_text(r.text)
                 best_email = _select_best_email(emails)
@@ -394,4 +392,5 @@ if __name__ == '__main__':
         print(f"  公式サイト:       {website or '取得失敗'}")
         print(f"  メール:           {email or '未発見'}")
         print(f"  お問い合わせURL:  {form_url or '未発見'}")
+
 
