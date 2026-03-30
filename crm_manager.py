@@ -271,6 +271,8 @@ class CRMManager:
                 "総合スコア": lead_data.get("総合スコア", old_record.get("総合スコア")),
                 "ランク": lead_data.get("ランク", old_record.get("ランク")),
                 "最新動画タイトル": lead_data.get("最新動画タイトル", old_record.get("最新動画タイトル", "")),
+                "問い合わせフォームURL": lead_data.get("問い合わせフォームURL", old_record.get("問い合わせフォームURL")),
+                "メールアドレス": lead_data.get("メールアドレス", old_record.get("メールアドレス")),
                 "最終更新日": now,
             }
 
