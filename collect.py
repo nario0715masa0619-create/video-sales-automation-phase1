@@ -84,7 +84,7 @@ def run_collect(keywords=None, dry_run=False):
     logger.info("\n=== Step 3.5: メールアドレス自動取得 ===")
     email_count = 0
     for ch in scored_channels:
-        channel_url = ch.get("url")
+        channel_url = ch.channel.channel_url
         company_name = ch.get("company_name")
         try:
             email = get_email_from_youtube_channel(channel_url)
@@ -106,6 +106,7 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
 
 
