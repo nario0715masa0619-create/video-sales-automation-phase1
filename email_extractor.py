@@ -14,6 +14,7 @@ import logging
 import requests
 import yt_dlp
 from urllib.parse import urlparse, urljoin
+from utils import normalize_url
 from bs4 import BeautifulSoup
 
 REQUEST_TIMEOUT = 10
@@ -249,7 +250,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                              
                 if is_contact:
                     if not contact_form_url:
-                        contact_form_url = abs_url
+                        contact_form_url = normalize_url(abs_url)
                         logger.info(f"フォームのみ発見 ({contact_form_url})")
 
                     # 同一ドメイン（サブドメイン含む簡易判定）を優先
@@ -264,7 +265,8 @@ def scrape_email_from_site(website_url: str) -> tuple:
                 # Markdown形式等が含まれていないか念のためクリーニング
                 found_email = re.sub(r'\[(.*?)\]\(mailto:.*?\)', r'\1', found_email)
                 logger.info(f"メール発見 ({base}): {found_email}")
-                return found_email, contact_form_url
+                contact_form_url = normalize_url(contact_form_url) if contact_form_url else ""
+    return found_email, contact_form_url
 
             # テキストからのメール抽出 (TOP)
             emails = _extract_emails_from_text(html)
@@ -309,7 +311,8 @@ def scrape_email_from_site(website_url: str) -> tuple:
                 if found_email:
                     found_email = re.sub(r'\[(.*?)\]\(mailto:.*?\)', r'\1', found_email)
                     logger.info(f"メール発見 ({url}): {found_email}")
-                    return found_email, contact_form_url
+                    contact_form_url = normalize_url(contact_form_url) if contact_form_url else ""
+    return found_email, contact_form_url
                     
                 emails = _extract_emails_from_text(r.text)
                 best_email = _select_best_email(emails)
@@ -320,7 +323,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                     
                 # フォームURLの補完
                 if not contact_form_url and any(kw in url.lower() for kw in contact_form_keywords):
-                    contact_form_url = url
+                    contact_form_url = normalize_url(url)
                     logger.info(f"フォームのみ発見 ({contact_form_url})")
         except Exception as e:
             logger.debug(f"クロール失敗 ({url}): {e}")
@@ -349,7 +352,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                 return best_email, contact_form_url
 
             if not contact_form_url and any(kw in url.lower() for kw in contact_form_keywords):
-                contact_form_url = url
+                contact_form_url = normalize_url(url)
                 logger.info(f"フォームのみ発見 ({contact_form_url})")
 
         except Exception as e:
@@ -391,3 +394,4 @@ if __name__ == '__main__':
         print(f"  公式サイト:       {website or '取得失敗'}")
         print(f"  メール:           {email or '未発見'}")
         print(f"  お問い合わせURL:  {form_url or '未発見'}")
+

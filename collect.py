@@ -22,6 +22,7 @@ class FlowResult:
 from scorer import score_channels
 from crm_manager import upsert_lead
 from email_extractor import get_email_from_youtube_channel
+from utils import normalize_url
 
 JST = timezone('Asia/Tokyo')
 
@@ -107,6 +108,7 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
 
 
