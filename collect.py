@@ -52,7 +52,7 @@ def run_collect(keywords=None, dry_run=False):
     logger.info("\n=== Step 1: ターゲット候補の検索・スクレイピング ===")
     all_urls = []
     for keyword in keywords:
-                current_key = config.SERPAPI_KEYS[config.SERPAPI_KEY_INDEX]
+        current_key = config.SERPAPI_KEYS[config.SERPAPI_KEY_INDEX]
         urls = search_company_channels(keyword, current_key)
         all_urls.extend(urls)
     
@@ -107,6 +107,7 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
 
 
 
