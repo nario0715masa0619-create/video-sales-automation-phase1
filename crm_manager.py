@@ -229,6 +229,7 @@ class CRMManager:
         reraise=True,
     )
     def upsert_lead(self, lead_data: dict) -> None:
+        logger.info(f"[upsert_lead] 開始: {lead_data.get('チャンネル名', 'Unknown')}")
         """
         リードを新規追加または更新する（重複チェック込み）。
         チャンネルURLを一意キーとして使用する。
@@ -286,8 +287,10 @@ class CRMManager:
             if cell_list:
                 sheet.update_cells(cell_list)
                 logger.info(f"リード更新: {lead_data.get('チャンネル名', channel_url)} (行{row_num}, {len(cell_list)}セル)")
+                logger.info(f"[upsert_lead] 完了")
             else:
                 logger.info(f"リード更新: {lead_data.get('チャンネル名', channel_url)} (変更なし)")
+                logger.info(f"[upsert_lead] 完了")
 
             time.sleep(2.0)
 

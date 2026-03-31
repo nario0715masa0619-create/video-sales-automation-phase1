@@ -1,0 +1,343 @@
+2026-03-31 13:19:24.903 | INFO     | __main__:run_collect:37 - ============================================================
+2026-03-31 13:19:24.904 | INFO     | __main__:run_collect:38 - 収集フロー開始
+2026-03-31 13:19:24.904 | INFO     | __main__:run_collect:39 - ============================================================
+2026-03-31 13:19:24.904 | INFO     | __main__:run_collect:50 - キーワード: ['YouTube 集客', 'セミナー YouTube', 'オンライン講座 YouTube', 'ウェビナー YouTube', 'スクール YouTube', '教室 YouTube', 'クリニック YouTube', 'ジム YouTube', '整体院 YouTube', '学習塾 YouTube', '士業 YouTube', 'コーチング YouTube']
+2026-03-31 13:19:24.904 | INFO     | __main__:run_collect:53 - 
+=== Step 1: ターゲット候補の検索・スクレイピング ===
+2026-03-31 14:35:10.528 | INFO     | __main__:run_collect:67 - ICP フィルタリング前: 959件
+2026-03-31 14:35:10.528 | INFO     | __main__:run_collect:68 - ICP フィルタリング後: 64件（合格）
+2026-03-31 14:35:10.528 | INFO     | __main__:run_collect:69 - ICP フィルタリング除外: 895件（不合格）
+2026-03-31 14:35:10.528 | DEBUG    | __main__:run_collect:71 - 除外されたチャンネル: ['O- MENZ OFFICIAL', 'T-SPARK 公式チャンネル', 'イヤホン・ヘッドホン専門店 eイヤホン', 'O-channel', 'ETtoday News', "進撃のY / Y's Rebellion 🇺🇦", 'NAME.O', 'B.LEAGUE - Japan Professional Basketball League', 'Sumi-e Artist RENSUI', 'シャキタ&S.O.ドドド']
+2026-03-31 14:35:10.528 | INFO     | __main__:run_collect:73 - チャンネル候補: 64件
+2026-03-31 14:35:10.528 | INFO     | __main__:run_collect:80 - 
+=== Step 2+3: スコアリングと CRM 更新 ===
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - T先輩: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - T先輩: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - アクロバット相談室: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - U-NEXT Pirates: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:12/20 → 合計50.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - プロバスケットボールチーム「青森ワッツ」B.LEAGUE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - NAME.O: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - シャキタ&S.O.ドドド: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - ヘルスケア治療院: 投稿頻度:10/30 再生数:8/25 エンゲージ:0/25 トレンド:0/20 → 合計18.0点(Cランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - 体幹ケア: 投稿頻度:20/30 再生数:0/25 エンゲージ:0/25 トレンド:0/20 → 合計20.0点(Cランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - U-NEXT Pirates: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:12/20 → 合計50.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - Tテレ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.529 | DEBUG    | scorer:calculate_score:283 - U-NEXT テニス: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - プロバスケットボールチーム「青森ワッツ」B.LEAGUE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - 院卒ライダー ゆうか: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - T先輩: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - Up-T（アップティー）YouTubeチャンネル: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - T[てぃー] handmade: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - T-STONE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - O! CLOCK (オクロック): 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - U-NEXT テニス: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.530 | DEBUG    | scorer:calculate_score:283 - 学習塾PLAN B.鶴見校: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-03-31 14:35:10.531 | DEBUG    | scorer:calculate_score:283 - T[てぃー] handmade: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.531 | DEBUG    | scorer:calculate_score:283 - T-STONE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.531 | DEBUG    | scorer:calculate_score:283 - シャキタ&S.O.ドドド: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-03-31 14:35:10.531 | DEBUG    | scorer:calculate_score:283 - S塾チャンネル: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:20/20 → 合計58.0点(Bランク)
+2026-03-31 14:35:10.531 | DEBUG    | scorer:calculate_score:283 - Up-T（アップティー）YouTubeチャンネル: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
+2026-03-31 14:35:10.531 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.531 | DEBUG    | scorer:calculate_score:283 - U-NEXT Pirates: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:12/20 → 合計50.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - Tテレ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - 個別指導の明光義塾【公式】: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計65.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - T先輩: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - NAME.O: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - プロバスケットボールチーム「青森ワッツ」B.LEAGUE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - ゆる音楽学ラジオ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - NAME.O: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - シャキタ&S.O.ドドド: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - U-NEXT Pirates: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:12/20 → 合計50.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - Tテレ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - O! CLOCK (オクロック): 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - U-NEXT テニス: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.532 | DEBUG    | scorer:calculate_score:283 - プロバスケットボールチーム「青森ワッツ」B.LEAGUE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - T先輩: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - Up-T（アップティー）YouTubeチャンネル: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - T[てぃー] handmade: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - T-STONE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - O! CLOCK (オクロック): 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - U-NEXT テニス: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - T[てぃー] handmade: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - T-STONE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - AFL JAPAN / 日本オーストラリアンフットボール協会: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - シャキタ&S.O.ドドド: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - U-NEXT Pirates: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:12/20 → 合計50.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - Tテレ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - T先輩: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - NAME.O: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
+2026-03-31 14:35:10.533 | DEBUG    | scorer:calculate_score:283 - プロバスケットボールチーム「青森ワッツ」B.LEAGUE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-03-31 14:35:10.534 | INFO     | scorer:score_channels:314 - スコアリング完了: Aランク 7件 / Bランク 55件 / Cランク 2件
+2026-03-31 14:35:10.534 | INFO     | __main__:run_collect:82 - スコアリング完了: 64件
+2026-03-31 14:35:10.534 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: シャキタ&S.O.ドドド
+2026-03-31 14:35:10.559 | INFO     | crm_manager:_get_client:155 - Google Sheets クライアント初期化完了
+2026-03-31 14:35:13.941 | INFO     | crm_manager:_get_spreadsheet:163 - スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-03-31 14:35:18.107 | INFO     | crm_manager:upsert_lead:289 - リード更新: シャキタ&S.O.ドドド (行33, 15セル)
+2026-03-31 14:35:18.108 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:35:22.108 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: O! CLOCK (オクロック)
+2026-03-31 14:35:26.339 | INFO     | crm_manager:upsert_lead:289 - リード更新: O! CLOCK (オクロック) (行104, 15セル)
+2026-03-31 14:35:26.339 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:35:30.340 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 学習塾PLAN B.鶴見校
+2026-03-31 14:35:33.379 | INFO     | crm_manager:upsert_lead:320 - リード新規追加: 学習塾PLAN B.鶴見校
+2026-03-31 14:35:35.380 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: シャキタ&S.O.ドドド
+2026-03-31 14:35:39.023 | INFO     | crm_manager:upsert_lead:289 - リード更新: シャキタ&S.O.ドドド (行33, 15セル)
+2026-03-31 14:35:39.023 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:35:43.023 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: シャキタ&S.O.ドドド
+2026-03-31 14:35:46.136 | INFO     | crm_manager:upsert_lead:289 - リード更新: シャキタ&S.O.ドドド (行33, 15セル)
+2026-03-31 14:35:46.136 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:35:50.142 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: O! CLOCK (オクロック)
+2026-03-31 14:35:53.604 | INFO     | crm_manager:upsert_lead:289 - リード更新: O! CLOCK (オクロック) (行104, 15セル)
+2026-03-31 14:35:53.604 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:35:57.606 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: シャキタ&S.O.ドドド
+2026-03-31 14:36:00.678 | INFO     | crm_manager:upsert_lead:289 - リード更新: シャキタ&S.O.ドドド (行33, 15セル)
+2026-03-31 14:36:00.679 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:36:04.680 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 個別指導の明光義塾【公式】
+2026-03-31 14:36:07.816 | INFO     | crm_manager:upsert_lead:289 - リード更新: 個別指導の明光義塾【公式】 (行89, 15セル)
+2026-03-31 14:36:07.817 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:36:11.818 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: S塾チャンネル
+2026-03-31 14:36:14.537 | INFO     | crm_manager:upsert_lead:320 - リード新規追加: S塾チャンネル
+2026-03-31 14:36:16.538 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T先輩
+2026-03-31 14:36:20.093 | INFO     | crm_manager:upsert_lead:289 - リード更新: T先輩 (行40, 15セル)
+2026-03-31 14:36:20.093 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:36:24.094 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T先輩
+2026-03-31 14:36:27.519 | INFO     | crm_manager:upsert_lead:289 - リード更新: T先輩 (行40, 15セル)
+2026-03-31 14:36:27.519 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:36:31.524 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: プロバスケットボールチーム「青森ワッツ」B.LEAGUE
+2026-03-31 14:36:35.013 | INFO     | crm_manager:upsert_lead:289 - リード更新: プロバスケットボールチーム「青森ワッツ」B.LEAGUE (行43, 15セル)
+2026-03-31 14:36:35.013 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:36:39.019 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Tテレ
+2026-03-31 14:36:42.213 | INFO     | crm_manager:upsert_lead:289 - リード更新: Tテレ (行39, 15セル)
+2026-03-31 14:36:42.217 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:36:46.218 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT テニス
+2026-03-31 14:36:49.455 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT テニス (行41, 15セル)
+2026-03-31 14:36:49.455 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:36:53.455 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: プロバスケットボールチーム「青森ワッツ」B.LEAGUE
+2026-03-31 14:36:56.337 | INFO     | crm_manager:upsert_lead:289 - リード更新: プロバスケットボールチーム「青森ワッツ」B.LEAGUE (行43, 15セル)
+2026-03-31 14:36:56.337 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:00.339 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T先輩
+2026-03-31 14:37:03.449 | INFO     | crm_manager:upsert_lead:289 - リード更新: T先輩 (行40, 15セル)
+2026-03-31 14:37:03.450 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:07.451 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T-STONE
+2026-03-31 14:37:10.348 | INFO     | crm_manager:upsert_lead:289 - リード更新: T-STONE (行42, 15セル)
+2026-03-31 14:37:10.348 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:14.349 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT テニス
+2026-03-31 14:37:17.733 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT テニス (行41, 15セル)
+2026-03-31 14:37:17.734 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:21.738 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T-STONE
+2026-03-31 14:37:24.830 | INFO     | crm_manager:upsert_lead:289 - リード更新: T-STONE (行42, 15セル)
+2026-03-31 14:37:24.831 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:28.832 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Tテレ
+2026-03-31 14:37:31.681 | INFO     | crm_manager:upsert_lead:289 - リード更新: Tテレ (行39, 15セル)
+2026-03-31 14:37:31.682 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:35.683 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T先輩
+2026-03-31 14:37:38.832 | INFO     | crm_manager:upsert_lead:289 - リード更新: T先輩 (行40, 15セル)
+2026-03-31 14:37:38.833 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:42.838 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: プロバスケットボールチーム「青森ワッツ」B.LEAGUE
+2026-03-31 14:37:46.145 | INFO     | crm_manager:upsert_lead:289 - リード更新: プロバスケットボールチーム「青森ワッツ」B.LEAGUE (行43, 15セル)
+2026-03-31 14:37:46.146 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:50.146 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ゆる音楽学ラジオ
+2026-03-31 14:37:53.281 | INFO     | crm_manager:upsert_lead:289 - リード更新: ゆる音楽学ラジオ (行53, 15セル)
+2026-03-31 14:37:53.282 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:37:57.283 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Tテレ
+2026-03-31 14:38:00.414 | INFO     | crm_manager:upsert_lead:289 - リード更新: Tテレ (行39, 15セル)
+2026-03-31 14:38:00.414 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:04.415 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT テニス
+2026-03-31 14:38:07.530 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT テニス (行41, 15セル)
+2026-03-31 14:38:07.530 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:11.531 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: プロバスケットボールチーム「青森ワッツ」B.LEAGUE
+2026-03-31 14:38:14.702 | INFO     | crm_manager:upsert_lead:289 - リード更新: プロバスケットボールチーム「青森ワッツ」B.LEAGUE (行43, 15セル)
+2026-03-31 14:38:14.703 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:18.703 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T先輩
+2026-03-31 14:38:21.879 | INFO     | crm_manager:upsert_lead:289 - リード更新: T先輩 (行40, 15セル)
+2026-03-31 14:38:22.011 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:26.012 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T-STONE
+2026-03-31 14:38:29.421 | INFO     | crm_manager:upsert_lead:289 - リード更新: T-STONE (行42, 15セル)
+2026-03-31 14:38:29.421 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:33.422 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT テニス
+2026-03-31 14:38:36.797 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT テニス (行41, 15セル)
+2026-03-31 14:38:36.798 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:40.798 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T-STONE
+2026-03-31 14:38:44.200 | INFO     | crm_manager:upsert_lead:289 - リード更新: T-STONE (行42, 15セル)
+2026-03-31 14:38:44.200 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:48.201 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Tテレ
+2026-03-31 14:38:51.308 | INFO     | crm_manager:upsert_lead:289 - リード更新: Tテレ (行39, 15セル)
+2026-03-31 14:38:51.308 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:38:55.309 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T先輩
+2026-03-31 14:38:58.698 | INFO     | crm_manager:upsert_lead:289 - リード更新: T先輩 (行40, 15セル)
+2026-03-31 14:38:58.698 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:02.703 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: プロバスケットボールチーム「青森ワッツ」B.LEAGUE
+2026-03-31 14:39:05.294 | INFO     | crm_manager:upsert_lead:289 - リード更新: プロバスケットボールチーム「青森ワッツ」B.LEAGUE (行43, 15セル)
+2026-03-31 14:39:05.295 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:09.296 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT Pirates
+2026-03-31 14:39:12.418 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT Pirates (行75, 15セル)
+2026-03-31 14:39:12.418 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:16.420 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT Pirates
+2026-03-31 14:39:19.665 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT Pirates (行75, 15セル)
+2026-03-31 14:39:19.666 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:23.667 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT Pirates
+2026-03-31 14:39:26.785 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT Pirates (行75, 15セル)
+2026-03-31 14:39:26.786 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:30.786 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT Pirates
+2026-03-31 14:39:34.176 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT Pirates (行75, 15セル)
+2026-03-31 14:39:34.176 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:38.180 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT Pirates
+2026-03-31 14:39:41.524 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT Pirates (行75, 15セル)
+2026-03-31 14:39:41.525 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:45.527 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: NAME.O
+2026-03-31 14:39:49.022 | INFO     | crm_manager:upsert_lead:289 - リード更新: NAME.O (行55, 15セル)
+2026-03-31 14:39:49.022 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:39:53.022 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 院卒ライダー ゆうか
+2026-03-31 14:39:56.115 | INFO     | crm_manager:upsert_lead:289 - リード更新: 院卒ライダー ゆうか (行57, 15セル)
+2026-03-31 14:39:56.116 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:00.117 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: NAME.O
+2026-03-31 14:40:03.214 | INFO     | crm_manager:upsert_lead:289 - リード更新: NAME.O (行55, 15セル)
+2026-03-31 14:40:03.215 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:07.215 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: NAME.O
+2026-03-31 14:40:10.389 | INFO     | crm_manager:upsert_lead:289 - リード更新: NAME.O (行55, 15セル)
+2026-03-31 14:40:10.390 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:14.391 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: NAME.O
+2026-03-31 14:40:17.851 | INFO     | crm_manager:upsert_lead:289 - リード更新: NAME.O (行55, 15セル)
+2026-03-31 14:40:17.851 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:21.852 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: アクロバット相談室
+2026-03-31 14:40:25.182 | INFO     | crm_manager:upsert_lead:289 - リード更新: アクロバット相談室 (行96, 15セル)
+2026-03-31 14:40:25.182 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:29.184 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel
+2026-03-31 14:40:32.049 | INFO     | crm_manager:upsert_lead:289 - リード更新: 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel (行97, 15セル)
+2026-03-31 14:40:32.049 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:36.051 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T[てぃー] handmade
+2026-03-31 14:40:39.428 | INFO     | crm_manager:upsert_lead:289 - リード更新: T[てぃー] handmade (行59, 15セル)
+2026-03-31 14:40:39.428 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:43.429 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:40:46.556 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:40:46.557 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:50.558 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:40:53.665 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:40:53.666 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:40:57.666 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T[てぃー] handmade
+2026-03-31 14:41:00.822 | INFO     | crm_manager:upsert_lead:289 - リード更新: T[てぃー] handmade (行59, 15セル)
+2026-03-31 14:41:00.822 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:04.823 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:41:08.009 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:41:08.010 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:12.012 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:41:15.412 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:41:15.412 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:19.412 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T[てぃー] handmade
+2026-03-31 14:41:22.526 | INFO     | crm_manager:upsert_lead:289 - リード更新: T[てぃー] handmade (行59, 15セル)
+2026-03-31 14:41:22.527 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:26.527 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:41:30.073 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:41:30.073 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:34.078 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:41:37.761 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:41:37.761 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:41.766 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T[てぃー] handmade
+2026-03-31 14:41:44.853 | INFO     | crm_manager:upsert_lead:289 - リード更新: T[てぃー] handmade (行59, 15セル)
+2026-03-31 14:41:44.853 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:48.854 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: AFL JAPAN / 日本オーストラリアンフットボール協会
+2026-03-31 14:41:51.962 | INFO     | crm_manager:upsert_lead:289 - リード更新: AFL JAPAN / 日本オーストラリアンフットボール協会 (行62, 15セル)
+2026-03-31 14:41:51.962 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:41:55.963 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:41:59.083 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:41:59.084 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:03.085 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-03-31 14:42:06.168 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
+2026-03-31 14:42:06.169 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:10.170 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Up-T（アップティー）YouTubeチャンネル
+2026-03-31 14:42:13.521 | INFO     | crm_manager:upsert_lead:289 - リード更新: Up-T（アップティー）YouTubeチャンネル (行68, 15セル)
+2026-03-31 14:42:13.525 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:17.526 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Up-T（アップティー）YouTubeチャンネル
+2026-03-31 14:42:20.650 | INFO     | crm_manager:upsert_lead:289 - リード更新: Up-T（アップティー）YouTubeチャンネル (行68, 15セル)
+2026-03-31 14:42:20.650 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:24.651 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: O! CLOCK (オクロック)
+2026-03-31 14:42:27.480 | INFO     | crm_manager:upsert_lead:289 - リード更新: O! CLOCK (オクロック) (行104, 15セル)
+2026-03-31 14:42:27.480 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:31.483 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Up-T（アップティー）YouTubeチャンネル
+2026-03-31 14:42:34.659 | INFO     | crm_manager:upsert_lead:289 - リード更新: Up-T（アップティー）YouTubeチャンネル (行68, 15セル)
+2026-03-31 14:42:34.660 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:38.661 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 体幹ケア
+2026-03-31 14:42:41.491 | INFO     | crm_manager:upsert_lead:289 - リード更新: 体幹ケア (行73, 15セル)
+2026-03-31 14:42:41.492 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:45.493 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ヘルスケア治療院
+2026-03-31 14:42:49.104 | INFO     | crm_manager:upsert_lead:289 - リード更新: ヘルスケア治療院 (行74, 15セル)
+2026-03-31 14:42:49.105 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
+2026-03-31 14:42:53.105 | INFO     | __main__:run_collect:88 - CRM 更新: 64件
+2026-03-31 14:42:53.106 | INFO     | __main__:run_collect:91 - 
+=== Step 3.5: メールアドレス自動取得 ===
+2026-03-31 14:42:59.739 | INFO     | __main__:run_collect:99 - メール取得成功: シャキタ&S.O.ドドド → ('', '', '')
+2026-03-31 14:43:05.671 | INFO     | __main__:run_collect:99 - メール取得成功: O! CLOCK (オクロック) → ('', '', '')
+2026-03-31 14:43:11.502 | INFO     | __main__:run_collect:99 - メール取得成功: 学習塾PLAN B.鶴見校 → ('', '', '')
+2026-03-31 14:43:17.426 | INFO     | __main__:run_collect:99 - メール取得成功: シャキタ&S.O.ドドド → ('', '', '')
+2026-03-31 14:43:23.837 | INFO     | __main__:run_collect:99 - メール取得成功: シャキタ&S.O.ドドド → ('', '', '')
+2026-03-31 14:43:29.753 | INFO     | __main__:run_collect:99 - メール取得成功: O! CLOCK (オクロック) → ('', '', '')
+2026-03-31 14:43:35.636 | INFO     | __main__:run_collect:99 - メール取得成功: シャキタ&S.O.ドドド → ('', '', '')
+2026-03-31 14:43:55.502 | INFO     | __main__:run_collect:99 - メール取得成功: 個別指導の明光義塾【公式】 → ('https://www.meikogijuku.jp/', '', 'javascript:void(0')
+2026-03-31 14:44:01.528 | INFO     | __main__:run_collect:99 - メール取得成功: S塾チャンネル → ('', '', '')
+2026-03-31 14:44:06.202 | INFO     | __main__:run_collect:99 - メール取得成功: T先輩 → ('', '', '')
+2026-03-31 14:44:11.545 | INFO     | __main__:run_collect:99 - メール取得成功: T先輩 → ('', '', '')
+2026-03-31 14:44:17.272 | INFO     | __main__:run_collect:99 - メール取得成功: プロバスケットボールチーム「青森ワッツ」B.LEAGUE → ('', '', '')
+2026-03-31 14:44:23.265 | INFO     | __main__:run_collect:99 - メール取得成功: Tテレ → ('', '', '')
+2026-03-31 14:44:31.130 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT テニス → ('', '', '')
+2026-03-31 14:44:37.346 | INFO     | __main__:run_collect:99 - メール取得成功: プロバスケットボールチーム「青森ワッツ」B.LEAGUE → ('', '', '')
+2026-03-31 14:44:42.508 | INFO     | __main__:run_collect:99 - メール取得成功: T先輩 → ('', '', '')
+2026-03-31 14:45:03.244 | INFO     | __main__:run_collect:99 - メール取得成功: T-STONE → ('https://t-to-da-mf-stone.com/', '', 'https://lin.ee/pt2VCDo')
+2026-03-31 14:45:11.652 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT テニス → ('', '', '')
+2026-03-31 14:45:30.421 | INFO     | __main__:run_collect:99 - メール取得成功: T-STONE → ('https://t-to-da-mf-stone.com/', '', 'https://lin.ee/pt2VCDo')
+2026-03-31 14:45:36.397 | INFO     | __main__:run_collect:99 - メール取得成功: Tテレ → ('', '', '')
+2026-03-31 14:45:41.067 | INFO     | __main__:run_collect:99 - メール取得成功: T先輩 → ('', '', '')
+2026-03-31 14:45:47.117 | INFO     | __main__:run_collect:99 - メール取得成功: プロバスケットボールチーム「青森ワッツ」B.LEAGUE → ('', '', '')
+2026-03-31 14:45:52.733 | INFO     | __main__:run_collect:99 - メール取得成功: ゆる音楽学ラジオ → ('', '', '')
+2026-03-31 14:45:58.302 | INFO     | __main__:run_collect:99 - メール取得成功: Tテレ → ('', '', '')
+2026-03-31 14:46:06.865 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT テニス → ('', '', '')
+2026-03-31 14:46:13.314 | INFO     | __main__:run_collect:99 - メール取得成功: プロバスケットボールチーム「青森ワッツ」B.LEAGUE → ('', '', '')
+2026-03-31 14:46:18.448 | INFO     | __main__:run_collect:99 - メール取得成功: T先輩 → ('', '', '')
+2026-03-31 14:46:36.246 | INFO     | __main__:run_collect:99 - メール取得成功: T-STONE → ('https://t-to-da-mf-stone.com/', '', 'https://lin.ee/pt2VCDo')
+2026-03-31 14:46:45.292 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT テニス → ('', '', '')
+2026-03-31 14:47:03.022 | INFO     | __main__:run_collect:99 - メール取得成功: T-STONE → ('https://t-to-da-mf-stone.com/', '', 'https://lin.ee/pt2VCDo')
+2026-03-31 14:47:08.956 | INFO     | __main__:run_collect:99 - メール取得成功: Tテレ → ('', '', '')
+2026-03-31 14:47:13.846 | INFO     | __main__:run_collect:99 - メール取得成功: T先輩 → ('', '', '')
+2026-03-31 14:47:20.036 | INFO     | __main__:run_collect:99 - メール取得成功: プロバスケットボールチーム「青森ワッツ」B.LEAGUE → ('', '', '')
+2026-03-31 14:47:26.045 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT Pirates → ('', '', '')
+2026-03-31 14:47:31.359 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT Pirates → ('', '', '')
+2026-03-31 14:47:36.926 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT Pirates → ('', '', '')
+2026-03-31 14:47:42.815 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT Pirates → ('', '', '')
+2026-03-31 14:47:48.265 | INFO     | __main__:run_collect:99 - メール取得成功: U-NEXT Pirates → ('', '', '')
+2026-03-31 14:47:53.924 | INFO     | __main__:run_collect:99 - メール取得成功: NAME.O → ('', '', '')
+2026-03-31 14:47:59.787 | INFO     | __main__:run_collect:99 - メール取得成功: 院卒ライダー ゆうか → ('', '', '')
+2026-03-31 14:48:05.484 | INFO     | __main__:run_collect:99 - メール取得成功: NAME.O → ('', '', '')
+2026-03-31 14:48:11.265 | INFO     | __main__:run_collect:99 - メール取得成功: NAME.O → ('', '', '')
+2026-03-31 14:48:16.341 | INFO     | __main__:run_collect:99 - メール取得成功: NAME.O → ('', '', '')
+2026-03-31 14:48:21.915 | INFO     | __main__:run_collect:99 - メール取得成功: アクロバット相談室 → ('', '', '')
+2026-03-31 14:48:28.320 | INFO     | __main__:run_collect:99 - メール取得成功: 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel → ('', '', '')
+2026-03-31 14:48:44.680 | INFO     | __main__:run_collect:99 - メール取得成功: T[てぃー] handmade → ('https://stand.fm/channels/5f5acb93f04', '', 'https://help.stand.fm/')
+2026-03-31 14:48:49.546 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:48:54.665 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:49:09.689 | INFO     | __main__:run_collect:99 - メール取得成功: T[てぃー] handmade → ('https://stand.fm/channels/5f5acb93f04', '', 'https://help.stand.fm/')
+2026-03-31 14:49:14.536 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:49:19.830 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:49:35.443 | INFO     | __main__:run_collect:99 - メール取得成功: T[てぃー] handmade → ('https://stand.fm/channels/5f5acb93f04', '', 'https://help.stand.fm/')
+2026-03-31 14:49:40.066 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:49:45.168 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:50:01.734 | INFO     | __main__:run_collect:99 - メール取得成功: T[てぃー] handmade → ('https://stand.fm/channels/5f5acb93f04', '', 'https://help.stand.fm/')
+2026-03-31 14:50:50.629 | INFO     | __main__:run_collect:99 - メール取得成功: AFL JAPAN / 日本オーストラリアンフットボール協会 → ('http://www.jafl.org/', '', 'https://forms.gle/PKQ5gBMYP8u8kknw6')
+2026-03-31 14:50:55.733 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:51:00.994 | INFO     | __main__:run_collect:99 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-03-31 14:51:11.963 | INFO     | __main__:run_collect:99 - メール取得成功: Up-T（アップティー）YouTubeチャンネル → ('https://up-t.jp/', 'info@up-t.jp', 'https://up-t.jp/page.php?p=faq')
+2026-03-31 14:51:23.265 | INFO     | __main__:run_collect:99 - メール取得成功: Up-T（アップティー）YouTubeチャンネル → ('https://up-t.jp/', 'info@up-t.jp', 'https://up-t.jp/page.php?p=faq')
+2026-03-31 14:51:28.960 | INFO     | __main__:run_collect:99 - メール取得成功: O! CLOCK (オクロック) → ('', '', '')
+2026-03-31 14:51:39.820 | INFO     | __main__:run_collect:99 - メール取得成功: Up-T（アップティー）YouTubeチャンネル → ('https://up-t.jp/', 'info@up-t.jp', 'https://up-t.jp/page.php?p=faq')
+2026-03-31 14:51:45.748 | INFO     | __main__:run_collect:99 - メール取得成功: 体幹ケア → ('', '', '')
+2026-03-31 14:51:50.911 | INFO     | __main__:run_collect:99 - メール取得成功: ヘルスケア治療院 → ('', '', '')
+2026-03-31 14:51:50.912 | INFO     | __main__:run_collect:107 - Step 3.5 完了: 64件のメール取得
+2026-03-31 14:51:50.912 | INFO     | __main__:run_collect:109 - 
+============================================================
+2026-03-31 14:51:50.912 | INFO     | __main__:run_collect:110 - ✅ 収集フロー完了
+2026-03-31 14:51:50.912 | INFO     | __main__:run_collect:111 - ============================================================
