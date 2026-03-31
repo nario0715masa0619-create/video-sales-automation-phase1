@@ -70,6 +70,10 @@ def run_collect(keywords=None, dry_run=False):
     if rejected_channels:
         logger.debug(f"除外されたチャンネル: {[ch.channel_name for ch in rejected_channels[:10]]}")
     channels = passed_channels
+    # URL で重複排除
+    unique_channels = {ch.channel.channel_url: ch for ch in channels}
+    channels = list(unique_channels.values())
+    logger.info(f"重複排除後: {len(channels)}件")
     logger.info(f"チャンネル候補: {len(channels)}件")
     
     if not channels:
