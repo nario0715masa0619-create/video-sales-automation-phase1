@@ -48,7 +48,7 @@ SERPAPI_KEYS: list[str] = [
     os.getenv("SERPAPI_KEY_2", ""),
     os.getenv("SERPAPI_KEY", ""),
 ]
-SERPAPI_KEY_INDEX: int = 0  # 現在使用中のキーインデックス
+SERPAPI_KEY_INDEX: int = 1  # 現在使用中のキーインデックス
 
 # ==================================================
 # 自社情報（メール署名）

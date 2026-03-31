@@ -64,6 +64,11 @@ def run_collect(keywords=None, dry_run=False):
             channels.append(stats)
     
     passed_channels, rejected_channels = filter_by_icp(channels)
+    logger.info(f"ICP フィルタリング前: {len(channels)}件")
+    logger.info(f"ICP フィルタリング後: {len(passed_channels)}件（合格）")
+    logger.info(f"ICP フィルタリング除外: {len(rejected_channels)}件（不合格）")
+    if rejected_channels:
+        logger.debug(f"除外されたチャンネル: {[ch.channel_name for ch in rejected_channels[:10]]}")
     channels = passed_channels
     logger.info(f"チャンネル候補: {len(channels)}件")
     
