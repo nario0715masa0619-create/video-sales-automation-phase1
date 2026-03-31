@@ -37,12 +37,18 @@ SHEET_MASTER: str = os.getenv("SHEET_MASTER", "マスタ設定")
 # Gemini API 設定
 # ==================================================
 GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-1.5-flash")
+GEMINI_MODEL: str = os.getenv("GEMINI_MODEL", "gemini-3-pro-preview")
 
 # ==================================================
 # SerpAPI 設定
 # ==================================================
-SERPAPI_KEY: str = os.getenv("SERPAPI_KEY", "")
+# SERPAPI_KEY: str = os.getenv("SERPAPI_KEY", "")  # 廃止
+SERPAPI_KEYS: list[str] = [
+    os.getenv("SERPAPI_KEY_1", ""),
+    os.getenv("SERPAPI_KEY_2", ""),
+    os.getenv("SERPAPI_KEY", ""),
+]
+SERPAPI_KEY_INDEX: int = 1  # 現在使用中のキーインデックス
 
 # ==================================================
 # 自社情報（メール署名）
@@ -194,5 +200,8 @@ if __name__ == "__main__":
     print(f"   GEMINI_MODEL: {GEMINI_MODEL}")
     print(f"   EMAIL_MAX_SEQUENCE: {EMAIL_MAX_SEQUENCE}通")
     print(f"   EMAIL_TARGET_RANKS: {EMAIL_TARGET_RANKS}")
+
+
+
 
 

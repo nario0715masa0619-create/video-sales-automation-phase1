@@ -22,6 +22,7 @@ class FlowResult:
 from scorer import score_channels
 from crm_manager import upsert_lead
 from email_extractor import get_email_from_youtube_channel
+from utils import normalize_url
 
 JST = timezone('Asia/Tokyo')
 
@@ -52,7 +53,8 @@ def run_collect(keywords=None, dry_run=False):
     logger.info("\n=== Step 1: ターゲット候補の検索・スクレイピング ===")
     all_urls = []
     for keyword in keywords:
-        urls = search_company_channels(keyword, config.SERPAPI_KEY)
+        current_key = config.SERPAPI_KEYS[config.SERPAPI_KEY_INDEX]
+        urls = search_company_channels(keyword, current_key)
         all_urls.extend(urls)
     
     channels = []
@@ -62,6 +64,11 @@ def run_collect(keywords=None, dry_run=False):
             channels.append(stats)
     
     passed_channels, rejected_channels = filter_by_icp(channels)
+    logger.info(f"ICP フィルタリング前: {len(channels)}件")
+    logger.info(f"ICP フィルタリング後: {len(passed_channels)}件（合格）")
+    logger.info(f"ICP フィルタリング除外: {len(rejected_channels)}件（不合格）")
+    if rejected_channels:
+        logger.debug(f"除外されたチャンネル: {[ch.channel_name for ch in rejected_channels[:10]]}")
     channels = passed_channels
     logger.info(f"チャンネル候補: {len(channels)}件")
     
@@ -84,8 +91,8 @@ def run_collect(keywords=None, dry_run=False):
     logger.info("\n=== Step 3.5: メールアドレス自動取得 ===")
     email_count = 0
     for ch in scored_channels:
-        channel_url = ch.get("url")
-        company_name = ch.get("company_name")
+        channel_url = ch.channel.channel_url
+        company_name = ch.channel_name
         try:
             email = get_email_from_youtube_channel(channel_url)
             if email:
@@ -106,6 +113,14 @@ def run_collect(keywords=None, dry_run=False):
 if __name__ == "__main__":
     logger.add("logs/collect.log", rotation="500 MB", retention="7 days")
     run_collect()
+
+
+
+
+
+
+
+
 
 
 
