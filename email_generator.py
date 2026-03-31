@@ -556,3 +556,4 @@ if __name__ == "__main__":
         content = generate_email(test_lead, num)
         print(f"件名: {content.subject}")
         print(f"本文:\n{content.body[:200]}...")
+

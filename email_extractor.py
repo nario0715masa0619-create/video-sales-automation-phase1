@@ -14,6 +14,7 @@ import logging
 import requests
 import yt_dlp
 from urllib.parse import urlparse, urljoin
+from utils import normalize_url
 from bs4 import BeautifulSoup
 
 REQUEST_TIMEOUT = 10
@@ -249,7 +250,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                              
                 if is_contact:
                     if not contact_form_url:
-                        contact_form_url = abs_url
+                        contact_form_url = normalize_url(abs_url)
                         logger.info(f"フォームのみ発見 ({contact_form_url})")
 
                     # 同一ドメイン（サブドメイン含む簡易判定）を優先
@@ -320,7 +321,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                     
                 # フォームURLの補完
                 if not contact_form_url and any(kw in url.lower() for kw in contact_form_keywords):
-                    contact_form_url = url
+                    contact_form_url = normalize_url(url)
                     logger.info(f"フォームのみ発見 ({contact_form_url})")
         except Exception as e:
             logger.debug(f"クロール失敗 ({url}): {e}")
@@ -349,7 +350,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                 return best_email, contact_form_url
 
             if not contact_form_url and any(kw in url.lower() for kw in contact_form_keywords):
-                contact_form_url = url
+                contact_form_url = normalize_url(url)
                 logger.info(f"フォームのみ発見 ({contact_form_url})")
 
         except Exception as e:
@@ -391,3 +392,5 @@ if __name__ == '__main__':
         print(f"  公式サイト:       {website or '取得失敗'}")
         print(f"  メール:           {email or '未発見'}")
         print(f"  お問い合わせURL:  {form_url or '未発見'}")
+
+
