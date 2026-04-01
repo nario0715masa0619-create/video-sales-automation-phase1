@@ -285,17 +285,17 @@ def _generate_effect_prediction(
 def _build_email_1(lead: dict, personalized: dict) -> EmailContent:
     """
     1通目: 初回接触メール
-    自己紹介 + 動画への一言コメント + スクレイピング分析の強み紹介 + 資料オファー
+    自己紹介 + 動画への一言コメント + 無料診断オファー
     """
     latest_title = (lead.get('最新動画タイトル') or "").strip()
     subject_title = latest_title if latest_title else "YouTube動画"
 
     subject = (
-        f"{lead.get('会社名', '御社')}様の"
-        f"「{subject_title[:20]}」を拝見しました"
+    f"{lead.get('会社名', '御社')}様の"
+    f"「{subject_title[:20]}」を拝見しました"
     )
 
-    company = (lead.get('会社名') or "").strip()
+    company = lead.get('会社名', '').strip()
     recipient_line = f"{company} 御中" if company else "ご担当者様"
 
     body = f"""
@@ -303,27 +303,257 @@ def _build_email_1(lead: dict, personalized: dict) -> EmailContent:
 
 はじめまして。{config.MY_COMPANY_NAME}の{config.MY_NAME}と申します。
 
-御社のYouTubeチャンネル「{lead.get('チャンネル名', '')}」、
-特に「{latest_title or '直近の動画'}」を拝見し、ご連絡しました。
+御社のYouTubeチャンネル「{lead.get('チャンネル名', '')}」を拝見し、\
+特に「{latest_title or '直近の動画'}」の内容でご連絡いたしました。
 
 {personalized.get('video_comment', '')}
 
-弊社では、直近の動画をスクレイピングしてJSON化し、
-タイトルや概要欄の重要ワードと再生数の関係をスコアリングしています。
+弊社では、動画を活用したマーケ・営業の改善に特化した
+「動画チャンネル無料診断」を提供しています。
 
+御社のチャンネルを簡単に拝見したところ、
 {personalized.get('improvement_hint', '')}
-といった点が、伸ばしやすいポイントだと感じました。
 
-この仕組みで御社に対して「何ができるか」をまとめた
-サービス概要（カタログ）をご用意していますので、
-「資料希望」とだけご返信ください。
+よろしければ、5分程度のお時間をいただき、
+簡単な診断結果をお伝えできればと思います。
 
-どうぞよろしくお願いいたします。
+ご都合のよい日程をご返信いただければ幸いです。
 {config.EMAIL_SIGNATURE}
 """.strip()
 
     return EmailContent(
+        email_num=1,
         subject=subject,
         body=body,
-        type="email_1",
+        personalized_comment=personalized.get('video_comment', ''),
+        improvement_hint=personalized.get('improvement_hint', ''),
     )
+
+
+def _build_email_2(lead: dict, personalized: dict) -> EmailContent:
+    """
+    2通目: 事例・ベネフィットの具体例
+    """
+    subject = "【事例】動画改善で問い合わせ数が2.3倍になった話"
+
+    company = lead.get('会社名', '').strip()
+    recipient_line = f"{company} 御中" if company else "ご担当者様"
+
+    body = f"""
+{recipient_line}
+
+先日ご連絡した{config.MY_COMPANY_NAME}の{config.MY_NAME}です。
+
+ご多忙の中恐れ入ります。
+今回は参考になるかと思い、事例をご紹介させてください。
+
+■ 類似ケースの改善事例
+動画マーケティングに取り組む企業様で、
+チャンネル分析と改善提案を実施したところ、
+・問い合わせ数：+130%（3ヶ月後）
+・動画の平均視聴維持率：+45%
+という結果が出ています。
+
+{personalized.get('case_study_detail', '')}
+
+無料診断は30分程度のオンラインMTGで完結します。
+一度お試しいただけませんか？
+
+ご返信をお待ちしております。
+{config.EMAIL_SIGNATURE}
+""".strip()
+
+    return EmailContent(
+        email_num=2,
+        subject=subject,
+        body=body,
+    )
+
+
+def _build_email_3(lead: dict, personalized: dict) -> EmailContent:
+    """
+    3通目: FAQ対応（料金・工数・効果への回答）
+    """
+    subject = "よくあるご質問にお答えします（料金・工数・効果）"
+
+    company = lead.get('会社名', '').strip()
+    recipient_line = f"{company} 御中" if company else "ご担当者様"
+
+    body = f"""
+{recipient_line}
+
+{config.MY_COMPANY_NAME}の{config.MY_NAME}です。
+
+これまでにご検討いただいた企業様からよくいただくご質問に
+事前にお答えしておきます。
+
+Q. 料金はどのくらいかかりますか？
+A. まず無料診断から始めていただけます。
+   その後のご支援は内容によって5〜30万円/月が目安ですが、
+   まずは診断結果をご覧いただいてから検討いただければ十分です。
+
+Q. 自社の工数はかかりますか？
+A. ヒアリング（30分）以外は弊社側で完結します。
+
+Q. 本当に効果がありますか？
+A. {lead.get('会社名', '御社')}様のチャンネルの場合、\
+{personalized.get('effect_prediction', '')}
+
+一度だけお話を聞いていただけませんか？
+{config.EMAIL_SIGNATURE}
+""".strip()
+
+    return EmailContent(
+        email_num=3,
+        subject=subject,
+        body=body,
+    )
+
+
+def _build_email_4(lead: dict, personalized: dict) -> EmailContent:
+    """
+    4通目: 締めのリマインド（最後のメール）
+    """
+    subject = f"最後のご連絡です（{lead.get('会社名', '御社')}様へ）"
+
+    company = lead.get('会社名', '').strip()
+    recipient_line = f"{company} 御中" if company else "ご担当者様"
+
+    body = f"""
+{recipient_line}
+
+{config.MY_COMPANY_NAME}の{config.MY_NAME}です。
+
+これまで数回ご連絡させていただきましたが、
+本メールを最後のご連絡とさせていただきます。
+
+もしタイミングが合わなかっただけであれば、
+いつでもお声がけください。
+
+■ 無料診断でわかること
+・チャンネルの「伸び代スコア」（独自指標）
+・競合チャンネルとの差異分析
+・今すぐできる改善アクション3つ
+
+ご興味があれば、このメールにご返信いただくだけで
+診断の日程調整が可能です。
+
+ありがとうございました。
+{config.EMAIL_SIGNATURE}
+""".strip()
+
+    return EmailContent(
+        email_num=4,
+        subject=subject,
+        body=body,
+    )
+
+
+# ==================================================
+# メイン生成関数
+# ==================================================
+
+def generate_email(lead: dict, email_num: int) -> EmailContent:
+    """
+    リードデータと通数を元に、パーソナライズされたメール文を生成する。
+
+    Args:
+        lead: CRMから取得したリードデータの辞書
+            キー例: 会社名、チャンネル名、最新動画タイトル、
+                    平均再生数、平均エンゲージメント率、ランク 等
+        email_num: 送信する通数（1〜4）
+
+    Returns:
+        EmailContent: 生成されたメールコンテンツ
+
+    Raises:
+        ValueError: email_num が 1〜4 の範囲外の場合
+    """
+    if email_num not in range(1, config.EMAIL_MAX_SEQUENCE + 1):
+        raise ValueError(f"email_num は 1〜{config.EMAIL_MAX_SEQUENCE} の範囲で指定してください")
+
+    channel_name = lead.get("チャンネル名", "")
+    company_name = lead.get("会社名", "")
+    latest_title = lead.get("最新動画タイトル", "")
+    avg_view = float(lead.get("平均再生数", 0) or 0)
+    avg_engagement = float(str(lead.get("平均エンゲージメント率", 0) or 0).replace('%', ''))
+    trend = lead.get("成長トレンド", "横ばい")
+    rank = lead.get("ランク", "B")
+    industry = lead.get("業種", "")
+    videos_3m = int(lead.get("投稿数（直近3ヶ月）", 0) or 0)
+
+    logger.info(f"メール生成開始: {company_name} - {email_num}通目")
+
+    # Gemini を使ったパーソナライズコンテンツの生成
+    personalized: dict = {}
+
+    if email_num == 1:
+        # 1通目: 動画コメント + 改善ポイント が必要
+        personalized["video_comment"] = _generate_video_comment(
+            channel_name, latest_title
+        )
+        personalized["improvement_hint"] = _generate_improvement_hint(
+            channel_name, videos_3m, avg_view, avg_engagement, trend, rank
+        )
+
+    elif email_num == 2:
+        # 2通目: 事例の具体的な指摘が必要
+        personalized["case_study_detail"] = _generate_case_study_detail(
+            channel_name, industry, rank
+        )
+
+    elif email_num == 3:
+        # 3通目: 効果予測が必要
+        personalized["effect_prediction"] = _generate_effect_prediction(
+            channel_name, avg_view, avg_engagement
+        )
+
+    # 4通目はパーソナライズ不要（定型文でOK）
+
+    # テンプレートビルダーで組み立て
+    builders = {
+        1: _build_email_1,
+        2: _build_email_2,
+        3: _build_email_3,
+        4: _build_email_4,
+    }
+
+    email_content = builders[email_num](lead, personalized)
+
+    if not email_content.is_valid():
+        logger.error(f"メール生成失敗（空の件名または本文）: {company_name} - {email_num}通目")
+    else:
+        logger.info(f"メール生成完了: {email_content}")
+
+    return email_content
+
+
+# ==================================================
+# メイン処理（単体テスト用）
+# ==================================================
+
+if __name__ == "__main__":
+    logger.info("=== email_generator.py 単体テスト ===")
+    logger.info("※ GEMINI_API_KEY が必要です")
+
+    # テスト用リードデータ
+    test_lead = {
+        "会社名": "グリーンライフ株式会社",
+        "担当者名": "鈴木様",
+        "チャンネル名": "GreenLife公式チャンネル",
+        "最新動画タイトル": "オーガニック野菜の選び方｜失敗しない5つのポイント",
+        "投稿数（直近3ヶ月）": 10,
+        "平均再生数": 3200,
+        "平均エンゲージメント率": 4.5,
+        "成長トレンド": "上昇",
+        "ランク": "A",
+        "業種": "EC/D2C",
+    }
+
+    for num in range(1, 5):
+        print(f"\n{'='*60}")
+        print(f"【{num}通目】")
+        content = generate_email(test_lead, num)
+        print(f"件名: {content.subject}")
+        print(f"本文:\n{content.body[:200]}...")
+

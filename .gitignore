@@ -19,3 +19,4 @@ logs/
 # Credentials
 credentials/*
 video-sales-automation-*.json
+.env
