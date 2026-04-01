@@ -1,243 +1,500 @@
-2026-03-31 21:05:28.212 | INFO     | __main__:run_collect:37 - ============================================================
-2026-03-31 21:05:28.212 | INFO     | __main__:run_collect:38 - 収集フロー開始
-2026-03-31 21:05:28.212 | INFO     | __main__:run_collect:39 - ============================================================
-2026-03-31 21:05:28.212 | INFO     | __main__:run_collect:50 - キーワード: ['YouTube 集客', 'セミナー YouTube', 'オンライン講座 YouTube', 'ウェビナー YouTube', 'スクール YouTube', '教室 YouTube', 'クリニック YouTube', 'ジム YouTube', '整体院 YouTube', '学習塾 YouTube', '士業 YouTube', 'コーチング YouTube']
-2026-03-31 21:05:28.212 | INFO     | __main__:run_collect:53 - 
+2026-04-01 18:23:37.344 | INFO     | __main__:run_collect:37 - ============================================================
+2026-04-01 18:23:37.345 | INFO     | __main__:run_collect:38 - 収集フロー開始
+2026-04-01 18:23:37.345 | INFO     | __main__:run_collect:39 - ============================================================
+2026-04-01 18:23:37.345 | INFO     | __main__:run_collect:45 - キーワード: ['YouTube 集客', 'セミナー YouTube', 'オンライン講座 YouTube', 'ウェビナー YouTube', 'スクール YouTube', '教室 YouTube', 'クリニック YouTube', 'ジム YouTube', '整体院 YouTube', '学習塾 YouTube', '士業 YouTube', 'コーチング YouTube']
+2026-04-01 18:23:37.345 | INFO     | __main__:run_collect:48 - 
 === Step 1: ターゲット候補の検索・スクレイピング ===
-2026-03-31 21:28:47.657 | INFO     | __main__:run_collect:67 - ICP フィルタリング前: 952件
-2026-03-31 21:28:47.658 | INFO     | __main__:run_collect:68 - ICP フィルタリング後: 193件（合格）
-2026-03-31 21:28:47.658 | INFO     | __main__:run_collect:69 - ICP フィルタリング除外: 759件（不合格）
-2026-03-31 21:28:47.658 | DEBUG    | __main__:run_collect:71 - 除外されたチャンネル: ['U-NEXT', 'U-NEXT', 'U-NEXT格闘技公式', 'B.LEAGUE - Japan Professional Basketball League', 'Takara Blevins', 'U-NEXT ゴルフ公式', 'O-VER-KiLL公式Channel', 'Uriahhhh', 'フレン・E・ルスタリオ', 'O- MENZ OFFICIAL']
-2026-03-31 21:28:47.658 | INFO     | __main__:run_collect:76 - 重複排除後: 44件
-2026-03-31 21:28:47.658 | INFO     | __main__:run_collect:77 - チャンネル候補: 44件
-2026-03-31 21:28:47.658 | INFO     | __main__:run_collect:84 - 
+2026-04-01 18:28:27.338 | INFO     | __main__:run_collect:37 - ============================================================
+2026-04-01 18:28:27.338 | INFO     | __main__:run_collect:38 - 収集フロー開始
+2026-04-01 18:28:27.338 | INFO     | __main__:run_collect:39 - ============================================================
+2026-04-01 18:28:27.338 | INFO     | __main__:run_collect:45 - キーワード: ['YouTube活用', '動画マーケティング', 'オンライン営業', 'SNS活用', '動画集客', 'ウェビナー', 'YouTube広告', 'インフルエンサー', 'チャンネル運用', 'コンテンツマーケティング', 'ビジネスYouTube', '企業動画']
+2026-04-01 18:28:27.338 | INFO     | __main__:run_collect:48 - 
+=== Step 1: ターゲット候補の検索・スクレイピング ===
+2026-04-01 18:51:00.096 | INFO     | __main__:run_collect:37 - ============================================================
+2026-04-01 18:51:00.096 | INFO     | __main__:run_collect:38 - 収集フロー開始
+2026-04-01 18:51:00.096 | INFO     | __main__:run_collect:39 - ============================================================
+2026-04-01 18:51:00.096 | INFO     | __main__:run_collect:45 - キーワード: ['YouTube活用', '動画マーケティング', 'オンライン営業', 'SNS活用', '動画集客', 'ウェビナー', 'YouTube広告', 'インフルエンサー', 'チャンネル運用', 'コンテンツマーケティング', 'ビジネスYouTube', '企業動画']
+2026-04-01 18:51:00.097 | INFO     | __main__:run_collect:48 - 
+=== Step 1: ターゲット候補の検索・スクレイピング ===
+2026-04-01 19:03:14.279 | INFO     | __main__:run_collect:62 - ICP フィルタリング前: 484件
+2026-04-01 19:03:14.280 | INFO     | __main__:run_collect:63 - ICP フィルタリング後: 100件（合格）
+2026-04-01 19:03:14.280 | INFO     | __main__:run_collect:64 - ICP フィルタリング除外: 384件（不合格）
+2026-04-01 19:03:14.280 | DEBUG    | __main__:run_collect:66 - 除外されたチャンネル: ['B.LEAGUE - Japan Professional Basketball League', 'U-NEXT ゴルフ公式', 'Takahiro Y', 'U-NEXT フットボール', 'B.LEAGUE - Japan Professional Basketball League', 'Y!mobile(ワイモバイル)', 'ラメリィとo-3のサブチャンネル', 'フレン・E・ルスタリオ', 'T.LEAGUE', 'Sumi-e Artist RENSUI']
+2026-04-01 19:03:14.280 | INFO     | __main__:run_collect:71 - 重複排除後: 51件
+2026-04-01 19:03:14.280 | INFO     | __main__:run_collect:72 - チャンネル候補: 51件
+2026-04-01 19:03:14.280 | INFO     | __main__:run_collect:79 - 
 === Step 2+3: スコアリングと CRM 更新 ===
-2026-03-31 21:28:47.658 | DEBUG    | scorer:calculate_score:283 - O! CLOCK (オクロック): 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
-2026-03-31 21:28:47.658 | DEBUG    | scorer:calculate_score:283 - Up-T（アップティー）YouTubeチャンネル: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - Tテレ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - T先輩: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - プロバスケットボールチーム「青森ワッツ」B.LEAGUE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - Y Racing[ゆた]: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - T[てぃー] handmade: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - NAME.O: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - シャキタ&S.O.ドドド: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - U-NEXT Pirates: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:12/20 → 合計50.0点(Bランク)
-2026-03-31 21:28:47.659 | DEBUG    | scorer:calculate_score:283 - U-NEXT テニス: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計67.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - T-STONE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - のぶナ。ちゃんねる: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - イブライチャンネル: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計35.0点(Cランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - 劇団前進座: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - 『座』ちゃんねる: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - AFL JAPAN / 日本オーストラリアンフットボール協会: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - ミヤタコーへイ : 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - 明治座公式YouTubeチャンネル: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - 音楽座ミュージカル: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.660 | DEBUG    | scorer:calculate_score:283 - 善了寺ともに講 公式チャンネル: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - ふぇーくん: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:0/20 → 合計38.0点(Cランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - 美麗-Bi-ray-: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - ねく: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計35.0点(Cランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - 文京区公式チャンネル: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:0/20 → 合計30.0点(Cランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - 江戸川区公式チャンネル えどがわ区民ニュース: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:0/20 → 合計30.0点(Cランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - ルアルアチャンネル: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - N1★にきル: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - カワニシカバンの社長室: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - 教社Radio: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計35.0点(Cランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - 採用こっそり相談室: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - ラグビーリパブリック: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - ナナブンノニジュウニ 計算外: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - しーじ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.661 | DEBUG    | scorer:calculate_score:283 - 院卒ライダー ゆうか: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - 体幹ケア: 投稿頻度:20/30 再生数:0/25 エンゲージ:0/25 トレンド:0/20 → 合計20.0点(Cランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - ヘルスケア治療院: 投稿頻度:10/30 再生数:8/25 エンゲージ:0/25 トレンド:0/20 → 合計18.0点(Cランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - 個別指導の明光義塾【公式】: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計65.0点(Bランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - ゆる音楽学ラジオ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - 白谷塾チャンネル: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:0/20 → 合計30.0点(Cランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - 新人社長が行く！製造業チャンネル: 投稿頻度:20/30 再生数:15/25 エンゲージ:0/25 トレンド:20/20 → 合計55.0点(Bランク)
-2026-03-31 21:28:47.662 | DEBUG    | scorer:calculate_score:283 - うぃんぐ / Wing Game ch.: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計67.0点(Bランク)
-2026-03-31 21:28:47.662 | INFO     | scorer:score_channels:314 - スコアリング完了: Aランク 3件 / Bランク 32件 / Cランク 9件
-2026-03-31 21:28:47.662 | INFO     | __main__:run_collect:86 - スコアリング完了: 44件
-2026-03-31 21:28:47.662 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: O! CLOCK (オクロック)
-2026-03-31 21:28:47.688 | INFO     | crm_manager:_get_client:155 - Google Sheets クライアント初期化完了
-2026-03-31 21:28:48.887 | INFO     | crm_manager:_get_spreadsheet:163 - スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
-2026-03-31 21:28:50.294 | INFO     | crm_manager:upsert_lead:289 - リード更新: O! CLOCK (オクロック) (行104, 15セル)
-2026-03-31 21:28:50.295 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:28:54.296 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: シャキタ&S.O.ドドド
-2026-03-31 21:28:55.667 | INFO     | crm_manager:upsert_lead:289 - リード更新: シャキタ&S.O.ドドド (行33, 15セル)
-2026-03-31 21:28:55.668 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:28:59.669 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ルアルアチャンネル
-2026-03-31 21:29:01.009 | INFO     | crm_manager:upsert_lead:289 - リード更新: ルアルアチャンネル (行35, 15セル)
-2026-03-31 21:29:01.009 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:05.011 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT テニス
-2026-03-31 21:29:06.338 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT テニス (行41, 15セル)
-2026-03-31 21:29:06.339 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:10.340 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: うぃんぐ / Wing Game ch.
-2026-03-31 21:29:11.531 | INFO     | crm_manager:upsert_lead:320 - リード新規追加: うぃんぐ / Wing Game ch.
-2026-03-31 21:29:13.533 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 個別指導の明光義塾【公式】
-2026-03-31 21:29:14.863 | INFO     | crm_manager:upsert_lead:289 - リード更新: 個別指導の明光義塾【公式】 (行89, 15セル)
-2026-03-31 21:29:14.864 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:18.865 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Tテレ
-2026-03-31 21:29:20.255 | INFO     | crm_manager:upsert_lead:289 - リード更新: Tテレ (行39, 15セル)
-2026-03-31 21:29:20.257 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:24.258 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T先輩
-2026-03-31 21:29:25.596 | INFO     | crm_manager:upsert_lead:289 - リード更新: T先輩 (行40, 15セル)
-2026-03-31 21:29:25.597 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:29.598 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: プロバスケットボールチーム「青森ワッツ」B.LEAGUE
-2026-03-31 21:29:30.969 | INFO     | crm_manager:upsert_lead:289 - リード更新: プロバスケットボールチーム「青森ワッツ」B.LEAGUE (行43, 15セル)
-2026-03-31 21:29:30.969 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:34.970 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T-STONE
-2026-03-31 21:29:36.647 | INFO     | crm_manager:upsert_lead:289 - リード更新: T-STONE (行42, 15セル)
-2026-03-31 21:29:36.648 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:40.649 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: のぶナ。ちゃんねる
-2026-03-31 21:29:42.018 | INFO     | crm_manager:upsert_lead:289 - リード更新: のぶナ。ちゃんねる (行44, 15セル)
-2026-03-31 21:29:42.020 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:46.020 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 劇団前進座
-2026-03-31 21:29:47.931 | INFO     | crm_manager:upsert_lead:289 - リード更新: 劇団前進座 (行48, 15セル)
-2026-03-31 21:29:47.932 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:51.933 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 明治座公式YouTubeチャンネル
-2026-03-31 21:29:53.601 | INFO     | crm_manager:upsert_lead:289 - リード更新: 明治座公式YouTubeチャンネル (行45, 15セル)
-2026-03-31 21:29:53.602 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:29:57.603 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 音楽座ミュージカル
-2026-03-31 21:29:59.209 | INFO     | crm_manager:upsert_lead:289 - リード更新: 音楽座ミュージカル (行47, 15セル)
-2026-03-31 21:29:59.210 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:03.210 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ナナブンノニジュウニ 計算外
-2026-03-31 21:30:04.587 | INFO     | crm_manager:upsert_lead:289 - リード更新: ナナブンノニジュウニ 計算外 (行51, 15セル)
-2026-03-31 21:30:04.588 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:08.589 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: しーじ
-2026-03-31 21:30:09.642 | INFO     | crm_manager:upsert_lead:320 - リード新規追加: しーじ
-2026-03-31 21:30:11.643 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ゆる音楽学ラジオ
-2026-03-31 21:30:13.647 | INFO     | crm_manager:upsert_lead:289 - リード更新: ゆる音楽学ラジオ (行53, 15セル)
-2026-03-31 21:30:13.648 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:17.649 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 新人社長が行く！製造業チャンネル
-2026-03-31 21:30:19.785 | INFO     | crm_manager:upsert_lead:289 - リード更新: 新人社長が行く！製造業チャンネル (行54, 15セル)
-2026-03-31 21:30:19.785 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:23.786 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT Pirates
-2026-03-31 21:30:25.142 | INFO     | crm_manager:upsert_lead:289 - リード更新: U-NEXT Pirates (行75, 15セル)
-2026-03-31 21:30:25.143 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:29.145 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: NAME.O
-2026-03-31 21:30:30.456 | INFO     | crm_manager:upsert_lead:289 - リード更新: NAME.O (行55, 15セル)
-2026-03-31 21:30:30.457 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:34.458 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 美麗-Bi-ray-
-2026-03-31 21:30:36.483 | INFO     | crm_manager:upsert_lead:289 - リード更新: 美麗-Bi-ray- (行56, 15セル)
-2026-03-31 21:30:36.484 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:40.485 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Y Racing[ゆた]
-2026-03-31 21:30:42.352 | INFO     | crm_manager:upsert_lead:289 - リード更新: Y Racing[ゆた] (行109, 15セル)
-2026-03-31 21:30:42.353 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:46.354 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T[てぃー] handmade
-2026-03-31 21:30:47.682 | INFO     | crm_manager:upsert_lead:289 - リード更新: T[てぃー] handmade (行59, 15セル)
-2026-03-31 21:30:47.684 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:51.686 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
-2026-03-31 21:30:53.096 | INFO     | crm_manager:upsert_lead:289 - リード更新: 腕時計と僕。Y (行58, 15セル)
-2026-03-31 21:30:53.097 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:30:57.098 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 『座』ちゃんねる
-2026-03-31 21:30:58.434 | INFO     | crm_manager:upsert_lead:289 - リード更新: 『座』ちゃんねる (行60, 15セル)
-2026-03-31 21:30:58.435 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:02.436 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: AFL JAPAN / 日本オーストラリアンフットボール協会
-2026-03-31 21:31:04.255 | INFO     | crm_manager:upsert_lead:289 - リード更新: AFL JAPAN / 日本オーストラリアンフットボール協会 (行62, 15セル)
-2026-03-31 21:31:04.256 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:08.257 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ミヤタコーへイ 
-2026-03-31 21:31:09.596 | INFO     | crm_manager:upsert_lead:289 - リード更新: ミヤタコーへイ  (行63, 15セル)
-2026-03-31 21:31:09.597 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:13.598 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 善了寺ともに講 公式チャンネル
-2026-03-31 21:31:14.990 | INFO     | crm_manager:upsert_lead:289 - リード更新: 善了寺ともに講 公式チャンネル (行61, 15セル)
-2026-03-31 21:31:14.990 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:18.991 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: N1★にきル
-2026-03-31 21:31:20.330 | INFO     | crm_manager:upsert_lead:289 - リード更新: N1★にきル (行110, 15セル)
-2026-03-31 21:31:20.331 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:24.332 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: カワニシカバンの社長室
-2026-03-31 21:31:25.649 | INFO     | crm_manager:upsert_lead:289 - リード更新: カワニシカバンの社長室 (行50, 15セル)
-2026-03-31 21:31:25.650 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:29.651 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 採用こっそり相談室
-2026-03-31 21:31:31.195 | INFO     | crm_manager:upsert_lead:289 - リード更新: 採用こっそり相談室 (行65, 15セル)
-2026-03-31 21:31:31.197 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:35.197 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ラグビーリパブリック
-2026-03-31 21:31:36.492 | INFO     | crm_manager:upsert_lead:289 - リード更新: ラグビーリパブリック (行128, 15セル)
-2026-03-31 21:31:36.493 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:40.494 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 院卒ライダー ゆうか
-2026-03-31 21:31:41.864 | INFO     | crm_manager:upsert_lead:289 - リード更新: 院卒ライダー ゆうか (行57, 15セル)
-2026-03-31 21:31:41.865 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:45.867 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel
-2026-03-31 21:31:47.176 | INFO     | crm_manager:upsert_lead:289 - リード更新: 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel (行97, 15セル)
-2026-03-31 21:31:47.177 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:51.178 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Up-T（アップティー）YouTubeチャンネル
-2026-03-31 21:31:52.538 | INFO     | crm_manager:upsert_lead:289 - リード更新: Up-T（アップティー）YouTubeチャンネル (行68, 15セル)
-2026-03-31 21:31:52.540 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:31:56.541 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ふぇーくん
-2026-03-31 21:31:57.803 | INFO     | crm_manager:upsert_lead:289 - リード更新: ふぇーくん (行70, 15セル)
-2026-03-31 21:31:57.804 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:01.804 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: イブライチャンネル
-2026-03-31 21:32:03.244 | INFO     | crm_manager:upsert_lead:289 - リード更新: イブライチャンネル (行78, 15セル)
-2026-03-31 21:32:03.245 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:07.246 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ねく
-2026-03-31 21:32:09.116 | INFO     | crm_manager:upsert_lead:289 - リード更新: ねく (行84, 15セル)
-2026-03-31 21:32:09.117 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:13.119 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 教社Radio
-2026-03-31 21:32:14.429 | INFO     | crm_manager:upsert_lead:289 - リード更新: 教社Radio (行71, 15セル)
-2026-03-31 21:32:14.430 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:18.430 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 文京区公式チャンネル
-2026-03-31 21:32:19.482 | INFO     | crm_manager:upsert_lead:320 - リード新規追加: 文京区公式チャンネル
-2026-03-31 21:32:21.484 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 江戸川区公式チャンネル えどがわ区民ニュース
-2026-03-31 21:32:22.831 | INFO     | crm_manager:upsert_lead:289 - リード更新: 江戸川区公式チャンネル えどがわ区民ニュース (行127, 15セル)
-2026-03-31 21:32:22.832 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:26.833 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 白谷塾チャンネル
-2026-03-31 21:32:28.150 | INFO     | crm_manager:upsert_lead:289 - リード更新: 白谷塾チャンネル (行121, 15セル)
-2026-03-31 21:32:28.152 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:32.153 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 体幹ケア
-2026-03-31 21:32:33.511 | INFO     | crm_manager:upsert_lead:289 - リード更新: 体幹ケア (行73, 15セル)
-2026-03-31 21:32:33.512 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:37.513 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ヘルスケア治療院
-2026-03-31 21:32:38.877 | INFO     | crm_manager:upsert_lead:289 - リード更新: ヘルスケア治療院 (行74, 15セル)
-2026-03-31 21:32:38.878 | INFO     | crm_manager:upsert_lead:290 - [upsert_lead] 完了
-2026-03-31 21:32:42.879 | INFO     | __main__:run_collect:92 - CRM 更新: 44件
-2026-03-31 21:32:42.880 | INFO     | __main__:run_collect:95 - 
+2026-04-01 19:03:14.280 | DEBUG    | scorer:calculate_score:283 - Tテレ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.280 | DEBUG    | scorer:calculate_score:283 - T-STONE: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
+2026-04-01 19:03:14.280 | DEBUG    | scorer:calculate_score:283 - 腕時計と僕。Y: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.280 | DEBUG    | scorer:calculate_score:283 - プロバスケットボールチーム「青森ワッツ」B.LEAGUE: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - Y Racing[ゆた]: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - U-NEXT Pirates: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:12/20 → 合計57.0点(Bランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - U-NEXT テニス: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計67.0点(Bランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - NAME.O: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - O! CLOCK (オクロック): 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - Up-T（アップティー）YouTubeチャンネル: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - AFL JAPAN / 日本オーストラリアンフットボール協会: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - millioneon うえでぃー: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-04-01 19:03:14.281 | DEBUG    | scorer:calculate_score:283 - 南瓜ぐてぃ with 西瓜@アクションゲーム ch.: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - ふぁるすてぃ《iDEN LiLY》: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - 南瓜ぐてぃ with 西瓜@RPG ch.: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - Ma-tonTV#國井米: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - アキ兄ィ:元皇居エアコン担当のプロ: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - 【公式】福岡伸一の動的平衡チャンネル: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - Happy ART 【結絆 ハルカの独学・ゼロから始める色鉛筆画🎨】: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - そーいんぐ実況 わかこ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - ちゃんねるテレポート山陰: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - ミヤタコーへイ : 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - 新人社長が行く！製造業チャンネル: 投稿頻度:20/30 再生数:15/25 エンゲージ:0/25 トレンド:20/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - ともにい: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - イブライチャンネル: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計35.0点(Cランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - N: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-04-01 19:03:14.282 | DEBUG    | scorer:calculate_score:283 - N: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - 弱小YouTuber⭐︎Sちゃん【猫Photo Rider】: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - 西日本新聞社の動画スタジオ N-Studio TENJIN: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - ふぇふぇ: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:0/20 → 合計38.0点(Cランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - ぱっふぇるちゃんねる: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:20/20 → 合計58.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - 美麗-Bi-ray-: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:12/20 → 合計47.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - ディズニーロルカナ【公式】: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:12/20 → 合計42.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - ウボスチャンネル: 投稿頻度:20/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計65.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - ウビアチャンネル ubia: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - おんせん県おおいた公式（大分県広報広聴課）: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:0/20 → 合計30.0点(Cランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - はせひろ スモールビジネス経営者の日常: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - 広テレ!公式チャンネル【広島テレビオンデマンド】: 投稿頻度:30/30 再生数:0/25 エンゲージ:0/25 トレンド:0/20 → 合計30.0点(Cランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - みんなきんさい広電チャンネル【広島電鉄公式】: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - サ活のサ: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計35.0点(Cランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - SA D A: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:12/20 → 合計50.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - N1★にきル: 投稿頻度:30/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計45.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - 世界一受けたいバレエ教室 ことえ先生: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.283 | DEBUG    | scorer:calculate_score:283 - ふわふわふうふ / fluffy couple: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.284 | DEBUG    | scorer:calculate_score:283 - ふじたふーふ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.284 | DEBUG    | scorer:calculate_score:283 - ルアルアチャンネル: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:20/20 → 合計75.0点(Aランク)
+2026-04-01 19:03:14.284 | DEBUG    | scorer:calculate_score:283 - Ne MUSIC: 投稿頻度:10/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計35.0点(Cランク)
+2026-04-01 19:03:14.284 | DEBUG    | scorer:calculate_score:283 - ツ: 投稿頻度:30/30 再生数:25/25 エンゲージ:0/25 トレンド:0/20 → 合計55.0点(Bランク)
+2026-04-01 19:03:14.284 | DEBUG    | scorer:calculate_score:283 -  ハピーツスイーツチャンネル: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:0/20 → 合計38.0点(Cランク)
+2026-04-01 19:03:14.284 | DEBUG    | scorer:calculate_score:283 - ツsmileyツ: 投稿頻度:30/30 再生数:8/25 エンゲージ:0/25 トレンド:0/20 → 合計38.0点(Cランク)
+2026-04-01 19:03:14.284 | DEBUG    | scorer:calculate_score:283 - 永井みつるのキギョズム研究室 (企ギョズム): 投稿頻度:20/30 再生数:15/25 エンゲージ:0/25 トレンド:0/20 → 合計35.0点(Cランク)
+2026-04-01 19:03:14.284 | INFO     | scorer:score_channels:314 - スコアリング完了: Aランク 5件 / Bランク 37件 / Cランク 9件
+2026-04-01 19:03:14.284 | INFO     | __main__:run_collect:81 - スコアリング完了: 51件
+2026-04-01 19:03:14.284 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: O! CLOCK (オクロック)
+2026-04-01 19:03:14.309 | INFO     | crm_manager:_get_client:155 - Google Sheets クライアント初期化完了
+2026-04-01 19:03:15.680 | INFO     | crm_manager:_get_spreadsheet:163 - スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-04-01 19:03:17.675 | INFO     | crm_manager:upsert_lead:291 - リード更新: O! CLOCK (オクロック) (行104, 16セル)
+2026-04-01 19:03:17.676 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:03:21.677 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: millioneon うえでぃー
+2026-04-01 19:03:22.912 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: millioneon うえでぃー
+2026-04-01 19:03:24.913 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ちゃんねるテレポート山陰
+2026-04-01 19:03:26.098 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ちゃんねるテレポート山陰
+2026-04-01 19:03:28.100 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: N
+2026-04-01 19:03:29.287 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: N
+2026-04-01 19:03:31.289 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ルアルアチャンネル
+2026-04-01 19:03:33.047 | INFO     | crm_manager:upsert_lead:291 - リード更新: ルアルアチャンネル (行35, 16セル)
+2026-04-01 19:03:33.048 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:03:37.049 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT テニス
+2026-04-01 19:03:38.570 | INFO     | crm_manager:upsert_lead:291 - リード更新: U-NEXT テニス (行41, 16セル)
+2026-04-01 19:03:38.571 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:03:42.572 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ウボスチャンネル
+2026-04-01 19:03:43.881 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ウボスチャンネル
+2026-04-01 19:03:45.882 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ぱっふぇるちゃんねる
+2026-04-01 19:03:47.447 | INFO     | crm_manager:upsert_lead:291 - リード更新: ぱっふぇるちゃんねる (行124, 16セル)
+2026-04-01 19:03:47.448 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:03:51.449 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: U-NEXT Pirates
+2026-04-01 19:03:52.899 | INFO     | crm_manager:upsert_lead:291 - リード更新: U-NEXT Pirates (行75, 16セル)
+2026-04-01 19:03:52.900 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:03:56.901 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Tテレ
+2026-04-01 19:03:58.338 | INFO     | crm_manager:upsert_lead:291 - リード更新: Tテレ (行39, 16セル)
+2026-04-01 19:03:58.339 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:04:02.340 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: プロバスケットボールチーム「青森ワッツ」B.LEAGUE
+2026-04-01 19:04:03.741 | INFO     | crm_manager:upsert_lead:291 - リード更新: プロバスケットボールチーム「青森ワッツ」B.LEAGUE (行43, 16セル)
+2026-04-01 19:04:03.741 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:04:07.742 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 南瓜ぐてぃ with 西瓜@アクションゲーム ch.
+2026-04-01 19:04:08.902 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 南瓜ぐてぃ with 西瓜@アクションゲーム ch.
+2026-04-01 19:04:10.904 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ふぁるすてぃ《iDEN LiLY》
+2026-04-01 19:04:12.033 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ふぁるすてぃ《iDEN LiLY》
+2026-04-01 19:04:14.034 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 南瓜ぐてぃ with 西瓜@RPG ch.
+2026-04-01 19:04:15.201 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 南瓜ぐてぃ with 西瓜@RPG ch.
+2026-04-01 19:04:17.202 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Ma-tonTV#國井米
+2026-04-01 19:04:18.443 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: Ma-tonTV#國井米
+2026-04-01 19:04:20.445 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: アキ兄ィ:元皇居エアコン担当のプロ
+2026-04-01 19:04:21.581 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: アキ兄ィ:元皇居エアコン担当のプロ
+2026-04-01 19:04:23.582 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 【公式】福岡伸一の動的平衡チャンネル
+2026-04-01 19:04:24.916 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 【公式】福岡伸一の動的平衡チャンネル
+2026-04-01 19:04:26.917 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: そーいんぐ実況 わかこ
+2026-04-01 19:04:28.175 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: そーいんぐ実況 わかこ
+2026-04-01 19:04:30.176 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 新人社長が行く！製造業チャンネル
+2026-04-01 19:04:31.727 | INFO     | crm_manager:upsert_lead:291 - リード更新: 新人社長が行く！製造業チャンネル (行54, 16セル)
+2026-04-01 19:04:31.728 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:04:35.728 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ともにい
+2026-04-01 19:04:37.606 | INFO     | crm_manager:upsert_lead:291 - リード更新: ともにい (行46, 16セル)
+2026-04-01 19:04:37.606 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:04:41.607 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: N
+2026-04-01 19:04:43.876 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: N
+2026-04-01 19:04:45.876 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ウビアチャンネル ubia
+2026-04-01 19:04:47.317 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ウビアチャンネル ubia
+2026-04-01 19:04:49.319 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: はせひろ スモールビジネス経営者の日常
+2026-04-01 19:04:50.525 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: はせひろ スモールビジネス経営者の日常
+2026-04-01 19:04:52.526 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: みんなきんさい広電チャンネル【広島電鉄公式】
+2026-04-01 19:04:54.299 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: みんなきんさい広電チャンネル【広島電鉄公式】
+2026-04-01 19:04:56.300 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 世界一受けたいバレエ教室 ことえ先生
+2026-04-01 19:04:57.589 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 世界一受けたいバレエ教室 ことえ先生
+2026-04-01 19:04:59.591 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ふわふわふうふ / fluffy couple
+2026-04-01 19:05:01.020 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ふわふわふうふ / fluffy couple
+2026-04-01 19:05:03.023 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ふじたふーふ
+2026-04-01 19:05:04.463 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ふじたふーふ
+2026-04-01 19:05:06.464 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ツ
+2026-04-01 19:05:08.061 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ツ
+2026-04-01 19:05:10.062 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: SA D A
+2026-04-01 19:05:12.004 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: SA D A
+2026-04-01 19:05:14.005 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: NAME.O
+2026-04-01 19:05:16.427 | INFO     | crm_manager:upsert_lead:291 - リード更新: NAME.O (行55, 16セル)
+2026-04-01 19:05:16.428 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:05:20.428 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 美麗-Bi-ray-
+2026-04-01 19:05:22.447 | INFO     | crm_manager:upsert_lead:291 - リード更新: 美麗-Bi-ray- (行56, 16セル)
+2026-04-01 19:05:22.447 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:05:26.448 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 腕時計と僕。Y
+2026-04-01 19:05:28.240 | INFO     | crm_manager:upsert_lead:291 - リード更新: 腕時計と僕。Y (行58, 16セル)
+2026-04-01 19:05:28.241 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:05:32.243 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Y Racing[ゆた]
+2026-04-01 19:05:33.669 | INFO     | crm_manager:upsert_lead:291 - リード更新: Y Racing[ゆた] (行109, 16セル)
+2026-04-01 19:05:33.669 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:05:37.671 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: AFL JAPAN / 日本オーストラリアンフットボール協会
+2026-04-01 19:05:39.156 | INFO     | crm_manager:upsert_lead:291 - リード更新: AFL JAPAN / 日本オーストラリアンフットボール協会 (行62, 16セル)
+2026-04-01 19:05:39.157 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:05:43.158 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Happy ART 【結絆 ハルカの独学・ゼロから始める色鉛筆画🎨】
+2026-04-01 19:05:44.579 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: Happy ART 【結絆 ハルカの独学・ゼロから始める色鉛筆画🎨】
+2026-04-01 19:05:46.579 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ミヤタコーへイ 
+2026-04-01 19:05:48.014 | INFO     | crm_manager:upsert_lead:291 - リード更新: ミヤタコーへイ  (行63, 16セル)
+2026-04-01 19:05:48.014 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:05:52.015 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 弱小YouTuber⭐︎Sちゃん【猫Photo Rider】
+2026-04-01 19:05:53.150 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 弱小YouTuber⭐︎Sちゃん【猫Photo Rider】
+2026-04-01 19:05:55.151 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 西日本新聞社の動画スタジオ N-Studio TENJIN
+2026-04-01 19:05:56.419 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 西日本新聞社の動画スタジオ N-Studio TENJIN
+2026-04-01 19:05:58.419 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: N1★にきル
+2026-04-01 19:05:59.857 | INFO     | crm_manager:upsert_lead:291 - リード更新: N1★にきル (行110, 16セル)
+2026-04-01 19:05:59.858 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:06:03.859 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: T-STONE
+2026-04-01 19:06:05.708 | INFO     | crm_manager:upsert_lead:291 - リード更新: T-STONE (行42, 16セル)
+2026-04-01 19:06:05.709 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:06:09.710 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Up-T（アップティー）YouTubeチャンネル
+2026-04-01 19:06:11.241 | INFO     | crm_manager:upsert_lead:291 - リード更新: Up-T（アップティー）YouTubeチャンネル (行68, 16セル)
+2026-04-01 19:06:11.242 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:06:15.243 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ディズニーロルカナ【公式】
+2026-04-01 19:06:16.668 | INFO     | crm_manager:upsert_lead:291 - リード更新: ディズニーロルカナ【公式】 (行69, 16セル)
+2026-04-01 19:06:16.668 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:06:20.669 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ふぇふぇ
+2026-04-01 19:06:21.843 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ふぇふぇ
+2026-04-01 19:06:23.843 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始:  ハピーツスイーツチャンネル
+2026-04-01 19:06:25.123 | INFO     | crm_manager:upsert_lead:322 - リード新規追加:  ハピーツスイーツチャンネル
+2026-04-01 19:06:27.123 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: ツsmileyツ
+2026-04-01 19:06:28.269 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: ツsmileyツ
+2026-04-01 19:06:30.271 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: イブライチャンネル
+2026-04-01 19:06:31.727 | INFO     | crm_manager:upsert_lead:291 - リード更新: イブライチャンネル (行78, 16セル)
+2026-04-01 19:06:31.728 | INFO     | crm_manager:upsert_lead:292 - [upsert_lead] 完了
+2026-04-01 19:06:35.729 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: サ活のサ
+2026-04-01 19:06:36.905 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: サ活のサ
+2026-04-01 19:06:38.907 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: Ne MUSIC
+2026-04-01 19:06:40.136 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: Ne MUSIC
+2026-04-01 19:06:42.137 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 永井みつるのキギョズム研究室 (企ギョズム)
+2026-04-01 19:06:43.430 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 永井みつるのキギョズム研究室 (企ギョズム)
+2026-04-01 19:06:45.431 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: おんせん県おおいた公式（大分県広報広聴課）
+2026-04-01 19:06:46.629 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: おんせん県おおいた公式（大分県広報広聴課）
+2026-04-01 19:06:48.630 | INFO     | crm_manager:upsert_lead:232 - [upsert_lead] 開始: 広テレ!公式チャンネル【広島テレビオンデマンド】
+2026-04-01 19:06:49.739 | INFO     | crm_manager:upsert_lead:322 - リード新規追加: 広テレ!公式チャンネル【広島テレビオンデマンド】
+2026-04-01 19:06:51.740 | INFO     | __main__:run_collect:87 - CRM 更新: 51件
+2026-04-01 19:06:51.741 | INFO     | __main__:run_collect:90 - 
 === Step 3.5: メールアドレス自動取得 ===
-2026-03-31 21:32:51.205 | INFO     | __main__:run_collect:103 - メール取得成功: O! CLOCK (オクロック) → ('https://gate-one.co.jp/map', '', 'https://gate-one.co.jp/contact/')
-2026-03-31 21:32:52.755 | INFO     | __main__:run_collect:103 - メール取得成功: シャキタ&S.O.ドドド → ('', '', '')
-2026-03-31 21:32:54.541 | INFO     | __main__:run_collect:103 - メール取得成功: ルアルアチャンネル → ('https://lure-ch.tv', 'info@lure-ch.tv', '')
-2026-03-31 21:32:56.189 | INFO     | __main__:run_collect:103 - メール取得成功: U-NEXT テニス → ('', '', '')
-2026-03-31 21:32:57.341 | INFO     | __main__:run_collect:103 - メール取得成功: うぃんぐ / Wing Game ch. → ('', '', '')
-2026-03-31 21:33:00.878 | INFO     | __main__:run_collect:103 - メール取得成功: 個別指導の明光義塾【公式】 → ('https://www.meikogijuku.jp/', '', 'https://www.meikogijuku.jp/contact/entry')
-2026-03-31 21:33:02.488 | INFO     | __main__:run_collect:103 - メール取得成功: Tテレ → ('', '', '')
-2026-03-31 21:33:05.597 | INFO     | __main__:run_collect:103 - メール取得成功: T先輩 → ('https://sir-tk.hatenablog.com', '', '')
-2026-03-31 21:33:07.192 | INFO     | __main__:run_collect:103 - メール取得成功: プロバスケットボールチーム「青森ワッツ」B.LEAGUE → ('', '', '')
-2026-03-31 21:33:10.536 | INFO     | __main__:run_collect:103 - メール取得成功: T-STONE → ('https://t-to-da-mf-stone.com/', '', 'https://lin.ee/pt2VCDo')
-2026-03-31 21:33:15.514 | INFO     | __main__:run_collect:103 - メール取得成功: のぶナ。ちゃんねる → ('https://ja.twitcasting.tv/c:nobuna2525', 'info@twitcasting.tv', 'https://ja.twitcasting.tv/helpcenter.php?pid=HELP_GUIDELINE_COMMUNITY')
-2026-03-31 21:33:17.677 | INFO     | __main__:run_collect:103 - メール取得成功: 劇団前進座 → ('https://zenshinza.com', 'p-zenshinzagekijo@nowgetta.com', 'https://zenshinza.com/zen-support/index.html')
-2026-03-31 21:33:24.829 | INFO     | __main__:run_collect:103 - メール取得成功: 明治座公式YouTubeチャンネル → ('https://meijiza.co.jp', '', 'https://meijiza.co.jp/performance-time/')
-2026-03-31 21:33:30.066 | INFO     | __main__:run_collect:103 - メール取得成功: 音楽座ミュージカル → ('https://ongakuza-musical.com', '', 'https://ongakuza-musical.com/contact')
-2026-03-31 21:33:35.508 | INFO     | __main__:run_collect:103 - メール取得成功: ナナブンノニジュウニ 計算外 → ('https://nanabunnonijyuuni.com', '', 'https://nanabunnonijyuuni.com/s/n110/page/official_contact?ima=3332')
-2026-03-31 21:33:37.142 | INFO     | __main__:run_collect:103 - メール取得成功: しーじ → ('', '', '')
-2026-03-31 21:33:38.495 | INFO     | __main__:run_collect:103 - メール取得成功: ゆる音楽学ラジオ → ('', '', '')
-2026-03-31 21:33:43.942 | INFO     | __main__:run_collect:103 - メール取得成功: 新人社長が行く！製造業チャンネル → ('https://seek-consulting.jp', '', 'https://seek-consulting.jp/contact/')
-2026-03-31 21:33:50.538 | INFO     | __main__:run_collect:103 - メール取得成功: U-NEXT Pirates → ('https://eshop.unext-pirates.jp', '', 'https://thebase.com/inquiry/upirates')
-2026-03-31 21:33:55.800 | INFO     | __main__:run_collect:103 - メール取得成功: NAME.O → ('https://bio.to/NAME.O', '', 'https://help.linkfire.com/hc/en-us')
-2026-03-31 21:34:00.379 | INFO     | __main__:run_collect:103 - メール取得成功: 美麗-Bi-ray- → ('https://jp.bi-ray.net', '', 'https://avex.com/jp/ja/contact/')
-2026-03-31 21:34:06.845 | INFO     | __main__:run_collect:103 - メール取得成功: Y Racing[ゆた] → ('https://minkara.carview.co.jp/smart/u...', '', 'https://minkara.carview.co.jp/help/')
-2026-03-31 21:34:10.920 | INFO     | __main__:run_collect:103 - メール取得成功: T[てぃー] handmade → ('https://stand.fm/channels/5f5acb93f04', '', 'https://help.stand.fm/')
-2026-03-31 21:34:12.319 | INFO     | __main__:run_collect:103 - メール取得成功: 腕時計と僕。Y → ('', '', '')
-2026-03-31 21:34:20.094 | INFO     | __main__:run_collect:103 - メール取得成功: 『座』ちゃんねる → ('https://za01.org', '', 'https://za01.org/contact.html')
-2026-03-31 21:34:33.947 | INFO     | __main__:run_collect:103 - メール取得成功: AFL JAPAN / 日本オーストラリアンフットボール協会 → ('http://www.jafl.org/', '', 'https://forms.gle/PKQ5gBMYP8u8kknw6')
-2026-03-31 21:34:35.820 | INFO     | __main__:run_collect:103 - メール取得成功: ミヤタコーへイ  → ('', '', '')
-2026-03-31 21:34:42.692 | INFO     | __main__:run_collect:103 - メール取得成功: 善了寺ともに講 公式チャンネル → ('https://zenryouji.jp/tomoniko', '', 'https://www.chadeau.com/otoiawase')
-2026-03-31 21:34:45.234 | INFO     | __main__:run_collect:103 - メール取得成功: N1★にきル → ('', '', '')
-2026-03-31 21:34:48.333 | INFO     | __main__:run_collect:103 - メール取得成功: カワニシカバンの社長室 → ('https://lin.ee/siQX4e2', '', '')
-2026-03-31 21:34:52.830 | INFO     | __main__:run_collect:103 - メール取得成功: 採用こっそり相談室 → ('https://forms.gle/TM9xYRs1WgxXc1q67', '', '')
-2026-03-31 21:34:56.882 | INFO     | __main__:run_collect:103 - メール取得成功: ラグビーリパブリック → ('https://rugby-rp.com/', '', 'https://rugby-rp.com/contact')
-2026-03-31 21:34:58.856 | INFO     | __main__:run_collect:103 - メール取得成功: 院卒ライダー ゆうか → ('', '', '')
-2026-03-31 21:37:42.651 | INFO     | __main__:run_collect:103 - メール取得成功: 音楽院 音届[おとどけ]チャンネル【公式】OtodokeChannel → ('https://ongakuin.jp', '', '')
-2026-03-31 21:37:45.312 | INFO     | __main__:run_collect:103 - メール取得成功: Up-T（アップティー）YouTubeチャンネル → ('https://up-t.jp/', 'info@up-t.jp', 'https://up-t.jp/page.php?p=faq')
-2026-03-31 21:37:47.340 | INFO     | __main__:run_collect:103 - メール取得成功: ふぇーくん → ('', '', '')
-2026-03-31 21:37:48.369 | INFO     | __main__:run_collect:103 - メール取得成功: イブライチャンネル → ('', '', '')
-2026-03-31 21:37:50.059 | INFO     | __main__:run_collect:103 - メール取得成功: ねく → ('', '', '')
-2026-03-31 21:37:56.478 | INFO     | __main__:run_collect:103 - メール取得成功: 教社Radio → ('https://kyosha.hiroshima-u.ac.jp', '', 'https://kyosha.hiroshima-u.ac.jp/contact')
-2026-03-31 21:37:59.605 | INFO     | __main__:run_collect:103 - メール取得成功: 文京区公式チャンネル → ('https://city.bunkyo.lg.jp', '', '')
-2026-03-31 21:38:05.393 | INFO     | __main__:run_collect:103 - メール取得成功: 江戸川区公式チャンネル えどがわ区民ニュース → ('https://news.city.edogawa.tokyo.jp', '', 'https://news.city.edogawa.tokyo.jp/contact/')
-2026-03-31 21:38:08.376 | INFO     | __main__:run_collect:103 - メール取得成功: 白谷塾チャンネル → ('https://shiratani.online', '', '')
-2026-03-31 21:38:12.832 | INFO     | __main__:run_collect:103 - メール取得成功: 体幹ケア → ('https://taikancare.com', '', 'https://taikancare.com/contents/category/information/')
-2026-03-31 21:38:13.879 | INFO     | __main__:run_collect:103 - メール取得成功: ヘルスケア治療院 → ('', '', '')
-2026-03-31 21:38:13.879 | INFO     | __main__:run_collect:111 - Step 3.5 完了: 44件のメール取得
-2026-03-31 21:38:13.880 | INFO     | __main__:run_collect:113 - 
+2026-04-01 19:06:59.338 | INFO     | __main__:run_collect:98 - メール取得成功: O! CLOCK (オクロック) → ('https://gate-one.co.jp/map', '', 'https://gate-one.co.jp/contact/')
+2026-04-01 19:07:05.231 | INFO     | __main__:run_collect:98 - メール取得成功: millioneon うえでぃー → ('https://millioneon.base.shop', '', 'https://thebase.com/inquiry/millioneon-base-shop')
+2026-04-01 19:07:07.501 | INFO     | __main__:run_collect:98 - メール取得成功: ちゃんねるテレポート山陰 → ('http://www.bss.jp/', '', '')
+2026-04-01 19:07:12.920 | INFO     | __main__:run_collect:98 - メール取得成功: N → ('https://www.twitch.tv/n_noirloup', '', 'https://www.twitch.tv/contact')
+2026-04-01 19:07:14.701 | INFO     | __main__:run_collect:98 - メール取得成功: ルアルアチャンネル → ('https://lure-ch.tv', 'info@lure-ch.tv', '')
+2026-04-01 19:07:16.627 | INFO     | __main__:run_collect:98 - メール取得成功: U-NEXT テニス → ('', '', '')
+2026-04-01 19:07:18.341 | INFO     | __main__:run_collect:98 - メール取得成功: ウボスチャンネル → ('', '', '')
+2026-04-01 19:07:23.971 | INFO     | __main__:run_collect:98 - メール取得成功: ぱっふぇるちゃんねる → ('https://marshmallow-qa.com/pachel_v?utm_medium=twitter&utm_source=promotion', '', 'https://marshmallow-qa.com/help/premium')
+2026-04-01 19:07:29.622 | INFO     | __main__:run_collect:98 - メール取得成功: U-NEXT Pirates → ('https://eshop.unext-pirates.jp', '', 'https://thebase.com/inquiry/upirates')
+2026-04-01 19:07:30.805 | INFO     | __main__:run_collect:98 - メール取得成功: Tテレ → ('', '', '')
+2026-04-01 19:07:32.198 | INFO     | __main__:run_collect:98 - メール取得成功: プロバスケットボールチーム「青森ワッツ」B.LEAGUE → ('', '', '')
+2026-04-01 19:07:33.673 | INFO     | __main__:run_collect:98 - メール取得成功: 南瓜ぐてぃ with 西瓜@アクションゲーム ch. → ('', '', '')
+2026-04-01 19:07:37.458 | INFO     | __main__:run_collect:98 - メール取得成功: ふぁるすてぃ《iDEN LiLY》 → ('https://fallstayp.fanbox.cc', '', '')
+2026-04-01 19:07:38.885 | INFO     | __main__:run_collect:98 - メール取得成功: 南瓜ぐてぃ with 西瓜@RPG ch. → ('', '', '')
+2026-04-01 19:07:44.658 | INFO     | __main__:run_collect:98 - メール取得成功: Ma-tonTV#國井米 → ('https://kuniimai.base.shop', '', 'https://thebase.com/inquiry/kuniimai-base-shop')
+2026-04-01 19:07:45.893 | INFO     | __main__:run_collect:98 - メール取得成功: アキ兄ィ:元皇居エアコン担当のプロ → ('', '', '')
+2026-04-01 19:07:49.628 | INFO     | __main__:run_collect:98 - メール取得成功: 【公式】福岡伸一の動的平衡チャンネル → ('https://www.fukuokashinichi.com/', '', 'https://www.fukuokashinichi.com/contact')
+2026-04-01 19:07:50.963 | INFO     | __main__:run_collect:98 - メール取得成功: そーいんぐ実況 わかこ → ('', '', '')
+2026-04-01 19:07:55.876 | INFO     | __main__:run_collect:98 - メール取得成功: 新人社長が行く！製造業チャンネル → ('https://seek-consulting.jp', '', 'https://seek-consulting.jp/contact/')
+2026-04-01 19:07:57.245 | INFO     | __main__:run_collect:98 - メール取得成功: ともにい → ('', '', '')
+2026-04-01 19:08:00.816 | INFO     | __main__:run_collect:98 - メール取得成功: N → ('https://3080xoq.booth.pm', '', '')
+2026-04-01 19:08:02.238 | INFO     | __main__:run_collect:98 - メール取得成功: ウビアチャンネル ubia → ('', '', '')
+2026-04-01 19:08:03.822 | INFO     | __main__:run_collect:98 - メール取得成功: はせひろ スモールビジネス経営者の日常 → ('https://hero-stories.jp/', 'info@hero-stories.jp', 'https://hero-stories.jp#contact')
+2026-04-01 19:08:09.431 | INFO     | __main__:run_collect:98 - メール取得成功: みんなきんさい広電チャンネル【広島電鉄公式】 → ('https://hiroden.co.jp', '', 'https://www.hiroden.co.jp/topics/2025/1001-businformation.html')
+2026-04-01 19:08:12.424 | INFO     | __main__:run_collect:98 - メール取得成功: 世界一受けたいバレエ教室 ことえ先生 → ('https://cheriegroup.com/', '', 'https://cheriegroup.com/inquire/')
+2026-04-01 19:08:13.910 | INFO     | __main__:run_collect:98 - メール取得成功: ふわふわふうふ / fluffy couple → ('', '', '')
+2026-04-01 19:08:15.133 | INFO     | __main__:run_collect:98 - メール取得成功: ふじたふーふ → ('', '', '')
+2026-04-01 19:08:16.939 | INFO     | __main__:run_collect:98 - メール取得成功: ツ → ('', '', '')
+2026-04-01 19:08:18.458 | INFO     | __main__:run_collect:98 - メール取得成功: SA D A → ('', '', '')
+2026-04-01 19:08:23.651 | INFO     | __main__:run_collect:98 - メール取得成功: NAME.O → ('https://bio.to/NAME.O', '', 'https://help.linkfire.com/hc/en-us')
+2026-04-01 19:08:27.670 | INFO     | __main__:run_collect:98 - メール取得成功: 美麗-Bi-ray- → ('https://jp.bi-ray.net', '', 'https://avex.com/jp/ja/contact/')
+2026-04-01 19:08:29.632 | INFO     | __main__:run_collect:98 - メール取得成功: 腕時計と僕。Y → ('', '', '')
+2026-04-01 19:08:35.213 | INFO     | __main__:run_collect:98 - メール取得成功: Y Racing[ゆた] → ('https://minkara.carview.co.jp/smart/u...', '', 'https://minkara.carview.co.jp/help/')
+2026-04-01 19:08:51.228 | INFO     | __main__:run_collect:98 - メール取得成功: AFL JAPAN / 日本オーストラリアンフットボール協会 → ('http://www.jafl.org/', '', 'https://forms.gle/PKQ5gBMYP8u8kknw6')
+2026-04-01 19:08:53.705 | INFO     | __main__:run_collect:98 - メール取得成功: Happy ART 【結絆 ハルカの独学・ゼロから始める色鉛筆画🎨】 → ('https://www.bungeisha.co.jp/bookinfo/detail/978-4-286-24281-1.jsp', 'kouhou@bungeisha.co.jp', 'https://www.bungeisha.co.jp/publishing/form/')
+2026-04-01 19:08:55.274 | INFO     | __main__:run_collect:98 - メール取得成功: ミヤタコーへイ  → ('', '', '')
+2026-04-01 19:08:56.742 | INFO     | __main__:run_collect:98 - メール取得成功: 弱小YouTuber⭐︎Sちゃん【猫Photo Rider】 → ('', '', '')
+2026-04-01 19:08:58.380 | INFO     | __main__:run_collect:98 - メール取得成功: 西日本新聞社の動画スタジオ N-Studio TENJIN → ('https://n-studiotenjin.jp/', 'mail@nishinippon.co.jp', 'https://jxkb.f.msgs.jp/webapp/form/24943_jxkb_1/index.do')
+2026-04-01 19:09:00.704 | INFO     | __main__:run_collect:98 - メール取得成功: N1★にきル → ('', '', '')
+2026-04-01 19:09:04.139 | INFO     | __main__:run_collect:98 - メール取得成功: T-STONE → ('https://t-to-da-mf-stone.com/', '', 'https://lin.ee/pt2VCDo')
+2026-04-01 19:09:06.582 | INFO     | __main__:run_collect:98 - メール取得成功: Up-T（アップティー）YouTubeチャンネル → ('https://up-t.jp/', 'info@up-t.jp', 'https://up-t.jp/page.php?p=faq')
+2026-04-01 19:09:07.352 | INFO     | __main__:run_collect:98 - メール取得成功: ディズニーロルカナ【公式】 → ('', '', '')
+2026-04-01 19:09:11.440 | INFO     | __main__:run_collect:98 - メール取得成功: ふぇふぇ → ('https://auctions.yahoo.co.jp/seller/5mfCLWQnYtuW157smnNvwEQq5yT7?user_type=c', '', 'https://support.yahoo-net.jp/noscript')
+2026-04-01 19:09:15.867 | INFO     | __main__:run_collect:98 - メール取得成功:  ハピーツスイーツチャンネル → ('http://atelier-s-liaison.com/', '', 'https://atelier-s-liaison.com/contact/')
+2026-04-01 19:09:20.650 | INFO     | __main__:run_collect:98 - メール取得成功: ツsmileyツ → ('https://scratch.mit.edu/users/maverickharlen', '', '')
+2026-04-01 19:09:21.663 | INFO     | __main__:run_collect:98 - メール取得成功: イブライチャンネル → ('', '', '')
+2026-04-01 19:09:22.640 | INFO     | __main__:run_collect:98 - メール取得成功: サ活のサ → ('', '', '')
+2026-04-01 19:09:23.638 | INFO     | __main__:run_collect:98 - メール取得成功: Ne MUSIC → ('', '', '')
+2026-04-01 19:09:27.535 | INFO     | __main__:run_collect:98 - メール取得成功: 永井みつるのキギョズム研究室 (企ギョズム) → ('https://forms.gle/1nHM11r69KWKwjDE6', '', '')
+2026-04-01 19:09:39.740 | INFO     | __main__:run_collect:98 - メール取得成功: おんせん県おおいた公式（大分県広報広聴課） → ('https://pref.oita.jp', '', '')
+2026-04-01 19:09:43.145 | INFO     | __main__:run_collect:98 - メール取得成功: 広テレ!公式チャンネル【広島テレビオンデマンド】 → ('https://htv.jp', '', '')
+2026-04-01 19:09:43.146 | INFO     | __main__:run_collect:106 - Step 3.5 完了: 51件のメール取得
+2026-04-01 19:09:43.146 | INFO     | __main__:run_collect:108 - 
 ============================================================
-2026-03-31 21:38:13.880 | INFO     | __main__:run_collect:114 - ✅ 収集フロー完了
-2026-03-31 21:38:13.880 | INFO     | __main__:run_collect:115 - ============================================================
+2026-04-01 19:09:43.146 | INFO     | __main__:run_collect:109 - ✅ 収集フロー完了
+2026-04-01 19:09:43.146 | INFO     | __main__:run_collect:110 - ============================================================
+2026-04-01 22:26:53.740 | INFO     | ======================================================================
+2026-04-01 22:26:53.742 | INFO     | 📊 収集フロー開始（YouTube Data API 最適化版）
+2026-04-01 22:26:53.742 | INFO     | ======================================================================
+2026-04-01 22:26:53.742 | INFO     | キーワード数: 2
+2026-04-01 22:26:53.743 | INFO     | キーワード: ['YouTube活用', '動画マーケティング']
+2026-04-01 22:26:53.743 | INFO     | 
+=== Step 1: チャンネル検索（search.list） ===
+2026-04-01 22:26:53.743 | INFO     | YouTube 検索開始: YouTube活用
+2026-04-01 22:26:54.460 | INFO     | 検索完了: YouTube活用 → 50 チャンネル（クォータ消費: 100）
+2026-04-01 22:26:55.464 | INFO     | YouTube 検索開始: 動画マーケティング
+2026-04-01 22:26:56.149 | INFO     | 検索完了: 動画マーケティング → 50 チャンネル（クォータ消費: 100）
+2026-04-01 22:26:57.151 | INFO     | チャンネル検索完了: 100 チャンネル
+2026-04-01 22:26:57.152 | INFO     | クォータ使用: 200/10000 (2.0%)
+2026-04-01 22:26:57.153 | INFO     | ✅ 検索結果: 100 チャンネル取得
+2026-04-01 22:26:57.153 | INFO     | 
+=== Step 2: チャンネル詳細取得（channels.list） ===
+2026-04-01 22:26:59.055 | WARNING  | ⏹️  ユーザーによる中断
+2026-04-01 22:27:57.361 | INFO     | ======================================================================
+2026-04-01 22:27:57.361 | INFO     | 📊 収集フロー開始（YouTube Data API 最適化版）
+2026-04-01 22:27:57.361 | INFO     | ======================================================================
+2026-04-01 22:27:57.361 | INFO     | キーワード数: 2
+2026-04-01 22:27:57.361 | INFO     | キーワード: ['YouTube活用', '動画マーケティング']
+2026-04-01 22:27:57.361 | INFO     | 
+=== Step 1: チャンネル検索（search.list） ===
+2026-04-01 22:27:57.361 | INFO     | 検索キャッシュヒット: YouTube活用 (50 チャンネル)
+2026-04-01 22:27:58.362 | INFO     | 検索キャッシュヒット: 動画マーケティング (50 チャンネル)
+2026-04-01 22:27:59.363 | INFO     | チャンネル検索完了: 100 チャンネル
+2026-04-01 22:27:59.364 | INFO     | クォータ使用: 0/10000 (0.0%)
+2026-04-01 22:27:59.364 | INFO     | ✅ 検索結果: 100 チャンネル取得
+2026-04-01 22:27:59.364 | INFO     | 
+=== Step 2: チャンネル詳細取得（channels.list） ===
+2026-04-01 22:28:05.396 | INFO     | 進捗: 20/100
+2026-04-01 22:28:11.091 | INFO     | 進捗: 40/100
+2026-04-01 22:28:16.777 | INFO     | 進捗: 60/100
+2026-04-01 22:28:22.491 | INFO     | 進捗: 80/100
+2026-04-01 22:28:28.243 | INFO     | ✅ 詳細取得完了: 100 チャンネル
+2026-04-01 22:28:28.243 | INFO     | 
+=== Step 3: ICP フィルタリング ===
+2026-04-01 22:28:28.244 | INFO     | フィルタリング前: 100 件
+2026-04-01 22:28:28.244 | INFO     | ✅ 合格: 48 件
+2026-04-01 22:28:28.244 | INFO     | ❌ 除外: 52 件
+2026-04-01 22:28:28.244 | INFO     | 
+=== Step 4: 重複排除 ===
+2026-04-01 22:28:28.244 | INFO     | ✅ 重複排除後: 48 件
+2026-04-01 22:28:28.244 | INFO     | 
+=== Step 5: スコアリング ===
+2026-04-01 22:28:28.244 | ERROR    | 予期しないエラー: 'ChannelData' object has no attribute 'recent_3m_count'
+2026-04-01 22:28:28.244 | INFO     | ============================================================
+2026-04-01 22:28:28.244 | INFO     | 📊 クォータ使用状況
+2026-04-01 22:28:28.244 | INFO     |   使用: 100/10000 ユニット
+2026-04-01 22:28:28.244 | INFO     |   残り: 9900 ユニット
+2026-04-01 22:28:28.244 | INFO     |   使用率: 1.0%
+2026-04-01 22:28:28.244 | INFO     | ============================================================
+2026-04-01 22:30:22.483 | INFO     | ======================================================================
+2026-04-01 22:30:22.483 | INFO     | 📊 収集フロー開始（YouTube Data API 最適化版）
+2026-04-01 22:30:22.483 | INFO     | ======================================================================
+2026-04-01 22:30:22.484 | INFO     | キーワード数: 2
+2026-04-01 22:30:22.484 | INFO     | キーワード: ['YouTube活用', '動画マーケティング']
+2026-04-01 22:30:22.484 | INFO     | 
+=== Step 1: チャンネル検索（search.list） ===
+2026-04-01 22:30:22.484 | INFO     | 検索キャッシュヒット: YouTube活用 (50 チャンネル)
+2026-04-01 22:30:23.484 | INFO     | 検索キャッシュヒット: 動画マーケティング (50 チャンネル)
+2026-04-01 22:30:24.486 | INFO     | チャンネル検索完了: 100 チャンネル
+2026-04-01 22:30:24.486 | INFO     | クォータ使用: 0/10000 (0.0%)
+2026-04-01 22:30:24.487 | INFO     | ✅ 検索結果: 100 チャンネル取得
+2026-04-01 22:30:24.487 | INFO     | 
+=== Step 2: チャンネル詳細取得（channels.list） ===
+2026-04-01 22:30:30.198 | INFO     | 進捗: 20/100
+2026-04-01 22:30:35.748 | INFO     | 進捗: 40/100
+2026-04-01 22:30:41.327 | INFO     | 進捗: 60/100
+2026-04-01 22:30:46.936 | INFO     | 進捗: 80/100
+2026-04-01 22:30:52.461 | INFO     | ✅ 詳細取得完了: 100 チャンネル
+2026-04-01 22:30:52.462 | INFO     | 
+=== Step 3: ICP フィルタリング ===
+2026-04-01 22:30:52.462 | INFO     | フィルタリング前: 100 件
+2026-04-01 22:30:52.462 | INFO     | ✅ 合格: 48 件
+2026-04-01 22:30:52.462 | INFO     | ❌ 除外: 52 件
+2026-04-01 22:30:52.462 | INFO     | 
+=== Step 4: 重複排除 ===
+2026-04-01 22:30:52.462 | INFO     | ✅ 重複排除後: 48 件
+2026-04-01 22:30:52.462 | INFO     | 
+=== Step 5: スコアリング ===
+2026-04-01 22:30:52.462 | ERROR    | 予期しないエラー: 'ChannelData' object has no attribute 'avg_view_count'
+2026-04-01 22:30:52.462 | INFO     | ============================================================
+2026-04-01 22:30:52.462 | INFO     | 📊 クォータ使用状況
+2026-04-01 22:30:52.462 | INFO     |   使用: 100/10000 ユニット
+2026-04-01 22:30:52.462 | INFO     |   残り: 9900 ユニット
+2026-04-01 22:30:52.462 | INFO     |   使用率: 1.0%
+2026-04-01 22:30:52.462 | INFO     | ============================================================
+2026-04-01 22:32:34.795 | INFO     | ======================================================================
+2026-04-01 22:32:34.795 | INFO     | 📊 収集フロー開始（YouTube Data API 最適化版）
+2026-04-01 22:32:34.796 | INFO     | ======================================================================
+2026-04-01 22:32:34.796 | INFO     | キーワード数: 2
+2026-04-01 22:32:34.796 | INFO     | キーワード: ['YouTube活用', '動画マーケティング']
+2026-04-01 22:32:34.796 | INFO     | 
+=== Step 1: チャンネル検索（search.list） ===
+2026-04-01 22:32:34.796 | INFO     | 検索キャッシュヒット: YouTube活用 (50 チャンネル)
+2026-04-01 22:32:35.797 | INFO     | 検索キャッシュヒット: 動画マーケティング (50 チャンネル)
+2026-04-01 22:32:36.798 | INFO     | チャンネル検索完了: 100 チャンネル
+2026-04-01 22:32:36.799 | INFO     | クォータ使用: 0/10000 (0.0%)
+2026-04-01 22:32:36.799 | INFO     | ✅ 検索結果: 100 チャンネル取得
+2026-04-01 22:32:36.799 | INFO     | 
+=== Step 2: チャンネル詳細取得（channels.list） ===
+2026-04-01 22:32:42.386 | INFO     | 進捗: 20/100
+2026-04-01 22:32:47.769 | INFO     | 進捗: 40/100
+2026-04-01 22:32:53.635 | INFO     | 進捗: 60/100
+2026-04-01 22:32:59.010 | INFO     | 進捗: 80/100
+2026-04-01 22:33:04.674 | INFO     | ✅ 詳細取得完了: 100 チャンネル
+2026-04-01 22:33:04.674 | INFO     | 
+=== Step 3: ICP フィルタリング ===
+2026-04-01 22:33:04.674 | INFO     | フィルタリング前: 100 件
+2026-04-01 22:33:04.674 | INFO     | ✅ 合格: 48 件
+2026-04-01 22:33:04.674 | INFO     | ❌ 除外: 52 件
+2026-04-01 22:33:04.674 | INFO     | 
+=== Step 4: 重複排除 ===
+2026-04-01 22:33:04.674 | INFO     | ✅ 重複排除後: 48 件
+2026-04-01 22:33:04.675 | INFO     | 
+=== Step 5: スコアリング ===
+2026-04-01 22:33:04.675 | DEBUG    | おーち | 30秒でわかるGooglePixel活用術: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | ねこぴーのIT活用: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 外国人労働者活用チャンネル: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | kintone活用ちゃんねる: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | ダイさん・AI活用の専門家: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | ゆーしAI活用法: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | AI・ICT活用チャンネル: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | Web&AI活用術 WEBST8 ウェブストエイトチャンネル: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | そのまま使えるAI活用集: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | GUGA_生成AI活用普及協会: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 動画の活用チャンネル 株式会社CTA公式: 投稿頻度:0/30 再生数:8/25 エンゲージ:8/25 トレンド:12/20 → 合計28.0点(Cランク)
+2026-04-01 22:33:04.675 | DEBUG    | 福井県県産材活用課: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | あきらパパのAI活用学習部屋: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 着物活用生活 Hisagoとwa: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 外来種活用の無機農法【薬剤師が考えたサバイバル】: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 動画活用のよりどころ-動画の窓口: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | けん@AI活用術: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 高田弘介のクラウド活用塾: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | IT活用Tips: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | ちゃーさんのAI・IT活用チャンネル: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 仕事で差がつくAI活用術: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | PowerQuery活用チャンネル: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | ねもたく-企業AI活用の参謀-: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | エクシーやなぎだのIT活用: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 空き家活用隊: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | AIビジネス活用塾: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 【弁護士が解説】弁護士向けAI活用・業務効率化術: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 経営者のkintone活用: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 稲葉のSNS活用最大化ch 【Instagram、X】: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 【小学生でもわかる】ChatGPT活用セミナー: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 動画マーケティング攻略チャンネル: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 動画制作の株式会社LOCUS: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | YouTubeマーケティングch -BIRDY-: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | マーケティングチャンネル: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | 石井賢介 MDマーケティング予備校: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | マーケティング研究所【雨と東京と株式会社】: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | SNS動画マーケティング・集客TV.天野裕之....: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | YouTubeマーケティング研究所 by 株式会社アカシア: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.675 | DEBUG    | ゼロから始める動画マーケティング【デジタル・エース公式】: 投稿頻度:0/30 再生数:0/25 エンゲージ:8/25 トレンド:12/20 → 合計20.0点(Cランク)
+2026-04-01 22:33:04.675 | DEBUG    | おさるマーケ講座受講生対談: 投稿頻度:0/30 再生数:15/25 エンゲージ:8/25 トレンド:12/20 → 合計35.0点(Cランク)
+2026-04-01 22:33:04.676 | DEBUG    | やぶもと社長のサムファン！【起業✕動画✕マーケティングチャンネル】: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | DEBUG    | 児島康孝日本Web動画マーケティング: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | DEBUG    | 現場のリアル-マーケティング解説ch: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | DEBUG    | 【動画経営】YouTubeマーケティングコンサル酒井大輔: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | DEBUG    | 動画編集の案件獲得チャンネル【バッシー】: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | DEBUG    | 【公式】マーケティングTV: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | DEBUG    | SNSマーケティング_TaTap: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | DEBUG    | Web集客・デジタルマーケティングを紐解くカギ【吉和の森シリーズ】: 投稿頻度:0/30 再生数:25/25 エンゲージ:8/25 トレンド:12/20 → 合計45.0点(Bランク)
+2026-04-01 22:33:04.676 | INFO     | スコアリング完了: Aランク 0件 / Bランク 45件 / Cランク 3件
+2026-04-01 22:33:04.676 | INFO     | ✅ スコアリング完了: 48 件
+2026-04-01 22:33:04.676 | INFO     | 
+=== Step 6: CRM 更新 ===
+2026-04-01 22:33:04.676 | INFO     | ⏭️  DRY-RUN: 48 件のチャンネルをスキップ（更新しません）
+2026-04-01 22:33:04.676 | INFO     | 
+=== Step 7: メールアドレス自動取得 ===
+2026-04-01 22:33:06.298 | INFO     | ✅ メール取得成功: おーち | 30秒でわかるGooglePixel活用術 → ('', '', '')
+2026-04-01 22:33:07.963 | INFO     | ✅ メール取得成功: ねこぴーのIT活用 → ('', '', '')
+2026-04-01 22:33:10.639 | INFO     | ✅ メール取得成功: 外国人労働者活用チャンネル → ('https://www.asean-carbusiness-career.com/', '', 'https://www.asean-carbusiness-career.com/contact/index.html')
+2026-04-01 22:33:13.782 | INFO     | ✅ メール取得成功: kintone活用ちゃんねる → ('https://pepacomi.com', 'sample@xx.co.jp', 'https://pepacomi.com/contact/')
+2026-04-01 22:33:14.786 | INFO     | ✅ メール取得成功: ダイさん・AI活用の専門家 → ('', '', '')
+2026-04-01 22:33:17.788 | INFO     | ✅ メール取得成功: ゆーしAI活用法 → ('https://lin.ee/VNVTzJA', '', '')
+2026-04-01 22:33:23.756 | INFO     | ✅ メール取得成功: AI・ICT活用チャンネル → ('https://amzn.to/4e57prd', '', '')
+2026-04-01 22:33:25.444 | INFO     | ✅ メール取得成功: Web&AI活用術 WEBST8 ウェブストエイトチャンネル → ('https://webst8.com', 'info@webst8.com', 'https://webst8.com/#contact')
+2026-04-01 22:33:29.761 | INFO     | ✅ メール取得成功: そのまま使えるAI活用集 → ('https://to.haveagood.holiday/', '', '')
+2026-04-01 22:33:35.460 | INFO     | ✅ メール取得成功: GUGA_生成AI活用普及協会 → ('https://guga.or.jp', '', 'https://guga.or.jp/contact')
+2026-04-01 22:33:35.461 | INFO     | 進捗: 10/48
+2026-04-01 22:33:38.825 | INFO     | ✅ メール取得成功: 福井県県産材活用課 → ('', '', '')
+2026-04-01 22:33:45.112 | INFO     | ✅ メール取得成功: あきらパパのAI活用学習部屋 → ('https://akirafunakoshi.com', '', '')
+2026-04-01 22:33:49.429 | INFO     | ✅ メール取得成功: 着物活用生活 Hisagoとwa → ('https://hisago-wa.stores.jp/', '', '')
+2026-04-01 22:33:51.132 | INFO     | ✅ メール取得成功: 外来種活用の無機農法【薬剤師が考えたサバイバル】 → ('', '', '')
+2026-04-01 22:33:56.285 | INFO     | ✅ メール取得成功: 動画活用のよりどころ-動画の窓口 → ('https://dougano-madoguchi.com/', '', 'https://concierge.dougano-madoguchi.com/?utm_source=madoguchi&utm_medium=referral&utm_campaign=otoiawase')
+2026-04-01 22:34:01.047 | INFO     | ✅ メール取得成功: けん@AI活用術 → ('https://utage-system.com/line/open/f3QG9hlUfzWD?mtid=2GWKdg5efybJ', '', '')
+2026-04-01 22:34:04.527 | INFO     | ✅ メール取得成功: 高田弘介のクラウド活用塾 → ('https://forms.office.com/r/sr4bqve5fk', '', '')
+2026-04-01 22:34:08.743 | INFO     | ✅ メール取得成功: IT活用Tips → ('https://minorusato.wixsite.com/website', '', '')
+2026-04-01 22:34:10.168 | INFO     | ✅ メール取得成功: ちゃーさんのAI・IT活用チャンネル → ('', '', '')
+2026-04-01 22:34:11.316 | INFO     | ✅ メール取得成功: 仕事で差がつくAI活用術 → ('', '', '')
+2026-04-01 22:34:11.316 | INFO     | 進捗: 20/48
+2026-04-01 22:34:12.655 | INFO     | ✅ メール取得成功: PowerQuery活用チャンネル → ('', '', '')
+2026-04-01 22:34:15.749 | INFO     | ✅ メール取得成功: ねもたく-企業AI活用の参謀- → ('https://lin.ee/TDgXZsg', '', '')
+2026-04-01 22:34:19.028 | INFO     | ✅ メール取得成功: エクシーやなぎだのIT活用 → ('https://excee.co.jp/', '', 'https://excee.co.jp/contact/')
+2026-04-01 22:34:22.447 | INFO     | ✅ メール取得成功: 空き家活用隊 → ('https://lendhouse.net', 'lend_house-consulting@yahoo.co.jp', 'https://www.lendhouse.net/youtubeform')
+2026-04-01 22:34:28.295 | INFO     | ✅ メール取得成功: AIビジネス活用塾 → ('https://miryoku.work/lp/aiwebjuku', '', 'https://miryoku.work/contact-2/')
+2026-04-01 22:34:42.028 | INFO     | ✅ メール取得成功: 【弁護士が解説】弁護士向けAI活用・業務効率化術 → ('https://office.reo7a.com', '', 'https://office.reo7a.com/ai-support/')
+2026-04-01 22:34:44.763 | INFO     | ✅ メール取得成功: 経営者のkintone活用 → ('https://reportpac.com', 'info@densanbanto.com', '')
+2026-04-01 22:34:47.898 | INFO     | ✅ メール取得成功: 稲葉のSNS活用最大化ch 【Instagram、X】 → ('https://lstep.app/hWq9OG9', '', '')
+2026-04-01 22:34:53.369 | INFO     | ✅ メール取得成功: 【小学生でもわかる】ChatGPT活用セミナー → ('https://top-web.gift/chatgpt_comunity', '', '')
+2026-04-01 22:34:56.279 | INFO     | ✅ メール取得成功: 動画マーケティング攻略チャンネル → ('https://bit.ly/46qdUSc', 'press@bitly.com', 'https://support.bitly.com/hc/en-us')
+2026-04-01 22:34:56.279 | INFO     | 進捗: 30/48
+2026-04-01 22:35:02.436 | INFO     | ✅ メール取得成功: 動画制作の株式会社LOCUS → ('https://locus-inc.co.jp', '', '')
+2026-04-01 22:35:05.702 | INFO     | ✅ メール取得成功: YouTubeマーケティングch -BIRDY- → ('https://bit.ly/458buGX', 'press@bitly.com', 'https://support.bitly.com/hc/en-us')
+2026-04-01 22:35:07.617 | INFO     | ✅ メール取得成功: マーケティングチャンネル → ('', '', '')
+2026-04-01 22:35:11.973 | INFO     | ✅ メール取得成功: 石井賢介 MDマーケティング予備校 → ('https://mktdemo.com/', '', 'https://mktdemo.com/contact')
+2026-04-01 22:35:15.171 | INFO     | ✅ メール取得成功: マーケティング研究所【雨と東京と株式会社】 → ('https://ameto.tokyo', 'xxx@xx.com', 'https://ameto.tokyo/form/')
+2026-04-01 22:35:17.379 | INFO     | ✅ メール取得成功: SNS動画マーケティング・集客TV.天野裕之.... → ('http://tanurl.net/t/amyoline', '', '')
+2026-04-01 22:35:18.911 | INFO     | ✅ メール取得成功: YouTubeマーケティング研究所 by 株式会社アカシア → ('https://acacia-web.com/contact/', 'info@acacia-web.com', 'https://acacia-web.com/contact/')
+2026-04-01 22:35:22.245 | INFO     | ✅ メール取得成功: やぶもと社長のサムファン！【起業✕動画✕マーケティングチャンネル】 → ('https://webinar.dooonut.jp/', '', 'https://webinar.dooonut.jp/contact')
+2026-04-01 22:35:23.453 | INFO     | ✅ メール取得成功: 児島康孝日本Web動画マーケティング → ('', '', '')
+2026-04-01 22:35:27.788 | INFO     | ✅ メール取得成功: 現場のリアル-マーケティング解説ch → ('https://exidea.co.jp', '', 'https://exidea.co.jp/contact/')
+2026-04-01 22:35:27.790 | INFO     | 進捗: 40/48
+2026-04-01 22:35:30.772 | INFO     | ✅ メール取得成功: 【動画経営】YouTubeマーケティングコンサル酒井大輔 → ('https://ytbs.jp', 'unison.sakai@gmail.com', 'https://ytbs.jp/contacts/')
+2026-04-01 22:35:35.286 | INFO     | ✅ メール取得成功: 動画編集の案件獲得チャンネル【バッシー】 → ('https://prstore.co.jp/upstart', '', 'https://prstore.co.jp/contact')
+2026-04-01 22:35:50.376 | INFO     | ✅ メール取得成功: 【公式】マーケティングTV → ('https://keta-chi.co.jp/?uqid=101e12e0c756e208&bid=6V1f485b55e1dnn0', '', 'https://keta-chi.co.jp/contact')
+2026-04-01 22:35:55.822 | INFO     | ✅ メール取得成功: SNSマーケティング_TaTap → ('https://amzn.asia/d/jgczWfe', '', '')
+2026-04-01 22:35:59.997 | INFO     | ✅ メール取得成功: Web集客・デジタルマーケティングを紐解くカギ【吉和の森シリーズ】 → ('https://yoshikazunomori.com/?utm_source=youtube&utm_medium=Organic+Video&utm_campaign=kagi', '', 'https://yoshikazunomori.com/contact/')
+2026-04-01 22:36:02.473 | INFO     | ✅ メール取得成功: おさるマーケ講座受講生対談 → ('', '', '')
+2026-04-01 22:36:06.374 | INFO     | ✅ メール取得成功: 動画の活用チャンネル 株式会社CTA公式 → ('https://cta-inc.co.jp', '', 'https://cta-inc.co.jp/contact')
+2026-04-01 22:36:08.891 | INFO     | ✅ メール取得成功: ゼロから始める動画マーケティング【デジタル・エース公式】 → ('https://lin.ee/uIgRnM9', '', '')
+2026-04-01 22:36:08.891 | INFO     | ✅ Step 7 完了: 48 件のメール取得
+2026-04-01 22:36:08.891 | INFO     | 
+======================================================================
+2026-04-01 22:36:08.891 | INFO     | ✅ 収集フロー完了
+2026-04-01 22:36:08.892 | INFO     |   合計チャンネル: 48 件
+2026-04-01 22:36:08.892 | INFO     |   メールアドレス取得: 48 件
+2026-04-01 22:36:08.892 | INFO     | ======================================================================
+2026-04-01 22:36:08.892 | INFO     | ============================================================
+2026-04-01 22:36:08.892 | INFO     | 📊 クォータ使用状況
+2026-04-01 22:36:08.892 | INFO     |   使用: 100/10000 ユニット
+2026-04-01 22:36:08.892 | INFO     |   残り: 9900 ユニット
+2026-04-01 22:36:08.892 | INFO     |   使用率: 1.0%
+2026-04-01 22:36:08.892 | INFO     | ============================================================
