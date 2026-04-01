@@ -290,9 +290,10 @@ def _build_email_1(lead: dict, personalized: dict) -> EmailContent:
     latest_title = (lead.get('最新動画タイトル') or "").strip()
     subject_title = latest_title if latest_title else "YouTube動画"
 
+    company_name = (lead.get('会社名') or lead.get('チャンネル名') or '御社').strip()
     subject = (
-    f"{lead.get('会社名', '御社')}様の"
-    f"「{subject_title[:20]}」を拝見しました"
+        f"{company_name}様の"
+        f"「{subject_title[:20]}」を拝見しました"
     )
 
     company = lead.get('会社名', '').strip()

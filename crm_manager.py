@@ -274,6 +274,8 @@ class CRMManager:
                 "最新動画タイトル": lead_data.get("最新動画タイトル", old_record.get("最新動画タイトル", "")),
                 "問い合わせフォームURL": lead_data.get("問い合わせフォームURL", old_record.get("問い合わせフォームURL")),
                 "メールアドレス": lead_data.get("メールアドレス", old_record.get("メールアドレス")),
+                "送信ステータス": lead_data.get("送信ステータス", old_record.get("送信ステータス", "")),
+                "最終送信日": lead_data.get("最終送信日", old_record.get("最終送信日", "")),
                 "最終更新日": now,
             }
 
@@ -643,13 +645,13 @@ class CRMManager:
 
 
     def get_leads_for_email(self, limit=10):
-        """メールアドレスを持つリード（A/B ランク、未送信）を取得"""
+        """メールアドレスを持つリード（A/B ランク、営業ステータス=未接触）を取得"""
         leads = self.get_all_leads()
         email_leads = [
             lead for lead in leads
-            if lead.get('メールアドレス') 
+            if lead.get('メールアドレス')
             and lead.get('ランク') in ['A', 'B']
-            and lead.get('送信ステータス') != 'sent'
+            and lead.get('営業ステータス') == '未接触'
         ]
         return email_leads[:limit]
 
