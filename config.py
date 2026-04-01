@@ -150,18 +150,18 @@ SCRAPE_MAX_CHANNELS: int = int(os.getenv("SCRAPE_MAX_CHANNELS", "50"))
 
 # YouTube チャンネル検索キーワード（ICP候補を発掘するためのデフォルトキーワード）
 DEFAULT_SEARCH_KEYWORDS: list[str] = [
-    "YouTube 集客",
-    "セミナー YouTube",
-    "オンライン講座 YouTube",
-    "ウェビナー YouTube",
-    "スクール YouTube",
-    "教室 YouTube",
-    "クリニック YouTube",
-    "ジム YouTube",
-    "整体院 YouTube",
-    "学習塾 YouTube",
-    "士業 YouTube",
-    "コーチング YouTube",
+    "YouTube活用",
+    "動画マーケティング",
+    "オンライン営業",
+    "SNS活用",
+    "動画集客",
+    "ウェビナー",
+    "YouTube広告",
+    "インフルエンサー",
+    "チャンネル運用",
+    "コンテンツマーケティング",
+    "ビジネスYouTube",
+    "企業動画",
 ]
 
 # ==================================================
@@ -205,3 +205,8 @@ if __name__ == "__main__":
 
 
 
+
+# YouTube Data API v3
+YOUTUBE_API_KEY: str = os.getenv("YOUTUBE_API_KEY", "")
+if not YOUTUBE_API_KEY:
+    raise ValueError("YOUTUBE_API_KEY が .env に設定されていません")

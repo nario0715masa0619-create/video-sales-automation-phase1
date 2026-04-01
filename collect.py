@@ -40,12 +40,7 @@ def run_collect(keywords=None, dry_run=False):
     
     # デフォルトキーワード
     if not keywords:
-        keywords = [
-            'YouTube 集客', 'セミナー YouTube', 'オンライン講座 YouTube',
-            'ウェビナー YouTube', 'スクール YouTube', '教室 YouTube',
-            'クリニック YouTube', 'ジム YouTube', '整体院 YouTube',
-            '学習塾 YouTube', '士業 YouTube', 'コーチング YouTube'
-        ]
+        keywords = config.DEFAULT_SEARCH_KEYWORDS
     
     logger.info(f"キーワード: {keywords}")
     
@@ -53,8 +48,7 @@ def run_collect(keywords=None, dry_run=False):
     logger.info("\n=== Step 1: ターゲット候補の検索・スクレイピング ===")
     all_urls = []
     for keyword in keywords:
-        current_key = config.SERPAPI_KEYS[config.SERPAPI_KEY_INDEX]
-        urls = search_company_channels(keyword, current_key)
+        urls = search_company_channels(keyword)
         all_urls.extend(urls)
     
     channels = []
