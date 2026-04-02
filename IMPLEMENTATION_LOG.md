@@ -1,0 +1,53 @@
+# 実装ログ
+
+このファイルは、各機能実装の完了サマリーを記録します。
+
+## 2026-04-02: API キーフェイルオーバー機能
+
+**実装内容:**
+- 複数 API キー（YOUTUBE_API_KEY, YOUTUBE_API_KEY2）のサポート
+- 403 エラー時の自動キー切り替え
+- キー別のクレジット使用状況追跡
+- 詳細なログ出力（API KEY インデックス表示）
+
+**完了項目:**
+| 項目 | 状態 | コミット |
+|------|------|---------|
+| API キーフェイルオーバー基本機能 | ✅ | 5cb0c54 |
+| キー別クレジット追跡 | ✅ | 1421ac1 |
+| 詳細ログ出力 | ✅ | 1421ac1 |
+| ユニットテスト | ✅ 3/3 合格 | 5cb0c54 |
+| ドキュメント更新 | ✅ | 5cb0c54 |
+
+**動作フロー:**
+1. YOUTUBE_API_KEY1 で実行 → 通常動作
+2. 403 Forbidden エラー → ログ: `403 Forbidden (API KEY 1)`
+3. 自動切り替え → ログ: `別の API キーで再試行します (API KEY 2)`
+4. YOUTUBE_API_KEY2 で再試行 → 成功時: `検索完了: ... (API KEY 2, クォータ消費: X pt)`
+5. クレジット追跡 → `get_quota_status()` で `{API_KEY_1: X, API_KEY_2: Y}` を取得
+
+**セキュリティ:**
+- ✅ 実キーは `.env` に隠蔽
+- ✅ ログには API KEY インデックスのみ記録
+- ✅ `.env` は `.gitignore` で保護
+
+**参考ファイル:**
+- youtube_api_optimized.py: API キーフェイルオーバー実装
+- tests/test_api_fallback.py: ユニットテスト
+- DEVELOPMENT.md: セクション 7「API キーフェイルオーバー」
+
+---
+
+## 2026-04-02: Step 6/7 依存関係修正
+
+**背景:** メールアドレスが Google Sheets に保存されない問題
+
+**完了項目:**
+- ✅ Step 7（メール抽出）を Step 6（CRM更新）より先に実行
+- ✅ ch.contact_email と ch.contact_form_url 設定保証
+- ✅ 自動検証関数 validate_crm_data_saved() 実装
+
+**参考ファイル:**
+- collect.py: Step 順序修正
+- CHECKLIST.md: コミット前チェックリスト
+- DEVELOPMENT.md: セクション 1-5
