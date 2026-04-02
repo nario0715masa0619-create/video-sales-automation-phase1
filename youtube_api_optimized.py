@@ -39,6 +39,7 @@ class YouTubeAPIOptimized:
         self.base_url = "https://www.googleapis.com/youtube/v3"
         self.cache = CacheManager(cache_dir)
         self.quota_used = 0
+        self.quota_by_key = {}  # キー別のクレジット使用状況を追跡
         
         # リトライ設定
         self.max_retries = 3
@@ -87,6 +88,11 @@ class YouTubeAPIOptimized:
                 # クォータ消費を推定
                 quota_cost = self._estimate_quota(endpoint, params)
                 self.quota_used += quota_cost
+                # キー別のクレジット使用状況を記録
+                current_key_idx = self.current_api_key_index
+                if current_key_idx not in self.quota_by_key:
+                    self.quota_by_key[current_key_idx] = 0
+                self.quota_by_key[current_key_idx] += quota_cost
                 
                 return resp.json(), quota_cost
             
@@ -97,10 +103,10 @@ class YouTubeAPIOptimized:
             
             except requests.exceptions.HTTPError as e:
                 if resp.status_code == 403:
-                    logger.error(f"403 Forbidden: API キーまたはクォータの問題 [{resource_key}]")
+                    logger.error(f"403 Forbidden (API KEY {self.current_api_key_index + 1}): API キーまたはクォータの問題 [{resource_key}]")
                     # 次の API キーに切り替える
                     if self._switch_api_key():
-                        logger.info(f"別の API キーで再試行します [{resource_key}]")
+                        logger.info(f"別の API キーで再試行します (API KEY {self.current_api_key_index + 1}) [{resource_key}]")
                         if attempt < self.max_retries - 1:
                             time.sleep(self.retry_wait)
                         continue  # 同じループ内で再試行
@@ -175,7 +181,7 @@ class YouTubeAPIOptimized:
         # 検索結果をキャッシュに保存
         self.cache.set_search_results(keyword, channel_ids)
         
-        logger.info(f"検索完了: {keyword} → {len(channel_ids)} チャンネル（クォータ消費: {quota}）")
+        logger.info(f"検索完了: {keyword} → {len(channel_ids)} チャンネル（API KEY {self.current_api_key_index + 1}, クォータ消費: {quota}）")
         return channel_ids
     
     # ===== チャンネル詳細取得 =====
@@ -308,12 +314,18 @@ class YouTubeAPIOptimized:
         return all_videos
     
     def get_quota_status(self) -> Dict:
-        """クォータ使用状況を返す"""
+        """クォータ使用状況を返す（キー別の詳細情報を含む）"""
+        quota_by_key_info = {}
+        for key_idx, quota in self.quota_by_key.items():
+            quota_by_key_info[f'API_KEY_{key_idx + 1}'] = quota
+        
         return {
             'quota_used': self.quota_used,
             'quota_limit': 10000,
             'remaining': 10000 - self.quota_used,
-            'utilization_percent': round((self.quota_used / 10000) * 100, 2)
+            'utilization_percent': round((self.quota_used / 10000) * 100, 2),
+            'quota_by_key': quota_by_key_info,
+            'current_api_key': f'API_KEY_{self.current_api_key_index + 1}'
         }
 # youtube_api_optimized.py にクォータ管理を追加
 
