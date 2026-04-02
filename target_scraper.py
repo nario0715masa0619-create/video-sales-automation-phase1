@@ -28,6 +28,11 @@ class ChannelData:
     avg_engagement_rate: float = 0.0
     growth_trend: str = "安定"
     custom_url: Optional[str] = None
+    contact_email: str = ""
+    contact_form_url: str = ""
+    latest_video_url: str = ""
+    latest_video_title: str = ""
+    latest_video_title: str = ""
     
     def to_crm_dict(self) -> dict:
         """CRM 用の辞書形式に変換"""

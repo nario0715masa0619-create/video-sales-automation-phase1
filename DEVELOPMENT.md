@@ -214,3 +214,37 @@ python -m pytest tests/test_collect_integration.py -v --tb=short
 
 最終更新: 2026-04-02
 ステータス: デグレード防止機構完成
+
+
+## 7. API キーフェイルオーバー
+
+**背景**: YouTube Data API v3 のクォータが枯渇したり、単一キーが 403 エラーを返す場合に対応するため、複数の API キーをサポート。
+
+**実装詳細**:
+- .env に複数のキーを設定: YOUTUBE_API_KEY と YOUTUBE_API_KEY2
+- youtube_api_optimized.py の YouTubeAPIOptimized.__init__() で両キーを読み込み
+- 403 エラー発生時に _switch_api_key() メソッドで自動的に次のキーに切り替え
+- 再試行ロジックで別キーでのリクエストを実施
+
+**使用方法**:
+.env ファイル:
+YOUTUBE_API_KEY=your_first_api_key_here
+YOUTUBE_API_KEY2=your_second_api_key_here
+
+実行時に 403 エラーが発生すると、自動的に YOUTUBE_API_KEY2 に切り替わります。
+
+**テスト**:
+python -m pytest tests/test_api_fallback.py -v
+
+テスト項目:
+- test_multiple_api_keys_loaded: 複数キーが読み込まれるか
+- test_api_key_fallback_on_403: 403 エラー時にキーが切り替わるか
+- test_fallback_fails_when_all_keys_exhausted: 全キー無効時に False を返すか
+
+**ログ出力例**:
+API キーを切り替えました (キー 2/2)
+別の API キーで再試行します [search:YouTube活用]
+
+**参考ファイル**:
+- youtube_api_optimized.py: API キーフェイルオーバー実装
+- tests/test_api_fallback.py: ユニットテスト

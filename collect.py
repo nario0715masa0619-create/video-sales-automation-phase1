@@ -28,6 +28,16 @@ logger.add(
     rotation="500 MB"
 )
 
+import signal
+
+def signal_handler(sig, frame):
+    logger.warning(f'⏹️  中断されました。キャッシュを保存中...')
+    # キャッシュはすでに同期的に保存されているので、ログに記録するのみ
+    logger.info('✅ キャッシュ保存完了')
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
+
 def run_collect(keywords=None, dry_run=False):
     """
     YouTube Data API 最適化版 チャンネル収集フロー
