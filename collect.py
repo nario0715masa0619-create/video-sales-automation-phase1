@@ -104,6 +104,31 @@ def run_collect(keywords=None, dry_run=False):
     scored_channels = score_channels(channels)
     logger.info(f"✅ スコアリング完了: {len(scored_channels)} 件")
     
+    # Step 7: メールアドレス抽出
+    logger.info("\n=== Step 7: メールアドレス自動取得 ===")
+    email_count = 0
+    for i, ch in enumerate(scored_channels):
+        if i % 10 == 0 and i > 0:
+            logger.info(f"進捗: {i}/{len(scored_channels)}")
+        
+        channel_url = ch.channel_url
+        company_name = ch.channel_name
+        
+        try:
+            website_url, email, contact_form_url = extractor.extract_email(channel_url)
+            ch.contact_email = email if email else ''
+            ch.contact_form_url = contact_form_url if contact_form_url else ''
+            if email:
+                logger.info(f"✅ メール取得成功: {company_name} → {email}")
+                email_count += 1
+            else:
+                logger.debug(f"メール取得失敗: {company_name}")
+        except Exception as e:
+            logger.warning(f"メール抽出エラー [{company_name}]: {e}")
+    
+    logger.info(f"✅ Step 7 完了: {email_count} 件のメール取得")
+    
+
     # Step 6: CRM 更新
     logger.info("\n=== Step 6: CRM 更新 ===")
     if not dry_run:
@@ -119,31 +144,19 @@ def run_collect(keywords=None, dry_run=False):
     else:
         logger.info(f"⏭️  DRY-RUN: {len(scored_channels)} 件のチャンネルをスキップ（更新しません）")
     
-    # Step 7: メールアドレス抽出
-    logger.info("\n=== Step 7: メールアドレス自動取得 ===")
-    email_count = 0
-    for i, ch in enumerate(scored_channels):
-        if i % 10 == 0 and i > 0:
-            logger.info(f"進捗: {i}/{len(scored_channels)}")
-        
-        channel_url = ch.channel_url
-        company_name = ch.channel_name
-        
-        try:
-            email = get_email_from_youtube_channel(channel_url)
-            if email:
-                logger.info(f"✅ メール取得成功: {company_name} → {email}")
-                email_count += 1
-            else:
-                logger.debug(f"メール取得失敗: {company_name}")
-        except Exception as e:
-            logger.warning(f"メール抽出エラー [{company_name}]: {e}")
-    
-    logger.info(f"✅ Step 7 完了: {email_count} 件のメール取得")
-    
     # 最終報告
     logger.info("\n" + "=" * 70)
     logger.info("✅ 収集フロー完了")
+
+    # Step 6/7 の検証: メール情報が正常に保存されたか確認
+    if not dry_run:
+        try:
+            from utils import validate_crm_data_saved
+            with_email, total = validate_crm_data_saved(min_email_ratio=0.8)
+            logger.info(f"✅ CRM データ検証: {with_email}/{total} 件がメール情報を含む")
+        except Exception as e:
+            logger.error(f"❌ {str(e)}")
+            sys.exit(1)
     logger.info(f"  合計チャンネル: {len(scored_channels)} 件")
     logger.info(f"  メールアドレス取得: {email_count} 件")
     logger.info("=" * 70)
