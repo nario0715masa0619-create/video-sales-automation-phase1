@@ -79,7 +79,16 @@ def run_collect(keywords=None, dry_run=False):
     
     logger.info(f"✅ 詳細取得完了: {len(channels)} チャンネル")
     
-    # Step 3: ICP フィルタリング
+
+    # クォータチェック: 90% 以上使用していたら処理を中断
+    current_quota_usage = api.quota_used
+    if current_quota_usage > 9000:
+        logger.error(f"❌ クォータ不足により処理を中断します")
+        logger.error(f"   使用量: {current_quota_usage:,}/10,000 ユニット")
+        logger.error(f"   詳細: DEVELOPMENT.md の『クォータ管理』を参照")
+        sys.exit(1)
+
+        # Step 3: ICP フィルタリング
     logger.info("\n=== Step 3: ICP フィルタリング ===")
     passed_channels, rejected_channels = filter_by_icp(channels)
     logger.info(f"フィルタリング前: {len(channels)} 件")

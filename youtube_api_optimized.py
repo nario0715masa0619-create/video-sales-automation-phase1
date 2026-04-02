@@ -271,3 +271,34 @@ class YouTubeAPIOptimized:
             'remaining': 10000 - self.quota_used,
             'utilization_percent': round((self.quota_used / 10000) * 100, 2)
         }
+# youtube_api_optimized.py にクォータ管理を追加
+
+def check_quota_limit(current_usage, daily_limit=10000, stop_threshold=0.9):
+    """
+    クォータ使用率をチェック、閾値を超えたら例外を発生させる
+    
+    Args:
+        current_usage: 現在のクォータ使用量
+        daily_limit: 1日の上限（デフォルト 10,000）
+        stop_threshold: 停止する使用率（デフォルト 0.9 = 90%）
+    
+    Raises:
+        Exception: クォータ使用率が閾値を超えた場合
+    """
+    usage_ratio = current_usage / daily_limit
+    
+    if usage_ratio >= stop_threshold:
+        raise Exception(
+            f"❌ クォータ不足により処理を中断します\n"
+            f"   現在の使用量: {current_usage:,}/{daily_limit:,} ユニット\n"
+            f"   使用率: {usage_ratio*100:.1f}%\n"
+            f"   閾値: {stop_threshold*100:.0f}%\n"
+            f"   原因: YouTube Data API のクォータが不足しています\n"
+            f"   対策: 明日 UTC 00:00（日本時間 09:00）以降に再実行してください\n"
+            f"   推奨: キーワード数を削減するか、キャッシュを活用してください"
+        )
+
+# collect.py での使用例
+# Step 2 の詳細取得直後にチェック
+if current_quota_usage > 9000:
+    check_quota_limit(current_quota_usage)
