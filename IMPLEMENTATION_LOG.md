@@ -51,3 +51,21 @@
 - collect.py: Step 順序修正
 - CHECKLIST.md: コミット前チェックリスト
 - DEVELOPMENT.md: セクション 1-5
+
+## 2026-04-02 (追記): API キーフェイルオーバー修正
+
+**問題:** target_scraper.py で API キーがハードコードされていたため、API KEY 2 が読み込まれず、403 エラー時に切り替わらない
+
+**修正内容:**
+- target_scraper.py 14行目を修正
+- YouTubeAPIOptimized(config.YOUTUBE_API_KEY, ...) → YouTubeAPIOptimized(api_key=None, ...)
+- これにより .env から複数キーが正常に読み込まれるようになった
+
+**結果:**
+- ✅ API KEY 1 で 403 エラー → 自動的に API KEY 2 に切り替わる
+- ✅ キー別クレジット追跡が機能
+- ✅ ログに「API KEY 1」「API KEY 2」が正確に表示される
+- ✅ テスト 3/3 合格
+
+**コミット:** 0e0dde9
+
