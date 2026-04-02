@@ -11,7 +11,7 @@ from loguru import logger
 from youtube_api_optimized import YouTubeAPIOptimized
 
 # YouTube API 初期化
-yt_api = YouTubeAPIOptimized(config.YOUTUBE_API_KEY, cache_dir="cache")
+yt_api = YouTubeAPIOptimized(api_key=None, cache_dir="cache")  # 複数キーサポート
 
 @dataclass
 class ChannelData:
