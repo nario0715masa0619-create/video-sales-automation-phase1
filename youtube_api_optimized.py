@@ -28,6 +28,14 @@ class YouTubeAPIOptimized:
                 self.api_keys.append(os.getenv("YOUTUBE_API_KEY"))
             if os.getenv("YOUTUBE_API_KEY2"):
                 self.api_keys.append(os.getenv("YOUTUBE_API_KEY2"))
+            if os.getenv("YOUTUBE_API_KEY3"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY3"))
+            if os.getenv("YOUTUBE_API_KEY4"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY4"))
+            if os.getenv("YOUTUBE_API_KEY5"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY5"))
+            if os.getenv("YOUTUBE_API_KEY6"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY6"))
         
         if not self.api_keys:
             raise ValueError("❌ API キーが設定されていません (YOUTUBE_API_KEY または YOUTUBE_API_KEY2)")
