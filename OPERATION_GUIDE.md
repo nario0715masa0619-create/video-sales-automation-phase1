@@ -143,3 +143,47 @@ video-sales-automation-phase1/
 | 09:00 | メール送信 | \python src/send_email.py\ |
 | 16:00 | ログ確認・メトリクス確認 | \Get-Content logs/collect.log -Tail 50\ |
 
+
+---
+
+## Phase 1 実行結果（2026-04-03）
+
+### 初回本番実行
+
+**実行コマンド:**
+\\\ash
+python collect.py
+\\\
+
+**実行結果:**
+- YouTube 検索: 575 チャンネル取得（クォータ 12% 消費）
+- ICP フィルタリング: 222 件合格
+- 重複排除: 207 件
+- スコアリング: 完了（A/B/C ランク分類）
+- メール抽出: 36 件成功（17%）
+- Google Sheets CRM 更新: 212 件新規追加
+
+**実行時間:** 約 5～10 分
+
+**出力ファイル:**
+- logs/collect.log: 実行ログ
+- cache/email_data.json: メール抽出結果（36 件）
+- Google Sheets: リード 212 件
+
+### 今後の運用
+
+**日次実行:**
+\\\ash
+# キャッシュクリア & 本番実行
+Remove-Item cache -Recurse -Force -ErrorAction SilentlyContinue
+python collect.py
+\\\
+
+**ドライラン（テスト）:**
+\\\ash
+python collect.py --dry-run
+\\\
+
+---
+
+**最終更新: 2026-04-03**

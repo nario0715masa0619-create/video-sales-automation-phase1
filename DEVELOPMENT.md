@@ -216,35 +216,135 @@ python -m pytest tests/test_collect_integration.py -v --tb=short
 ステータス: デグレード防止機構完成
 
 
-## 7. API キーフェイルオーバー
+## 7. API キーフェイルオーバー（KEY 1-6 対応）
 
-**背景**: YouTube Data API v3 のクォータが枯渇したり、単一キーが 403 エラーを返す場合に対応するため、複数の API キーをサポート。
+**背景**: YouTube Data API v3 のクォータが枯渇したり、単一キーが 403 エラーを返す場合に対応するため、複数の API キー（1-6）をサポート。
 
-**実装詳細**:
-- .env に複数のキーを設定: YOUTUBE_API_KEY と YOUTUBE_API_KEY2
-- youtube_api_optimized.py の YouTubeAPIOptimized.__init__() で両キーを読み込み
-- 403 エラー発生時に _switch_api_key() メソッドで自動的に次のキーに切り替え
-- 再試行ロジックで別キーでのリクエストを実施
+**実装詳細:**
+- youtube_api_optimized.py で KEY 1-6 対応を実装
+- .env に最大 6 つのキーを設定可能
+- 403 エラー発生時に自動的に KEY 1 → KEY 2 → ... → KEY 6 に順番に切り替え
+- キー別のクレジット使用状況を追跡
 
-**使用方法**:
-.env ファイル:
-YOUTUBE_API_KEY=your_first_api_key_here
-YOUTUBE_API_KEY2=your_second_api_key_here
+**設定方法（.env）:**
+`env
+YOUTUBE_API_KEY1=your_api_key_1
+YOUTUBE_API_KEY2=your_api_key_2
+YOUTUBE_API_KEY3=your_api_key_3
+YOUTUBE_API_KEY4=your_api_key_4
+YOUTUBE_API_KEY5=your_api_key_5
+YOUTUBE_API_KEY6=your_api_key_6
+`
 
-実行時に 403 エラーが発生すると、自動的に YOUTUBE_API_KEY2 に切り替わります。
+**動作フロー:**
+1. KEY 1 で実行開始
+2. 403 Forbidden エラー → KEY 2 に自動切り替え
+3. KEY 2 も失敗 → KEY 3, 4, 5, 6 と順番に試行
+4. すべてのキーが失敗 → エラーログ出力
 
-**テスト**:
+**ログ出力例:**
+`
+API キーを切り替えました (キー 1/6 → 2/6)
+別の API キーで再試行します [search:YouTube活用]
+検索完了: 12 件 (API KEY 2, クォータ消費: 100 pt)
+`
+
+**キー別クレジット追跡:**
+`bash
+# get_quota_status() で各キーのクレジット使用状況を確認
+KEY 1: 8,000 pt 使用
+KEY 2: 2,500 pt 使用
+KEY 3: 未使用
+KEY 4: 未使用
+KEY 5: 未使用
+KEY 6: 未使用
+`
+
+**テスト:**
+`bash
 python -m pytest tests/test_api_fallback.py -v
+`
 
 テスト項目:
-- test_multiple_api_keys_loaded: 複数キーが読み込まれるか
+- test_multiple_api_keys_loaded: KEY 1-6 が読み込まれるか
 - test_api_key_fallback_on_403: 403 エラー時にキーが切り替わるか
+- test_fallback_order: KEY 1 → 2 → 3... の順番で試行されるか
 - test_fallback_fails_when_all_keys_exhausted: 全キー無効時に False を返すか
 
-**ログ出力例**:
-API キーを切り替えました (キー 2/2)
-別の API キーで再試行します [search:YouTube活用]
-
-**参考ファイル**:
-- youtube_api_optimized.py: API キーフェイルオーバー実装
+**参考ファイル:**
+- youtube_api_optimized.py: API キーフェイルオーバー実装（KEY 1-6 対応）
+- config.py: YOUTUBE_API_KEY1～6 設定管理
 - tests/test_api_fallback.py: ユニットテスト
+
+---
+## Phase 1 完了 & Phase 2 計画（2026-04-03）
+
+### Phase 1 実装完了
+
+**チェック済み項目:**
+- ✅ YouTube 検索・詳細取得
+- ✅ ICP フィルタリング & スコアリング
+- ✅ メール & URL 自動抽出
+- ✅ Google Sheets CRM 連携
+- ✅ API キーフェイルオーバー（KEY 1-6）
+   - youtube_api_optimized.py で KEY 1-6 対応実装
+   - 403 エラー時に自動キー切り替え
+   - キー別クレジット追跡機能
+- ✅ キャッシュシステム
+- ✅ エラーハンドリング & リトライ
+- ✅ テストモード廃止
+
+**実績:**
+- チャンネル検索: 575 件
+- ICP フィルタリング: 222 件
+- CRM 保存: 212 件
+- 公式サイト URL: 100%
+- メール抽出: 36 件（17%）
+
+### Phase 2 開発予定
+
+**目標:** メール抽出成功率を 17% → 80%+ に改善
+
+**改善項目:**
+
+1. **短縮 URL 除外**
+   - bitly, goo.gl, tinyurl, short.link など
+   - EXCLUDE_DOMAINS に追加
+
+2. **日本語ドメイン対応**
+   - .jp, .co.jp ドメイン対応
+   - 新しい regex パターン追加
+
+3. **JSON-LD & microdata 強化**
+   - 既存: 基本的な JSON-LD パース
+   - 改善: 完全な microdata サポート、schema.org 対応
+
+4. **コンタクトフォーム検出改善**
+   - 候補パス拡張（"contact", "お問い合わせ", "お知らせ" など）
+   - キーワードマッチング精度向上
+
+5. **メール正規表現パターン拡張**
+   - 既存: 基本的なメールパターン
+   - 改善: 複雑なメール形式対応
+
+**スケジュール:**
+- 計画・ドキュメント: 2026-04-04
+- 実装: 2026-04-05～2026-04-10
+- テスト: 2026-04-11～2026-04-15
+- デプロイ: 2026-04-16
+
+**テスト方法:**
+\\\ash
+# email_extractor.py の改善版をテスト
+python email_extractor.py <channel_url>
+
+# 目標: 80% 以上のメール取得成功率
+\\\
+
+---
+
+**最終更新: 2026-04-03**
+
+
+
+
