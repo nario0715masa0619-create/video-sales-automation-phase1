@@ -147,7 +147,8 @@ def _get_website_via_html(base_url: str) -> str:
                                 url = (link.get('navigationEndpoint') or {}).get('urlEndpoint', {}).get('url', '')
 
                         if url and not any(d in url for d in EXCLUDE_DOMAINS):
-                            if not url.startswith('http'):
+                            # ドメインのみの場合は https:// を追加
+                            if url and not url.startswith('http'):
                                 url = 'https://' + url
                             logger.info(f"ytInitialData でサイトURL発見: {url}")
                             return url
