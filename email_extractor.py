@@ -39,11 +39,24 @@ EMAIL_PATTERN = re.compile(
     r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}'
 )
 
+# 日本語ドメイン対応パターン（Phase 2 追加）
+EMAIL_PATTERN_JP = re.compile(
+    r'[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.(?:jp|co\.jp|ac\.jp|or\.jp|ne\.jp|go\.jp|lg\.jp|ad\.jp|ed\.jp|gr\.jp|io\.jp)'
+)
+
 EXCLUDE_DOMAINS = [
+    # SNS & ソーシャルメディア
     'youtube.com', 'youtu.be', 'instagram.com', 'twitter.com',
     'x.com', 'facebook.com', 't.co', 'tiktok.com', 'line.me',
     'ameblo.jp', 'note.com', 'linktr.ee', 'lit.link',
+    
+    # 大手テック企業
     'google.com', 'apple.com', 'microsoft.com',
+    
+    # 短縮URLサービス（Phase 2 追加）
+    'bit.ly', 'bitly.com', 'goo.gl', 'tinyurl.com', 'short.link',
+    'ow.ly', 'j.mp', 'youtu.be', 'ift.tt', 'buff.ly',
+    'adf.ly', 'al.ly', 'v.gd', 'is.gd', 'tiny.cc',
 ]
 
 EXCLUDE_EMAIL_KEYWORDS = [
@@ -271,7 +284,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                         ld_json = json.loads(script.string)
                         if isinstance(ld_json, dict):
                             email = ld_json.get('email') or ld_json.get('contactPoint', {}).get('email')
-                            if email and EMAIL_PATTERN.match(email):
+                            if email and (EMAIL_PATTERN.match(email) or EMAIL_PATTERN_JP.match(email)):
                                 logger.info(f"JSON-LD でメール発見: {email}")
                                 return website_url, email, contact_form_url
                     except:
@@ -286,7 +299,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                     if href.lower().startswith('mailto:'):
                         mailto_addr = href[7:].split('?')[0].strip()
                         mailto_addr = mailto_addr.replace('[at]', '@').replace('(at)', '@').replace('＠', '@')
-                        if EMAIL_PATTERN.match(mailto_addr):
+                        if EMAIL_PATTERN.match(mailto_addr) or EMAIL_PATTERN_JP.match(mailto_addr):
                             if not any(kw in mailto_addr.lower() for kw in EXCLUDE_EMAIL_KEYWORDS):
                                 found_email = mailto_addr
                                 break
@@ -363,7 +376,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                         if href.lower().startswith('mailto:'):
                             mailto_addr = href[7:].split('?')[0].strip()
                             mailto_addr = mailto_addr.replace('[at]', '@').replace('(at)', '@').replace('＠', '@')
-                            if EMAIL_PATTERN.match(mailto_addr):
+                            if EMAIL_PATTERN.match(mailto_addr) or EMAIL_PATTERN_JP.match(mailto_addr):
                                 if not any(kw in mailto_addr.lower() for kw in EXCLUDE_EMAIL_KEYWORDS):
                                     found_email = mailto_addr
                                     break
@@ -457,3 +470,7 @@ if __name__ == '__main__':
         print(f"  公式サイト:       {website or '取得失敗'}")
         print(f"  メール:           {email or '未発見'}")
         print(f"  お問い合わせURL:  {form_url or '未発見'}")
+
+
+
+
