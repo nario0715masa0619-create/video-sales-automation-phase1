@@ -89,8 +89,28 @@ def _find_values_recursive(data, target_key: str) -> list:
     return results
 
 
+def _extract_urls_from_text(text: str) -> list:
+    """テキストから URL を抽出（日本語ドメイン・複雑形式対応）"""
+    pattern = r'https?://(?:[a-zA-Z0-9\-._~:/?#\[\]@!$&\'()*+,;=%]|[\u3040-\u309f\u30a0-\u30ff\u4e00-\u9fff])+(?<![.,;:\)\]\"\'\s\u3000\u3001\u3002\u4e00-\u9fff])'
+    try:
+        urls = re.findall(pattern, text)
+        cleaned_urls = []
+        for url in urls:
+            if '?' in url:
+                base, query = url.split('?', 1)
+                base = base.rstrip('.,;:\)\]\"\'')
+                url = base + '?' + query
+            else:
+                url = url.rstrip('.,;:\)\]\"\'')
+            cleaned_urls.append(url)
+        return cleaned_urls
+    except Exception as e:
+        logger.debug(f"URL 抽出エラー: {e}")
+        return []
+
+
 def _get_website_via_ytdlp(base_url: str) -> str:
-    """yt-dlpでチャンネル説明文からサイトURLを抽出（リトライ対応）"""
+    """yt-dlp でチャンネル説明文からサイトURL を抽出（精度向上版）"""
     ydl_opts = {
         'quiet': True,
         'no_warnings': True,
@@ -99,35 +119,32 @@ def _get_website_via_ytdlp(base_url: str) -> str:
         'ignoreerrors': True,
         'socket_timeout': 20,
     }
-    
+
     for attempt in range(MAX_RETRIES):
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(base_url, download=False)
-            
+
             if not info:
                 return ""
 
             description = info.get('description', '') or ''
-            urls = re.findall(r'https?://[^\s\)\"\'\u3000\u3001\u3002]+', description)
+            urls = _extract_urls_from_text(description)
 
             for url in urls:
-                url = url.rstrip('.,)')
-                if not any(d in url for d in EXCLUDE_DOMAINS):
-                    logger.info(f"yt-dlp でサイトURL発見: {url}")
+                if not any(d in url.lower() for d in EXCLUDE_DOMAINS):
+                    logger.info(f"✅ yt-dlp サイトURL発見: {url}")
                     return url
-            
-            return ""
-        
-        except Exception as e:
-            if attempt < MAX_RETRIES - 1:
-                logger.debug(f"yt-dlp リトライ ({attempt + 1}/{MAX_RETRIES}): {e}")
-                time.sleep(RETRY_DELAY)
-            else:
-                logger.debug(f"yt-dlp サイトURL取得失敗: {e}")
-    
-    return ""
 
+            return ""
+
+        except Exception as e:
+            logger.debug(f"yt-dlp リトライ {attempt + 1}/{MAX_RETRIES}: {e}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY)
+            continue
+
+    return ""
 
 def _get_website_via_html(base_url: str) -> str:
     """YouTubeのaboutページHTMLからサイトURLを抽出（強化版）"""
@@ -258,6 +275,40 @@ def _generate_candidate_paths(base_url: str, domain: str) -> list:
         ])
     
     return paths
+
+
+def _extract_contact_form_url(html: str, base_url: str) -> str:
+    """HTML から contact form URL を抽出"""
+    try:
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        # パターン1: <form action="..."> を検出
+        forms = soup.find_all('form')
+        for form in forms:
+            action = form.get('action', '')
+            if action:
+                if action.startswith('http'):
+                    return action
+                else:
+                    return urljoin(base_url, action)
+        
+        # パターン2: お問い合わせリンクを検出
+        contact_links = soup.find_all('a', href=True)
+        for link in contact_links:
+            href = link.get('href', '').lower()
+            text = link.get_text().lower()
+            if any(kw in href or kw in text for kw in ['contact', 'inquiry', 'お問い合わせ', 'お問合せ', 'contact-form', 'form']):
+                url = link.get('href', '')
+                if url.startswith('http'):
+                    return url
+                elif url.startswith('/'):
+                    return urljoin(base_url, url)
+        
+        return ''
+    except Exception as e:
+        logger.debug(f"Contact Form 抽出エラー: {e}")
+        return ''
+
 
 
 def scrape_email_from_site(website_url: str) -> tuple:
@@ -463,6 +514,16 @@ def get_email_from_youtube_channel(base_url: str) -> tuple:
         return "", "", ""
 
     website_url, email, contact_form_url = scrape_email_from_site(website_url)
+
+    # Contact Form URL を検出
+    if not contact_form_url:
+        try:
+            contact_form_url = _extract_contact_form_url(html, website_url)
+            if contact_form_url:
+                logger.info(f'✅ Contact Form URL発見: {contact_form_url}')
+        except:
+            pass
+
     return website_url, email, contact_form_url
 
 
@@ -485,6 +546,7 @@ if __name__ == '__main__':
         print(f"  公式サイト:       {website or '取得失敗'}")
         print(f"  メール:           {email or '未発見'}")
         print(f"  お問い合わせURL:  {form_url or '未発見'}")
+
 
 
 
