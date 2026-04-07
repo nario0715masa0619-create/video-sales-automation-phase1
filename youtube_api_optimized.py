@@ -8,18 +8,64 @@ from cache_manager import CacheManager
 class YouTubeAPIOptimized:
     """YouTube Data API v3 クォータ最適化版"""
     
-    def __init__(self, api_key: str, cache_dir: str = "cache"):
-        self.api_key = api_key
+
+    def __init__(self, api_key: str = None, cache_dir: str = "cache"):
+        """
+        初期化。api_key が指定されていない場合は .env から読み込み。
+        複数 API キーをサポート（YOUTUBE_API_KEY, YOUTUBE_API_KEY2）
+        """
+        import os
+        from dotenv import load_dotenv
+        
+        load_dotenv()
+        
+        # API キーの優先順位: 引数 > YOUTUBE_API_KEY > YOUTUBE_API_KEY2
+        self.api_keys = []
+        if api_key:
+            self.api_keys.append(api_key)
+        else:
+            if os.getenv("YOUTUBE_API_KEY"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY"))
+            if os.getenv("YOUTUBE_API_KEY2"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY2"))
+            if os.getenv("YOUTUBE_API_KEY3"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY3"))
+            if os.getenv("YOUTUBE_API_KEY4"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY4"))
+            if os.getenv("YOUTUBE_API_KEY5"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY5"))
+            if os.getenv("YOUTUBE_API_KEY6"):
+                self.api_keys.append(os.getenv("YOUTUBE_API_KEY6"))
+        
+        if not self.api_keys:
+            raise ValueError("❌ API キーが設定されていません (YOUTUBE_API_KEY または YOUTUBE_API_KEY2)")
+        
+        self.current_api_key_index = 0
+        self.api_key = self.api_keys[self.current_api_key_index]
+        logger.info(f"✅ API キー設定完了 ({len(self.api_keys)} 個のキーを使用可能)")
+        
         self.base_url = "https://www.googleapis.com/youtube/v3"
         self.cache = CacheManager(cache_dir)
         self.quota_used = 0
+        self.quota_by_key = {}  # キー別のクレジット使用状況を追跡
         
         # リトライ設定
         self.max_retries = 3
         self.retry_wait = 2  # 秒
-        
-        logger.info("YouTubeAPIOptimized を初期化しました")
-    
+
+
+    def _switch_api_key(self) -> bool:
+        """次の API キーに切り替える。利用可能なキーがない場合は False を返す"""
+        if self.current_api_key_index < len(self.api_keys) - 1:
+            self.current_api_key_index += 1
+            self.api_key = self.api_keys[self.current_api_key_index]
+            logger.warning(f"⚠️ API キーを切り替えました (キー {self.current_api_key_index + 1}/{len(self.api_keys)})")
+            return True
+        else:
+            logger.error(f"❌ 全ての API キーが無効です")
+            return False
+
+
     def _request_with_etag(self, method: str, endpoint: str, params: Dict, 
                           resource_key: str) -> tuple[Optional[Dict], int]:
         """ETag ベースのリクエスト（304 対応）"""
@@ -50,6 +96,11 @@ class YouTubeAPIOptimized:
                 # クォータ消費を推定
                 quota_cost = self._estimate_quota(endpoint, params)
                 self.quota_used += quota_cost
+                # キー別のクレジット使用状況を記録
+                current_key_idx = self.current_api_key_index
+                if current_key_idx not in self.quota_by_key:
+                    self.quota_by_key[current_key_idx] = 0
+                self.quota_by_key[current_key_idx] += quota_cost
                 
                 return resp.json(), quota_cost
             
@@ -60,8 +111,15 @@ class YouTubeAPIOptimized:
             
             except requests.exceptions.HTTPError as e:
                 if resp.status_code == 403:
-                    logger.error(f"403 Forbidden: API キーまたはクォータの問題 [{resource_key}]")
-                    return None, 0
+                    logger.error(f"403 Forbidden (API KEY {self.current_api_key_index + 1}): API キーまたはクォータの問題 [{resource_key}]")
+                    # 次の API キーに切り替える
+                    if self._switch_api_key():
+                        logger.info(f"別の API キーで再試行します (API KEY {self.current_api_key_index + 1}) [{resource_key}]")
+                        if attempt < self.max_retries - 1:
+                            time.sleep(self.retry_wait)
+                        continue  # 同じループ内で再試行
+                    else:
+                        return None, 0  # 全てのキーが無効
                 elif resp.status_code == 404:
                     logger.warning(f"404 Not Found: {resource_key}")
                     return None, 0
@@ -131,7 +189,7 @@ class YouTubeAPIOptimized:
         # 検索結果をキャッシュに保存
         self.cache.set_search_results(keyword, channel_ids)
         
-        logger.info(f"検索完了: {keyword} → {len(channel_ids)} チャンネル（クォータ消費: {quota}）")
+        logger.info(f"検索完了: {keyword} → {len(channel_ids)} チャンネル（API KEY {self.current_api_key_index + 1}, クォータ消費: {quota}）")
         return channel_ids
     
     # ===== チャンネル詳細取得 =====
@@ -264,10 +322,43 @@ class YouTubeAPIOptimized:
         return all_videos
     
     def get_quota_status(self) -> Dict:
-        """クォータ使用状況を返す"""
+        """クォータ使用状況を返す（キー別の詳細情報を含む）"""
+        quota_by_key_info = {}
+        for key_idx, quota in self.quota_by_key.items():
+            quota_by_key_info[f'API_KEY_{key_idx + 1}'] = quota
+        
         return {
             'quota_used': self.quota_used,
             'quota_limit': 10000,
             'remaining': 10000 - self.quota_used,
-            'utilization_percent': round((self.quota_used / 10000) * 100, 2)
+            'utilization_percent': round((self.quota_used / 10000) * 100, 2),
+            'quota_by_key': quota_by_key_info,
+            'current_api_key': f'API_KEY_{self.current_api_key_index + 1}'
         }
+# youtube_api_optimized.py にクォータ管理を追加
+
+def check_quota_limit(current_usage, daily_limit=10000, stop_threshold=0.9):
+    """
+    クォータ使用率をチェック、閾値を超えたら例外を発生させる
+    
+    Args:
+        current_usage: 現在のクォータ使用量
+        daily_limit: 1日の上限（デフォルト 10,000）
+        stop_threshold: 停止する使用率（デフォルト 0.9 = 90%）
+    
+    Raises:
+        Exception: クォータ使用率が閾値を超えた場合
+    """
+    usage_ratio = current_usage / daily_limit
+    
+    if usage_ratio >= stop_threshold:
+        raise Exception(
+            f"❌ クォータ不足により処理を中断します\n"
+            f"   現在の使用量: {current_usage:,}/{daily_limit:,} ユニット\n"
+            f"   使用率: {usage_ratio*100:.1f}%\n"
+            f"   閾値: {stop_threshold*100:.0f}%\n"
+            f"   原因: YouTube Data API のクォータが不足しています\n"
+            f"   対策: 明日 UTC 00:00（日本時間 09:00）以降に再実行してください\n"
+            f"   推奨: キーワード数を削減するか、キャッシュを活用してください"
+        )
+

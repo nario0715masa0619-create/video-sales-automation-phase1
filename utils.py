@@ -59,3 +59,42 @@ def is_valid_url(url: str) -> bool:
         return all([result.scheme, result.netloc])
     except Exception:
         return False
+
+# データ検証関数（CRM保存データの確認用）
+def validate_crm_data_saved(min_email_ratio=0.8):
+    """
+    Google Sheets にメール情報が実際に保存されたか検証する
+    
+    Args:
+        min_email_ratio: メール情報を持つリードの最小割合（デフォルト 0.8 = 80%）
+    
+    Returns:
+        tuple: (メール情報を持つリード数, 総リード数)
+    
+    Raises:
+        Exception: メール情報が保存されていない場合
+    """
+    from crm_manager import CRMManager
+    
+    crm = CRMManager()
+    leads = crm.get_all_leads()
+    
+    with_email = sum(1 for lead in leads if lead.get('メールアドレス'))
+    total = len(leads)
+    
+    if total == 0:
+        return 0, 0
+    
+    email_ratio = with_email / total if total > 0 else 0
+    
+    if email_ratio < min_email_ratio:
+        raise Exception(
+            f"❌ メール情報の検証エラー\n"
+            f"   総リード数: {total} 件\n"
+            f"   メール情報あり: {with_email} 件\n"
+            f"   比率: {email_ratio*100:.1f}% (最小: {min_email_ratio*100:.0f}%)\n"
+            f"   原因: Step 6 と Step 7 の順序を確認してください\n"
+            f"   詳細: CHECKLIST.md のトラブルシューティングを参照"
+        )
+    
+    return with_email, total
