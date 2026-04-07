@@ -65,7 +65,7 @@ def run_collect(keywords=None, dry_run=False):
 
     # Step 1: YouTube Data API でチャンネル検索
     logger.info("\n=== Step 1: チャンネル検索（search.list） ===")
-    all_urls = search_company_channels(keywords, max_per_keyword=50)
+    all_urls = search_company_channels(keywords, max_per_keyword=150)
     logger.info(f"✅ 検索結果: {len(all_urls)} チャンネル取得")
 
     if not all_urls:
@@ -113,7 +113,7 @@ def run_collect(keywords=None, dry_run=False):
     logger.info(f"✅ スコアリング完了: {len(scored_channels)} 件")
 
 
-    # Step 6: メールアドレス自動取得
+    # Step 7: メールアドレス自動取得
     logger.info("\n=== Step 6: メールアドレス自動取得 ===")
     email_count = 0
     email_data = {}
@@ -127,9 +127,9 @@ def run_collect(keywords=None, dry_run=False):
 
         try:
             website_url, email, contact_form_url = get_email_from_youtube_channel(channel_url)
-            ch.channel.contact_email = email if email else ''
-            ch.channel.website_url = website_url if website_url else ''
-            ch.channel.contact_form_url = contact_form_url if contact_form_url else ''
+            ch.contact_email = email if email else ''
+            ch.website_url = website_url if website_url else ''
+            ch.contact_form_url = contact_form_url if contact_form_url else ''
             
             # JSON にも同時に保存
             email_data[channel_url] = {
@@ -154,7 +154,7 @@ def run_collect(keywords=None, dry_run=False):
         json.dump(email_data, f, ensure_ascii=False, indent=2)
     logger.info(f"✅ メール情報保存: {len(email_data)} 件を JSON に保存")
 
-    # Step 7: CRM 更新
+    # Step 6: CRM 更新
     logger.info("\n=== Step 7: CRM 更新 ===")
     
     if dry_run:
@@ -222,3 +222,5 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"予期しないエラー: {e}")
         sys.exit(1)
+
+

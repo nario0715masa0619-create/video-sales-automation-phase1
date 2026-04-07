@@ -108,7 +108,7 @@ def search_company_channels(keywords: List[str], max_per_keyword: int = 50) -> L
 
     for keyword in keywords:
         try:
-            channel_ids = yt_api.search_channels(keyword, max_per_keyword)
+            channel_ids = yt_api.search_channels_paginated(keyword, max_per_keyword)
             all_channel_ids.extend(channel_ids)
             time.sleep(1.0)  # Rate limiting
         except Exception as e:
@@ -234,3 +234,5 @@ def print_quota_status():
     logger.info(f"  残り: {status['remaining']} ユニット")
     logger.info(f"  使用率: {status['utilization_percent']}%")
     logger.info("="*60)
+
+
