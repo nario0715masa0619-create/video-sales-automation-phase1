@@ -127,9 +127,9 @@ def run_collect(keywords=None, dry_run=False):
 
         try:
             website_url, email, contact_form_url = get_email_from_youtube_channel(channel_url)
-            ch.channel.contact_email = email if email else ''
-            ch.channel.website_url = website_url if website_url else ''
-            ch.channel.contact_form_url = contact_form_url if contact_form_url else ''
+            ch.contact_email = email if email else ''
+            ch.website_url = website_url if website_url else ''
+            ch.contact_form_url = contact_form_url if contact_form_url else ''
             
             # JSON にも同時に保存
             email_data[channel_url] = {
