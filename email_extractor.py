@@ -89,8 +89,28 @@ def _find_values_recursive(data, target_key: str) -> list:
     return results
 
 
+def _extract_urls_from_text(text: str) -> list:
+    """テキストから URL を抽出（日本語ドメイン・複雑形式対応）"""
+    pattern = r'https?://(?:[a-zA-Z0-9\-._~:/?#\[\]@!$&\'()*+,;=%]|[\u3040-\u309f\u30a0-\u30ff\u4e00-\u9fff])+(?<![.,;:\)\]\"\'\s\u3000\u3001\u3002\u4e00-\u9fff])'
+    try:
+        urls = re.findall(pattern, text)
+        cleaned_urls = []
+        for url in urls:
+            if '?' in url:
+                base, query = url.split('?', 1)
+                base = base.rstrip('.,;:\)\]\"\'')
+                url = base + '?' + query
+            else:
+                url = url.rstrip('.,;:\)\]\"\'')
+            cleaned_urls.append(url)
+        return cleaned_urls
+    except Exception as e:
+        logger.debug(f"URL 抽出エラー: {e}")
+        return []
+
+
 def _get_website_via_ytdlp(base_url: str) -> str:
-    """yt-dlpでチャンネル説明文からサイトURLを抽出（リトライ対応）"""
+    """yt-dlp でチャンネル説明文からサイトURL を抽出（精度向上版）"""
     ydl_opts = {
         'quiet': True,
         'no_warnings': True,
@@ -99,35 +119,32 @@ def _get_website_via_ytdlp(base_url: str) -> str:
         'ignoreerrors': True,
         'socket_timeout': 20,
     }
-    
+
     for attempt in range(MAX_RETRIES):
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(base_url, download=False)
-            
+
             if not info:
                 return ""
 
             description = info.get('description', '') or ''
-            urls = re.findall(r'https?://[^\s\)\"\'\u3000\u3001\u3002]+', description)
+            urls = _extract_urls_from_text(description)
 
             for url in urls:
-                url = url.rstrip('.,)')
-                if not any(d in url for d in EXCLUDE_DOMAINS):
-                    logger.info(f"yt-dlp でサイトURL発見: {url}")
+                if not any(d in url.lower() for d in EXCLUDE_DOMAINS):
+                    logger.info(f"✅ yt-dlp サイトURL発見: {url}")
                     return url
-            
-            return ""
-        
-        except Exception as e:
-            if attempt < MAX_RETRIES - 1:
-                logger.debug(f"yt-dlp リトライ ({attempt + 1}/{MAX_RETRIES}): {e}")
-                time.sleep(RETRY_DELAY)
-            else:
-                logger.debug(f"yt-dlp サイトURL取得失敗: {e}")
-    
-    return ""
 
+            return ""
+
+        except Exception as e:
+            logger.debug(f"yt-dlp リトライ {attempt + 1}/{MAX_RETRIES}: {e}")
+            if attempt < MAX_RETRIES - 1:
+                time.sleep(RETRY_DELAY)
+            continue
+
+    return ""
 
 def _get_website_via_html(base_url: str) -> str:
     """YouTubeのaboutページHTMLからサイトURLを抽出（強化版）"""
