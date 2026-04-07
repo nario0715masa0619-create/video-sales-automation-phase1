@@ -210,3 +210,37 @@ if __name__ == "__main__":
 YOUTUBE_API_KEY: str = os.getenv("YOUTUBE_API_KEY", "")
 if not YOUTUBE_API_KEY:
     raise ValueError("YOUTUBE_API_KEY が .env に設定されていません")
+
+# ===== ウォームアップ・バウンス管理設定 =====
+from datetime import datetime
+import os
+
+# ドメイン運用開始日
+DOMAIN_LAUNCH_DATE = "2026-04-07"
+
+# 週ごとのウォームアップスケジュール
+WARMUP_SCHEDULE = {
+    1: 10,   # 1週目：10件/日
+    2: 15,   # 2週目：15件/日
+    3: 20,   # 3週目：20件/日
+    4: 25,   # 4週目：25件/日
+}
+
+# 4週目以降のオプション設定
+ENABLE_AGGRESSIVE_MODE = False  # True なら最大 30 件/日を許可
+AGGRESSIVE_BOUNCE_THRESHOLD = 1.0  # バウンス率が 1% 未満なら aggressive mode に進める条件
+
+# SMTP送信元設定（luvira-biz.jp）
+SMTP_HOST = "mail.luvira-biz.jp"
+SMTP_PORT = 587
+SMTP_USER = "marketing@luvira-biz.jp"
+SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
+MAIL_FROM = "marketing@luvira-biz.jp"
+
+# ===== IMAP 設定（バウンス監視用）=====
+IMAP_HOST = os.getenv("IMAP_HOST", "mail.luvira-biz.jp")
+IMAP_PORT = int(os.getenv("IMAP_PORT", "993"))
+IMAP_USER = os.getenv("IMAP_USER", "marketing@luvira-biz.jp")
+IMAP_PASSWORD = os.getenv("IMAP_PASSWORD")
+if not IMAP_PASSWORD:
+    raise ValueError("IMAP_PASSWORD が .env に設定されていません")
