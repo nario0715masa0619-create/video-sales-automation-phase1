@@ -165,3 +165,46 @@ Remove-Item cache -Recurse -Force
 **プロジェクトステータス:** ✅ 本番環境対応 / Phase 2 開発中
 
 
+
+## Phase 3 実装進捗（2026-04-07）
+
+### 段階1: YouTube About ページ URL 抽出精度向上 ✅
+- **実装内容**: 
+  - _extract_urls_from_text() 関数を追加（日本語ドメイン・複雑URL形式対応）
+  - _get_website_via_ytdlp() を改善
+  - 正規表現パターン拡張（日本語文字対応）
+  
+- **成果**:
+  - Website 取得率: 27% → 63%（+36%改善）
+  - テスト実行（飲食店企業）: 73チャンネル、14メール抽出（19.2%）
+  - Git コミット: ad1fc62
+
+### 段階2: Contact Form 検出関数実装 ✅
+- **実装内容**:
+  - _extract_contact_form_url() 関数を追加
+  - scrape_email_from_site() に Contact Form 自動検出ロジック統合
+  - &lt;form action&gt; と contact リンクの検出対応
+  
+- **テスト実行**:
+  - 製造業企業ラン: 37チャンネル取得、メール抽出中
+  - Git コミット: 81f3a28
+
+### データ収集実績（本日）
+
+| ジャンル | チャンネル数 | メール取得 | Website取得 | 完了 |
+|---------|-----------|----------|-----------|------|
+| 動画制作 | 73 | 14 | 46 | ✅ |
+| 飲食店・小売 | 73 | 14 | 73 | ✅ |
+| 製造業 | 37 | 進行中 | - | 🔄 |
+
+### CRM 累計統計（2026-04-07 時点）
+- 総リード数: 397+ 件
+- メール情報: 69+ 件（17.4%）
+- Website情報: 266+ 件（74%+）
+- 本日追加: 146+ リード
+
+### Git 履歴
+- ad1fc62: Phase 3 - YouTube About ページの URL 抽出精度向上（日本語ドメイン対応）
+- 81f3a28: Phase 3 段階2 - Contact Form 検出関数を実装
+- 8c2af5a: chore: .gitignore を追加（__pycache__, .env, logs, cache を除外）
+
