@@ -19,6 +19,14 @@ from urllib.parse import urlparse, urljoin
 from utils import normalize_url
 from bs4 import BeautifulSoup
 
+try:
+    from email_cache import load_from_cache, save_to_cache
+except ImportError:
+    def load_from_cache(url):
+        return None, None, None
+    def save_to_cache(url, email, form):
+        pass
+
 REQUEST_TIMEOUT = 10
 MAX_CRAWL_PAGES = 8
 MAX_RETRIES = 3
@@ -254,6 +262,12 @@ def _generate_candidate_paths(base_url: str, domain: str) -> list:
 
 def scrape_email_from_site(website_url: str) -> tuple:
     """企業サイトからメールアドレスとお問い合わせフォームURLを抽出"""
+    
+    # キャッシュから確認
+    cached_website, cached_email, cached_form = load_from_cache(website_url)
+    if cached_email or cached_form:
+        logger.info(f"📦 キャッシュから取得: {website_url}")
+        return cached_website, cached_email, cached_form
     parsed = urlparse(website_url)
     base = f"{parsed.scheme}://{parsed.netloc}"
 
@@ -471,6 +485,8 @@ if __name__ == '__main__':
         print(f"  公式サイト:       {website or '取得失敗'}")
         print(f"  メール:           {email or '未発見'}")
         print(f"  お問い合わせURL:  {form_url or '未発見'}")
+
+
 
 
 
