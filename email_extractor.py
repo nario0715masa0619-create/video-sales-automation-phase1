@@ -277,6 +277,40 @@ def _generate_candidate_paths(base_url: str, domain: str) -> list:
     return paths
 
 
+def _extract_contact_form_url(html: str, base_url: str) -> str:
+    """HTML から contact form URL を抽出"""
+    try:
+        soup = BeautifulSoup(html, 'html.parser')
+        
+        # パターン1: <form action="..."> を検出
+        forms = soup.find_all('form')
+        for form in forms:
+            action = form.get('action', '')
+            if action:
+                if action.startswith('http'):
+                    return action
+                else:
+                    return urljoin(base_url, action)
+        
+        # パターン2: お問い合わせリンクを検出
+        contact_links = soup.find_all('a', href=True)
+        for link in contact_links:
+            href = link.get('href', '').lower()
+            text = link.get_text().lower()
+            if any(kw in href or kw in text for kw in ['contact', 'inquiry', 'お問い合わせ', 'お問合せ', 'contact-form', 'form']):
+                url = link.get('href', '')
+                if url.startswith('http'):
+                    return url
+                elif url.startswith('/'):
+                    return urljoin(base_url, url)
+        
+        return ''
+    except Exception as e:
+        logger.debug(f"Contact Form 抽出エラー: {e}")
+        return ''
+
+
+
 def scrape_email_from_site(website_url: str) -> tuple:
     """企業サイトからメールアドレスとお問い合わせフォームURLを抽出"""
     
@@ -480,6 +514,16 @@ def get_email_from_youtube_channel(base_url: str) -> tuple:
         return "", "", ""
 
     website_url, email, contact_form_url = scrape_email_from_site(website_url)
+
+    # Contact Form URL を検出
+    if not contact_form_url:
+        try:
+            contact_form_url = _extract_contact_form_url(html, website_url)
+            if contact_form_url:
+                logger.info(f'✅ Contact Form URL発見: {contact_form_url}')
+        except:
+            pass
+
     return website_url, email, contact_form_url
 
 
@@ -502,6 +546,7 @@ if __name__ == '__main__':
         print(f"  公式サイト:       {website or '取得失敗'}")
         print(f"  メール:           {email or '未発見'}")
         print(f"  お問い合わせURL:  {form_url or '未発見'}")
+
 
 
 
