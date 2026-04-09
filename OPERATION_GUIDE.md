@@ -1,189 +1,90 @@
-# 本番稼働手順書
+# 営業自動化プロジェクト - 運用ガイド
 
-## 日次実行コマンド
+## Phase 2 ウォームアップ & バウンス管理
 
-### 1. 自動収集・CRM更新（毎日実行）
-\\\powershell
-cd D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1
-python src/collect.py
-\\\
+### 📊 実装完了確認
 
-**処理内容：**
-- YouTube検索（12キーワード）
-- チャンネル詳細取得（550チャンネル程度）
-- ICPフィルタリング
-- 重複排除
-- スコアリング（A/B/C ランク分類）
-- メール抽出（公式サイトから）
-- Google Sheets CRM自動更新
-
-**出力：**
-- logs/collect.log: 実行ログ
-- cache/search_cache.json: 検索結果キャッシュ
-- cache/scored_channels.pkl: スコアリング済みチャンネル
-- Google Sheets: 194件のリード追加
-
-**実行時間：** 約5～10分
+| 項目 | ファイル | 状態 |
+|------|---------|------|
+| SQLite ログ管理 | db_manager.py | ✅ |
+| ウォームアップスケジュール | send_email.py / config.py | ✅ |
+| バウンス監視 & 集計 | bounce_checker.py | ✅ |
+| 週次レビュー & 判定 | weekly_report.py | ✅ |
 
 ---
 
-### 2. メール送信（手動実行）
-\\\powershell
-python src/send_email.py
-\\\
+## 📅 日次運用スケジュール
 
-**処理内容：**
-- Google Sheetsから未送信リードを取得
-- メール本文生成（Gemini AI使用）
-- 自動メール送信
-- 送信履歴をGoogle Sheetsに記録
+| 時刻 | スクリプト | 説明 |
+|------|-----------|------|
+| 09:00 | `python send_email.py --limit 10` | メール送信（日次） |
+| 01:00 | `python bounce_checker.py` | バウンスチェック（深夜） |
+| 月朝 | `python weekly_report.py` | 週次レビュー |
 
 ---
 
-### 3. フォーム自動送信（手動実行）
-\\\powershell
-python src/form_submitter.py
-\\\
+## 🔄 実行手順
 
-**処理内容：**
-- 問い合わせフォームへ自動入力・送信
+### 1. メール送信実行
 
----
+`python send_email.py --limit 10`
 
-## 定期メンテナンス
+**オプション:**
+- `--limit N`: 送信件数を指定（デフォルト: 10）
+- `--dry-run`: テスト実行（実際には送信しない）
 
-### キャッシュクリア（重い場合）
-\\\powershell
-Remove-Item cache -Recurse -Force
-\\\
+### 2. バウンスチェック実行
 
-### Google Sheets クリア（リセット時）
-\\\powershell
-python -c "
-import gspread
-from google.oauth2.service_account import Credentials
+`python bounce_checker.py`
 
-scopes = ['https://www.googleapis.com/auth/spreadsheets', 'https://www.googleapis.com/auth/drive']
-creds = Credentials.from_service_account_file('credentials/service_account.json', scopes=scopes)
-client = gspread.authorize(creds)
-sheet = client.open('SNS動画活用企業向け営業CRM管理シート').sheet1
-sheet.batch_clear(['A2:ZZ10000'])
-print('✅ クリア完了')
-"
-\\\
+毎日深夜 01:00 に自動実行推奨
+
+### 3. 週次レビュー実行
+
+`python weekly_report.py`
+
+毎週月曜朝に実行
 
 ---
 
-## トラブル時のデバッグ
+## ⚙️ 設定確認
 
-### ログ確認
-\\\powershell
-Get-Content logs/collect.log -Tail 100
-\\\
+### .env に必須項目
 
-### キャッシュ状態確認
-\\\powershell
-Get-ChildItem cache
-\\\
-
-### Google Sheets 状態確認
-\\\powershell
-python tools/check_crm.py
-\\\
+YOUTUBE_API_KEY=xxx
+GOOGLE_SHEETS_ID=xxx
+GEMINI_API_KEY=xxx
+SMTP_USER=marketing@luvira-biz.jp
+SMTP_PASSWORD=xxx
+IMAP_HOST=sv16675.xserver.jp
+IMAP_PORT=993
+IMAP_USER=marketing@luvira-biz.jp
+IMAP_PASSWORD=xxx
 
 ---
 
-## ファイル配置図
+## 🚨 トラブルシューティング
 
-\\\
-video-sales-automation-phase1/
-├── src/
-│   ├── collect.py ← 【これを実行】
-│   ├── send_email.py ← メール送信用
-│   ├── form_submitter.py ← フォーム送信用
-│   ├── config.py
-│   ├── target_scraper.py
-│   ├── scorer.py
-│   ├── crm_manager.py
-│   ├── email_extractor.py
-│   └── ...（その他メインコード）
-├── scripts/
-│   └── orchestrator.py （不使用）
-├── tools/
-│   ├── check_crm.py （デバッグ用）
-│   ├── analyze_*.py （分析用）
-│   └── ...（その他デバッグ用）
-├── cache/
-│   ├── search_cache.json （自動生成）
-│   └── scored_channels.pkl （自動生成）
-├── logs/
-│   └── collect.log （実行ログ）
-├── credentials/
-│   └── service_account.json （Google認証）
-└── PROJECT_STRUCTURE.md （このファイル）
-\\\
+### SMTP エラー: Client host rejected
+
+原因: ドメイン運用初期段階で IP ブロック
+対策: test_email.py で単体テスト実行
+
+### IMAP エラー: NoneType object
+
+原因: IMAP_PASSWORD が .env に設定されていない
+対策: .env に IMAP_PASSWORD を設定
 
 ---
 
-## 実行前チェックリスト
+## 📊 ウォームアップスケジュール
 
-- [ ] credentials/service_account.json が存在するか
-- [ ] config.py に YOUTUBE_API_KEY が設定されているか
-- [ ] config.py に GEMINI_API_KEY が設定されているか（メール送信時）
-- [ ] Google Sheets シート名が正しいか
-- [ ] インターネット接続は正常か
+| 週 | 期間 | 上限 |
+|---|------|------|
+| 1週目 | 運用開始～7日 | 10件/日 |
+| 2週目 | 8～14日 | 15件/日 |
+| 3週目 | 15～21日 | 20件/日 |
+| 4週目 | 22～28日 | 25件/日 |
+| 5週目～ | 29日以降 | 25件/日 |
 
----
-
-## 本番稼働スケジュール案
-
-| 時間 | 処理 | コマンド |
-|------|------|---------|
-| 08:00 | 自動収集・CRM更新 | \python src/collect.py\ |
-| 09:00 | メール送信 | \python src/send_email.py\ |
-| 16:00 | ログ確認・メトリクス確認 | \Get-Content logs/collect.log -Tail 50\ |
-
-
----
-
-## Phase 1 実行結果（2026-04-03）
-
-### 初回本番実行
-
-**実行コマンド:**
-\\\ash
-python collect.py
-\\\
-
-**実行結果:**
-- YouTube 検索: 575 チャンネル取得（クォータ 12% 消費）
-- ICP フィルタリング: 222 件合格
-- 重複排除: 207 件
-- スコアリング: 完了（A/B/C ランク分類）
-- メール抽出: 36 件成功（17%）
-- Google Sheets CRM 更新: 212 件新規追加
-
-**実行時間:** 約 5～10 分
-
-**出力ファイル:**
-- logs/collect.log: 実行ログ
-- cache/email_data.json: メール抽出結果（36 件）
-- Google Sheets: リード 212 件
-
-### 今後の運用
-
-**日次実行:**
-\\\ash
-# キャッシュクリア & 本番実行
-Remove-Item cache -Recurse -Force -ErrorAction SilentlyContinue
-python collect.py
-\\\
-
-**ドライラン（テスト）:**
-\\\ash
-python collect.py --dry-run
-\\\
-
----
-
-**最終更新: 2026-04-03**
+バウンス率 2% 未満の場合のみ次週に進める
