@@ -434,3 +434,39 @@ ENABLE_AGGRESSIVE_MODE = True
 
 ---
 **最終更新**: 2026-04-07  
+
+
+## Phase 3 段階 3: Google Forms メール除外とノイズフィルタリング強化（2026-04-10）
+
+### 実装内容
+- **EXCLUDE_DOMAINS 拡張**: 短縮 URL サービス（bit.ly, tinyurl.com, goo.gl, amzn.to, is.gd等）を除外
+- **EXCLUDE_EMAIL_KEYWORDS 拡張**: Google Forms メール（marketing-studio-*@google.com）とアカウント系メール（accounts-noreply等）を除外
+- **email_extractor.py 強化**: JSON-LD スキーマ解析時に EXCLUDE_EMAIL_KEYWORDS を適用
+- **collect.py 修正**: Step 6 メール保存時に Google Forms メールを除外する条件判定を追加
+
+### 検証済み実績
+| 項目 | 数値 |
+|------|------|
+| 教育ジャンル チャンネル数 | 106 件 |
+| 正規メール抽出 | 18 件（17.0%）|
+| Google Forms ノイズ削減 | 32 件 |
+| CRM 累計リード | 1,030 件 |
+| CRM メール情報 | 212 件（20.6%）|
+
+### 技術的改善
+- ✅ メール品質向上（Google Forms ノイズ完全除外）
+- ✅ ノイズフィルタリング強化（段階的な除外ルール適用）
+- ✅ 偽陽性削減による精度向上
+- ✅ 今後の大規模実行での信頼性向上
+
+### Git コミット
+- **3961408**: feat: Google Forms メール除外で正規メール抽出率向上
+
+### ファイル変更
+- email_extractor.py: EXCLUDE_DOMAINS, EXCLUDE_EMAIL_KEYWORDS 拡張 + JSON-LD チェック修正
+- collect.py: Step 6 メール保存時に Google Forms 除外ロジック追加
+
+### 次のステップ
+1. **Phase 3 段階 4**: 完全 JSON-LD 解析（Organization, LocalBusiness, BreadcrumbList）
+2. **大規模実行**: IT・ソフトウェア企業ジャンル実行（メール検出率 20% → 50% 目標）
+3. **他ジャンル実行**: 医療、製造、建設等での検証
