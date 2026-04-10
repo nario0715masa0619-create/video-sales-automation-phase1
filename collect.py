@@ -133,7 +133,7 @@ def run_collect(keywords=None, dry_run=False):
             
             # JSON にも同時に保存
             email_data[channel_url] = {
-                "email": email if email else '',
+                "email": email if email and "marketing-studio" not in email.lower() and "googlegroups" not in email.lower() else "",
                 "website": website_url if website_url else '',
                 "form_url": contact_form_url if contact_form_url else ''
             }

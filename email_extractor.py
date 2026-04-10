@@ -57,19 +57,21 @@ EXCLUDE_DOMAINS = [
     'youtube.com', 'youtu.be', 'instagram.com', 'twitter.com',
     'x.com', 'facebook.com', 't.co', 'tiktok.com', 'line.me',
     'ameblo.jp', 'note.com', 'linktr.ee', 'lit.link',
-    
-    # 大手テック企業
-    'google.com', 'apple.com', 'microsoft.com',
-    
-    # 短縮URLサービス（Phase 2 追加）
-    'bit.ly', 'bitly.com', 'goo.gl', 'tinyurl.com', 'short.link',
-    'ow.ly', 'j.mp', 'youtu.be', 'ift.tt', 'buff.ly',
-    'adf.ly', 'al.ly', 'v.gd', 'is.gd', 'tiny.cc',
+    # 短縮URL・リダイレクト
+    'bit.ly', 'tinyurl.com', 'short.link', 'goo.gl', 'ow.ly',
+    'amzn.to', 'is.gd', 'buff.ly', 'rebrand.ly', 'msha.ke',
+    # フォーム・アンケート・決済
+    'forms.gle', 'typeform.com', 'qualtrics.com', 'stripe.com',
+    'paypal.com', 'square.com', 'shopify.com', 'wix.com',
+    # ホスティング・分析
+    'github.com', 'gitlab.com', 'analytics.google.com', 'ads.google.com',
 ]
 
 EXCLUDE_EMAIL_KEYWORDS = [
     'example', 'test', 'noreply', 'no-reply',
     'sentry', 'wixpress', 'wordpress', 'schema',
+    'marketing-studio-cloud-regional-pmms',  # Google Forms
+    'accounts-noreply', 'googlegroups',
     '.png', '.jpg', '.gif', '.svg', '.webp',
 ]
 
@@ -350,7 +352,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
                         ld_json = json.loads(script.string)
                         if isinstance(ld_json, dict):
                             email = ld_json.get('email') or ld_json.get('contactPoint', {}).get('email')
-                            if email and (EMAIL_PATTERN.match(email) or EMAIL_PATTERN_JP.match(email)):
+                            if email and (EMAIL_PATTERN.match(email) or EMAIL_PATTERN_JP.match(email)) and not any(kw in email.lower() for kw in EXCLUDE_EMAIL_KEYWORDS):
                                 logger.info(f"JSON-LD でメール発見: {email}")
                                 return website_url, email, contact_form_url
                     except:
