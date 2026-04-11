@@ -5,18 +5,33 @@ from datetime import datetime, timedelta
 from loguru import logger
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# .env ファイルを読み込み
+load_dotenv()
 
 logger.add('logs/bounce_checker.log', rotation='500 MB')
 
 DB_PATH = Path("logs/send_log.db")
 
 def check_bounces():
-    """IMAP で marketing@luvira-biz.jp のバウンスメールを集計"""
+    """IMAP でバウンスメールを集計"""
     logger.info("=== バウンスチェック開始 ===")
     
+    # 環境変数から直接読み込み
+    IMAP_HOST = os.getenv("IMAP_HOST", "sv16675.xserver.jp")
+    IMAP_PORT = int(os.getenv("IMAP_PORT", "993"))
+    IMAP_USER = os.getenv("IMAP_USER", "marketing@luvira-biz.jp")
+    IMAP_PASSWORD = os.getenv("IMAP_PASSWORD")
+    
+    logger.info(f"接続情報: {IMAP_HOST}:{IMAP_PORT} / {IMAP_USER}")
+    
     try:
-        imap = imaplib.IMAP4_SSL("mail.luvira-biz.jp", 993)
-        imap.login("marketing@luvira-biz.jp", os.getenv("SMTP_PASSWORD"))
+        if not IMAP_PASSWORD:
+            raise ValueError("IMAP_PASSWORD が設定されていません")
+        
+        imap = imaplib.IMAP4_SSL(IMAP_HOST, IMAP_PORT)
+        imap.login(IMAP_USER, IMAP_PASSWORD)
         logger.info("✅ IMAP ログイン成功")
         
         # 本日受信したメール（未処理のみ）を検索
@@ -94,6 +109,8 @@ def check_bounces():
         
     except Exception as e:
         logger.error(f"IMAP接続エラー: {e}")
+        import traceback
+        traceback.print_exc()
 
 if __name__ == '__main__':
     check_bounces()
