@@ -128,8 +128,8 @@ def main():
                     logger.error(f'❌ {ch_name} へメール送信失敗: {result.error}')
                     crm.update_after_email_send(lead, success=False)
 
-            if not args.dry_run:
-                wait_between_sends(idx, total_leads, base_wait=args.wait)
+            # ドライラン、本番どちらでも待機を実行
+            wait_between_sends(idx, total_leads, base_wait=args.wait)
 
         except Exception as e:
             logger.error(f'例外発生 ({ch_name}): {e}')
