@@ -70,7 +70,7 @@ EXCLUDE_DOMAINS = [
 EXCLUDE_EMAIL_KEYWORDS = [
     'example', 'test', 'noreply', 'no-reply',
     'sentry', 'wixpress', 'wordpress', 'schema',
-    'marketing-studio-cloud-regional-pmms',  # Google Forms
+    'marketing-studio',  # Google Forms（全パターン対応）
     'accounts-noreply', 'googlegroups',
     '.png', '.jpg', '.gif', '.svg', '.webp',
 ]
@@ -525,6 +525,10 @@ def get_email_from_youtube_channel(base_url: str) -> tuple:
                 logger.info(f'✅ Contact Form URL発見: {contact_form_url}')
         except:
             pass
+
+    # 最終フィルタリング: EXCLUDE_EMAIL_KEYWORDS チェック
+    if email and any(kw in email.lower() for kw in EXCLUDE_EMAIL_KEYWORDS):
+        email = ''
 
     return website_url, email, contact_form_url
 

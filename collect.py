@@ -38,7 +38,7 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-def run_collect(keywords=None, dry_run=False):
+def run_collect(keywords=None, dry_run=False, max_channels=150):
     """
     YouTube Data API 最適化版 チャンネル収集フロー
 
