@@ -1,4 +1,4 @@
-import sys, time
+import sys, time, random
 from datetime import datetime
 from loguru import logger
 from crm_manager import CRMManager
@@ -34,20 +34,30 @@ def is_sending_allowed():
         return False
     return True
 
-def wait_between_sends(email_count, total_count):
-    """送信間隔を調整（最後の1件の場合は待機しない）"""
+def wait_between_sends(email_count, total_count, base_wait=1200):
+    """送信間隔を調整（ランダム性を持たせる）
+    
+    基本待機時間: 1200秒 (20分)
+    ランダムばらつき: ±50%
+    """
     if email_count < total_count:
-        wait_time = 600  # 10分 = 600秒
-        logger.info(f'次のメール送信まで {wait_time} 秒（10分）待機します...')
+        # ランダムばらつき（±50%）
+        variance = random.uniform(0.5, 1.5)  # 0.5倍～1.5倍
+        wait_time = int(base_wait * variance)
+        
+        logger.info(f'次のメール送信まで {wait_time} 秒（約 {wait_time // 60} 分）待機します...')
+        logger.info(f'  (基本: {base_wait}秒、ランダムばらつき: ±50%)')
+        
         for remaining in range(wait_time, 0, -1):
-            if remaining % 60 == 0 or remaining <= 10:
-                logger.info(f'  残り時間: {remaining} 秒')
+            if remaining % 300 == 0 or remaining <= 60:  # 5分ごと、または最後1分
+                logger.info(f'  残り時間: {remaining} 秒（約 {remaining // 60} 分）')
             time.sleep(1)
 
 def main():
     parser = argparse.ArgumentParser(description='メール送信スクリプト')
     parser.add_argument('--limit', type=int, default=None, help='送信上限件数（指定なしなら自動計算）')
     parser.add_argument('--dry-run', action='store_true', help='ドライラン（実際には送信しない）')
+    parser.add_argument('--wait', type=int, default=1200, help='メール間隔（秒、デフォルト: 1200秒=20分）')
     args = parser.parse_args()
 
     # DB 初期化
@@ -59,9 +69,10 @@ def main():
     else:
         daily_limit = get_daily_limit()
     
-    logger.info(f'=== メール送信開始 (limit={daily_limit}, dry_run={args.dry_run}) ===')
+    logger.info(f'=== メール送信開始 (limit={daily_limit}, wait={args.wait}秒, dry_run={args.dry_run}) ===')
     logger.info(f'現在時刻: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     logger.info(f'本日の送信上限: {daily_limit} 件')
+    logger.info(f'メール間隔: {args.wait} 秒（ランダムばらつき: ±50%）')
 
     if not args.dry_run and not is_sending_allowed():
         logger.warning('23:00以降のため送信を中止します')
@@ -118,7 +129,7 @@ def main():
                     crm.update_after_email_send(lead, success=False)
 
             if not args.dry_run:
-                wait_between_sends(idx, total_leads)
+                wait_between_sends(idx, total_leads, base_wait=args.wait)
 
         except Exception as e:
             logger.error(f'例外発生 ({ch_name}): {e}')
