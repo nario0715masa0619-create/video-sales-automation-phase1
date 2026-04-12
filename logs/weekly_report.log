@@ -1,0 +1,26 @@
+2026-04-07 21:52:51.178 | INFO     | __main__:generate_weekly_report:13 - === 週次レビュー開始 ===
+2026-04-07 21:52:51.179 | INFO     | __main__:generate_weekly_report:38 - 
+    ╔════════════════════════════════════════╗
+    ║     週次レビュー（直近7日間）          ║
+    ╚════════════════════════════════════════╝
+    
+    📊 送信数: 0 件
+    📊 バウンス数: 0 件
+    📊 平均バウンス率: 0.00%
+    
+2026-04-07 21:52:51.179 | INFO     | __main__:generate_weekly_report:56 - 判定: ✅ 翌週 +5件/日に増やしてよい
+2026-04-07 21:52:51.180 | INFO     | __main__:generate_weekly_report:61 - 💡 Aggressive mode 推奨: バウンス率 0.00% < 1.0%
+2026-04-07 21:52:51.180 | INFO     | __main__:generate_weekly_report:62 - config.py の ENABLE_AGGRESSIVE_MODE = True に設定することで、最大 30件/日を許可できます
+2026-04-11 07:54:20.065 | INFO     | __main__:generate_weekly_report:13 - === 週次レビュー開始 ===
+2026-04-11 07:54:20.086 | INFO     | __main__:generate_weekly_report:38 - 
+    ╔════════════════════════════════════════╗
+    ║     週次レビュー（直近7日間）          ║
+    ╚════════════════════════════════════════╝
+    
+    📊 送信数: 0 件
+    📊 バウンス数: 0 件
+    📊 平均バウンス率: 0.00%
+    
+2026-04-11 07:54:20.086 | INFO     | __main__:generate_weekly_report:56 - 判定: ✅ 翌週 +5件/日に増やしてよい
+2026-04-11 07:54:20.086 | INFO     | __main__:generate_weekly_report:61 - 💡 Aggressive mode 推奨: バウンス率 0.00% < 1.0%
+2026-04-11 07:54:20.086 | INFO     | __main__:generate_weekly_report:62 - config.py の ENABLE_AGGRESSIVE_MODE = True に設定することで、最大 30件/日を許可できます

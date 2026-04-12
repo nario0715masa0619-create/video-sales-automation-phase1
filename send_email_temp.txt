@@ -1,0 +1,2 @@
+            if not args.dry_run:
+                wait_between_sends(idx, total_leads, base_wait=args.wait)

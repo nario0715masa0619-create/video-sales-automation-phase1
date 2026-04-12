@@ -244,3 +244,37 @@ IMAP_USER = os.getenv("IMAP_USER", "marketing@luvira-biz.jp")
 IMAP_PASSWORD = os.getenv("IMAP_PASSWORD")
 if not IMAP_PASSWORD:
     raise ValueError("IMAP_PASSWORD が .env に設定されていません")
+
+# === 大規模実行用ジャンル別キーワード定義 ===
+
+CONSTRUCTION_KEYWORDS: list[str] = [
+    "建設企業", "工務店", "ハウスメーカー", "建築会社"
+]
+
+RETAIL_KEYWORDS: list[str] = [
+    "小売企業", "店舗運営", "商業施設", "チェーン店"
+]
+
+FOOD_BEVERAGE_KEYWORDS: list[str] = [
+    "飲食店", "飲食企業", "レストラン", "カフェ運営"
+]
+
+SERVICE_KEYWORDS: list[str] = [
+    "サービス企業", "コンサルティング", "人材派遣", "清掃サービス"
+]
+
+FINANCE_KEYWORDS: list[str] = [
+    "金融企業", "銀行", "保険会社", "投資会社"
+]
+
+REAL_ESTATE_KEYWORDS: list[str] = [
+    "不動産企業", "不動産開発", "賃貸管理", "物件仲介"
+]
+
+APPAREL_KEYWORDS: list[str] = [
+    "アパレル企業", "ファッションブランド", "衣料品メーカー", "靴メーカー"
+]
+
+LOGISTICS_KEYWORDS: list[str] = [
+    "物流企業", "配送サービス", "運送会社", "倉庫管理"
+]

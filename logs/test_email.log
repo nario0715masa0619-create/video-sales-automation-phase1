@@ -1,0 +1,38 @@
+2026-04-05 10:53:09.907 | INFO     | __main__:send_test_email:14 - === テストメール送信開始 ===
+2026-04-05 10:53:09.908 | INFO     | __main__:send_test_email:15 - 送信先: nari.o.0715.masa.0619@gmail.com
+2026-04-05 10:53:09.908 | INFO     | __main__:send_test_email:27 - メール本文を生成中...
+2026-04-05 10:53:09.908 | INFO     | email_generator:generate_email:486 - メール生成開始:  - 1通目
+2026-04-05 10:53:16.197 | INFO     | email_generator:generate_email:527 - メール生成完了: [1通目] 件名: テスト企業様の「YouTube動画」を拝見しました...
+2026-04-05 10:53:16.198 | INFO     | __main__:send_test_email:30 - 件名: テスト企業様の「YouTube動画」を拝見しました
+2026-04-05 10:53:16.199 | INFO     | __main__:send_test_email:31 - 本文プレビュー:
+ご担当者様
+
+はじめまして。株式会社ルヴィラの成相と申します。
+
+御社のYouTubeチャンネル「テスト企業」を拝見し、特に「直近の動画」の内容でご連絡いたしました。
+
+営業メール
+
+弊社では、動画を活用したマーケ・営業の改善に特化した
+「動画チャンネル無料診断」を提供しています。
+
+御社のチャンネルを簡単に拝見したところ、
+直近3
+
+よろしければ、5分程度のお時間をいただき、
+簡単な診断結果をお...
+2026-04-05 10:53:16.199 | INFO     | __main__:send_test_email:39 - メール送信中...
+2026-04-05 10:53:16.546 | INFO     | email_sender:check_connection:507 - Xserver SMTP 接続確認OK
+2026-04-05 10:53:17.233 | INFO     | email_sender:send_email:482 - メール送信成功 (SMTP): nari.o.0715.masa.0619@gmail.com
+2026-04-05 10:53:17.235 | INFO     | __main__:send_test_email:57 - ✅ テストメール送信成功!
+2026-04-05 10:53:17.235 | INFO     | __main__:send_test_email:58 - MessageID: 
+2026-04-05 10:53:17.235 | INFO     | __main__:send_test_email:59 - 送信先: nari.o.0715.masa.0619@gmail.com
+2026-04-08 15:07:01.459 | INFO     | __main__:test_smtp:10 - === SMTP テスト開始 ===
+2026-04-08 15:07:01.495 | INFO     | __main__:test_smtp:22 - メール生成中...
+2026-04-08 15:07:01.495 | INFO     | email_generator:generate_email:486 - メール生成開始:  - 1通目
+2026-04-08 15:07:07.955 | INFO     | email_generator:generate_email:527 - メール生成完了: [1通目] 件名: テスト企業様の「YouTube動画」を拝見しました...
+2026-04-08 15:07:07.955 | INFO     | __main__:test_smtp:24 - 件名: テスト企業様の「YouTube動画」を拝見しました
+2026-04-08 15:07:07.955 | INFO     | __main__:test_smtp:27 - SMTP 接続テスト...
+2026-04-08 15:07:07.955 | INFO     | __main__:test_smtp:31 - メール送信中...
+2026-04-08 15:07:08.698 | INFO     | email_sender:send_email:482 - メール送信成功 (SMTP): nari.o.0715.masa.0619@gmail.com
+2026-04-08 15:07:08.698 | INFO     | __main__:test_smtp:42 - ✅ テストメール送信成功 (MessageID: )

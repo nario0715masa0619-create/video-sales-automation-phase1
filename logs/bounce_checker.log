@@ -1,0 +1,33 @@
+2026-04-09 10:21:49.811 | INFO     | __main__:check_bounces:15 - === バウンスチェック開始 ===
+2026-04-09 10:21:50.032 | ERROR    | __main__:check_bounces:96 - IMAP接続エラー: 'NoneType' object has no attribute 'replace'
+2026-04-09 10:29:06.655 | INFO     | __main__:check_bounces:16 - === バウンスチェック開始 ===
+2026-04-09 10:29:06.656 | INFO     | __main__:check_bounces:17 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-09 10:29:07.186 | INFO     | __main__:check_bounces:25 - ✅ IMAP ログイン成功
+2026-04-09 10:29:07.278 | INFO     | __main__:check_bounces:70 - ✅ IMAP ログアウト
+2026-04-09 10:29:07.438 | INFO     | __main__:check_bounces:95 - === バウンス集計完了 ===
+2026-04-09 10:29:07.439 | INFO     | __main__:check_bounces:96 - 本日送信数: 0 件
+2026-04-09 10:29:07.440 | INFO     | __main__:check_bounces:97 - 本日バウンス数: 0 件
+2026-04-09 10:29:07.440 | INFO     | __main__:check_bounces:98 - バウンス率: 0.00%
+2026-04-11 09:00:01.871 | INFO     | __main__:check_bounces:15 - === バウンスチェック開始 ===
+2026-04-11 09:00:02.176 | ERROR    | __main__:check_bounces:96 - IMAP接続エラー: 'NoneType' object has no attribute 'replace'
+2026-04-11 18:44:08.893 | INFO     | __main__:check_bounces:15 - === バウンスチェック開始 ===
+2026-04-11 18:44:09.053 | ERROR    | __main__:check_bounces:96 - IMAP接続エラー: 'NoneType' object has no attribute 'replace'
+2026-04-11 18:45:55.876 | INFO     | __main__:check_bounces:15 - === バウンスチェック開始 ===
+2026-04-11 18:45:55.876 | INFO     | __main__:check_bounces:23 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-11 18:45:55.876 | ERROR    | __main__:check_bounces:107 - IMAP接続エラー: IMAP_PASSWORD が設定されていません
+2026-04-11 18:46:35.975 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-11 18:46:35.975 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-11 18:46:36.436 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-11 18:46:36.482 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-11 18:46:36.544 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-11 18:46:36.545 | INFO     | __main__:check_bounces:106 - 本日送信数: 20 件
+2026-04-11 18:46:36.545 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-11 18:46:36.545 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-12 09:00:03.632 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-12 09:00:03.640 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-12 09:00:04.544 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-12 09:00:04.693 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-12 09:00:04.937 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-12 09:00:04.938 | INFO     | __main__:check_bounces:106 - 本日送信数: 0 件
+2026-04-12 09:00:04.938 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-12 09:00:04.938 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%

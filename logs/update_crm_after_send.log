@@ -1,0 +1,22 @@
+2026-04-06 18:49:44.586 | INFO     | __main__:update_crm_from_send_log:32 - === CRM 更新開始 ===
+2026-04-06 18:49:44.587 | INFO     | __main__:update_crm_from_send_log:33 - 対象メール数: 18 件
+2026-04-06 18:49:46.992 | INFO     | __main__:update_crm_from_send_log:48 - 全リード数: 247 件
+2026-04-06 18:49:46.994 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: sample@xx.co.jp
+2026-04-06 18:49:48.851 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: sample@xx.co.jp
+2026-04-06 18:49:48.852 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: info@webst8.com
+2026-04-06 18:49:49.802 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: info@webst8.com
+2026-04-06 18:49:49.804 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: membership@guga.or.jp
+2026-04-06 18:49:50.683 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: membership@guga.or.jp
+2026-04-06 18:49:50.684 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: lend_house-consulting@yahoo.co.jp
+2026-04-06 18:49:51.479 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: lend_house-consulting@yahoo.co.jp
+2026-04-06 18:49:51.480 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: info@densanbanto.com
+2026-04-06 18:49:52.451 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: info@densanbanto.com
+2026-04-06 18:49:52.452 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: xxx@xx.com
+2026-04-06 18:49:53.277 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: xxx@xx.com
+2026-04-06 18:49:53.277 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: consulting@s-bokan.com
+2026-04-06 18:49:54.740 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: consulting@s-bokan.com
+2026-04-06 18:49:54.740 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: info@acacia-web.com
+2026-04-06 18:49:55.634 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: info@acacia-web.com
+2026-04-06 18:49:55.634 | INFO     | __main__:update_crm_from_send_log:63 - 更新対象: unison.sakai@gmail.com
+2026-04-06 18:49:56.436 | INFO     | __main__:update_crm_from_send_log:82 - ✅ 更新完了: unison.sakai@gmail.com
+2026-04-06 18:49:56.437 | INFO     | __main__:update_crm_from_send_log:84 - === 更新完了: 9 件 ===

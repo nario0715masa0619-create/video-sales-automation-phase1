@@ -1,0 +1,44 @@
+2026-04-06 18:42:37.338 | INFO     | __main__:update_sent_emails:33 - === 送信済みメール更新開始 ===
+2026-04-06 18:42:37.338 | INFO     | __main__:update_sent_emails:34 - 対象メール数: 18 件
+2026-04-06 18:42:39.796 | INFO     | __main__:update_sent_emails:52 - 全リード数: 247 件
+2026-04-06 18:42:39.797 | INFO     | __main__:update_sent_emails:67 - 更新対象: sample@xx.co.jp (現在: 未接触)
+2026-04-06 18:42:40.187 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: sample@xx.co.jp
+2026-04-06 18:42:40.188 | INFO     | __main__:update_sent_emails:67 - 更新対象: info@webst8.com (現在: 未接触)
+2026-04-06 18:42:40.564 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: info@webst8.com
+2026-04-06 18:42:40.565 | INFO     | __main__:update_sent_emails:67 - 更新対象: membership@guga.or.jp (現在: 未接触)
+2026-04-06 18:42:41.114 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: membership@guga.or.jp
+2026-04-06 18:42:41.115 | INFO     | __main__:update_sent_emails:67 - 更新対象: lend_house-consulting@yahoo.co.jp (現在: 未接触)
+2026-04-06 18:42:41.477 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: lend_house-consulting@yahoo.co.jp
+2026-04-06 18:42:41.479 | INFO     | __main__:update_sent_emails:67 - 更新対象: info@densanbanto.com (現在: 未接触)
+2026-04-06 18:42:41.754 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: info@densanbanto.com
+2026-04-06 18:42:41.755 | INFO     | __main__:update_sent_emails:67 - 更新対象: xxx@xx.com (現在: 未接触)
+2026-04-06 18:42:42.112 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: xxx@xx.com
+2026-04-06 18:42:42.113 | INFO     | __main__:update_sent_emails:67 - 更新対象: consulting@s-bokan.com (現在: 未接触)
+2026-04-06 18:42:42.391 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: consulting@s-bokan.com
+2026-04-06 18:42:42.392 | INFO     | __main__:update_sent_emails:67 - 更新対象: info@acacia-web.com (現在: 未接触)
+2026-04-06 18:42:42.666 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: info@acacia-web.com
+2026-04-06 18:42:42.669 | INFO     | __main__:update_sent_emails:67 - 更新対象: unison.sakai@gmail.com (現在: 未接触)
+2026-04-06 18:42:43.028 | INFO     | __main__:update_sent_emails:72 - ✅ 更新完了: unison.sakai@gmail.com
+2026-04-06 18:42:43.028 | INFO     | __main__:update_sent_emails:74 - === 更新完了: 9 件 ===
+2026-04-06 18:43:53.294 | INFO     | __main__:update_sent_emails:32 - === 送信済みメール更新開始 ===
+2026-04-06 18:43:53.294 | INFO     | __main__:update_sent_emails:33 - 対象メール数: 18 件
+2026-04-06 18:43:55.402 | INFO     | __main__:update_sent_emails:51 - 全リード数: 247 件
+2026-04-06 18:43:55.403 | INFO     | __main__:update_sent_emails:66 - 更新対象: sample@xx.co.jp (現在: 送信済み)
+2026-04-06 18:43:55.786 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: sample@xx.co.jp → 接触
+2026-04-06 18:43:55.787 | INFO     | __main__:update_sent_emails:66 - 更新対象: info@webst8.com (現在: 送信済み)
+2026-04-06 18:43:56.143 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: info@webst8.com → 接触
+2026-04-06 18:43:56.143 | INFO     | __main__:update_sent_emails:66 - 更新対象: membership@guga.or.jp (現在: 送信済み)
+2026-04-06 18:43:56.418 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: membership@guga.or.jp → 接触
+2026-04-06 18:43:56.419 | INFO     | __main__:update_sent_emails:66 - 更新対象: lend_house-consulting@yahoo.co.jp (現在: 送信済み)
+2026-04-06 18:43:56.799 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: lend_house-consulting@yahoo.co.jp → 接触
+2026-04-06 18:43:56.799 | INFO     | __main__:update_sent_emails:66 - 更新対象: info@densanbanto.com (現在: 送信済み)
+2026-04-06 18:43:57.152 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: info@densanbanto.com → 接触
+2026-04-06 18:43:57.153 | INFO     | __main__:update_sent_emails:66 - 更新対象: xxx@xx.com (現在: 送信済み)
+2026-04-06 18:43:57.513 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: xxx@xx.com → 接触
+2026-04-06 18:43:57.514 | INFO     | __main__:update_sent_emails:66 - 更新対象: consulting@s-bokan.com (現在: 送信済み)
+2026-04-06 18:43:57.874 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: consulting@s-bokan.com → 接触
+2026-04-06 18:43:57.876 | INFO     | __main__:update_sent_emails:66 - 更新対象: info@acacia-web.com (現在: 送信済み)
+2026-04-06 18:43:58.154 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: info@acacia-web.com → 接触
+2026-04-06 18:43:58.154 | INFO     | __main__:update_sent_emails:66 - 更新対象: unison.sakai@gmail.com (現在: 送信済み)
+2026-04-06 18:43:58.510 | INFO     | __main__:update_sent_emails:71 - ✅ 更新完了: unison.sakai@gmail.com → 接触
+2026-04-06 18:43:58.510 | INFO     | __main__:update_sent_emails:73 - === 更新完了: 9 件 ===

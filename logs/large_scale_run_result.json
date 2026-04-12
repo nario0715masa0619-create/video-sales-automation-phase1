@@ -1,0 +1,50 @@
+{
+  "timestamp": "2026-04-12T12:51:57.734766",
+  "results": {
+    "建設": {
+      "channels": 88,
+      "emails": 26,
+      "rate": 29.5
+    },
+    "小売": {
+      "channels": 47,
+      "emails": 7,
+      "rate": 14.9
+    },
+    "飲食": {
+      "channels": 99,
+      "emails": 11,
+      "rate": 11.1
+    },
+    "サービス": {
+      "channels": 67,
+      "emails": 12,
+      "rate": 17.9
+    },
+    "金融": {
+      "channels": 119,
+      "emails": 18,
+      "rate": 15.1
+    },
+    "不動産": {
+      "channels": 89,
+      "emails": 25,
+      "rate": 28.1
+    },
+    "アパレル": {
+      "channels": 78,
+      "emails": 21,
+      "rate": 26.9
+    },
+    "物流": {
+      "channels": 38,
+      "emails": 7,
+      "rate": 18.4
+    }
+  },
+  "summary": {
+    "total_channels": 625,
+    "total_emails": 127,
+    "average_rate": 20.3
+  }
+}
