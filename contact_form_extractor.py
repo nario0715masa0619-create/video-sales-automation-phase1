@@ -1,224 +1,182 @@
-"""
-フォーム自動送信モジュール
-複数のフォーム型（HTML、JavaScript、Google Forms等）に対応
-"""
-
+import logging
+import re
+import time
 from abc import ABC, abstractmethod
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import logging
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 
 logger = logging.getLogger(__name__)
 
 class FormStrategy(ABC):
     """フォーム処理の基底クラス"""
-    
+
     @abstractmethod
     def detect(self, driver, url: str) -> bool:
         """このフォーム型に該当するか判定"""
         pass
-    
+
     @abstractmethod
     def fill_and_submit(self, driver, form_data: dict) -> str:
-        """フォーム入力・送信実行、メール抽出"""
+        """フォームを自動入力・送信してメール抽出"""
         pass
+
 
 class HtmlFormStrategy(FormStrategy):
     """静的 HTML フォーム対応"""
-    
+
     def detect(self, driver, url: str) -> bool:
+        """HTML フォームが存在するか判定"""
         try:
             form = driver.find_element(By.TAG_NAME, "form")
             return form is not None
         except:
             return False
-    
+
     def fill_and_submit(self, driver, form_data: dict) -> str:
-        # フォーム入力・送信ロジック（後で実装）
-        logger.info(f"HTML フォーム送信: {form_data}")
-        return ""
+        """HTML フォームを自動入力・送信"""
+        try:
+            logger.info("HTML フォーム処理開始")
+            
+            # テキスト入力フィールドを探す
+            inputs = driver.find_elements(By.CSS_SELECTOR, "input[type='text'], textarea")
+            if len(inputs) >= 1:
+                inputs[0].send_keys(form_data.get('company', 'テスト企業'))
+                time.sleep(0.3)
+            if len(inputs) >= 2:
+                inputs[1].send_keys(form_data.get('email', 'test@example.com'))
+                time.sleep(0.3)
+            if len(inputs) >= 3:
+                inputs[2].send_keys(form_data.get('message', 'お問い合わせテスト'))
+                time.sleep(0.3)
+            
+            # 送信ボタンをクリック
+            try:
+                submit = driver.find_element(By.CSS_SELECTOR, "button[type='submit'], input[type='submit']")
+                submit.click()
+                logger.info("HTML フォーム送信完了")
+            except:
+                logger.warning("送信ボタンが見つかりません")
+                return ""
+            
+            time.sleep(2)
+            
+            # メールアドレスを抽出
+            page_text = driver.page_source
+            emails = re.findall(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', page_text)
+            return emails[0] if emails else ""
+            
+        except Exception as e:
+            logger.error(f"HTML フォーム処理エラー: {e}")
+            return ""
+
 
 class GoogleFormsStrategy(FormStrategy):
     """Google Forms 対応"""
-    
+
     def detect(self, driver, url: str) -> bool:
-        return "forms.google.com" in url
-    
+        """Google Forms か判定"""
+        return "forms.google.com" in url or "forms.gle" in url
+
     def fill_and_submit(self, driver, form_data: dict) -> str:
-        logger.info(f"Google Forms 送信: {form_data}")
-        return ""
+        """Google Forms を自動入力・送信"""
+        try:
+            logger.info("Google Forms 処理開始")
+            
+            # テキスト入力フィールドを探す
+            inputs = driver.find_elements(By.CSS_SELECTOR, "input[type='text'], textarea")
+            if len(inputs) >= 1:
+                inputs[0].send_keys(form_data.get('company', 'テスト企業'))
+                time.sleep(0.3)
+            if len(inputs) >= 2:
+                inputs[1].send_keys(form_data.get('email', 'test@example.com'))
+                time.sleep(0.3)
+            if len(inputs) >= 3:
+                inputs[2].send_keys(form_data.get('message', 'お問い合わせテスト'))
+                time.sleep(0.3)
+            
+            # 送信ボタンをクリック
+            try:
+                submit = driver.find_element(By.CSS_SELECTOR, "button[jsname], button[type='button'][aria-label*='送信']")
+                submit.click()
+                logger.info("Google Forms 送信完了")
+            except:
+                logger.warning("Google Forms 送信ボタンが見つかりません")
+                return ""
+            
+            time.sleep(2)
+            
+            # メールアドレスを抽出
+            page_text = driver.page_source
+            emails = re.findall(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', page_text)
+            return emails[0] if emails else ""
+            
+        except Exception as e:
+            logger.error(f"Google Forms 処理エラー: {e}")
+            return ""
+
 
 class FormSubmitter:
-    """フォーム自動送信オーケストレーター"""
-    
+    """フォーム送信オーケストレータ"""
+
     def __init__(self):
         self.strategies = [
             HtmlFormStrategy(),
             GoogleFormsStrategy(),
         ]
-    
+        logger.info("FormSubmitter 初期化完了")
+
     def submit_form(self, form_url: str, form_data: dict) -> str:
-        """フォーム自動送信実行"""
-        driver = webdriver.Chrome()
+        """
+        フォーム URL に対して自動送信し、メールを抽出
+        
+        Args:
+            form_url: フォーム URL
+            form_data: 送信データ {'company', 'email', 'phone', 'message'}
+        
+        Returns:
+            抽出したメールアドレス、見つからない場合は空文字列
+        """
+        driver = None
         try:
-            driver.get(form_url)
+            # Chrome WebDriver 初期化
+            options = webdriver.ChromeOptions()
+            options.add_argument("--headless")
+            options.add_argument("--no-sandbox")
+            options.add_argument("--disable-dev-shm-usage")
             
-            # フォーム型自動判定
+            service = Service(ChromeDriverManager().install())
+            driver = webdriver.Chrome(service=service, options=options)
+            
+            logger.info(f"フォーム URL にアクセス: {form_url}")
+            driver.get(form_url)
+            WebDriverWait(driver, 10).until(EC.presence_of_all_elements_located((By.TAG_NAME, "body")))
+            
+            # 適切な Strategy を選択して実行
             for strategy in self.strategies:
                 if strategy.detect(driver, form_url):
-                    logger.info(f"フォーム型判定: {strategy.__class__.__name__}")
-                    extracted_email = strategy.fill_and_submit(driver, form_data)
-                    return extracted_email
+                    logger.info(f"戦略選択: {strategy.__class__.__name__}")
+                    return strategy.fill_and_submit(driver, form_data)
             
             logger.warning(f"対応するフォーム型が見つかりません: {form_url}")
             return ""
-        
+            
+        except Exception as e:
+            logger.error(f"フォーム送信エラー [{form_url}]: {e}")
+            return ""
         finally:
-            driver.quit()
+            if driver:
+                driver.quit()
+
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO)
-    submitter = FormSubmitter()
-    # テスト実行
-"""
-HTML フォーム自動入力・送信の具体実装
-"""
-
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.common.action_chains import ActionChains
-import time
-
-class HtmlFormStrategy:
-    """静的 HTML フォーム対応"""
-    
-    def detect(self, driver, url: str) -> bool:
-        try:
-            form = driver.find_element(By.TAG_NAME, "form")
-            return form is not None
-        except:
-            return False
-    
-    def fill_and_submit(self, driver, form_data: dict) -> str:
-        """フォーム入力・送信"""
-        try:
-            # テキスト入力フィールドを検索・入力
-            inputs = driver.find_elements(By.TAG_NAME, "input")
-            
-            for input_elem in inputs:
-                input_type = input_elem.get_attribute("type")
-                input_name = input_elem.get_attribute("name")
-                placeholder = input_elem.get_attribute("placeholder")
-                
-                logger.info(f"フォーム入力: name={input_name}, type={input_type}, placeholder={placeholder}")
-                
-                # 名前フィールド
-                if any(kw in (input_name or "").lower() for kw in ["name", "company"]):
-                    input_elem.send_keys("テスト企業")
-                    time.sleep(0.5)
-                
-                # メールフィールド
-                elif any(kw in (input_name or "").lower() for kw in ["email", "mail"]):
-                    input_elem.send_keys("test@example.com")
-                    time.sleep(0.5)
-                
-                # 電話番号フィールド
-                elif any(kw in (input_name or "").lower() for kw in ["phone", "tel"]):
-                    input_elem.send_keys("09012345678")
-                    time.sleep(0.5)
-            
-            # テキストエリア（メッセージ）を入力
-            textareas = driver.find_elements(By.TAG_NAME, "textarea")
-            if textareas:
-                textareas[0].send_keys("お問い合わせテスト")
-                time.sleep(0.5)
-            
-            # 送信ボタンを検索・クリック
-            submit_button = None
-            for btn in driver.find_elements(By.TAG_NAME, "button"):
-                if "submit" in (btn.get_attribute("type") or "").lower():
-                    submit_button = btn
-                    break
-            
-            if not submit_button:
-                submit_button = driver.find_element(By.CSS_SELECTOR, "button[type='submit']")
-            
-            if submit_button:
-                submit_button.click()
-                logger.info("フォーム送信完了")
-                time.sleep(2)
-                
-                # 送信後のメールアドレス抽出（ページテキストから）
-                page_text = driver.page_source
-                import re
-                emails = re.findall(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', page_text)
-                if emails:
-                    return emails[0]
-            
-            return ""
-        
-        except Exception as e:
-            logger.error(f"HTML フォーム送信エラー: {e}")
-            return ""
-
-class GoogleFormsStrategy(FormStrategy):
-    """Google Forms 自動入力・送信"""
-    
-    def fill_and_submit(self, driver, form_data: dict) -> str:
-        """Google Forms 自動入力・送信"""
-        try:
-            # Google Forms のテキスト入力フィールドを検索
-            text_inputs = driver.find_elements(By.CSS_SELECTOR, "input[type='text'], textarea")
-            
-            if len(text_inputs) >= 1:
-                text_inputs[0].send_keys("テスト企業")
-                time.sleep(0.5)
-            
-            if len(text_inputs) >= 2:
-                text_inputs[1].send_keys("test@example.com")
-                time.sleep(0.5)
-            
-            if len(text_inputs) >= 3:
-                text_inputs[2].send_keys("お問い合わせテスト")
-                time.sleep(0.5)
-            
-            # 送信ボタンをクリック
-            submit_button = driver.find_element(By.CSS_SELECTOR, "button[jsname]")
-            submit_button.click()
-            logger.info("Google Forms 送信完了")
-            
-            time.sleep(2)
-            
-            # 確認画面からメールアドレス抽出
-            page_text = driver.page_source
-            import re
-            emails = re.findall(r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}', page_text)
-            if emails:
-                return emails[0]
-            
-            return ""
-        
-        except Exception as e:
-            logger.error(f"Google Forms 送信エラー: {e}")
-            return ""
-
-# === テスト実行 ===
-if __name__ == "__main__":
-    import sys
-    logging.basicConfig(level=logging.INFO)
-    
-    test_form_url = "https://example.com/contact"
-    test_form_data = {
-        "company": "テスト企業",
-        "email": "test@example.com",
-        "phone": "09012345678",
-        "message": "お問い合わせテスト"
-    }
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s | %(levelname)-8s | %(message)s'
+    )
     
     submitter = FormSubmitter()
-    try:
-        extracted_email = submitter.submit_form(test_form_url, test_form_data)
-        print(f"抽出メール: {extracted_email if extracted_email else 'なし'}")
-    except Exception as e:
-        print(f"エラー: {e}")
+    logger.info("✅ FormSubmitter 初期化成功")
