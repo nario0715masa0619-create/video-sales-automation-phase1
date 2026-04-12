@@ -141,6 +141,27 @@ def run_collect(keywords=None, dry_run=False, max_channels=150):
             if email:
                 logger.info(f"✅ メール取得成功: {company_name} → {email}")
                 email_count += 1
+            elif contact_form_url:
+                # ===== Step 6b: フォーム自動送信でメール抽出 =====
+                logger.info(f"Step 6b 開始: フォーム送信 → {contact_form_url}")
+                try:
+                    from contact_form_extractor import FormSubmitter
+                    submitter = FormSubmitter()
+                    form_data = {
+                        "company": company_name,
+                        "email": "test@example.com",
+                        "phone": "09000000000",
+                        "message": "YouTube 営業活動"
+                    }
+                    extracted_email = submitter.submit_form(contact_form_url, form_data)
+                    if extracted_email:
+                        email = extracted_email
+                        email_count += 1
+                        logger.info(f"✅ フォーム送信でメール抽出: {company_name} → {email}")
+                    else:
+                        logger.debug(f"フォーム送信: メール未抽出 {company_name}")
+                except Exception as e:
+                    logger.warning(f"Step 6b エラー [{company_name}]: {e}")
             else:
                 logger.debug(f"メール取得失敗: {company_name}")
         except Exception as e:
@@ -230,3 +251,5 @@ if __name__ == "__main__":
     except Exception as e:
         logger.error(f"予期しないエラー: {e}")
         sys.exit(1)
+
+
