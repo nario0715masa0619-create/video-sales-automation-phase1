@@ -278,3 +278,19 @@ APPAREL_KEYWORDS: list[str] = [
 LOGISTICS_KEYWORDS: list[str] = [
     "物流企業", "配送サービス", "運送会社", "倉庫管理"
 ]
+
+# ===== ウォームアップ・バウンス管理設定 =====
+DOMAIN_LAUNCH_DATE = "2026-04-07"
+WARMUP_SCHEDULE = {1: 10, 2: 15, 3: 20, 4: 25}
+ENABLE_AGGRESSIVE_MODE = False
+AGGRESSIVE_BOUNCE_THRESHOLD = 1.0
+IMAP_HOST = os.getenv("IMAP_HOST")
+IMAP_PORT = int(os.getenv("IMAP_PORT", "993"))
+IMAP_USER = os.getenv("IMAP_USER")
+IMAP_PASSWORD = os.getenv("IMAP_PASSWORD")
+
+SPREADSHEET_ID_PHASE5: str = os.getenv("SPREADSHEET_ID_PHASE5", "")
+
+SHEET_NAME_CRM: str = os.getenv("SHEET_NAME_CRM", "Leads")
+SHEET_NAME_PHASE5: str = os.getenv("SHEET_NAME_PHASE5", "Phase5")
+CREDENTIALS_FILE: str = os.getenv("CREDENTIALS_FILE", "credentials/service_account.json")
