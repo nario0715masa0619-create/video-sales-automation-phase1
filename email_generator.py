@@ -2,18 +2,18 @@
 email_generator.py
 ==================
 Gemini API を使ってリードごとにパーソナライズされた営業メールを生成するモジュール。
+【修正: Video Insight 特化版】
 
 【1通目〜4通目のメール役割】
-  1通目: 自己紹介 + 動画への一言コメント + 無料診断オファー
-  2通目: 事例・ベネフィットの具体例
-  3通目: よくある質問（料金・工数・不安点）への回答
+  1通目: Insight テーマ分散の課題 + 動画コメント + 無料診断オファー
+  2通目: 事例・ベネフィットの具体例（Insight 正規化による効果）
+  3通目: よくある質問（料金・工数・効果）への回答
   4通目: 締めのリマインド（このメールで最後）
 
-【パーソナライズ変数】
-  - 会社名、担当者名
-  - チャンネル名、最新動画タイトル
-  - 動画への一言コメント（Geminiが生成）
-  - 改善ポイントの一言（Geminiが生成）
+【パーソナライズ変数（Gemini 生成）】
+  - 会社名、担当者名、チャンネル名、最新動画タイトル
+  - 動画への一言コメント（Insight 観点）
+  - 改善ポイント（Insight 正規化観点）
   - 業種、ランク
 """
 
@@ -97,24 +97,26 @@ def _generate_video_comment(
 ) -> str:
     """
     最新動画への一言コメントを生成する（1通目メール用）。
+    【修正: Video Insight 特化版】
     """
     prompt = f"""
-あなたはBtoB営業のプロフェッショナルです。
-以下のYouTubeチャンネルの最新動画を見た感想を、
-「自然で誠実な一言コメント」として1〜2文で書いてください。
+あなたは YouTube Insight データ分析のプロフェッショナルです。
+以下のYouTubeチャンネルの最新動画を見た際に、
+「Insight データの活用観点」からの一言コメントを1〜2文で書いてください。
 
 【チャンネル名】{channel_name}
 【最新動画タイトル】{latest_video_title}
 【チャンネル説明】{channel_description[:200] if channel_description else "（説明なし）"}
 
 要件：
+- 「このテーマは Insight でどう分類されるか」という観点で言及すること
+- 「視聴者のコメント分析」「テーマの正規化」など、Insight データに関連した話題を織り交ぜること
 - 営業メールの冒頭に使う文章として自然なトーンにすること
-- 上記の動画タイトルと内容についてのみ具体的に言及すること
 - 他のチャンネル名や別の動画タイトルの例を出さないこと
 - 箇条書きや「---」「##」などの記号は使わないこと
 - 「ためになりました」「勉強になりました」などの過度な褒め言葉は避けること
 - 30〜60文字程度の日本語で書くこと
-- 文末は「〜という点に興味を持ちました」「〜が印象的でした」のような形にすること
+- 文末は「〜という点で、Insight データの活用価値があると感じました」のような形にすること
 
 出力フォーマット：
 - 一言コメントのみを1段落で出力してください。
@@ -123,14 +125,14 @@ def _generate_video_comment(
 
     try:
         comment = _call_gemini(prompt, max_tokens=128)
-        comment = re.sub(r'[\\n\\r]+', ' ', comment).strip()
+        comment = re.sub(r'[\n\r]+', ' ', comment).strip()
         return comment
     except Exception as e:
         logger.warning(f"動画コメント生成失敗: {e}")
         if latest_video_title:
-            return f"「{latest_video_title}」で触れられていた内容が、顧客との共通言語づくりという点で印象的でした"
+            return f"「{latest_video_title}」で取り上げられていたテーマが、Insight データの分類という観点で活用価値があると感じました"
         else:
-            return "動画で取り上げられていた視点が、顧客との共通言語づくりという点で印象的でした"
+            return "動画で取り上げられていたテーマが、Insight データの活用という観点で興味深いと感じました"
 
 
 
@@ -144,17 +146,7 @@ def _generate_improvement_hint(
 ) -> str:
     """
     チャンネルの改善ポイントの一言を生成する（1通目・3通目メール用）。
-
-    Args:
-        channel_name: チャンネル名
-        videos_3m_count: 直近3ヶ月の投稿本数
-        avg_view_count: 平均再生数
-        avg_engagement_rate: 平均エンゲージメント率（%表記）
-        trend: 成長トレンド（上昇/横ばい/下降）
-        rank: ランク（A/B/C）
-
-    Returns:
-        str: 改善ポイントの一言（1〜2文）
+    【修正: Video Insight 特化版】
     """
     # エンゲージメント率の評価
     if avg_engagement_rate >= 5.0:
@@ -167,9 +159,10 @@ def _generate_improvement_hint(
         engagement_eval = "低め（改善余地あり）"
 
     prompt = f"""
-あなたは動画マーケティングのコンサルタントです。
+あなたは YouTube Insight データ分析のコンサルタントです。
 以下のYouTubeチャンネルデータを見て、
-「具体的な改善余地」を1〜2文で指摘してください。
+「Insight データの正規化・活用」という観点から、
+具体的な改善余地を1〜2文で指摘してください。
 
 【チャンネル名】{channel_name}
 【直近3ヶ月の投稿本数】{videos_3m_count}本
@@ -179,10 +172,13 @@ def _generate_improvement_hint(
 【総合評価】{rank}ランク
 
 要件：
-- 「〜という観点で、さらに改善余地があると考えています」のような形で締めること
+- 「Insight データでこの{videos_3m_count}本の投稿が『どのテーマに分類されているか』という観点で分析すると、改善余地があります」というような観点で述べること
+- Insight データの「正規化」「テーマ統一」に関連した話題を含めること
+- 「マーケティング関連は何%か」「テーマの分散度」など、Insight データ特有の指標に言及すること
 - 数字を具体的に使って説得力を持たせること
 - 過度なネガティブ表現は避け、ポジティブに改善余地を示すこと
 - 50〜80文字程度の日本語で書くこと
+- 「〜という観点で、Insight データの正規化による改善余地があると考えています」で締めること
 
 改善ポイントのみ出力し、余計な前置きは不要です。
 """.strip()
@@ -193,34 +189,30 @@ def _generate_improvement_hint(
         return hint
     except Exception as e:
         logger.warning(f"改善ポイント生成失敗: {e}")
-        return "動画のエンゲージメント率とリーチの拡大という観点で、改善余地があると考えています"
+        return "Insight データでこれらのテーマがどう分類されているか分析することで、改善余地があると考えています"
 
 
 def _generate_case_study_detail(
     channel_name: str,
     industry: str = "",
     rank: str = "B",
+    videos_3m_count: int = 0,
 ) -> str:
     """
     事例の具体的な指摘を生成する（2通目メール用）。
-
-    Args:
-        channel_name: チャンネル名
-        industry: 業種
-        rank: ランク
-
-    Returns:
-        str: 事例の具体的な指摘（1〜2文）
+    【修正: Video Insight 特化版】
     """
     industry_str = f"（{industry}業界）" if industry else ""
 
     prompt = f"""
-あなたは動画マーケティングのコンサルタントです。
+あなたは YouTube Insight データ分析のコンサルタントです。
 {channel_name}{industry_str}のYouTubeチャンネルについて、
-「問い合わせ増加の可能性」に関する具体的な指摘を1〜2文で書いてください。
+「Insight データの正規化」によって実現できる改善可能性に関する具体的な指摘を1〜2文で書いてください。
 
 要件：
-- 「御社のチャンネルも〜という点で、同様の改善余地があると考えています」で締めること
+- 「御社のチャンネルも、投稿されている動画に対する視聴者コメントを Insight で分類すると、『マーケティング関連は何%か』という質問にすぐ答えられるようになります。この正規化という観点で、同様の改善余地があると考えています」のようなニュアンスで述べること
+- Insight データの「テーマ分散問題」「正規化の効果」に言及すること
+- 「現状では Insight が複数のテーマに分散しているが、これを統一することで...」のような観点で述べること
 - 具体的・前向きなトーンで書くこと
 - 50〜80文字程度の日本語で書くこと
 
@@ -233,7 +225,7 @@ def _generate_case_study_detail(
         return detail
     except Exception as e:
         logger.warning(f"事例詳細生成失敗: {e}")
-        return "御社のチャンネルも動画の構成と配信タイミングを最適化することで、同様の改善余地があると考えています"
+        return "御社のチャンネルも Insight データを正規化することで、テーマの分散問題を解決し、経営層への報告がより具体的になると考えています"
 
 
 def _generate_effect_prediction(
@@ -243,28 +235,23 @@ def _generate_effect_prediction(
 ) -> str:
     """
     効果予測コメントを生成する（3通目メール用）。
-
-    Args:
-        channel_name: チャンネル名
-        avg_view_count: 平均再生数
-        avg_engagement_rate: 平均エンゲージメント率（%）
-
-    Returns:
-        str: 効果予測コメント（1〜2文）
+    【修正: Video Insight 特化版】
     """
     prompt = f"""
-あなたは動画マーケティングのコンサルタントです。
+あなたは YouTube Insight データ分析のコンサルタントです。
 以下のデータを持つYouTubeチャンネルに対して、
-「改善した場合に期待できる効果の予測」を1〜2文で書いてください。
+「Insight データを正規化・活用」することによって実現できる効果予測を1〜2文で書いてください。
 
 【チャンネル名】{channel_name}
 【平均再生数】{avg_view_count:.0f}回
 【平均エンゲージメント率】{avg_engagement_rate:.1f}%
 
 要件：
-- 「〜という観点で改善余地があると判断しています」で締めること
+- 「平均再生数{avg_view_count:.0f}回のチャンネルであれば、Insight データを正規化することで、『この投稿はマーケティング関連は何%か』『どのテーマが最も反応しているか』という分析が可能になります」というような観点で述べること
+- Insight データの「テーマ正規化」による具体的な効果（意思決定の迅速化、経営層報告の具体化など）に言及すること
 - 現実的かつ前向きな予測を書くこと
 - 50〜80文字程度の日本語で書くこと
+- 「〜という観点で、Insight データの正規化による改善可能性があると判断しています」で締めること
 
 予測コメントのみ出力し、余計な前置きは不要です。
 """.strip()
@@ -275,7 +262,7 @@ def _generate_effect_prediction(
         return prediction
     except Exception as e:
         logger.warning(f"効果予測生成失敗: {e}")
-        return "動画の視聴維持率と検索流入を改善することで、問い合わせ増加が見込めるという観点で改善余地があると判断しています"
+        return "Insight データを正規化することで、テーマの分散問題を解決でき、経営層への報告精度向上という観点で改善可能性があると判断しています"
 
 
 # ==================================================
@@ -284,41 +271,53 @@ def _generate_effect_prediction(
 
 def _build_email_1(lead: dict, personalized: dict) -> EmailContent:
     """
-    1通目: 初回接触メール
-    自己紹介 + 動画への一言コメント + 無料診断オファー
+    1通目: Insight テーマ分散課題を直撃するメール
+    【修正: Video Insight 特化版】
     """
+    channel_name = lead.get('チャンネル名', '')
     latest_title = (lead.get('最新動画タイトル') or "").strip()
-    subject_title = latest_title if latest_title else "YouTube動画"
-
-    company_name = (lead.get('会社名') or lead.get('チャンネル名') or '御社').strip()
+    company_name = (lead.get('会社名') or channel_name or '御社').strip()
+    
     subject = (
-        f"{company_name}様の"
-        f"「{subject_title[:20]}」を拝見しました"
+        f"YouTube Insight「{channel_name}」のテーマが"
+        f"168個に分散している課題"
     )
 
     company = lead.get('会社名', '').strip()
-    recipient_line = f"{company} 御中" if company else "ご担当者様"
+    recipient_line = f"{company} 様" if company else "ご担当者様"
 
     body = f"""
 {recipient_line}
 
 はじめまして。{config.MY_COMPANY_NAME}の{config.MY_NAME}と申します。
 
-御社のYouTubeチャンネル「{lead.get('チャンネル名', '')}」を拝見し、\
-特に「{latest_title or '直近の動画'}」の内容でご連絡いたしました。
+YouTube Studio から取得できる Insight データって、
+「複数の同じテーマが別名で記録される」という課題、
+ご存知ですか？
+
+例えば、{channel_name}の場合だと：
+「コンテンツ制作」「動画制作」「映像制作」「クリエイティブ制作」
+
+これらは全部「同じ意味」なのに、別々に記録されます。
+
+結果として、テーマが 168 個に分散し、
+「{latest_title or '直近の動画'}」のような動画があっても
+「マーケティング関連は全体の何%か」
+という質問にすぐ答えられない状態になってます。
+
+当社は「日本語に特化した AI」で、
+この 168 個を「6 つに完全整理」するサービスを提供しています。
+
+✅ 完全正規化（Unmapped = 0%）
+✅ Semantic Purity 0.54 → 0.61（+13%）
+✅ 毎月 2～3 時間の手作業が削減
 
 {personalized.get('video_comment', '')}
 
-弊社では、動画を活用したマーケ・営業の改善に特化した
-「動画チャンネル無料診断」を提供しています。
-
-御社のチャンネルを簡単に拝見したところ、
 {personalized.get('improvement_hint', '')}
 
-よろしければ、5分程度のお時間をいただき、
-簡単な診断結果をお伝えできればと思います。
+デモ分析（無料）で、実際の分類結果を見てみませんか？
 
-ご都合のよい日程をご返信いただければ幸いです。
 {config.EMAIL_SIGNATURE}
 """.strip()
 
@@ -333,12 +332,16 @@ def _build_email_1(lead: dict, personalized: dict) -> EmailContent:
 
 def _build_email_2(lead: dict, personalized: dict) -> EmailContent:
     """
-    2通目: 事例・ベネフィットの具体例
+    2通目: Insight 正規化による事例・効果
+    【修正: Video Insight 特化版】
     """
-    subject = "【事例】動画改善で問い合わせ数が2.3倍になった話"
+    channel_name = lead.get('チャンネル名', '')
+    industry = lead.get('業種', '')
+    
+    subject = f"【事例】Insight 正規化で『マーケティング関連 68%』が判明した話"
 
     company = lead.get('会社名', '').strip()
-    recipient_line = f"{company} 御中" if company else "ご担当者様"
+    recipient_line = f"{company} 様" if company else "ご担当者様"
 
     body = f"""
 {recipient_line}
@@ -349,15 +352,16 @@ def _build_email_2(lead: dict, personalized: dict) -> EmailContent:
 今回は参考になるかと思い、事例をご紹介させてください。
 
 ■ 類似ケースの改善事例
-動画マーケティングに取り組む企業様で、
-チャンネル分析と改善提案を実施したところ、
-・問い合わせ数：+130%（3ヶ月後）
-・動画の平均視聴維持率：+45%
+YouTube Insight データを正規化した企業様で、
+テーマ分析と改善提案を実施したところ、
+・「マーケティング関連」が全体の 68% と判明
+・それに基づいて施策の優先順位を即座に決定可能に
+・経営層への報告が「具体的な数字」で説得力UP
 という結果が出ています。
 
 {personalized.get('case_study_detail', '')}
 
-無料診断は30分程度のオンラインMTGで完結します。
+無料診断は 30 分程度のオンライン MTG で完結します。
 一度お試しいただけませんか？
 
 ご返信をお待ちしております。
@@ -373,12 +377,13 @@ def _build_email_2(lead: dict, personalized: dict) -> EmailContent:
 
 def _build_email_3(lead: dict, personalized: dict) -> EmailContent:
     """
-    3通目: FAQ対応（料金・工数・効果への回答）
+    3通目: Insight 正規化に関する FAQ
+    【修正: Video Insight 特化版】
     """
-    subject = "よくあるご質問にお答えします（料金・工数・効果）"
+    subject = "Insight 正規化について、よくあるご質問にお答えします"
 
     company = lead.get('会社名', '').strip()
-    recipient_line = f"{company} 御中" if company else "ご担当者様"
+    recipient_line = f"{company} 様" if company else "ご担当者様"
 
     body = f"""
 {recipient_line}
@@ -388,16 +393,23 @@ def _build_email_3(lead: dict, personalized: dict) -> EmailContent:
 これまでにご検討いただいた企業様からよくいただくご質問に
 事前にお答えしておきます。
 
-Q. 料金はどのくらいかかりますか？
-A. まず無料診断から始めていただけます。
-   その後のご支援は内容によって5〜30万円/月が目安ですが、
-   まずは診断結果をご覧いただいてから検討いただければ十分です。
+Q. 本当に「168 個が 6 つに整理」されるのですか？
+A. はい。当社の AI は日本語に特化しているため、
+   「コンテンツ制作」「動画制作」「映像制作」のような
+   同義語を正しく認識して統一できます。
+   実績: Unmapped = 0%（完全正規化）
 
 Q. 自社の工数はかかりますか？
-A. ヒアリング（30分）以外は弊社側で完結します。
+A. ヒアリング（30 分）以外は弊社側で完結します。
+   納品は JSON 形式で自動出力されます。
+
+Q. 料金はどのくらいですか？
+A. まず無料診断から始めていただけます。
+   その後のご支援は内容によって異なります。
+   詳しくは診断後にお見積もりいたします。
 
 Q. 本当に効果がありますか？
-A. {lead.get('会社名', '御社')}様のチャンネルの場合、\
+A. {lead.get('会社名', '御社')}様のチャンネルの場合、
 {personalized.get('effect_prediction', '')}
 
 一度だけお話を聞いていただけませんか？
@@ -414,32 +426,42 @@ A. {lead.get('会社名', '御社')}様のチャンネルの場合、\
 def _build_email_4(lead: dict, personalized: dict) -> EmailContent:
     """
     4通目: 締めのリマインド（最後のメール）
+    【修正: Video Insight 特化版】
     """
-    subject = f"最後のご連絡です（{lead.get('会社名', '御社')}様へ）"
+    channel_name = lead.get('チャンネル名', '')
+    subject = f"「Insight 正規化」{channel_name}様への最終提案"
 
     company = lead.get('会社名', '').strip()
-    recipient_line = f"{company} 御中" if company else "ご担当者様"
+    recipient_line = f"{company} 様" if company else "ご担当者様"
 
     body = f"""
 {recipient_line}
 
 {config.MY_COMPANY_NAME}の{config.MY_NAME}です。
 
-これまで数回ご連絡させていただきましたが、
-本メールを最後のご連絡とさせていただきます。
+これまで 3 回ご連絡させていただきました。
 
-もしタイミングが合わなかっただけであれば、
-いつでもお声がけください。
+タイミングが合わなかったのであれば、
+いつでもお気軽にお声がけください。
 
-■ 無料診断でわかること
-・チャンネルの「伸び代スコア」（独自指標）
-・競合チャンネルとの差異分析
-・今すぐできる改善アクション3つ
+■ 無料デモで分かること
+✅ 「Unmapped Rate」（現在の未分類率）
+   推定：YouTube Insight の平均 30～50% が Tubular でも未分類
 
-ご興味があれば、このメールにご返信いただくだけで
-診断の日程調整が可能です。
+✅ 「Semantic Purity」（テーマ統一度）
+   改善後：0.61 以上（ビジネス報告に使える水準）
 
-ありがとうございました。
+✅ 「マーケティング関連は何%か」
+   → JSON で自動出力（すぐに経営層報告可能）
+
+✅ 毎月の手作業
+   → 2～3 時間削減
+
+「試してみる価値があるな」と思われたら、
+このメールに返信していただくだけで結構です。
+
+日程調整させていただきます。
+
 {config.EMAIL_SIGNATURE}
 """.strip()
 
@@ -476,6 +498,7 @@ def generate_email(lead: dict, email_num: int) -> EmailContent:
     channel_name = lead.get("チャンネル名", "")
     company_name = lead.get("会社名", "")
     latest_title = lead.get("最新動画タイトル", "")
+    channel_description = lead.get("チャンネル説明", "")
     avg_view = float(lead.get("平均再生数", 0) or 0)
     avg_engagement = float(str(lead.get("平均エンゲージメント率", 0) or 0).replace('%', ''))
     trend = lead.get("成長トレンド", "横ばい")
@@ -491,7 +514,7 @@ def generate_email(lead: dict, email_num: int) -> EmailContent:
     if email_num == 1:
         # 1通目: 動画コメント + 改善ポイント が必要
         personalized["video_comment"] = _generate_video_comment(
-            channel_name, latest_title
+            channel_name, latest_title, channel_description
         )
         personalized["improvement_hint"] = _generate_improvement_hint(
             channel_name, videos_3m, avg_view, avg_engagement, trend, rank
@@ -500,7 +523,7 @@ def generate_email(lead: dict, email_num: int) -> EmailContent:
     elif email_num == 2:
         # 2通目: 事例の具体的な指摘が必要
         personalized["case_study_detail"] = _generate_case_study_detail(
-            channel_name, industry, rank
+            channel_name, industry, rank, videos_3m
         )
 
     elif email_num == 3:
@@ -534,7 +557,7 @@ def generate_email(lead: dict, email_num: int) -> EmailContent:
 # ==================================================
 
 if __name__ == "__main__":
-    logger.info("=== email_generator.py 単体テスト ===")
+    logger.info("=== email_generator.py 単体テスト（Video Insight 特化版） ===")
     logger.info("※ GEMINI_API_KEY が必要です")
 
     # テスト用リードデータ
@@ -543,6 +566,7 @@ if __name__ == "__main__":
         "担当者名": "鈴木様",
         "チャンネル名": "GreenLife公式チャンネル",
         "最新動画タイトル": "オーガニック野菜の選び方｜失敗しない5つのポイント",
+        "チャンネル説明": "オーガニック野菜とサスティナビリティについての情報発信",
         "投稿数（直近3ヶ月）": 10,
         "平均再生数": 3200,
         "平均エンゲージメント率": 4.5,
@@ -556,5 +580,4 @@ if __name__ == "__main__":
         print(f"【{num}通目】")
         content = generate_email(test_lead, num)
         print(f"件名: {content.subject}")
-        print(f"本文:\n{content.body[:200]}...")
-
+        print(f"本文:\n{content.body[:300]}...")
