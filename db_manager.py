@@ -104,7 +104,7 @@ def get_next_email_num(to_address, interval_days=3):
         last_sent = datetime.fromisoformat(last_sent_datetime)
         days_since = (datetime.now() - last_sent).days
         
-        if days_since >= interval_days:
+        if days_since >= 0:  # テスト用：即座に送信可能
             return sent_count + 1  # 次の通数を返す
     
     return None  # まだタイミングではない

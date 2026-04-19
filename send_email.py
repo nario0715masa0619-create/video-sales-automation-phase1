@@ -115,16 +115,22 @@ def main():
             else:
                 lead_dict = lead
             
-            # 次に送るべき通数を判定
-            email_num = get_next_email_num(email)
-            if email_num is None:
-                logger.info(f'スキップ: 送信タイミングではない ({ch_name})')
-                continue
-            
-
             # スキップされなかった企業だけカウント
             processed_count += 1
+
+            # 1回目と2回目以降の切り替え判定
+            if processed_count <= first_send_limit:
+                email_num = 1  # 1回目は必ず1通目
+            else:
+                # 2回目以降：データがあれば2通目、なければスキップ
+                email_num = get_next_email_num(email)
+                if not email_num:
+                    logger.info(f'スキップ: 2通目データなし ({ch_name})')
+                    continue
+            
+
             logger.info(f'[{processed_count}/{daily_limit}] {email_num} 通目を送信します: {ch_name}')
+
             email_content = generate_email(lead_dict, email_num=email_num)
 
             if args.dry_run:
@@ -162,6 +168,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
