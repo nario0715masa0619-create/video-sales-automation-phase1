@@ -89,6 +89,7 @@ def main():
     sent_count = 0
     total_leads = len(leads)
 
+    processed_count = 0  # 実際に処理対象に選ばれた企業数
     for idx, lead in enumerate(leads, 1):
         try:
             if not args.dry_run and not is_sending_allowed():
@@ -100,9 +101,9 @@ def main():
 
             # メールアドレスがなければスキップ
             if not email or not email.strip():
-                logger.warning(f'[{idx}/{total_leads}] スキップ: メールアドレスなし ({ch_name})')
+                logger.warning(f"[SKIP] スキップ: メールアドレスなし ({ch_name})")
                 continue
-            logger.info(f'[{idx}/{total_leads}] 処理中: {ch_name} ({email})')
+            logger.info(f"[CANDIDATE] 処理中: {ch_name} ({email})")
 
             # タプルを辞書に変換 (idx, website_url, email, company_name)
             if isinstance(lead, tuple):
@@ -117,10 +118,13 @@ def main():
             # 次に送るべき通数を判定
             email_num = get_next_email_num(email)
             if email_num is None:
-                logger.info(f'[{idx}/{total_leads}] スキップ: 送信タイミングではない ({ch_name})')
+                logger.info(f'スキップ: 送信タイミングではない ({ch_name})')
                 continue
             
-            logger.info(f'[{idx}/{total_leads}] {email_num} 通目を送信します: {ch_name}')
+
+            # スキップされなかった企業だけカウント
+            processed_count += 1
+            logger.info(f'[{processed_count}/{daily_limit}] {email_num} 通目を送信します: {ch_name}')
             email_content = generate_email(lead_dict, email_num=email_num)
 
             if args.dry_run:
@@ -158,7 +162,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 
 
 
