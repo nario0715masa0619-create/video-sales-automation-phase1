@@ -765,3 +765,57 @@ if __name__ == "__main__":
     ng_list = crm.get_ng_list()
     print(f"   → {len(ng_list)}件のNGアドレス")
 
+
+
+# ==================================================
+# Website Scraper v2 用の関数（Phase 5 対応）
+# ==================================================
+
+def read_website_urls_from_crm(limit=None):
+    """CRM から Website URL を読み込む"""
+    try:
+        crm = get_crm()
+        leads = crm.get_all_leads()
+        
+        results = []
+        for idx, lead in enumerate(leads, start=2):  # ヘッダーをスキップ
+            website_url = lead.get('公式サイト', '').strip()
+            company_name = lead.get('会社名', '').strip()
+            email = lead.get('メールアドレス', '').strip()
+            
+            if website_url.startswith(('http://', 'https://')):
+                logger.info(f"📌 Row {idx}: {website_url}")
+                results.append((idx, website_url, email, company_name))
+        
+        logger.info(f"✅ CRM から {len(results)} 件の URL を読み込みました")
+        
+        if limit:
+            results = results[:limit]
+            logger.info(f"📊 --limit {limit} で {len(results)} 件に制限しました")
+        
+        return results
+    except Exception as e:
+        logger.error(f"❌ CRM 読み込みエラー: {e}")
+        return []
+
+
+def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
+    """Phase 5 Sheet に結果を追記"""
+    try:
+        crm = get_crm()
+        spreadsheet = crm._get_spreadsheet()
+        
+        try:
+            ws = spreadsheet.worksheet("Phase5")
+        except:
+            # Phase5 シートがない場合は作成
+            ws = spreadsheet.add_worksheet("Phase5", 1000, 5)
+        
+        row_data = [company_name, phone_number, status, website_url, datetime.now(JST).strftime('%Y-%m-%d %H:%M:%S')]
+        ws.append_row(row_data)
+        
+        logger.info(f"💾 Phase 5 に保存: {company_name} | {phone_number} | {status}")
+        return True
+    except Exception as e:
+        logger.error(f"❌ Phase 5 保存エラー: {e}")
+        return False

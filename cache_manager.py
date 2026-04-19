@@ -1,124 +1,125 @@
-﻿import json
+"""
+cache_manager.py
+HTML キャッシュ管理（SQLite）
+"""
+import logging
+import sqlite3
 import os
 from datetime import datetime, timedelta
-from pathlib import Path
-from typing import Optional, Dict, Any
-from loguru import logger
 
-class CacheManager:
-    """YouTube API のキャッシュ管理（ETag、検索結果、チャンネルインデックス）"""
-    
-    def __init__(self, cache_dir: str = "cache"):
-        self.cache_dir = Path(cache_dir)
-        self.cache_dir.mkdir(exist_ok=True)
+logger = logging.getLogger(__name__)
+
+CACHE_DB_PATH = 'html_cache.db'
+
+def init_cache():
+    """キャッシュ DB を初期化"""
+    try:
+        conn = sqlite3.connect(CACHE_DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS html_cache (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                url TEXT UNIQUE NOT NULL,
+                domain TEXT,
+                html TEXT,
+                cached_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                expires_at TIMESTAMP
+            )
+        ''')
+        conn.commit()
+        conn.close()
+        logger.info("✅ キャッシュ DB を初期化しました")
+    except Exception as e:
+        logger.error(f"❌ キャッシュ DB 初期化エラー: {e}")
+
+def get_cached_html(url, ttl=24):
+    """キャッシュから HTML を取得（TTL チェック付き）"""
+    try:
+        conn = sqlite3.connect(CACHE_DB_PATH)
+        cursor = conn.cursor()
         
-        self.etag_file = self.cache_dir / "etag_cache.json"
-        self.channel_index_file = self.cache_dir / "channel_index.json"
-        self.search_cache_file = self.cache_dir / "search_cache.json"
+        now = datetime.now()
+        cursor.execute('''
+            SELECT html FROM html_cache 
+            WHERE url = ? AND expires_at > ?
+        ''', (url, now))
         
-        # キャッシュの有効期限（日数）
-        self.CHANNEL_CACHE_DAYS = 30
-        self.SEARCH_CACHE_DAYS = 7
+        result = cursor.fetchone()
+        conn.close()
         
-        self._load_caches()
-    
-    def _load_caches(self):
-        """ファイルからキャッシュを読み込む"""
-        self.etag_cache = self._load_json(self.etag_file, {})
-        self.channel_index = self._load_json(self.channel_index_file, {})
-        self.search_cache = self._load_json(self.search_cache_file, {})
-    
-    def _load_json(self, filepath: Path, default: Any) -> Any:
-        """JSON ファイルを安全に読み込む"""
-        try:
-            if filepath.exists():
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    return json.load(f)
-        except Exception as e:
-            logger.warning(f"キャッシュ読み込みエラー [{filepath.name}]: {e}")
-        return default
-    
-    def _save_json(self, filepath: Path, data: Dict):
-        """JSON ファイルに保存（UTF-8 BOMなし）"""
-        try:
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(data, f, indent=2, ensure_ascii=False)
-        except Exception as e:
-            logger.error(f"キャッシュ保存エラー [{filepath.name}]: {e}")
-    
-    # ===== ETag キャッシュ =====
-    def get_etag(self, resource_key: str) -> Optional[str]:
-        """保存済みの ETag を取得"""
-        return self.etag_cache.get(resource_key)
-    
-    def set_etag(self, resource_key: str, etag: str):
-        """ETag を保存"""
-        self.etag_cache[resource_key] = etag
-        self._save_json(self.etag_file, self.etag_cache)
-    
-    # ===== チャンネルインデックス =====
-    def get_channel_id(self, keyword: str) -> Optional[str]:
-        """キーワードから保存済みチャンネルID を取得"""
-        entry = self.channel_index.get(keyword)
-        if entry:
-            # キャッシュ有効期限チェック
-            cached_at = datetime.fromisoformat(entry.get('cached_at', ''))
-            if (datetime.now() - cached_at).days < self.CHANNEL_CACHE_DAYS:
-                return entry.get('channel_id')
+        if result:
+            logger.debug(f"💾 キャッシュヒット: {url}")
+            return result[0]
+        
         return None
-    
-    def set_channel_id(self, keyword: str, channel_id: str):
-        """キーワードとチャンネルID を保存"""
-        self.channel_index[keyword] = {
-            'channel_id': channel_id,
-            'cached_at': datetime.now().isoformat()
-        }
-        self._save_json(self.channel_index_file, self.channel_index)
-    
-    # ===== 検索キャッシュ =====
-    def get_search_results(self, keyword: str) -> Optional[list]:
-        """キーワード検索結果をキャッシュから取得"""
-        entry = self.search_cache.get(keyword)
-        if entry:
-            cached_at = datetime.fromisoformat(entry.get('cached_at', ''))
-            if (datetime.now() - cached_at).days < self.SEARCH_CACHE_DAYS:
-                return entry.get('channel_ids', [])
+    except Exception as e:
+        logger.debug(f"キャッシュ取得エラー: {e}")
         return None
-    
-    def set_search_results(self, keyword: str, channel_ids: list):
-        """キーワード検索結果をキャッシュに保存"""
-        self.search_cache[keyword] = {
-            'channel_ids': channel_ids,
-            'cached_at': datetime.now().isoformat()
-        }
-        self._save_json(self.search_cache_file, self.search_cache)
-    
-    def clear_expired_caches(self):
-        """有効期限切れのキャッシュを削除"""
-        # チャンネルインデックス
-        expired_keywords = []
-        for keyword, entry in self.channel_index.items():
-            cached_at = datetime.fromisoformat(entry.get('cached_at', ''))
-            if (datetime.now() - cached_at).days >= self.CHANNEL_CACHE_DAYS:
-                expired_keywords.append(keyword)
+
+def set_cached_html(url, html, ttl=24):
+    """キャッシュに HTML を保存"""
+    try:
+        conn = sqlite3.connect(CACHE_DB_PATH)
+        cursor = conn.cursor()
         
-        for keyword in expired_keywords:
-            del self.channel_index[keyword]
-            logger.info(f"期限切れチャンネルキャッシュを削除: {keyword}")
+        expires_at = datetime.now() + timedelta(hours=ttl)
+        domain = url.split('/')[2]  # ドメイン抽出
         
-        if expired_keywords:
-            self._save_json(self.channel_index_file, self.channel_index)
+        cursor.execute('''
+            INSERT OR REPLACE INTO html_cache (url, domain, html, expires_at)
+            VALUES (?, ?, ?, ?)
+        ''', (url, domain, html, expires_at))
         
-        # 検索キャッシュ
-        expired_searches = []
-        for keyword, entry in self.search_cache.items():
-            cached_at = datetime.fromisoformat(entry.get('cached_at', ''))
-            if (datetime.now() - cached_at).days >= self.SEARCH_CACHE_DAYS:
-                expired_searches.append(keyword)
+        conn.commit()
+        conn.close()
+        logger.debug(f"💾 キャッシュ保存: {url}")
+        return True
+    except Exception as e:
+        logger.error(f"❌ キャッシュ保存エラー: {e}")
+        return False
+
+def clear_cache():
+    """すべてのキャッシュをクリア"""
+    try:
+        conn = sqlite3.connect(CACHE_DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM html_cache')
+        conn.commit()
+        conn.close()
+        logger.info("✅ キャッシュをクリアしました")
+        return True
+    except Exception as e:
+        logger.error(f"❌ キャッシュクリアエラー: {e}")
+        return False
+
+def clear_cache_by_domain(domain):
+    """ドメイン単位でキャッシュをクリア"""
+    try:
+        conn = sqlite3.connect(CACHE_DB_PATH)
+        cursor = conn.cursor()
+        cursor.execute('DELETE FROM html_cache WHERE domain = ?', (domain,))
+        conn.commit()
+        conn.close()
+        logger.info(f"✅ {domain} のキャッシュをクリアしました")
+        return True
+    except Exception as e:
+        logger.error(f"❌ キャッシュクリアエラー: {e}")
+        return False
+
+def get_cache_stats():
+    """キャッシュの統計情報を取得"""
+    try:
+        conn = sqlite3.connect(CACHE_DB_PATH)
+        cursor = conn.cursor()
         
-        for keyword in expired_searches:
-            del self.search_cache[keyword]
-            logger.info(f"期限切れ検索キャッシュを削除: {keyword}")
+        cursor.execute('SELECT COUNT(*) FROM html_cache')
+        count = cursor.fetchone()[0]
         
-        if expired_searches:
-            self._save_json(self.search_cache_file, self.search_cache)
+        # DB ファイルサイズ
+        db_size_mb = os.path.getsize(CACHE_DB_PATH) / (1024 * 1024)
+        
+        conn.close()
+        return count, db_size_mb
+    except Exception as e:
+        logger.error(f"❌ キャッシュ統計エラー: {e}")
+        return 0, 0.0

@@ -100,10 +100,10 @@ def _extract_urls_from_text(text: str) -> list:
         for url in urls:
             if '?' in url:
                 base, query = url.split('?', 1)
-                base = base.rstrip('.,;:\)\]\"\'')
+                base = base.rstrip(r'.,;:)\]\"\'')
                 url = base + '?' + query
             else:
-                url = url.rstrip('.,;:\)\]\"\'')
+                url = url.rstrip(r'.,;:)\]\"\'')
             cleaned_urls.append(url)
         return cleaned_urls
     except Exception as e:

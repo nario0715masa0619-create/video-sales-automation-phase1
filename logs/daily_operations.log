@@ -37,3 +37,53 @@
 2026-04-12 11:49:21.964 | INFO     | __main__:run_daily_operations:26 - 🎉 日次運用完了
 2026-04-12 11:49:21.964 | INFO     | __main__:run_daily_operations:27 - 終了時刻: 2026-04-12 11:49:21
 2026-04-12 11:49:21.964 | INFO     | __main__:run_daily_operations:28 - ============================================================
+2026-04-14 09:00:02.054 | INFO     | __main__:run_daily_operations:9 - ============================================================
+2026-04-14 09:00:02.054 | INFO     | __main__:run_daily_operations:10 - 🚀 日次運用開始
+2026-04-14 09:00:02.054 | INFO     | __main__:run_daily_operations:11 - 実行時刻: 2026-04-14 09:00:02
+2026-04-14 09:00:02.055 | INFO     | __main__:run_daily_operations:12 - ============================================================
+2026-04-14 09:00:02.055 | INFO     | __main__:run_daily_operations:16 - 
+[Step 1] バウンスチェック開始...
+2026-04-14 09:00:04.138 | INFO     | __main__:run_daily_operations:18 - ✅ バウンスチェック完了
+
+2026-04-14 09:00:04.138 | INFO     | __main__:run_daily_operations:21 - [Step 2] メール送信開始...
+2026-04-14 09:00:04.383 | ERROR    | __main__:run_daily_operations:31 - ❌ エラー発生: Command '['python', 'send_email.py', '--limit', '10']' returned non-zero exit status 1.
+2026-04-17 09:00:01.853 | INFO     | __main__:run_daily_operations:9 - ============================================================
+2026-04-17 09:00:01.860 | INFO     | __main__:run_daily_operations:10 - 🚀 日次運用開始
+2026-04-17 09:00:01.860 | INFO     | __main__:run_daily_operations:11 - 実行時刻: 2026-04-17 09:00:01
+2026-04-17 09:00:01.860 | INFO     | __main__:run_daily_operations:12 - ============================================================
+2026-04-17 09:00:01.860 | INFO     | __main__:run_daily_operations:16 - 
+[Step 1] バウンスチェック開始...
+2026-04-17 09:00:03.462 | INFO     | __main__:run_daily_operations:18 - ✅ バウンスチェック完了
+
+2026-04-17 09:00:03.462 | INFO     | __main__:run_daily_operations:21 - [Step 2] メール送信開始...
+2026-04-17 09:00:03.715 | ERROR    | __main__:run_daily_operations:31 - ❌ エラー発生: Command '['python', 'send_email.py', '--limit', '10']' returned non-zero exit status 1.
+2026-04-18 09:00:02.190 | INFO     | __main__:run_daily_operations:9 - ============================================================
+2026-04-18 09:00:02.203 | INFO     | __main__:run_daily_operations:10 - 🚀 日次運用開始
+2026-04-18 09:00:02.203 | INFO     | __main__:run_daily_operations:11 - 実行時刻: 2026-04-18 09:00:02
+2026-04-18 09:00:02.203 | INFO     | __main__:run_daily_operations:12 - ============================================================
+2026-04-18 09:00:02.203 | INFO     | __main__:run_daily_operations:16 - 
+[Step 1] バウンスチェック開始...
+2026-04-18 09:00:04.374 | INFO     | __main__:run_daily_operations:18 - ✅ バウンスチェック完了
+
+2026-04-18 09:00:04.374 | INFO     | __main__:run_daily_operations:21 - [Step 2] メール送信開始...
+2026-04-18 12:25:53.598 | INFO     | __main__:run_daily_operations:23 - ✅ メール送信完了
+
+2026-04-18 12:25:53.754 | INFO     | __main__:run_daily_operations:25 - ============================================================
+2026-04-18 12:25:53.755 | INFO     | __main__:run_daily_operations:26 - 🎉 日次運用完了
+2026-04-18 12:25:53.756 | INFO     | __main__:run_daily_operations:27 - 終了時刻: 2026-04-18 12:25:53
+2026-04-18 12:25:53.756 | INFO     | __main__:run_daily_operations:28 - ============================================================
+2026-04-19 09:00:02.234 | INFO     | __main__:run_daily_operations:9 - ============================================================
+2026-04-19 09:00:02.247 | INFO     | __main__:run_daily_operations:10 - 🚀 日次運用開始
+2026-04-19 09:00:02.247 | INFO     | __main__:run_daily_operations:11 - 実行時刻: 2026-04-19 09:00:02
+2026-04-19 09:00:02.247 | INFO     | __main__:run_daily_operations:12 - ============================================================
+2026-04-19 09:00:02.247 | INFO     | __main__:run_daily_operations:16 - 
+[Step 1] バウンスチェック開始...
+2026-04-19 09:00:03.850 | INFO     | __main__:run_daily_operations:18 - ✅ バウンスチェック完了
+
+2026-04-19 09:00:03.851 | INFO     | __main__:run_daily_operations:21 - [Step 2] メール送信開始...
+2026-04-19 09:00:06.845 | INFO     | __main__:run_daily_operations:23 - ✅ メール送信完了
+
+2026-04-19 09:00:06.847 | INFO     | __main__:run_daily_operations:25 - ============================================================
+2026-04-19 09:00:06.849 | INFO     | __main__:run_daily_operations:26 - 🎉 日次運用完了
+2026-04-19 09:00:06.850 | INFO     | __main__:run_daily_operations:27 - 終了時刻: 2026-04-19 09:00:06
+2026-04-19 09:00:06.852 | INFO     | __main__:run_daily_operations:28 - ============================================================

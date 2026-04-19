@@ -1,0 +1,679 @@
+2026-04-17 16:20:10.228 | INFO     | youtube_api_optimized:__init__:45 - \u2705 API キー設定完了 (6 個のキーを使用可能)
+======================================================================
+\U0001f4ca 収集フロー開始（YouTube Data API 最適化版）
+======================================================================
+キーワード数: 12
+キーワード: ['YouTube活用', '動画マーケティング', 'オンライン営業', 'SNS活用', '動画集客', 'ウェビナー', 'YouTube広告', 'インフルエンサー', 'チャンネル運用', 'コンテンツマーケティング', 'ビジネスYouTube', '企業動画']
+
+=== Step 1: チャンネル検索（search.list） ===
+検索キャッシュヒット: YouTube活用 (50 チャンネル)
+検索キャッシュヒット: 動画マーケティング (50 チャンネル)
+検索キャッシュヒット: オンライン営業 (50 チャンネル)
+検索キャッシュヒット: SNS活用 (50 チャンネル)
+検索キャッシュヒット: 動画集客 (50 チャンネル)
+検索キャッシュヒット: ウェビナー (50 チャンネル)
+検索キャッシュヒット: YouTube広告 (50 チャンネル)
+検索キャッシュヒット: インフルエンサー (50 チャンネル)
+検索キャッシュヒット: チャンネル運用 (50 チャンネル)
+検索キャッシュヒット: コンテンツマーケティング (50 チャンネル)
+検索キャッシュヒット: ビジネスYouTube (50 チャンネル)
+検索キャッシュヒット: 企業動画 (50 チャンネル)
+チャンネル検索完了: 600 チャンネル
+クォータ使用: 0/10000 (0.0%)
+\u2705 検索結果: 600 チャンネル取得
+
+=== Step 2: チャンネル詳細取得（channels.list） ===
+進捗: 20/600
+進捗: 40/600
+進捗: 60/600
+進捗: 80/600
+進捗: 100/600
+進捗: 120/600
+進捗: 140/600
+進捗: 160/600
+進捗: 180/600
+進捗: 200/600
+進捗: 220/600
+進捗: 240/600
+進捗: 260/600
+進捗: 280/600
+進捗: 300/600
+進捗: 320/600
+進捗: 340/600
+進捗: 360/600
+進捗: 380/600
+進捗: 400/600
+進捗: 420/600
+進捗: 440/600
+進捗: 460/600
+進捗: 480/600
+進捗: 500/600
+進捗: 520/600
+進捗: 540/600
+進捗: 560/600
+進捗: 580/600
+\u2705 詳細取得完了: 600 チャンネル
+
+=== Step 3: ICP フィルタリング ===
+フィルタリング前: 600 件
+\u2705 合格: 229 件
+\u274c 除外: 371 件
+
+=== Step 4: 重複排除 ===
+\u2705 重複排除後: 215 件
+
+=== Step 5: スコアリング ===
+スコアリング完了: Aランク 0件 / Bランク 205件 / Cランク 10件
+\u2705 スコアリング完了: 215 件
+
+=== Step 6: メールアドレス自動取得 ===
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: kintone活用ちゃんねる → sample@xx.co.jp
+Step 6b 開始: フォーム送信 → https://www.asean-carbusiness-career.com/contact/index.html
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://linestep.jp/lp/01/lstepservice_form.html?utm_source=lstep_blog&utm_medium=referral&utm_campaign=header
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: Web&AI活用術 WEBST8 ウェブストエイトチャンネル → info@webst8.com
+進捗: 10/215
+Step 6b 開始: フォーム送信 → https://office.reo7a.com/ai-support/
+対応するフォーム型が見つかりません: https://office.reo7a.com/ai-support/
+Step 6b 開始: フォーム送信 → https://concierge.dougano-madoguchi.com/?utm_source=madoguchi&utm_medium=referral&utm_campaign=otoiawase
+対応するフォーム型が見つかりません: https://concierge.dougano-madoguchi.com/?utm_source=madoguchi&utm_medium=referral&utm_campaign=otoiawase
+\u2705 メール取得成功: GUGA_生成AI活用普及協会 → membership@guga.or.jp
+進捗: 20/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://excee.co.jp/contact/
+Step 6b 開始: フォーム送信 → https://triggermind.com/contact-us/
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+進捗: 30/215
+Step 6b 開始: フォーム送信 → https://x.gd/contact
+対応するフォーム型が見つかりません: https://x.gd/contact
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://mktdemo.com/contact
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: YouTubeマーケティング研究所 by 株式会社アカシア → info@acacia-web.com
+進捗: 40/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://webinar.dooonut.jp/contact
+対応するフォーム型が見つかりません: https://webinar.dooonut.jp/contact
+Step 6b 開始: フォーム送信 → https://exidea.co.jp/contact/
+\u2705 メール取得成功: 【動画経営】YouTubeマーケティングコンサル酒井大輔 → unison.sakai@gmail.com
+Step 6b 開始: フォーム送信 → https://prstore.co.jp/contact
+対応するフォーム型が見つかりません: https://prstore.co.jp/contact
+Step 6b 開始: フォーム送信 → https://keta-chi.co.jp/contact
+対応するフォーム型が見つかりません: https://keta-chi.co.jp/contact
+Step 6b 開始: フォーム送信 → https://www.linkedin.com/help/linkedin?lang=ja&trk=homepage-basic_directory_helpCenterUrl
+進捗: 50/215
+\u2705 メール取得成功: CEO ONLINE → aaaaa@bbbbb.com
+Step 6b 開始: フォーム送信 → https://ip-practice.notion.site/contact
+対応するフォーム型が見つかりません: https://ip-practice.notion.site/contact
+\u2705 メール取得成功: 金本相太 -営業の新常識- → sales@wss-class.com
+Step 6b 開始: フォーム送信 → https://miraikyoso.com/contact/
+\u2705 フォーム送信でメール抽出: 泉克明のキャリア転職サロン ー 若手エンジニアや営業職の《仕事》《年収》《ブラック企業対策》 ー → info@example.com
+Step 6b 開始: フォーム送信 → https://studio-nagomi.com/contact-page
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+\u2705 メール取得成功: YUUGA ONLINE → info@kdt.co.jp
+進捗: 60/215
+\u2705 メール取得成功: エコめがね 営業ここだけの話 → support@nttse.com
+Step 6b 開始: フォーム送信 → https://docs.google.com/forms/d/e/1FAIpQLSdRkt-4roYA4mc3BqVxwb3i2frfuOheSgz1Upe7BK6Uh54Yhg/viewform?usp=send_form
+送信ボタンが見つかりません
+\u2705 メール取得成功: オンライン完結型行政書士　チャンネル → info@well-consultant.jp
+\u2705 メール取得成功: らふぁにぃのおしゃべり営業所 → support@discord.com
+\u2705 メール取得成功: SSJ 営業広報部 → support@silverstar.co.jp
+\u2705 メール取得成功: エアコンなんでも情報館　エアコンクリーニング技術研究所 → aircongiken@gmail.com
+\u2705 メール取得成功: 太陽光 蓄電池の営業・提案支援ならエネがえる → info@enegaeru.com
+\u2705 メール取得成功: イタダキオンライン予備校 → itadaki@alliswell2015.com
+進捗: 70/215
+Step 6b 開始: フォーム送信 → https://liff.line.me/2006535856-DZj1yRlB/landing?follow=%40805ucvpw&lp=IhnXtW&liff_id=2006535856-DZj1yRlB
+対応するフォーム型が見つかりません: https://liff.line.me/2006535856-DZj1yRlB/landing?follow=%40805ucvpw&lp=IhnXtW&liff_id=2006535856-DZj1yRlB
+Step 6b 開始: フォーム送信 → https://sns-sakiyomi.com/blog/contact/
+Step 6b 開始: フォーム送信 → https://gaiax-socialmedialab.jp/contact/email_newsletter
+対応するフォーム型が見つかりません: https://gaiax-socialmedialab.jp/contact/email_newsletter
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+進捗: 80/215
+Step 6b 開始: フォーム送信 → https://funtre.co.jp/onlinesupport
+対応するフォーム型が見つかりません: https://funtre.co.jp/onlinesupport
+Step 6b 開始: フォーム送信 → https://yoshikazunomori.com/contact/
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → http://webdemo.co.jp/inquiry/public/
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+\u2705 メール取得成功: 比嘉太一@店舗集客×AI → taichi.higa@churaweb.net
+進捗: 90/215
+Step 6b 開始: フォーム送信 → https://ma-shi.info/payform/
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://excel-master.net/contact/
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.livewebinar.com/webinar-platform-comparison
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+\u2705 メール取得成功: 株式会社リガク → Info@Rigaku.com
+\u2705 メール取得成功: 月刊税理 WEBセミナー → eigyo-zeikei@gyosei.co.jp
+Step 6b 開始: フォーム送信 → https://www.cfiec.jp/activities/#information-dissemination
+対応するフォーム型が見つかりません: https://www.cfiec.jp/activities/#information-dissemination
+\u2705 メール取得成功: 情報計測オンラインセミナーシリーズ → tada.mizuki.u6@f.mail.nagoya-u.ac.jp
+\u2705 メール取得成功: 【公式】日本郵船 チャンネル_NYK Line Official → nyk@nyk.com
+進捗: 100/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.mierune.co.jp/contactus
+対応するフォーム型が見つかりません: https://www.mierune.co.jp/contactus
+Step 6b 開始: フォーム送信 → https://leaveit-ad.com/contact/
+対応するフォーム型が見つかりません: https://leaveit-ad.com/contact/
+\u2705 メール取得成功: Google 広告 公式 → smart.journey.prober@gmail.com
+Step 6b 開始: フォーム送信 → https://pixai.art/contact
+対応するフォーム型が見つかりません: https://pixai.art/contact
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+進捗: 110/215
+Step 6b 開始: フォーム送信 → https://www.lycbiz.com/jp/contact/
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://companydata.tsujigawa.com/contact-us/
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+Step 6b 開始: フォーム送信 → https://inglow.jp/case/case7/
+対応するフォーム型が見つかりません: https://inglow.jp/case/case7/
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+進捗: 120/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+進捗: 130/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.gpif.go.jp/contact/
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: 資産運用チャンネル「どうなる!?マネー」 → sample@sample.co.jp
+Step 6b 開始: フォーム送信 → https://s.lmes.jp/contact
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: よくわかる資産運用チャンネル by ウェルスリード → customer.s@wealthlead.co.jp
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.sugimurataizo.com
+送信ボタンが見つかりません
+進捗: 140/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://adviser-navi.co.jp/contact.php
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+Step 6b 開始: フォーム送信 → https://privacymark.jp/contact/
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.ramosmarketing.net
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://creal.jp/contacts/new
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+\u2705 メール取得成功: CCUSチャンネル　建設キャリアアップシステム公式チャンネル → ccus-million@kensetsu-kikin.or.jp
+進捗: 150/215
+Step 6b 開始: フォーム送信 → https://globalsupportthailand.com
+対応するフォーム型が見つかりません: https://globalsupportthailand.com
+Step 6b 開始: フォーム送信 → https://lp.contentmarketinglab.jp/cma/contactus
+\u2705 フォーム送信でメール抽出: Content Marketing Academy → test@example.com
+Step 6b 開始: フォーム送信 → https://repro.io/books/booster-information/
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.xlisting.co.jp/contact/
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.thedigitalx.net/contact?utm_source=header&utm_medium=button&utm_campaign=contact
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.seohacks.net/contact-form/?click=tel
+\u2705 フォーム送信でメール抽出: ナイルTV / SEO相談室 → test@example.com
+進捗: 160/215
+Step 6b 開始: フォーム送信 → https://lucy.ne.jp/impotant-in-marketing-support
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://amazon.co.jp/contact-us
+\u2705 メール取得成功: 【工務店WEBマーケティング】アババイチャンネル → info@ababai.co.jp
+Step 6b 開始: フォーム送信 → https://ny-marketing.co.jp/contact/
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://web-rider.jp/service/support/
+対応するフォーム型が見つかりません: https://web-rider.jp/service/support/
+Step 6b 開始: フォーム送信 → https://support.nikkeibp.co.jp/app/answers/list/p/216
+Step 6b 開始: フォーム送信 → https://i-career.co.jp/contact/
+HTML フォーム処理エラー: Message: element not interactable
+  (Session info: chrome=147.0.7727.56); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#elementnotinteractableexception
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe71f3e]
+	chromedriver!(No symbol) [0xeb6dbf]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+進捗: 170/215
+Step 6b 開始: フォーム送信 → https://www.nbc-world.net/committee/2021/gakusei-platform_21list
+対応するフォーム型が見つかりません: https://www.nbc-world.net/committee/2021/gakusei-platform_21list
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://supportbot-admin.userlocal.jp/pages/cfedf72a8faaa713c095
+対応するフォーム型が見つかりません: https://supportbot-admin.userlocal.jp/pages/cfedf72a8faaa713c095
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: KOTARO AI & VIDEO AI動画 × ビジネス研究所 → smart.journey.prober@gmail.com
+Step 6b 開始: フォーム送信 → https://vitjp.com/contact/
+\u2705 フォーム送信でメール抽出: 猪谷のベトナムビジネス情報Youtubeチャンネル → test@example.com
+Step 6b 開始: フォーム送信 → https://jun-ohsugi.com/contact/
+送信ボタンが見つかりません
+進捗: 180/215
+Step 6b 開始: フォーム送信 → https://amazon.co.jp/contact-us
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: ゆっくりビジネスモデル探検隊 → shimada.kota713@gmail.com
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+進捗: 190/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 メール取得成功: Googleビジネスプロフィール ヘルプコミュニティ ダイジェスト → smart.journey.prober@gmail.com
+Step 6b 開始: フォーム送信 → http://keita-sasaki.com/contact
+対応するフォーム型が見つかりません: http://keita-sasaki.com/contact
+Step 6b 開始: フォーム送信 → http://blog.web8.co.jp/blogmessage
+\u2705 フォーム送信でメール抽出: ビジネスサクセスアカデミー / クサマ社長 → test@example.com
+Step 6b 開始: フォーム送信 → https://x.gd/contact
+対応するフォーム型が見つかりません: https://x.gd/contact
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://tokyu-fudosan-hd.co.jp/inquiry/
+送信ボタンが見つかりません
+進捗: 200/215
+Step 6b 開始: フォーム送信 → https://kigyoudamashii.com/contact
+\u2705 メール取得成功: 企業版ふるさと納税チャンネル → XXXXX@cultive.co.jp
+\u2705 メール取得成功: 企業・講師特化の動画編集大学 → info@videovision.jp
+Step 6b 開始: フォーム送信 → https://jp-life.japanpost.jp/contact/index.html?sid=pc_header
+対応するフォーム型が見つかりません: https://jp-life.japanpost.jp/contact/index.html?sid=pc_header
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://www.agentmail.jp/inquiry/
+HTML フォーム処理エラー: Message: unknown error: ChromeDriver only supports characters in the BMP
+  (Session info: chrome=147.0.7727.56)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109c733+10b73]
+	chromedriver!GetHandleVerifier [0x109c864+10ca4]
+	chromedriver!(No symbol) [0xe72100]
+	chromedriver!(No symbol) [0xef4e25]
+	chromedriver!(No symbol) [0xeb6d6b]
+	chromedriver!(No symbol) [0xeb5b20]
+	chromedriver!(No symbol) [0xeddc1c]
+	chromedriver!(No symbol) [0xeb17f4]
+	chromedriver!(No symbol) [0xeddde4]
+	chromedriver!(No symbol) [0xefb1f4]
+	chromedriver!(No symbol) [0xedd9b6]
+	chromedriver!(No symbol) [0xeb0339]
+	chromedriver!(No symbol) [0xeb10f4]
+	chromedriver!GetHandleVerifier [0x12ffe04+274244]
+	chromedriver!GetHandleVerifier [0x12fb459+26f899]
+	chromedriver!GetHandleVerifier [0x1319bd5+28e015]
+	chromedriver!GetHandleVerifier [0x10b7188+2b5c8]
+	chromedriver!GetHandleVerifier [0x10bf23d+3367d]
+	chromedriver!GetHandleVerifier [0x10a5138+19578]
+	chromedriver!GetHandleVerifier [0x10a5302+19742]
+	chromedriver!GetHandleVerifier [0x108e48f+28cf]
+	KERNEL32!BaseThreadInitThunk [0x76ef5d49+19]
+	ntdll!RtlInitializeExceptionChain [0x77a0d81b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x77a0d7a1+231]
+
+Step 6b 開始: フォーム送信 → https://www.aqxis.biz
+送信ボタンが見つかりません
+\u2705 メール取得成功: アポロ\U0001f1e8\U0001f1e6 Official Channel → info@bluepoint-ca.com
+進捗: 210/215
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+Step 6b 開始: フォーム送信 → https://console.cloud.google.com
+送信ボタンが見つかりません
+\u2705 Step 6 完了: 36/215 件のメール取得
+\u2705 メール情報保存: 累計 215 件（新規 215 件）
+
+=== Step 7: CRM 更新 ===
+\u23ed\ufe0f  DRY-RUN: 215 件のチャンネルをスキップ（更新しません）
+
+======================================================================
+\u2705 収集フロー完了
+  合計チャンネル: 215 件
+  メールアドレス取得: 36 件
+======================================================================

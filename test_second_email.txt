@@ -1,0 +1,31 @@
+D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\email_generator.py:25: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-04-19 15:50:47.968 | INFO     | __main__:calculate_send_limits:51 - 送信配分: 1回目 3件 (70%), 2回目以降 2件 (30%)
+2026-04-19 15:50:47.968 | INFO     | __main__:main:73 - === メール送信開始 (limit=5, wait=1200秒, dry_run=True) ===
+2026-04-19 15:50:47.969 | INFO     | __main__:main:74 - 現在時刻: 2026-04-19 15:50:47
+2026-04-19 15:50:47.969 | INFO     | __main__:main:75 - 本日の送信上限: 5 件
+2026-04-19 15:50:47.969 | INFO     | __main__:main:76 - メール間隔: 1200 秒（ランダムばらつき: ±50%）
+2026-04-19 15:50:47.993 | INFO     | crm_manager:_get_client:156 - Google Sheets クライアント初期化完了
+2026-04-19 15:50:48.846 | INFO     | crm_manager:_get_spreadsheet:164 - スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-04-19 15:50:49.918 | DEBUG    | crm_manager:get_all_leads:192 - 全リード取得: 1705件
+2026-04-19 15:50:49.919 | INFO     | crm_manager:get_pending_leads:463 - 送信対象リード: 341件
+2026-04-19 15:50:49.919 | INFO     | __main__:main:83 - 対象リード: 5 件
+2026-04-19 15:50:49.919 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: kintone活用ちゃんねる (sample@xx.co.jp)
+2026-04-19 15:50:49.920 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (kintone活用ちゃんねる)
+2026-04-19 15:50:49.920 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: Web&AI活用術 WEBST8 ウェブストエイトチャンネル (info@webst8.com)
+2026-04-19 15:50:49.920 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (Web&AI活用術 WEBST8 ウェブストエイトチャンネル)
+2026-04-19 15:50:49.920 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: GUGA_生成AI活用普及協会 (membership@guga.or.jp)
+2026-04-19 15:50:49.920 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (GUGA_生成AI活用普及協会)
+2026-04-19 15:50:49.920 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 空き家活用隊 (lend_house-consulting@yahoo.co.jp)
+2026-04-19 15:50:49.921 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (空き家活用隊)
+2026-04-19 15:50:49.921 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 40歳からのAI活用塾 (info@umino-ai.com)
+2026-04-19 15:50:49.921 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (40歳からのAI活用塾)
+2026-04-19 15:50:49.921 | INFO     | __main__:main:160 - === メール送信完了: 0 件 ===
+2026-04-19 15:50:49.921 | INFO     | __main__:main:161 - 実行終了時刻: 2026-04-19 15:50:49
