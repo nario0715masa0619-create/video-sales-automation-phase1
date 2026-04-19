@@ -70,3 +70,41 @@ def get_todays_send_count():
     count = c.fetchone()[0]
     conn.close()
     return count
+
+
+
+def get_send_history(to_address):
+    """メールアドレスの送信履歴を取得（通数と日付）"""
+    conn = sqlite3.connect(DB_PATH)
+    c = conn.cursor()
+    
+    c.execute("""
+    SELECT COUNT(*), MAX(datetime) FROM send_log
+    WHERE to_address = ? AND status = 'sent'
+    """, (to_address,))
+    
+    result = c.fetchone()
+    conn.close()
+    
+    if result[0] == 0:
+        return 0, None  # 未送信
+    return result[0], result[1]  # (送信済み通数, 最後の送信日時)
+
+def get_next_email_num(to_address, interval_days=3):
+    """次に送るべきメール通数を判定（3日ごとに次の通数へ）"""
+    sent_count, last_sent_datetime = get_send_history(to_address)
+    
+    if sent_count == 0:
+        return 1  # 未送信なら1通目
+    
+    if sent_count >= 4:
+        return None  # 4通すべて送信済み
+    
+    if last_sent_datetime:
+        last_sent = datetime.fromisoformat(last_sent_datetime)
+        days_since = (datetime.now() - last_sent).days
+        
+        if days_since >= interval_days:
+            return sent_count + 1  # 次の通数を返す
+    
+    return None  # まだタイミングではない

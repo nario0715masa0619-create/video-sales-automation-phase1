@@ -3,9 +3,9 @@ from datetime import datetime
 from loguru import logger
 from email_generator import generate_email, EmailContent
 from email_sender import XserverSMTPSender
-from db_manager import init_send_log_db, log_send_event, get_todays_send_count
+from db_manager import init_send_log_db, log_send_event, get_todays_send_count, get_next_email_num
 from config import DOMAIN_LAUNCH_DATE, WARMUP_SCHEDULE, ENABLE_AGGRESSIVE_MODE, AGGRESSIVE_BOUNCE_THRESHOLD
-from crm_manager import read_website_urls_from_crm
+from crm_manager import get_pending_leads
 import argparse
 import uuid
 
@@ -62,7 +62,7 @@ def main():
         logger.warning('23:00以降のため送信を中止します')
         return
 
-    leads = read_website_urls_from_crm(limit=daily_limit)
+    leads = get_pending_leads()[:daily_limit]
     logger.info(f'対象リード: {len(leads)} 件')
     if not leads:
         logger.warning('メール対象リードなし')
@@ -80,6 +80,11 @@ def main():
 
             ch_name = lead[3] if isinstance(lead, tuple) else lead.get('チャンネル名', 'Unknown')
             email = lead[2] if isinstance(lead, tuple) else lead.get('メールアドレス')
+
+            # メールアドレスがなければスキップ
+            if not email or not email.strip():
+                logger.warning(f'[{idx}/{total_leads}] スキップ: メールアドレスなし ({ch_name})')
+                continue
             logger.info(f'[{idx}/{total_leads}] 処理中: {ch_name} ({email})')
 
             # タプルを辞書に変換 (idx, website_url, email, company_name)
@@ -92,7 +97,14 @@ def main():
             else:
                 lead_dict = lead
             
-            email_content = generate_email(lead_dict, email_num=1)
+            # 次に送るべき通数を判定
+            email_num = get_next_email_num(email)
+            if email_num is None:
+                logger.info(f'[{idx}/{total_leads}] スキップ: 送信タイミングではない ({ch_name})')
+                continue
+            
+            logger.info(f'[{idx}/{total_leads}] {email_num} 通目を送信します: {ch_name}')
+            email_content = generate_email(lead_dict, email_num=email_num)
 
             if args.dry_run:
                 logger.info(f'[DRY-RUN] {ch_name} へメール送信スキップ')
@@ -112,9 +124,12 @@ def main():
                     log_send_event(to_address=email, message_id=message_id, status='sent')
                     sent_count += 1
                 else:
-                    logger.error(f'❌ {ch_name} へメール送信失敗: {result.error}')
+                    logger.error(f'❌ {ch_name} へメール送信失敗')
 
-            wait_between_sends(idx, total_leads, base_wait=args.wait)
+            if not args.dry_run:
+                wait_between_sends(idx, total_leads, base_wait=args.wait)
+            else:
+                logger.info(f'[DRY-RUN] 待機をスキップ')
 
         except Exception as e:
             logger.error(f'例外発生: {e}')
@@ -126,3 +141,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
