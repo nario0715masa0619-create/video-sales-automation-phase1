@@ -71,12 +71,18 @@ URL: {MY_WEBSITE}
 # ==================================================
 # 営業メール設定
 # ==================================================
-EMAIL_MAX_SEQUENCE: int = int(os.getenv("EMAIL_MAX_SEQUENCE", "4"))
-EMAIL_INTERVAL_DAYS: int = int(os.getenv("EMAIL_INTERVAL_DAYS", "4"))
-EMAIL_MAX_SEND_PER_RUN: int = int(os.getenv("EMAIL_MAX_SEND_PER_RUN", "20"))
-EMAIL_TARGET_RANKS: list[str] = [
+EMAIL_MAX_SEQUENCE = int(os.getenv("EMAIL_MAX_SEQUENCE", "4"))
+EMAIL_INTERVAL_DAYS = int(os.getenv("EMAIL_INTERVAL_DAYS", "4"))
+EMAIL_MAX_SEND_PER_RUN = int(os.getenv("EMAIL_MAX_SEND_PER_RUN", "20"))
+EMAIL_TARGET_RANKS = [
     r.strip() for r in os.getenv("EMAIL_TARGET_RANKS", "A,B").split(",")
 ]
+
+# ==================================================
+# メール送信の配分比率（1回目優先）
+# ==================================================
+EMAIL_FIRST_SEND_RATIO = 0.70    # 1回目送信：70%
+EMAIL_FOLLOWUP_SEND_RATIO = 0.30  # 2回目以降：30%
 
 # ==================================================
 # ICP（理想顧客プロファイル）条件
@@ -201,6 +207,12 @@ if __name__ == "__main__":
     print(f"   EMAIL_MAX_SEQUENCE: {EMAIL_MAX_SEQUENCE}通")
     print(f"   EMAIL_TARGET_RANKS: {EMAIL_TARGET_RANKS}")
 
+# ==================================================
+# メール送信の配分比率（1回目優先）
+# ==================================================
+EMAIL_FIRST_SEND_RATIO = 0.70    # 1回目送信：70%
+EMAIL_FOLLOWUP_SEND_RATIO = 0.30  # 2回目以降：30%
+
 
 
 
@@ -294,3 +306,48 @@ SPREADSHEET_ID_PHASE5: str = os.getenv("SPREADSHEET_ID_PHASE5", "")
 SHEET_NAME_CRM: str = os.getenv("SHEET_NAME_CRM", "Leads")
 SHEET_NAME_PHASE5: str = os.getenv("SHEET_NAME_PHASE5", "Phase5")
 CREDENTIALS_FILE: str = os.getenv("CREDENTIALS_FILE", "credentials/service_account.json")
+
+
+# ==================================================
+# 電話番号抽出用の正規表現パターン（幅広く抽出後、is_valid_phone で厳密検証）
+# ==================================================
+PHONE_PATTERNS = [
+    r'0\d{1,4}[-\s]?\d{1,4}[-\s]?\d{4}',     # 固定電話（各種形式）
+    r'(070|080|090)[-\s]?\d{4}[-\s]?\d{4}',  # 携帯（各種形式）
+    r'0120[-\s]?\d{2,4}[-\s]?\d{4}',         # フリーダイヤル
+    r'0570[-\s]?\d{2,4}[-\s]?\d{4}',         # ナビダイヤル
+    r'\+81[-\s]?\d{1,4}[-\s]?\d{1,4}[-\s]?\d{4}',  # 国際電話
+    r'0\d{2,4}\d{2,4}\d{4}',                 # ハイフンなし固定電話
+    r'(070|080|090)\d{8}',                   # ハイフンなし携帯
+]
+
+# ==================================================
+# HTML フェッチング設定
+# ==================================================
+DEFAULT_HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+}
+
+REQUEST_TIMEOUT = 10  # Requests タイムアウト（秒）
+CRAWL_TIMEOUT = 30    # Playwright タイムアウト（秒）
+# ==================================================
+# スキップ対象 URL パターン（短縮 URL、PDF、画像など）
+# ==================================================
+SKIP_URL_PATTERNS = [
+    r'bit\.ly',
+    r'goo\.gl',
+    r'tinyurl',
+    r'short\.link',
+    r'ow\.ly',
+    r'\.pdf$',
+    r'\.jpg$', r'\.jpeg$', r'\.png$', r'\.gif$', r'\.webp$',
+    r'\.mp4$', r'\.mov$', r'\.avi$',
+    r'youtube\.com/watch',
+    r'youtube\.com/playlist',
+    r'twitter\.com',
+    r'facebook\.com',
+    r'instagram\.com',
+    r'linkedin\.com',
+]
+
+

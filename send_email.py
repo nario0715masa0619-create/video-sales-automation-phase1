@@ -4,7 +4,7 @@ from loguru import logger
 from email_generator import generate_email, EmailContent
 from email_sender import XserverSMTPSender
 from db_manager import init_send_log_db, log_send_event, get_todays_send_count, get_next_email_num
-from config import DOMAIN_LAUNCH_DATE, WARMUP_SCHEDULE, ENABLE_AGGRESSIVE_MODE, AGGRESSIVE_BOUNCE_THRESHOLD
+from config import DOMAIN_LAUNCH_DATE, WARMUP_SCHEDULE, ENABLE_AGGRESSIVE_MODE, AGGRESSIVE_BOUNCE_THRESHOLD, EMAIL_FIRST_SEND_RATIO, EMAIL_FOLLOWUP_SEND_RATIO
 from crm_manager import get_pending_leads
 import argparse
 import uuid
@@ -39,6 +39,20 @@ def wait_between_sends(email_count, total_count, base_wait=1200):
                 logger.info(f'  残り時間: {remaining} 秒（約 {remaining // 60} 分）')
             time.sleep(1)
 
+def calculate_send_limits(daily_limit):
+    """
+    1回目と2回目以降の送信上限を計算
+    - 1回目: 70%
+    - 2回目以降: 30%
+    """
+    from config import EMAIL_FIRST_SEND_RATIO, EMAIL_FOLLOWUP_SEND_RATIO
+    first_send_limit = int(daily_limit * EMAIL_FIRST_SEND_RATIO)
+    followup_send_limit = daily_limit - first_send_limit
+    logger.info(f'送信配分: 1回目 {first_send_limit}件 (70%), 2回目以降 {followup_send_limit}件 (30%)')
+    return first_send_limit, followup_send_limit
+
+
+
 def main():
     parser = argparse.ArgumentParser(description='メール送信スクリプト')
     parser.add_argument('--limit', type=int, default=None, help='送信上限件数（指定なしなら自動計算）')
@@ -52,6 +66,9 @@ def main():
         daily_limit = args.limit
     else:
         daily_limit = get_daily_limit()
+
+    # 配分比率に基づいて1回目と2回目以降の送信上限を計算
+    first_send_limit, followup_send_limit = calculate_send_limits(daily_limit)
     
     logger.info(f'=== メール送信開始 (limit={daily_limit}, wait={args.wait}秒, dry_run={args.dry_run}) ===')
     logger.info(f'現在時刻: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
@@ -141,5 +158,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
 
 
