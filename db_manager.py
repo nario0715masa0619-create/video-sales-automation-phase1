@@ -90,7 +90,7 @@ def get_send_history(to_address):
         return 0, None  # 未送信
     return result[0], result[1]  # (送信済み通数, 最後の送信日時)
 
-def get_next_email_num(to_address, interval_days=3):
+def get_next_email_num(to_address, interval_days=0):  # TODO: テスト完了後は interval_days=3 に戻す
     """次に送るべきメール通数を判定（3日ごとに次の通数へ）"""
     sent_count, last_sent_datetime = get_send_history(to_address)
     
@@ -104,7 +104,7 @@ def get_next_email_num(to_address, interval_days=3):
         last_sent = datetime.fromisoformat(last_sent_datetime)
         days_since = (datetime.now() - last_sent).days
         
-        if days_since >= 0:  # テスト用：即座に送信可能
+        if days_since >= interval_days:
             return sent_count + 1  # 次の通数を返す
     
     return None  # まだタイミングではない
