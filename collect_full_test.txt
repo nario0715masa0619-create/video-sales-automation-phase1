@@ -1,0 +1,580 @@
+2026-04-20 14:09:52.474 | INFO     | youtube_api_optimized:__init__:45 - \u2705 API キー設定完了 (6 個のキーを使用可能)
+======================================================================
+\U0001f4ca 収集フロー開始（YouTube Data API 最適化版）
+======================================================================
+キーワード数: 12
+キーワード: ['YouTube活用', '動画マーケティング', 'オンライン営業', 'SNS活用', '動画集客', 'ウェビナー', 'YouTube広告', 'インフルエンサー', 'チャンネル運用', 'コンテンツマーケティング', 'ビジネスYouTube', '企業動画']
+
+=== Step 1: チャンネル検索（search.list） ===
+検索キャッシュヒット: YouTube活用 (50 チャンネル)
+検索キャッシュヒット: 動画マーケティング (50 チャンネル)
+検索キャッシュヒット: オンライン営業 (50 チャンネル)
+検索キャッシュヒット: SNS活用 (50 チャンネル)
+検索キャッシュヒット: 動画集客 (50 チャンネル)
+検索キャッシュヒット: ウェビナー (50 チャンネル)
+検索キャッシュヒット: YouTube広告 (50 チャンネル)
+検索キャッシュヒット: インフルエンサー (50 チャンネル)
+検索キャッシュヒット: チャンネル運用 (50 チャンネル)
+検索キャッシュヒット: コンテンツマーケティング (50 チャンネル)
+検索キャッシュヒット: ビジネスYouTube (50 チャンネル)
+検索キャッシュヒット: 企業動画 (50 チャンネル)
+チャンネル検索完了: 600 チャンネル
+クォータ使用: 0/10000 (0.0%)
+\u2705 検索結果: 600 チャンネル取得
+
+=== Step 2: チャンネル詳細取得（channels.list） ===
+進捗: 20/600
+進捗: 40/600
+進捗: 60/600
+進捗: 80/600
+進捗: 100/600
+進捗: 120/600
+進捗: 140/600
+進捗: 160/600
+進捗: 180/600
+進捗: 200/600
+進捗: 220/600
+進捗: 240/600
+進捗: 260/600
+進捗: 280/600
+進捗: 300/600
+進捗: 320/600
+進捗: 340/600
+進捗: 360/600
+進捗: 380/600
+進捗: 400/600
+進捗: 420/600
+進捗: 440/600
+進捗: 460/600
+進捗: 480/600
+進捗: 500/600
+進捗: 520/600
+進捗: 540/600
+進捗: 560/600
+進捗: 580/600
+\u2705 詳細取得完了: 599 チャンネル
+
+=== Step 3: ICP フィルタリング ===
+フィルタリング前: 599 件
+\u2705 合格: 229 件
+\u274c 除外: 370 件
+
+=== Step 4: 重複排除 ===
+\u2705 重複排除後: 215 件
+
+=== Step 5: スコアリング ===
+スコアリング完了: Aランク 0件 / Bランク 205件 / Cランク 10件
+\u2705 スコアリング完了: 215 件
+
+=== Step 6: メールアドレス自動取得 ===
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCBqGfceKbtIegpvXGmok-Sw
+サイトURL取得失敗: https://www.youtube.com/channel/UCBqGfceKbtIegpvXGmok-Sw
+メール抽出エラー [ねこぴーのIT活用]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCmEbYpu_BC_SAIJNxk40bDA
+サイトURL取得失敗: https://www.youtube.com/channel/UCmEbYpu_BC_SAIJNxk40bDA
+メール抽出エラー [AI・ICT活用チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCdwCRA5nabkUAddDCn9rADQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCdwCRA5nabkUAddDCn9rADQ
+メール抽出エラー [kintone活用ちゃんねる]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [外国人労働者活用チャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [Lステップ公式活用チャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [そのまま使えるAI活用集]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCNjHT-PGWtoHAJzDbP_fKaA
+サイトURL取得失敗: https://www.youtube.com/channel/UCNjHT-PGWtoHAJzDbP_fKaA
+メール抽出エラー [仕事で差がつくAI活用術]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCqSAU1TcVNUqJbNoh-EPC9w
+サイトURL取得失敗: https://www.youtube.com/channel/UCqSAU1TcVNUqJbNoh-EPC9w
+メール抽出エラー [おーち | 30秒でわかるGooglePixel活用術]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCYIqpw7ZJFgMGMSLhWq83Fg
+サイトURL取得失敗: https://www.youtube.com/channel/UCYIqpw7ZJFgMGMSLhWq83Fg
+メール抽出エラー [Web&AI活用術 WEBST8 ウェブストエイトチャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [着物活用生活 Hisagoとwa]: cannot access local variable 'email' where it is not associated with a value
+進捗: 10/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCRODug_zRTMEz4w4i5XPH1g
+サイトURL取得失敗: https://www.youtube.com/channel/UCRODug_zRTMEz4w4i5XPH1g
+メール抽出エラー [福井県県産材活用課]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [ねもたく-企業AI活用の参謀-]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCDGYA9Zhwc6BIGxgigBLLdg
+サイトURL取得失敗: https://www.youtube.com/channel/UCDGYA9Zhwc6BIGxgigBLLdg
+メール抽出エラー [あきらパパのAI活用学習部屋]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [高田弘介のクラウド活用塾]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCFzh0v1XYIV1k4eyqft6eXw
+サイトURL取得失敗: https://www.youtube.com/channel/UCFzh0v1XYIV1k4eyqft6eXw
+メール抽出エラー [稲葉のSNS活用最大化ch 【Instagram、X】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCeif4PPZdpLbW8twdG0essA
+サイトURL取得失敗: https://www.youtube.com/channel/UCeif4PPZdpLbW8twdG0essA
+メール抽出エラー [けん@AI活用術]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCpJ0UI7fJViPnCtZ4qPKPkA
+サイトURL取得失敗: https://www.youtube.com/channel/UCpJ0UI7fJViPnCtZ4qPKPkA
+メール抽出エラー [IT活用Tips]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC0AM5-NiIa5wJjZPpZyV7LQ
+サイトURL取得失敗: https://www.youtube.com/channel/UC0AM5-NiIa5wJjZPpZyV7LQ
+メール抽出エラー [【弁護士が解説】弁護士向けAI活用・業務効率化術]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [動画活用のよりどころ-動画の窓口]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCZXkNhjGjoEwd9T6oYCoYxg
+サイトURL取得失敗: https://www.youtube.com/channel/UCZXkNhjGjoEwd9T6oYCoYxg
+メール抽出エラー [GUGA_生成AI活用普及協会]: cannot access local variable 'email' where it is not associated with a value
+進捗: 20/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCi-L_nFW8EazjO4z8fGEwfA
+サイトURL取得失敗: https://www.youtube.com/channel/UCi-L_nFW8EazjO4z8fGEwfA
+メール抽出エラー [ちゃーさんのAI・IT活用チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC-oskQFlG7LUZWniFPWL9Vw
+サイトURL取得失敗: https://www.youtube.com/channel/UC-oskQFlG7LUZWniFPWL9Vw
+メール抽出エラー [池田朋弘の生成AIビジネス活用研究所]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCepEK3fdu_RA69tH0jetuEA
+サイトURL取得失敗: https://www.youtube.com/channel/UCepEK3fdu_RA69tH0jetuEA
+メール抽出エラー [PowerQuery活用チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC3r7eoBiL47uCRnnbeQk5bw
+サイトURL取得失敗: https://www.youtube.com/channel/UC3r7eoBiL47uCRnnbeQk5bw
+メール抽出エラー [外来種活用の無機農法【薬剤師が考えたサバイバル】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [エクシーやなぎだのIT活用]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCdGF4VotWpLw6e76ForUeeQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCdGF4VotWpLw6e76ForUeeQ
+メール抽出エラー [【まっち】ゼロから始めるAI活用]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCe-biKii3ibY_m1kJBC7cSQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCe-biKii3ibY_m1kJBC7cSQ
+メール抽出エラー [佐藤辰則 / iPad・AI活用教室]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC-BFgZCnOabJdTMmpZVA1Lw
+サイトURL取得失敗: https://www.youtube.com/channel/UC-BFgZCnOabJdTMmpZVA1Lw
+メール抽出エラー [おしんちゃん【AI活用×Blender】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC9X9-4HyoC9F0cOUPnk_DZA
+サイトURL取得失敗: https://www.youtube.com/channel/UC9X9-4HyoC9F0cOUPnk_DZA
+メール抽出エラー [ひさ | SNS×AI活用]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [ゆーしAI活用法]: cannot access local variable 'email' where it is not associated with a value
+進捗: 30/215
+メール抽出エラー [トラ先生 | AI活用]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC8FwuifT73FtnO93ZUNSoLg
+サイトURL取得失敗: https://www.youtube.com/channel/UC8FwuifT73FtnO93ZUNSoLg
+メール抽出エラー [ダイさん・AI活用の専門家]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCTFw5r7CKKJkWXgCwr6BX4Q
+サイトURL取得失敗: https://www.youtube.com/channel/UCTFw5r7CKKJkWXgCwr6BX4Q
+メール抽出エラー [動画マーケティング攻略チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCEi1lI9JDgboWQRLYqEJEHg
+サイトURL取得失敗: https://www.youtube.com/channel/UCEi1lI9JDgboWQRLYqEJEHg
+メール抽出エラー [YouTubeマーケティングch -BIRDY-]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCQoV8g1sL8Y13D2sc5b6ZZA
+サイトURL取得失敗: https://www.youtube.com/channel/UCQoV8g1sL8Y13D2sc5b6ZZA
+メール抽出エラー [動画制作の株式会社LOCUS]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UClPSNM53EwjCeegTzogp1xw
+サイトURL取得失敗: https://www.youtube.com/channel/UClPSNM53EwjCeegTzogp1xw
+メール抽出エラー [きむ 【動画マーケティング】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [石井賢介 MDマーケティング予備校]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCDY_l3jMV6M4mrNOO47Nvng
+サイトURL取得失敗: https://www.youtube.com/channel/UCDY_l3jMV6M4mrNOO47Nvng
+メール抽出エラー [マーケティングチャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [SNS動画マーケティング・集客TV.天野裕之....]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [YouTubeマーケティング研究所 by 株式会社アカシア]: cannot access local variable 'email' where it is not associated with a value
+進捗: 40/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCgdeapIXT37nrWkveH0QJvw
+サイトURL取得失敗: https://www.youtube.com/channel/UCgdeapIXT37nrWkveH0QJvw
+メール抽出エラー [児島康孝日本Web動画マーケティング]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [やぶもと社長のサムファン！【起業\u2715動画\u2715マーケティングチャンネル】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCO_Ckz65dx6DsuJgy7dSlDA
+サイトURL取得失敗: https://www.youtube.com/channel/UCO_Ckz65dx6DsuJgy7dSlDA
+メール抽出エラー [現場のリアル-マーケティング解説ch]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCl6S1dfbDW7ExstgqUXF3UQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCl6S1dfbDW7ExstgqUXF3UQ
+メール抽出エラー [【動画経営】YouTubeマーケティングコンサル酒井大輔]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC_crH2MFtISLT2ZI6f6rOJw
+サイトURL取得失敗: https://www.youtube.com/channel/UC_crH2MFtISLT2ZI6f6rOJw
+メール抽出エラー [動画編集の案件獲得チャンネル【バッシー】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCI0wzrFHuuhSyVxwB5RUUhA
+サイトURL取得失敗: https://www.youtube.com/channel/UCI0wzrFHuuhSyVxwB5RUUhA
+メール抽出エラー [【公式】マーケティングTV]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [SNSマーケティング_TaTap]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCizApX9vl_us4sHBaZkUgVg
+サイトURL取得失敗: https://www.youtube.com/channel/UCizApX9vl_us4sHBaZkUgVg
+メール抽出エラー [営業フリーランスチャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [セールス大学～しゅーぞーの営業学～]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCTkTqdYGZooEp5A6uU5X_Bw
+サイトURL取得失敗: https://www.youtube.com/channel/UCTkTqdYGZooEp5A6uU5X_Bw
+メール抽出エラー [営業アカデミー]: cannot access local variable 'email' where it is not associated with a value
+進捗: 50/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCNZsdyOBvaVjwAkaZHhZZFw
+サイトURL取得失敗: https://www.youtube.com/channel/UCNZsdyOBvaVjwAkaZHhZZFw
+メール抽出エラー [CEO ONLINE]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC9wUmfwG0y4sYYGh5GApneA
+サイトURL取得失敗: https://www.youtube.com/channel/UC9wUmfwG0y4sYYGh5GApneA
+メール抽出エラー [知財実務オンライン]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [営業ノウハウラボ]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [社長online]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [中西龍一の営業塾助け舟【口下手でも4億売れた営業トーク】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [金本相太 -営業の新常識-]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [オンラインHACCP教室]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [泉克明のキャリア転職サロン ー 若手エンジニアや営業職の《仕事》《年収》《ブラック企業対策》 ー]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCsziRO97G2BK6HlUJLW5bsg
+サイトURL取得失敗: https://www.youtube.com/channel/UCsziRO97G2BK6HlUJLW5bsg
+メール抽出エラー [集客・リピートの極意「100回顧客」カウンセリング営業で売上アップ小林未千]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [YUUGA ONLINE]: cannot access local variable 'email' where it is not associated with a value
+進捗: 60/215
+メール抽出エラー [エコめがね 営業ここだけの話]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [大夜社長【若者特化の営業会社】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [S1グランプリ]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [オンライン留学]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [オンライン完結型行政書士　チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC-V05ihNxeHC9IWfsqk1iOQ
+サイトURL取得失敗: https://www.youtube.com/channel/UC-V05ihNxeHC9IWfsqk1iOQ
+メール抽出エラー [らふぁにぃのおしゃべり営業所]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [SSJ 営業広報部]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [エアコンなんでも情報館　エアコンクリーニング技術研究所]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [太陽光 蓄電池の営業・提案支援ならエネがえる]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UChyGEwd-vG4h3eutDwO3SAw
+サイトURL取得失敗: https://www.youtube.com/channel/UChyGEwd-vG4h3eutDwO3SAw
+メール抽出エラー [イタダキオンライン予備校]: cannot access local variable 'email' where it is not associated with a value
+進捗: 70/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCLL3HieB-oNZkdAvT4Jzpcw
+サイトURL取得失敗: https://www.youtube.com/channel/UCLL3HieB-oNZkdAvT4Jzpcw
+メール抽出エラー [いっせい | SNS運用代行で在宅ワーク]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC9DCLuohbX47Z7xO7Xp9jYw
+サイトURL取得失敗: https://www.youtube.com/channel/UC9DCLuohbX47Z7xO7Xp9jYw
+メール抽出エラー [りゅう【SNS × ai活用】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCUw0zm2QHrimRNjlfpsniGA
+サイトURL取得失敗: https://www.youtube.com/channel/UCUw0zm2QHrimRNjlfpsniGA
+メール抽出エラー [せいや@インスタ副業でフリーランスになって脱サラ起業。SNSスクール運営中]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [バズを生み出すSNS運用【sizuru wiz】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC3wC4G9Is9kcnGcBQD_Ee4w
+サイトURL取得失敗: https://www.youtube.com/channel/UC3wC4G9Is9kcnGcBQD_Ee4w
+メール抽出エラー [そう【SNS×AI活用】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [プロ目線のインスタ運用法 | SAKIYOMI]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCwPAvD_scOzB4m703GK22yg
+サイトURL取得失敗: https://www.youtube.com/channel/UCwPAvD_scOzB4m703GK22yg
+メール抽出エラー [えみ【SNS × ai活用】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCbqO0pVcIUkiAuOkYs48HHQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCbqO0pVcIUkiAuOkYs48HHQ
+メール抽出エラー [【ガイアックス】ソーシャルメディアラボ]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCmq-Gbr-NL2s3Sk73qNibOQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCmq-Gbr-NL2s3Sk73qNibOQ
+メール抽出エラー [美容サロン集客の先生 KURITA]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [元テレビディレクターが教えるSNS動画集客]: cannot access local variable 'email' where it is not associated with a value
+進捗: 80/215
+メール抽出エラー [スマホ動画集客チャンネル FunTre ファントレ株式会社]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [Web集客・デジタルマーケティングを紐解くカギ【吉和の森シリーズ】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC212BRvpZZekGmjJ-HubDOQ
+サイトURL取得失敗: https://www.youtube.com/channel/UC212BRvpZZekGmjJ-HubDOQ
+メール抽出エラー [YouTube動画集客.com]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [ゆうゆう | インスタ集客マーケティング攻略チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCQMWmTaS52daiJWa94twrSw
+サイトURL取得失敗: https://www.youtube.com/channel/UCQMWmTaS52daiJWa94twrSw
+メール抽出エラー [BeautyTube/ビューティーチューブ動画集客コンテンツ]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCdRoR51ToZB8KKxaqB83Vfw
+サイトURL取得失敗: https://www.youtube.com/channel/UCdRoR51ToZB8KKxaqB83Vfw
+メール抽出エラー [ネット集客コンサルタント八坂昌明チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCLS_umYDZNXaGR5aeqSI45A
+サイトURL取得失敗: https://www.youtube.com/channel/UCLS_umYDZNXaGR5aeqSI45A
+メール抽出エラー [こういち:YouTubeビジネスラボ(動画集客Xコンテンツ販売の専門家)]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [AIと動画でビジネス促進チャンネル　清水明華　SDL清水動画Labo]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [動画集客 ビデオレターネット]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [比嘉太一@店舗集客×AI]: cannot access local variable 'email' where it is not associated with a value
+進捗: 90/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC1YbZ8wURJDkorr0TDUZc5A
+サイトURL取得失敗: https://www.youtube.com/channel/UC1YbZ8wURJDkorr0TDUZc5A
+メール抽出エラー [YouTube集客【コンテンツ販売者向け】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [森田貢士のExcelウェビナー]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCnwkLZwrwemnWHzAXOIAADQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCnwkLZwrwemnWHzAXOIAADQ
+メール抽出エラー [ユウキロックのエンタメウェビナー]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCOKQeHk1hh2MQ40MLyjPyJA
+サイトURL取得失敗: https://www.youtube.com/channel/UCOKQeHk1hh2MQ40MLyjPyJA
+メール抽出エラー [くらゆー OBS配信 ウェビナー制作スタジオ]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCWxIlsbSfhX8zq6Hw9GFlxw
+サイトURL取得失敗: https://www.youtube.com/channel/UCWxIlsbSfhX8zq6Hw9GFlxw
+メール抽出エラー [LiveWebinar]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [株式会社リガク]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [月刊税理 WEBセミナー]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC14Po05YFm1O05t1YmMZvaQ
+サイトURL取得失敗: https://www.youtube.com/channel/UC14Po05YFm1O05t1YmMZvaQ
+メール抽出エラー [国際経済連携推進センター]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [情報計測オンラインセミナーシリーズ]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [【公式】日本郵船 チャンネル_NYK Line Official]: cannot access local variable 'email' where it is not associated with a value
+進捗: 100/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCI3uDE804yRCetx-NC9OWrw
+サイトURL取得失敗: https://www.youtube.com/channel/UCI3uDE804yRCetx-NC9OWrw
+メール抽出エラー [IHRM Webinar Series]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [MIERUNE]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCm6619UvgnwAAfoGedOrkcg
+サイトURL取得失敗: https://www.youtube.com/channel/UCm6619UvgnwAAfoGedOrkcg
+メール抽出エラー [広告運用 - ちゅうそん]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [Google 広告 公式]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCjHAhVHs4_ssIVpfJJTtZ3w
+サイトURL取得失敗: https://www.youtube.com/channel/UCjHAhVHs4_ssIVpfJJTtZ3w
+メール抽出エラー [PixAI公式]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCdxYWkAhRKxnboimjmoq8ug
+サイトURL取得失敗: https://www.youtube.com/channel/UCdxYWkAhRKxnboimjmoq8ug
+メール抽出エラー [WEB広告のプロゆう]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC2rTDMZh9spIo8E0u8j_-Fg
+サイトURL取得失敗: https://www.youtube.com/channel/UC2rTDMZh9spIo8E0u8j_-Fg
+メール抽出エラー [動画広告博物館]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCYG_0h5PYT1X7HVC3ZSm0iQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCYG_0h5PYT1X7HVC3ZSm0iQ
+メール抽出エラー [広告ウヒョー!【公式】広告専門メディア]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCu6J4jCafHAggFHX8axu-KQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCu6J4jCafHAggFHX8axu-KQ
+メール抽出エラー [Canva 公式 (キャンバ)]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCCoVklagaBrCwrSFmxKr4Sw
+サイトURL取得失敗: https://www.youtube.com/channel/UCCoVklagaBrCwrSFmxKr4Sw
+メール抽出エラー [広告王国]: cannot access local variable 'email' where it is not associated with a value
+進捗: 110/215
+メール抽出エラー [Yahoo!広告 公式]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [Marin広告チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC0GqZfpUc0Hs_tWjK8mVhYw
+サイトURL取得失敗: https://www.youtube.com/channel/UC0GqZfpUc0Hs_tWjK8mVhYw
+メール抽出エラー [楽天市場広告ナビ]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCEvqbAfr1Q_qs9VkWZbjrNg
+サイトURL取得失敗: https://www.youtube.com/channel/UCEvqbAfr1Q_qs9VkWZbjrNg
+メール抽出エラー [JPCM広告]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [Web広告攻略チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCD1zvhI-zuvbp-Sdy2y6eRA
+サイトURL取得失敗: https://www.youtube.com/channel/UCD1zvhI-zuvbp-Sdy2y6eRA
+メール抽出エラー [Japan Ads / 日本の広告]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [プレスリリース広告]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCaDkz9ZdnySvwFtFddSSKZg
+サイトURL取得失敗: https://www.youtube.com/channel/UCaDkz9ZdnySvwFtFddSSKZg
+メール抽出エラー [WEB広告のプロ inglow]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCy7lCX-b-sf-1N8LJpQHR6g
+サイトURL取得失敗: https://www.youtube.com/channel/UCy7lCX-b-sf-1N8LJpQHR6g
+メール抽出エラー [インフルエンサー大全]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCYEXmRHX3Rg3Kn6dc3yxPvw
+サイトURL取得失敗: https://www.youtube.com/channel/UCYEXmRHX3Rg3Kn6dc3yxPvw
+メール抽出エラー [インフルエンサー図鑑]: cannot access local variable 'email' where it is not associated with a value
+進捗: 120/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC-oDWjTJSimGWMKcfhTYYmw
+サイトURL取得失敗: https://www.youtube.com/channel/UC-oDWjTJSimGWMKcfhTYYmw
+メール抽出エラー [インフルエンサースポーツ]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [俺がメイドインフルエンサーを作るまで]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCZUTTcOKfs5hNER79mbYpGQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCZUTTcOKfs5hNER79mbYpGQ
+メール抽出エラー [インフルエンサーが日本を斬る]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCG2RxvJz-IjMPelzmc7_n-Q
+サイトURL取得失敗: https://www.youtube.com/channel/UCG2RxvJz-IjMPelzmc7_n-Q
+メール抽出エラー [インフルエンサー紹介TV]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC5eGOgjHQaJimCIoSCYuvIg
+サイトURL取得失敗: https://www.youtube.com/channel/UC5eGOgjHQaJimCIoSCYuvIg
+メール抽出エラー [USATV【宇佐市初公認インフルエンサー】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCWls6whDs548itHJZfCMgCQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCWls6whDs548itHJZfCMgCQ
+メール抽出エラー [朝比奈さん@推し活インフルエンサー]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCeLBgrXjXGl54TQ8i8xeZlg
+サイトURL取得失敗: https://www.youtube.com/channel/UCeLBgrXjXGl54TQ8i8xeZlg
+メール抽出エラー [インフルエンサー大魔神]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC9l2eZqVgD5cUWEyiBg2uUw
+サイトURL取得失敗: https://www.youtube.com/channel/UC9l2eZqVgD5cUWEyiBg2uUw
+メール抽出エラー [美女インフルエンサー紹介CH]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC4ld9Jvtsgw71RX_8xK93rA
+サイトURL取得失敗: https://www.youtube.com/channel/UC4ld9Jvtsgw71RX_8xK93rA
+メール抽出エラー [轟 瑛二  植物系インフルエンサーチャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [SNS弁護士キタガワ【企業・インフルエンサーの親切な顧問弁護士】]: cannot access local variable 'email' where it is not associated with a value
+進捗: 130/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCe8vZmReh8O1aktDr1ZZ2pA
+サイトURL取得失敗: https://www.youtube.com/channel/UCe8vZmReh8O1aktDr1ZZ2pA
+メール抽出エラー [インフルエンサー推しの子]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [年金積立金管理運用独立行政法人【GPIF】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC75fpGBNzK0q-V6BLX8kBgA
+サイトURL取得失敗: https://www.youtube.com/channel/UC75fpGBNzK0q-V6BLX8kBgA
+メール抽出エラー [株式の資産運用]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC1xKTQUe5JNnXuKmRskr5JA
+サイトURL取得失敗: https://www.youtube.com/channel/UC1xKTQUe5JNnXuKmRskr5JA
+メール抽出エラー [資産運用業協会チャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [資産運用チャンネル「どうなる!?マネー」]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCf3gUx-4MaPDA1iamfxamcg
+サイトURL取得失敗: https://www.youtube.com/channel/UCf3gUx-4MaPDA1iamfxamcg
+メール抽出エラー [かず【資産運用・経済チャンネル】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCYIyeWdmTC15I6Ts-oJpaXA
+サイトURL取得失敗: https://www.youtube.com/channel/UCYIyeWdmTC15I6Ts-oJpaXA
+メール抽出エラー [投資・資産運用の達人ちゃんねる]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [よくわかる資産運用チャンネル by ウェルスリード]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCMaPk3k1k9DZ-w0U0cV63xw
+サイトURL取得失敗: https://www.youtube.com/channel/UCMaPk3k1k9DZ-w0U0cV63xw
+メール抽出エラー [30代フリーター資産運用チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCSvVHZVncyBV_1B4MRaRKCQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCSvVHZVncyBV_1B4MRaRKCQ
+メール抽出エラー [杉村太蔵の資産運用講座]: cannot access local variable 'email' where it is not associated with a value
+進捗: 140/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCtrap6NxPHyZah2hDD2OxRA
+サイトURL取得失敗: https://www.youtube.com/channel/UCtrap6NxPHyZah2hDD2OxRA
+メール抽出エラー [資産運用生活]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC--nrTfjUMmSG0dVjbOg_Mg
+サイトURL取得失敗: https://www.youtube.com/channel/UC--nrTfjUMmSG0dVjbOg_Mg
+メール抽出エラー [試験運用]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCyaj2N9_jNo_9MIbFce-_Lg
+サイトURL取得失敗: https://www.youtube.com/channel/UCyaj2N9_jNo_9MIbFce-_Lg
+メール抽出エラー [みこ～ママの資産運用チャンネル～]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [資産運用ナビチャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCscKq0Qp-dfY6m0yjLRut5A
+サイトURL取得失敗: https://www.youtube.com/channel/UCscKq0Qp-dfY6m0yjLRut5A
+メール抽出エラー [【JIPDEC公式】プライバシーマークチャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCBCsZNXRNlXidZi-zF0ZTzQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCBCsZNXRNlXidZi-zF0ZTzQ
+メール抽出エラー [ラモマケ～社長のためのYoutube運用代行チャンネル～]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [りさのゆるっと資産運用]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [延吉・チャンキョメ・夏彦@NovaSphere(広告運用)]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCmsVapmQzzQDbryHVm8lSRA
+サイトURL取得失敗: https://www.youtube.com/channel/UCmsVapmQzzQDbryHVm8lSRA
+メール抽出エラー [和歌山市公式チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCtR75Ei3m5xjr3onoH9iOLw
+サイトURL取得失敗: https://www.youtube.com/channel/UCtR75Ei3m5xjr3onoH9iOLw
+メール抽出エラー [CCUSチャンネル　建設キャリアアップシステム公式チャンネル]: cannot access local variable 'email' where it is not associated with a value
+進捗: 150/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCR_21xTXvfOIZDl4IUde1pg
+サイトURL取得失敗: https://www.youtube.com/channel/UCR_21xTXvfOIZDl4IUde1pg
+メール抽出エラー [【タイ在住・移住者向け資産運用チャンネル】グローバルサポートタイランド]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCyZ5dUAaK-sBc06ONj3xnog
+サイトURL取得失敗: https://www.youtube.com/channel/UCyZ5dUAaK-sBc06ONj3xnog
+メール抽出エラー [クロノ【コンテンツ販売研究所】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [Content Marketing Academy]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC-fklE3_evYFYeHnQoWBC6A
+サイトURL取得失敗: https://www.youtube.com/channel/UC-fklE3_evYFYeHnQoWBC6A
+メール抽出エラー [アプリマーケch【Repro公式】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCiioFCLZjaowfW3Y9PSkk_w
+サイトURL取得失敗: https://www.youtube.com/channel/UCiioFCLZjaowfW3Y9PSkk_w
+メール抽出エラー [【Webマーケティング攻略】ウォルト]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [MarketingX(マーケティング・エックス) / クロスリスティング]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC300hFJ7gOtQT6Yn_xdqr3w
+サイトURL取得失敗: https://www.youtube.com/channel/UC300hFJ7gOtQT6Yn_xdqr3w
+メール抽出エラー [Food Creative Factory 食のコンテンツマーケティング会社]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCy6rVs7s4Z0j_dMjeF1YA3w
+サイトURL取得失敗: https://www.youtube.com/channel/UCy6rVs7s4Z0j_dMjeF1YA3w
+メール抽出エラー [世界とつながる海外デジタルマーケティング　The Digital Xチャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [ナイルTV / SEO相談室]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [中小企業マーケティングラボ]: cannot access local variable 'email' where it is not associated with a value
+進捗: 160/215
+メール抽出エラー [バズ部 / ルーシー]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC21vu8WoT2iXxSEZklguiBg
+サイトURL取得失敗: https://www.youtube.com/channel/UC21vu8WoT2iXxSEZklguiBg
+メール抽出エラー [マーケティングを図解する人 by CMO 田中龍之介]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [【工務店WEBマーケティング】アババイチャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [女性のためのマーケティング大学 | きたえり]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCmO0IUAzfrSWPDgEf0Xmd5g
+サイトURL取得失敗: https://www.youtube.com/channel/UCmO0IUAzfrSWPDgEf0Xmd5g
+メール抽出エラー [Web集客専門チャンネル-株式会社ノックス-]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [脱SEOコンサル・中川]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCYISOYpKv4dHj6C-9D84YZQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCYISOYpKv4dHj6C-9D84YZQ
+メール抽出エラー [ウェブライダービジネスチャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCF5cWRzPwFuYz43qzEytAzw
+サイトURL取得失敗: https://www.youtube.com/channel/UCF5cWRzPwFuYz43qzEytAzw
+メール抽出エラー [日経ビジネス（Nikkei Business）]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCCE9oxk2-JbB6Awty-YzrUw
+サイトURL取得失敗: https://www.youtube.com/channel/UCCE9oxk2-JbB6Awty-YzrUw
+メール抽出エラー [人材育成トレーナー太田章代の【ビジネスコミュニケーション術】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [秦卓民 ビジネスコーチch]: cannot access local variable 'email' where it is not associated with a value
+進捗: 170/215
+メール抽出エラー [東京ニュービジネス協議会]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCHJTU_-O1SiveznrfBvEDAQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCHJTU_-O1SiveznrfBvEDAQ
+メール抽出エラー [YouTubeビジネス塾 / 現役物販プレイヤー]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCMPb64dU63ARhe2OLdcS9Mg
+サイトURL取得失敗: https://www.youtube.com/channel/UCMPb64dU63ARhe2OLdcS9Mg
+メール抽出エラー [ビジネス英語コーチHika]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCiLzuHH1lnD3yt038BkuiLA
+サイトURL取得失敗: https://www.youtube.com/channel/UCiLzuHH1lnD3yt038BkuiLA
+メール抽出エラー [大堀蒼汰【ビジネスオタク起業家】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCtJrdagG4CEssKscVEY0-ZA
+サイトURL取得失敗: https://www.youtube.com/channel/UCtJrdagG4CEssKscVEY0-ZA
+メール抽出エラー [KOTARO AI & VIDEO AI動画 × ビジネス研究所]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UChHXdmU6rFyqWjDfEILR7ng
+サイトURL取得失敗: https://www.youtube.com/channel/UChHXdmU6rFyqWjDfEILR7ng
+メール抽出エラー [仙道塾【公式】副業、フリーランスのビジネス作成×マーケティング]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCBRJhWy4C7YbYGp12X688uw
+サイトURL取得失敗: https://www.youtube.com/channel/UCBRJhWy4C7YbYGp12X688uw
+メール抽出エラー [猪谷のベトナムビジネス情報Youtubeチャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCIwJA0CZFgYK1BXrJ7fuKMQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCIwJA0CZFgYK1BXrJ7fuKMQ
+メール抽出エラー [大杉潤のyoutubeビジネススクール]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [山本 智也【ビジネスサイボーグ】 AI×外注で40億円]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCu5cGD1O29jOC6wVqXSfjTA
+サイトURL取得失敗: https://www.youtube.com/channel/UCu5cGD1O29jOC6wVqXSfjTA
+メール抽出エラー [川原卓巳のビジネス戦略ch【自分らしいプロデュースメソッド】]: cannot access local variable 'email' where it is not associated with a value
+進捗: 180/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCPGLbthgetcZPGLDjaxnkoA
+サイトURL取得失敗: https://www.youtube.com/channel/UCPGLbthgetcZPGLDjaxnkoA
+メール抽出エラー [バリ島のビジネスマン]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCIdtMUXDqhG1ZPp2Nfwj7Tg
+サイトURL取得失敗: https://www.youtube.com/channel/UCIdtMUXDqhG1ZPp2Nfwj7Tg
+メール抽出エラー [BMRスモールビジネス研究所]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCzDRQDBB-kcJhjZptozPKNA
+サイトURL取得失敗: https://www.youtube.com/channel/UCzDRQDBB-kcJhjZptozPKNA
+メール抽出エラー [【公式】ドテラ・ジャパン ビジネス]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [整骨院ビジネスチャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCtyHo1WzCC0yauYAOqNgrIg
+サイトURL取得失敗: https://www.youtube.com/channel/UCtyHo1WzCC0yauYAOqNgrIg
+メール抽出エラー [早稲田大学ビジネススクール - Waseda Business School]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [個人メディア研究所 | 三浦-歌島 REスタート-令和無双ビジネス-]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCPbLOQFybHDVhNDkOAJ3NJQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCPbLOQFybHDVhNDkOAJ3NJQ
+メール抽出エラー [ゆっくりビジネスモデル探検隊]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC8484i3zkx5kzHv-ak-SWhg
+サイトURL取得失敗: https://www.youtube.com/channel/UC8484i3zkx5kzHv-ak-SWhg
+メール抽出エラー [渡邉社長のYouTubeビジネス攻略チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC6xdpkfuehdNJz7brrD5fzw
+サイトURL取得失敗: https://www.youtube.com/channel/UC6xdpkfuehdNJz7brrD5fzw
+メール抽出エラー [税理士YouTubeスクール【ビジネスとまなび】]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [ビジネスプロデューサーじぇい]: cannot access local variable 'email' where it is not associated with a value
+進捗: 190/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCTXmT1BK79OaEAY4ukWnj9w
+サイトURL取得失敗: https://www.youtube.com/channel/UCTXmT1BK79OaEAY4ukWnj9w
+メール抽出エラー [KYOKO先生ビジネス戦略の授業]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCNBx3JIAs0FT0JnRICUd2HA
+サイトURL取得失敗: https://www.youtube.com/channel/UCNBx3JIAs0FT0JnRICUd2HA
+メール抽出エラー [Googleビジネスプロフィール ヘルプコミュニティ ダイジェスト]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [【佐々木啓太】ビジネスチャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [ビジネスサクセスアカデミー / クサマ社長]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [矢田ひろき「飲食店・店舗ビジネス攻略」]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCa-BXOJX5m6WULXni_V-Erg
+サイトURL取得失敗: https://www.youtube.com/channel/UCa-BXOJX5m6WULXni_V-Erg
+メール抽出エラー [新潟県企業紹介動画]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCwnH8W9F3DeTKgyZQDDXCuw
+サイトURL取得失敗: https://www.youtube.com/channel/UCwnH8W9F3DeTKgyZQDDXCuw
+メール抽出エラー [上場企業IR動画チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCHSIXMfPHpq1KUurE0BJ2xA
+サイトURL取得失敗: https://www.youtube.com/channel/UCHSIXMfPHpq1KUurE0BJ2xA
+メール抽出エラー [東急不動産ホールディングス]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UC1FQzOK5NoD_a1ui8UCBW_A
+サイトURL取得失敗: https://www.youtube.com/channel/UC1FQzOK5NoD_a1ui8UCBW_A
+メール抽出エラー [JCB採用公式チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCEdNFcSehiegPuB8TZVeBOg
+サイトURL取得失敗: https://www.youtube.com/channel/UCEdNFcSehiegPuB8TZVeBOg
+メール抽出エラー [商船三井公式チャンネル / MOL Channel]: cannot access local variable 'email' where it is not associated with a value
+進捗: 200/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCbNPaOaKf2ivKoQh846gDxQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCbNPaOaKf2ivKoQh846gDxQ
+メール抽出エラー [企業魂]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCxAdWyw83qW--0irEVxTNxQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCxAdWyw83qW--0irEVxTNxQ
+メール抽出エラー [企業版ふるさと納税チャンネル]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [企業・講師特化の動画編集大学]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCSYX7YLtKEl--fS0CwzbYCw
+サイトURL取得失敗: https://www.youtube.com/channel/UCSYX7YLtKEl--fS0CwzbYCw
+メール抽出エラー [かんぽ生命企業広告]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCkxT_hUwdI0fi09C23GiJDQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCkxT_hUwdI0fi09C23GiJDQ
+メール抽出エラー [中小企業診断士チャンネル]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCFQEO_c41E-8VtQTSX7rKMw
+サイトURL取得失敗: https://www.youtube.com/channel/UCFQEO_c41E-8VtQTSX7rKMw
+メール抽出エラー [おさるマーケ講座受講生対談]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [らくらくAI自動集客]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [集まる集客\xae\ufe0eカレッジ\U0001f340女性起業家のWEBマーケティング]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [10分マーケティング - 多田 翼]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [アポロ\U0001f1e8\U0001f1e6 Official Channel]: cannot access local variable 'email' where it is not associated with a value
+進捗: 210/215
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCsP3bwo92Q7DvMEvUaMcc0A
+サイトURL取得失敗: https://www.youtube.com/channel/UCsP3bwo92Q7DvMEvUaMcc0A
+メール抽出エラー [大将のビジネス道場]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [ゼロから始める動画マーケティング【デジタル・エース公式】]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCLHqTa_-ORcsL-4hSwwZDDg
+サイトURL取得失敗: https://www.youtube.com/channel/UCLHqTa_-ORcsL-4hSwwZDDg
+メール抽出エラー [AI×SNS活用講師　りょう]: cannot access local variable 'email' where it is not associated with a value
+公式サイトURL取得失敗: https://www.youtube.com/channel/UCNrbfgdhCb6CLq5b7XuHmFQ
+サイトURL取得失敗: https://www.youtube.com/channel/UCNrbfgdhCb6CLq5b7XuHmFQ
+メール抽出エラー [動画集客ライブ!]: cannot access local variable 'email' where it is not associated with a value
+メール抽出エラー [インフルエンサー しげる]: cannot access local variable 'email' where it is not associated with a value
+\u2705 Step 6 完了: 0/215 件のメール取得
+\u2705 メール情報保存: 累計 215 件（新規 0 件）
+
+=== Step 7: CRM 更新 ===
+\u23ed\ufe0f  DRY-RUN: 215 件のチャンネルをスキップ（更新しません）
+
+======================================================================
+\u2705 収集フロー完了
+  合計チャンネル: 215 件
+  メールアドレス取得: 0 件
+======================================================================

@@ -413,3 +413,5 @@ def check_quota_limit(current_usage, daily_limit=10000, stop_threshold=0.9):
             f"   推奨: キーワード数を削減するか、キャッシュを活用してください"
         )
 
+
+

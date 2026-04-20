@@ -1,0 +1,16 @@
+D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\email_generator.py:25: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-04-19 23:59:09.309 | INFO     | __main__:calculate_send_limits:51 - 送信配分: 1回目 3件 (70%), 2回目以降 2件 (30%)
+2026-04-19 23:59:09.309 | INFO     | __main__:main:73 - === メール送信開始 (limit=5, wait=1200秒, dry_run=False) ===
+2026-04-19 23:59:09.309 | INFO     | __main__:main:74 - 現在時刻: 2026-04-19 23:59:09
+2026-04-19 23:59:09.309 | INFO     | __main__:main:75 - 本日の送信上限: 5 件
+2026-04-19 23:59:09.309 | INFO     | __main__:main:76 - メール間隔: 1200 秒（ランダムばらつき: ±50%）
+2026-04-19 23:59:09.309 | WARNING  | __main__:is_sending_allowed:27 - 23:00以降のため送信をスキップします (現在時刻: 23:59:09)
+2026-04-19 23:59:09.309 | WARNING  | __main__:main:79 - 23:00以降のため送信を中止します

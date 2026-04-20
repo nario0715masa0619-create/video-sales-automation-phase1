@@ -1,0 +1,51 @@
+D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\email_generator.py:25: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-04-19 20:19:03.363 | INFO     | __main__:calculate_send_limits:51 - 送信配分: 1回目 10件 (70%), 2回目以降 5件 (30%)
+2026-04-19 20:19:03.364 | INFO     | __main__:main:73 - === メール送信開始 (limit=15, wait=1200秒, dry_run=True) ===
+2026-04-19 20:19:03.364 | INFO     | __main__:main:74 - 現在時刻: 2026-04-19 20:19:03
+2026-04-19 20:19:03.364 | INFO     | __main__:main:75 - 本日の送信上限: 15 件
+2026-04-19 20:19:03.364 | INFO     | __main__:main:76 - メール間隔: 1200 秒（ランダムばらつき: ±50%）
+2026-04-19 20:19:03.388 | INFO     | crm_manager:_get_client:156 - Google Sheets クライアント初期化完了
+2026-04-19 20:19:04.340 | INFO     | crm_manager:_get_spreadsheet:164 - スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-04-19 20:19:05.399 | DEBUG    | crm_manager:get_all_leads:192 - 全リード取得: 1705件
+2026-04-19 20:19:05.400 | INFO     | crm_manager:get_pending_leads:463 - 送信対象リード: 341件
+2026-04-19 20:19:05.400 | INFO     | __main__:main:83 - 対象リード: 15 件
+2026-04-19 20:19:05.400 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: kintone活用ちゃんねる (sample@xx.co.jp)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (kintone活用ちゃんねる)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: Web&AI活用術 WEBST8 ウェブストエイトチャンネル (info@webst8.com)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (Web&AI活用術 WEBST8 ウェブストエイトチャンネル)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: GUGA_生成AI活用普及協会 (membership@guga.or.jp)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (GUGA_生成AI活用普及協会)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 空き家活用隊 (lend_house-consulting@yahoo.co.jp)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (空き家活用隊)
+2026-04-19 20:19:05.401 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 40歳からのAI活用塾 (info@umino-ai.com)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (40歳からのAI活用塾)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 経営者のkintone活用 (info@densanbanto.com)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (経営者のkintone活用)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: AI搭載スライド自動生成サービス「イルシル」 (tarou@sample.com)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (AI搭載スライド自動生成サービス「イルシル」)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 太陽光 蓄電池の営業・提案支援ならエネがえる (info@enegaeru.com)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (太陽光 蓄電池の営業・提案支援ならエネがえる)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: マーケティング研究所【雨と東京と株式会社】 (xxx@xx.com)
+2026-04-19 20:19:05.402 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (マーケティング研究所【雨と東京と株式会社】)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 越境EC・海外WEBマーケティング_世界へボカン (consulting@s-bokan.com)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (越境EC・海外WEBマーケティング_世界へボカン)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 谷本理恵子の「女性」に売れる!プリンセス・マーケティング (xxx123@mail.com)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (谷本理恵子の「女性」に売れる!プリンセス・マーケティング)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: YouTubeマーケティング研究所 by 株式会社アカシア (info@acacia-web.com)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (YouTubeマーケティング研究所 by 株式会社アカシア)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: イベントマーケティング (info@event-marketing.co.jp)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (イベントマーケティング)
+2026-04-19 20:19:05.403 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: 【動画経営】YouTubeマーケティングコンサル酒井大輔 (unison.sakai@gmail.com)
+2026-04-19 20:19:05.404 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (【動画経営】YouTubeマーケティングコンサル酒井大輔)
+2026-04-19 20:19:05.404 | INFO     | __main__:main:106 - [CANDIDATE] 処理中: CEO ONLINE (aaaaa@bbbbb.com)
+2026-04-19 20:19:05.404 | INFO     | __main__:main:121 - スキップ: 送信タイミングではない (CEO ONLINE)
+2026-04-19 20:19:05.404 | INFO     | __main__:main:168 - === メール送信完了: 0 件 ===
+2026-04-19 20:19:05.404 | INFO     | __main__:main:169 - 実行終了時刻: 2026-04-19 20:19:05
