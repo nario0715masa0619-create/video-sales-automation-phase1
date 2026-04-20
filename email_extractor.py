@@ -527,6 +527,11 @@ def get_email_from_youtube_channel(base_url: str) -> tuple:
             pass
 
     # 最終フィルタリング: EXCLUDE_EMAIL_KEYWORDS チェック
+    # メールアドレスの有効性チェック（ドメイン実在確認）
+    if email and not is_valid_email(email):
+        logger.warning(f'無効なメール（ドメイン未確認）: {email} → スキップ')
+        email = ''
+
     if email and any(kw in email.lower() for kw in EXCLUDE_EMAIL_KEYWORDS):
         email = ''
 
@@ -559,3 +564,33 @@ if __name__ == '__main__':
 
 
 
+
+
+def is_valid_email_format(email):
+    """メールアドレスの形式をチェック"""
+    return EMAIL_PATTERN.match(email) or EMAIL_PATTERN_JP.match(email)
+
+
+def is_valid_domain(domain):
+    """ドメインが実在するか確認（DNS MX レコード確認）"""
+    try:
+        import dns.resolver
+        mx_records = dns.resolver.resolve(domain, 'MX')
+        return len(mx_records) > 0
+    except Exception:
+        return False
+
+
+def is_valid_email(email):
+    """メールアドレスの有効性を確認（形式 + ドメイン実在確認）"""
+    if not email:
+        return False
+    
+    if not is_valid_email_format(email):
+        return False
+    
+    domain = email.split('@')[1] if '@' in email else None
+    if not domain:
+        return False
+    
+    return is_valid_domain(domain)

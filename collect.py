@@ -12,6 +12,7 @@ from target_scraper import (
 from scorer import score_channels
 from crm_manager import upsert_lead
 from email_extractor import get_email_from_youtube_channel
+from email_extractor import is_valid_email
 from utils import normalize_url
 
 # ログ設定
@@ -38,7 +39,7 @@ def signal_handler(sig, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-def run_collect(keywords=None, dry_run=False, max_channels=150):
+def run_collect(keywords=None, dry_run=False, max_channels=150, limit=None):
     """
     YouTube Data API 最適化版 チャンネル収集フロー
 
@@ -67,6 +68,11 @@ def run_collect(keywords=None, dry_run=False, max_channels=150):
     logger.info("\n=== Step 1: チャンネル検索（search.list） ===")
     all_urls = search_company_channels(keywords, max_per_keyword=50)
     logger.info(f"✅ 検索結果: {len(all_urls)} チャンネル取得")
+
+    # limit オプションで件数制限
+    if limit and len(all_urls) > limit:
+        all_urls = all_urls[:limit]
+        logger.info(f'📊 limit={limit} で制限しました（実際の処理対象: {len(all_urls)} 件）')
 
     if not all_urls:
         logger.warning("❌ チャンネル候補なし。終了。")
@@ -241,15 +247,22 @@ if __name__ == "__main__":
         action="store_true",
         help="ドライランモード（CRM に更新しない）"
     )
+    parser.add_argument(
+        '--limit',
+        type=int,
+        default=None,
+        help='処理対象リード数の上限（省略時はすべて処理）'
+    )
 
     args = parser.parse_args()
 
     try:
-        run_collect(keywords=args.keywords, dry_run=args.dry_run)
+        run_collect(keywords=args.keywords, dry_run=args.dry_run, limit=args.limit)
     except KeyboardInterrupt:
         logger.warning("⏹️  ユーザーによる中断")
     except Exception as e:
         logger.error(f"予期しないエラー: {e}")
         sys.exit(1)
+
 
 
