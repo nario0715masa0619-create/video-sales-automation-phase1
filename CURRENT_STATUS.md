@@ -387,3 +387,32 @@ d6583a4 - 修正: スキップ企業をカウント対象外に変更
 **更新者**: AI Assistant  
 **更新日時**: 2026-04-19 16:10  
 **プロジェクト進捗**: 85%（本格運用準備完了）
+
+## 2026-04-20 更新
+
+### 1. メールアドレス有効性チェック機能 ✅
+- mail_extractor.py に 3つの関数を実装
+  - is_valid_email_format(email): 正規表現による形式チェック
+  - is_valid_domain(domain): DNS MX レコード確認
+  - is_valid_email(email): 形式 + ドメイン実在確認
+- collect.py に検証ロジックを統合（YouTube チャンネル収集時に自動検証）
+- 依存関係: dnspython パッケージ
+
+### 2. CRM データクリーンアップ ✅
+- 検出: CRM 内 1,705件中 31件の無効メールアドレス
+- 処理: 無効ドメインのメールアドレスを空にクリア
+- 例: sample@xx.co.jp, xxx@xx.com, info@well-consultant.jp など
+
+### 3. テスト完了 ✅
+- collect.py --limit 5 --dry-run で正常動作確認
+- エラーなく Step 6 完了
+
+### Git コミット（本日分）
+- 8e2401c: CRM 内の無効メールアドレス 31件をクリア
+- 00f77e5: メールアドレス有効性チェック機能の統合
+- d91c105: email_extractor.py ロジック破損を修正
+
+### 期待される効果
+- メール送信のバウンス率低下
+- デリバリー率向上
+- CRM データ品質向上
