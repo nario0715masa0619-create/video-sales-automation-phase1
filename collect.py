@@ -130,13 +130,13 @@ def run_collect(keywords=None, dry_run=False, max_channels=150):
             ch.contact_email = email if email else ''
             ch.website_url = website_url if website_url else ''
             ch.contact_form_url = contact_form_url if contact_form_url else ''
-            
-            # JSON にも同時に保存
-            email_data[channel_url] = {
-                "email": email if email and "marketing-studio" not in email.lower() and "googlegroups" not in email.lower() else "",
-                "website": website_url if website_url else '',
-                "form_url": contact_form_url if contact_form_url else ''
-            }
+
+            # メールアドレスの有効性チェック
+            if email:
+                from email_extractor import is_valid_email
+                if not is_valid_email(email):
+                    logger.warning(f'無効なメール（ドメイン未確認）: {email} → スキップ')
+                    email = None
             
             if email:
                 logger.info(f"✅ メール取得成功: {company_name} → {email}")
