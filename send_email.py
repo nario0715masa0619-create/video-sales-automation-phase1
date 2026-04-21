@@ -81,6 +81,30 @@ def main():
 
     leads = get_pending_leads()[:daily_limit]
     logger.info(f'対象リード: {len(leads)} 件')
+    
+    # 初回とリピートを分離
+    first_send_leads = [lead for lead in leads if int(lead.get('メール送信回数', 0) or 0) == 0]
+    followup_leads = [lead for lead in leads if int(lead.get('メール送信回数', 0) or 0) >= 1]
+    logger.info(f'  → 初回: {len(first_send_leads)} 件, リピート: {len(followup_leads)} 件')
+    
+    # 送信数を計算（リピート不足分を初回で補填）
+    first_send_limit = int(daily_limit * EMAIL_FIRST_SEND_RATIO)
+    followup_send_limit = daily_limit - first_send_limit
+    
+    actual_followup = min(len(followup_leads), followup_send_limit)
+    additional_first = followup_send_limit - actual_followup
+    actual_first = min(len(first_send_leads), first_send_limit + additional_first)
+    
+    logger.info(f'送信配分: 初回 {actual_first}件, リピート {actual_followup}件')
+    
+    # リストを制限
+    first_send_leads = first_send_leads[:actual_first]
+    followup_leads = followup_leads[:actual_followup]
+    
+    # カウンター初期化
+    processed_count = 0
+    email_count = 0
+    
     if not leads:
         logger.warning('メール対象リードなし')
         return
@@ -89,8 +113,9 @@ def main():
     sent_count = 0
     total_leads = len(leads)
 
-    processed_count = 0  # 実際に処理対象に選ばれた企業数
-    for idx, lead in enumerate(leads, 1):
+    # 初回リストを処理
+    logger.info(f"\n--- 初回メール送信開始 ({len(first_send_leads)} 件) ---")
+    for idx, lead in enumerate(first_send_leads, 1):
         try:
             if not args.dry_run and not is_sending_allowed():
                 logger.warning(f'23:00に到達したため、残り {total_leads - idx + 1} 件の送信を中止します')

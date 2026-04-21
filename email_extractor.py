@@ -320,7 +320,7 @@ def scrape_email_from_site(website_url: str) -> tuple:
     cached_website, cached_email, cached_form = load_from_cache(website_url)
     if cached_email or cached_form:
         logger.info(f"📦 キャッシュから取得: {website_url}")
-        return cached_website, cached_email, cached_form
+        return cached_website, cached_email, cached_form, ""
     parsed = urlparse(website_url)
     base = f"{parsed.scheme}://{parsed.netloc}"
 
@@ -594,3 +594,6 @@ def is_valid_email(email):
         return False
     
     return is_valid_domain(domain)
+
+
+

@@ -20,7 +20,7 @@ def run_daily_operations(limit=15):
         
         # ステップ2: メール送信
         logger.info("[Step 2] メール送信開始...")
-        result = subprocess.run(['python', 'send_email.py', '--limit', str(limit)], check=True)
+        result = subprocess.run(['python', 'send_email.py', '--limit', str(limit), '--dry-run'], check=True)
         logger.info("✅ メール送信完了\n")
         
         logger.info("=" * 60)
@@ -35,7 +35,10 @@ def run_daily_operations(limit=15):
     return True
 
 if __name__ == '__main__':
-    import sys
-    limit = int(sys.argv[1]) if len(sys.argv) > 1 else 15
-    run_daily_operations(limit)
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--limit', type=int, default=15)
+    args = parser.parse_args()
+    run_daily_operations(args.limit)
+
 

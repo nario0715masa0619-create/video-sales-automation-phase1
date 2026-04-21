@@ -1,0 +1,4 @@
+2026-04-21 13:42:49.541 | INFO     | youtube_api_optimized:__init__:45 - \u2705 API キー設定完了 (6 個のキーを使用可能)
+usage: collect.py [-h] [--keywords KEYWORDS [KEYWORDS ...]] [--dry-run]
+                  [--limit LIMIT]
+collect.py: error: unrecognized arguments: --step 6

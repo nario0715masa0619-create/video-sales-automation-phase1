@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\daily_operations.py", line 39, in <module>
+    limit = int(sys.argv[1]) if len(sys.argv) > 1 else 15
+            ~~~^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '--limit'
