@@ -1,651 +1,147 @@
-# 営業自動化プロジェクト - YouTube Data API v3 最適化版
-
-## 📋 プロジェクト概要
-
-YouTube チャンネルから営業リード（企業情報・メールアドレス）を自動収集し、Gemini API でメール生成、SMTP で自動送信するシステム。
-
-**実装期間:** 2026-03-31 ～ 2026-04-07
-**プロジェクトステータス:** ✅ 本番環境対応 / Phase 2 開発中
-
----
-
-## 🎯 実装済み機能
-
-### ✅ 1. YouTube Data API v3 統合
-
-- search.list: キーワードからチャンネルを検索（100pt/リクエスト）
-- channels.list: チャンネル詳細情報取得（1pt/リクエスト）
-- ETag キャッシング: 304 Not Modified 対応
-- クォータ最適化: 8,500pt → 100pt（98.8% 削減）
-
-### ✅ 2. キャッシュシステム
-
-- etag_cache.json: API レスポンス ETag 保存
-- search_cache.json: 検索結果キャッシュ（7日有効）
-- channel_index.json: チャンネルインデックス（30日有効）
-- **website_scrape/**: Website クロール結果キャッシュ（新規 - 2026-04-07）
-
-### ✅ 3. リード収集フロー
-
-7ステップフロー: 検索 → 詳細取得 → ICP フィルタリング → 重複排除 → スコアリング → メール抽出 → CRM 更新
-
-### ✅ 4. メール送信自動化
-
-Google Sheets からリード取得 → Gemini API で文面生成 → SMTP 送信 → 履歴記録
-
-### ✅ 5. エラーハンドリング
-
-HTTP 429: 自動リトライ（最大 3 回）
-HTTP 403/404: ログ記録してスキップ
-タイムアウト: 15 秒で自動リトライ
-
-### ✅ 6. セキュリティ
-
-API キーを .env に保存（Git 無視）
-キャッシュファイルは UTF-8 without BOM
-パスは Windows 絶対パス対応
-
----
-
-## 📊 データ収集実績（2026-04-18）
-
-### 全パイプライン統計
-
-| フェーズ | 内容 | 完了状況 | 件数 |
-|--------|------|--------|------|
-| Phase 1 | YouTube チャンネル検索 | ✅ 完了 | 215 件 |
-| Phase 2 | メール送信 | ✅ 完了 | 339 件ペンディング |
-| Phase 5 | URL スクレイピング | ✅ 完了 | 1589/1589（100%） |
-| **合計営業対象** | ready_to_contact | ✅ | **3,986 件** 🎯 |
-
-### Phase 5 実績（2026-04-18）
-- 処理完了: 1589/1589 行（100%）
-- ready_to_contact: 904 件
-- 電話番号抽出: 569 件（57.4% 抽出率）
-- 実行時間: 約 30 分
-- キャッシュ: 16,852 URLs、3,212.75 MB
-
-
-| 実行日 | ジャンル | チャンネル数 | メール取得数 |
-|--------|---------|------------|-----------|
-| 2026-04-06 | SNS動画活用 | 74 | 13 |
-| 2026-04-07（1回目） | Web制作・デジタル | 49 | 10 |
-| **累計** | - | **288** | **50** |
-
----
-
-## 🔧 改善 3: キャッシング機能（2026-04-07）
-
-### 実装内容
-- email_cache.py: キャッシング機能モジュール
-- email_extractor.py: キャッシュ読み込み・保存機能
-
-### パフォーマンス
-- 改善前: 200チャンネル × 5秒 = 16分
-- 改善後: 2回目以降は約20秒（キャッシュから直接読み込み）
-
-### Git コミット
-commit: fb45031 / branch: feature/email-extractor-caching
-
----
-
-## 🔧 セットアップ手順
-
-### 1. 環境変数の設定
-
-.env ファイルを作成:
-```\
-YOUTUBE_API_KEY=YOUR_KEY
-GOOGLE_SHEETS_ID=YOUR_ID
-GEMINI_API_KEY=YOUR_KEY
-SMTP_USER=your-email@gmail.com
-SMTP_PASSWORD=your-password
-```\
-
-### 2. パッケージインストール
-
-```\ash
-pip install -r requirements.txt
-```\
-
-### 3. Google Sheets 準備
-
-1. YouTube Data API v3 を有効化
-2. リード用 Google Sheets を作成
-3. config.py の GOOGLE_SHEETS_ID を設定
-
----
-
-## 📈 使用例
-
-### 基本的な実行
-```\ash
-python -c "from collect import run_collect; run_collect(dry_run=False)"
-```\
-
-### キーワード指定での実行
-```\ash
-python -c "from collect import run_collect; run_collect(keywords=['Web制作企業', 'Webデザイン企業'], dry_run=False)"
-```\
-
-### ドライラン（テスト実行）
-```\ash
-python -c "from collect import run_collect; run_collect(dry_run=True)"
-```\
-
----
-
-## 🐛 トラブルシューティング
-
-### キャッシュをクリア
-
-```powershell
-Remove-Item cache -Recurse -Force
-```\
-
-### クォータ不足
-
-- YouTube API は UTC 0:00 にリセット
-- config.py の DEFAULT_SEARCH_KEYWORDS を削減
-- キャッシュ活用で削減
-
-### メール送信失敗
-
-- .env の SMTP_PASSWORD を確認
-- GOOGLE_SHEETS_ID を確認
-- GEMINI_API_KEY を確認
-
----
-
-## 📅 実装タイムライン
-
-| 日付 | タスク | 状態 |
-|------|--------|------|
-| 2026-03-31 | SerpAPI → YouTube API v3 置換 | ✅ |
-| 2026-04-01 | スコアリング統合 | ✅ |
-| 2026-04-03 | Phase 1 実装完了 | ✅ |
-| 2026-04-07 | キャッシング機能実装 | ✅ |
-
----
-
-## 🚀 今後の拡張案
-
-1. データベース化: Google Sheets → SQLite
-2. メール返信追跡: IMAP で開封検知
-3. スケジューリング: Task Scheduler 自動化
-4. メール送信自動化: 抽出メールアドレスへの自動送信
-5. 問い合わせフォーム自動送信: Selenium で自動入力
-
----
-
-**最終更新: 2026-04-07 10:45 JST**
-**プロジェクトステータス:** ✅ 本番環境対応 / Phase 2 開発中
-
-
-
-## Phase 3 実装進捗（2026-04-07）
-
-### 段階1: YouTube About ページ URL 抽出精度向上 ✅
-- **実装内容**: 
-  - _extract_urls_from_text() 関数を追加（日本語ドメイン・複雑URL形式対応）
-  - _get_website_via_ytdlp() を改善
-  - 正規表現パターン拡張（日本語文字対応）
-  
-- **成果**:
-  - Website 取得率: 27% → 63%（+36%改善）
-  - テスト実行（飲食店企業）: 73チャンネル、14メール抽出（19.2%）
-  - Git コミット: ad1fc62
-
-### 段階2: Contact Form 検出関数実装 ✅
-- **実装内容**:
-  - _extract_contact_form_url() 関数を追加
-  - scrape_email_from_site() に Contact Form 自動検出ロジック統合
-  - &lt;form action&gt; と contact リンクの検出対応
-  
-- **テスト実行**:
-  - 製造業企業ラン: 37チャンネル取得、メール抽出中
-  - Git コミット: 81f3a28
-
-### データ収集実績（本日）
-
-| ジャンル | チャンネル数 | メール取得 | Website取得 | 完了 |
-|---------|-----------|----------|-----------|------|
-| 動画制作 | 73 | 14 | 46 | ✅ |
-| 飲食店・小売 | 73 | 14 | 73 | ✅ |
-| 製造業 | 37 | 進行中 | - | 🔄 |
-
-### CRM 累計統計（2026-04-07 時点）
-- 総リード数: 397+ 件
-- メール情報: 69+ 件（17.4%）
-- Website情報: 266+ 件（74%+）
-- 本日追加: 146+ リード
-
-### Git 履歴
-- ad1fc62: Phase 3 - YouTube About ページの URL 抽出精度向上（日本語ドメイン対応）
-- 81f3a28: Phase 3 段階2 - Contact Form 検出関数を実装
-- 8c2af5a: chore: .gitignore を追加（__pycache__, .env, logs, cache を除外）
-
-# 営業自動化プロジェクト - Phase 3 実装完了（2026-04-07）
-
-## 📈 本日の実装成果
-
-### Phase 3 実装進捗
-- **段階1**: YouTube About ページ URL 抽出精度向上（日本語ドメイン対応）
-  - Website 取得率: 27% → 63%（+36%）
-  - 正規表現を日本語ドメイン対応に改善
-  
-- **段階2**: Contact Form 検出関数実装
-  - _extract_contact_form_url() を email_extractor.py に統合
-  - HTML から <form> タグと contact リンクを自動抽出
-
-- **新機能**: 検索ページネーション対応
-  - 1キーワードあたり 150 チャンネル取得対応（従来: 50）
-  - API クォータ効率化（100pt → 300pt/キーワード）
-
-- **キャッシング機能統合**
-  - mail_cache.py による処理速度向上（12 分 → 20 秒）
-  - cache/email_data.json マージ機能で複数実行対応
-
-### 本日の実行実績
-| ジャンル | チャンネル | メール取得 | 検出率 |
-|---------|-----------|----------|------|
-| 動画制作 | 73 | 14 | 19.2% |
-| 飲食・小売 | 73 | 14 | 19.2% |
-| 製造業 | 37 | 6 | 16.2% |
-| 建設・不動産 | 104 | 23 | 22.1% |
-| 教育・学習支援 | 236 | 59 | 25.0% |
-| 医療・福祉 | 106 | 17 | 16.0% |
-| **合計** | **629** | **133** | **21.1%** |
-
-### CRM 累計統計
-- **総リード数**: 1,030 件
-- **メール情報**: 211 件（20.5%）
-- **Website 情報**: 266+ 件（26%+）
-- **本日追加**: 267 リード、133 メール
-
-### バグ修正
-1. ✅ mail_extractor.py: undefined html 変数削除
-   - Line 521 の Contact Form ロジック削除
-   
-2. ✅ collect.py: ch.channel → ch に修正
-   - Step 6 でメール取得時の AttributeError 解決
-   - email が正しく cache/email_data.json に保存されるように修正
-   
-3. ✅ collect.py: Cache マージ機能実装
-   - 既存 cache/email_data.json を読み込んでマージ
-   - 複数ジャンル実行時もメールデータが累積されるように改善
-
-### Git コミット履歴
-- db8c31f: Merge main
-- c3e7fa4: fix: Step 6 で ch.channel → ch に修正（AttributeError を解決）
-- 597b58c: fix: Step 6 JSON 保存をマージ方式に変更（複数実行時もデータ保持）
-- 5abece3: feat: ページネーション対応版で大幅改善を実装・確認完了
-- 927d43f: docs: Phase 3 実装進捗を README に記録（段階1・2完了、複数ジャンル実行）
-- 81f3a28: feat: Phase 3 段階2 - Contact Form 検出関数を実装
--  d1fc62: feat: Phase 3 - YouTube About ページの URL 抽出精度向上（日本語ドメイン対応）
-
-## 🎯 次のステップ（Phase 3 段階3）
-
-**目標**: メール検出率 20% → 50%
-
-### 実装予定
-1. **JSON-LD 完全解析**
-   - Organization スキーマの email フィールド抽出
-   - LocalBusiness スキーマの contactPoint 解析
-   - BreadcrumbList 経由の会社情報取得
-
-2. **短縮 URL 除外強化**
-   - amzn.to, bit.ly, tinyurl 等の短縮URL除外
-   - YouTube/SNS リンク除外
-   - ドメイン正規化改善
-
-3. **他ジャンルでの大規模実行**
-   - IT・ソフトウェア企業
-   - その他業種での検証
-
-## 📝 開発ブランチ戦略
-- main: 本番環境コード
-- eature/improve-email-detection-rate: 現在の開発ブランチ（マージ完了）
-
----
-
-**更新日**: 2026-04-07  
-**チーム**: 営業自動化プロジェクト
-
-
----
-
-## 🚀 Phase 3 実装完了（2026-04-07）
-
-### Phase 3 実装進捗
-
-#### 段階1: YouTube About ページ URL 抽出精度向上
-- 日本語ドメイン対応の正規表現実装
-- Website 取得率: 27% → 63%（+36%）
-- 実装ファイル: email_extractor.py
-- コミット: ad1fc62
-
-#### 段階2: Contact Form 検出機能
-- _extract_contact_form_url() 関数実装
-- HTML から <form> タグと contact リンク自動抽出
-- 実装ファイル: email_extractor.py, contact_form_enhance.py
-- コミット: 81f3a28
-
-#### 新機能: 検索ページネーション対応
-- 1キーワードあたり 150 チャンネル取得対応（従来: 50）
-- API クォータ効率化: 100pt → 300pt/キーワード
-- 実装ファイル: youtube_api_optimized.py, method_paginated.py, target_scraper.py, collect.py
-- コミット: 5abece3
-
-#### キャッシング機能統合
-- email_cache.py による処理速度向上
-- 処理速度: 12 分 → 20 秒
-- cache/email_data.json マージ機能で複数実行対応
-
-### 本日の実行実績
-
-| ジャンル | チャンネル | メール取得 | 検出率 |
-|---------|-----------|----------|------|
-| 動画制作 | 73 | 14 | 19.2% |
-| 飲食・小売 | 73 | 14 | 19.2% |
-| 製造業 | 37 | 6 | 16.2% |
-| 建設・不動産 | 104 | 23 | 22.1% |
-| 教育・学習支援 | 236 | 59 | 25.0% |
-| 医療・福祉 | 106 | 17 | 16.0% |
-| **合計** | **629** | **133** | **21.1%** |
-
-### CRM 累計統計
-- 総リード数: 1,030 件
-- メール情報: 211 件（20.5%）
-- Website 情報: 266+ 件（26%+）
-- 本日追加: 267 リード、133 メール
-
-### バグ修正
-1. **email_extractor.py**: undefined html 変数削除
-   - Line 521 の Contact Form ロジック削除
-   - 例外発生を防止
-
-2. **collect.py**: ch.channel → ch に修正
-   - Step 6 でメール取得時の AttributeError 解決
-   - email が正しく cache/email_data.json に保存されるように修正
-   - コミット: c3e7fa4
-
-3. **collect.py**: Cache マージ機能実装
-   - 既存 cache/email_data.json を読み込んでマージ
-   - 複数ジャンル実行時もメールデータが累積されるように改善
-   - コミット: 597b58c
-
-### 本日のコミット履歴
-- c3e7fa4: fix: Step 6 で ch.channel → ch に修正（AttributeError を解決）
-- 597b58c: fix: Step 6 JSON 保存をマージ方式に変更（複数実行時もデータ保持）
-- 5abece3: feat: ページネーション対応版で大幅改善を実装・確認完了
-- 927d43f: docs: Phase 3 実装進捗を README に記録（段階1・2完了、複数ジャンル実行）
-- 81f3a28: feat: Phase 3 段階2 - Contact Form 検出関数を実装
-- ad1fc62: feat: Phase 3 - YouTube About ページの URL 抽出精度向上（日本語ドメイン対応）
-
-## 🎯 次のステップ（Phase 3 段階3）
-
-**目標**: メール検出率 20% → 50%
-
-### 実装予定
-1. **JSON-LD 完全解析**
-   - Organization スキーマの email フィールド抽出
-   - LocalBusiness スキーマの contactPoint 解析
-
-2. **短縮 URL 除外強化**
-   - amzn.to, bit.ly, tinyurl 等の短縮URL除外
-
-3. **他ジャンルでの大規模実行**
-   - IT・ソフトウェア企業での検証
-
-
----
-
-## 🚀 新機能: ウォームアップスケジュール & バウンス管理（Phase 2 - 2026-04-07）
-
-### 📋 概要
-
-**luvira-biz.jp ドメイン運用開始に向けた IP ウォームアップ + バウンス監視システム**
-
-送信ボリュームを段階的に増やしながら、バウンス率を監視し、ドメイン評判を保護します。
-
-### 📅 ウォームアップスケジュール
-
-| 週 | 期間 | 上限 | 条件 |
-|----|------|------|------|
-| 1週目 | 運用開始～7日 | 10件/日 | ドメイン信頼度構築フェーズ |
-| 2週目 | 8～14日 | 15件/日 | バウンス率 2% 未満で進行 |
-| 3週目 | 15～21日 | 20件/日 | バウンス率 2% 未満で進行 |
-| 4週目 | 22～28日 | 25件/日 | バウンス率 2% 未満で進行 |
-| 5週目～ | 29日以降 | 25件/日（固定）| **Aggressive mode** で最大 30件/日 |
-
-### 🎯 バウンス率による判定ルール
-
-| バウンス率 | 判定 | アクション |
-|-----------|------|-----------|
-| < 2% | ✅ 理想的 | 翌週 +5件/日 に増やしてよい |
-| 2～5% | ⚠️ 注意ゾーン | 翌週は据え置き、リスト精査を検討 |
-| > 5% | 🔴 危険 | 翌週は -5件/日 に減らす、SMTP 設定を確認 |
-
-### 🔧 実装ファイル
-
-1. **db_manager.py** - SQLite ログ管理
-2. **bounce_checker.py** - バウンスチェック（毎日 01:00 実行推奨）
-3. **send_email.py** - 修正版（ウォームアップスケジュール対応）
-4. **weekly_report.py** - 週次レビュー（毎週月曜朝実行推奨）
-5. **config.py** - 設定ファイル（ウォームアップ + IMAP）
-
-### 📈 運用スケジュール（推奨）
-
-| 時刻 | スクリプト | 説明 |
-|------|-----------|------|
-| 09:00 | `python send_email.py` | 日次メール送信（上限自動計算） |
-| 01:00 | `python bounce_checker.py` | バウンスチェック & DB 集計（深夜） |
-| 月朝 | `python weekly_report.py` | 週次レビュー & 判定 |
-
-### 🎛️ Aggressive mode の有効化
-
-config.py で設定：
-```python
-ENABLE_AGGRESSIVE_MODE = True
-
----
-**最終更新**: 2026-04-07  
-
-
-## Phase 3 段階 3: Google Forms メール除外とノイズフィルタリング強化（2026-04-10）
-
-### 実装内容
-- **EXCLUDE_DOMAINS 拡張**: 短縮 URL サービス（bit.ly, tinyurl.com, goo.gl, amzn.to, is.gd等）を除外
-- **EXCLUDE_EMAIL_KEYWORDS 拡張**: Google Forms メール（marketing-studio-*@google.com）とアカウント系メール（accounts-noreply等）を除外
-- **email_extractor.py 強化**: JSON-LD スキーマ解析時に EXCLUDE_EMAIL_KEYWORDS を適用
-- **collect.py 修正**: Step 6 メール保存時に Google Forms メールを除外する条件判定を追加
-
-### 検証済み実績
-| 項目 | 数値 |
-|------|------|
-| 教育ジャンル チャンネル数 | 106 件 |
-| 正規メール抽出 | 18 件（17.0%）|
-| Google Forms ノイズ削減 | 32 件 |
-| CRM 累計リード | 1,030 件 |
-| CRM メール情報 | 212 件（20.6%）|
-
-### 技術的改善
-- ✅ メール品質向上（Google Forms ノイズ完全除外）
-- ✅ ノイズフィルタリング強化（段階的な除外ルール適用）
-- ✅ 偽陽性削減による精度向上
-- ✅ 今後の大規模実行での信頼性向上
-
-### Git コミット
-- **3961408**: feat: Google Forms メール除外で正規メール抽出率向上
-
-### ファイル変更
-- email_extractor.py: EXCLUDE_DOMAINS, EXCLUDE_EMAIL_KEYWORDS 拡張 + JSON-LD チェック修正
-- collect.py: Step 6 メール保存時に Google Forms 除外ロジック追加
-
-### 次のステップ
-1. **Phase 3 段階 4**: 完全 JSON-LD 解析（Organization, LocalBusiness, BreadcrumbList）
-2. **大規模実行**: IT・ソフトウェア企業ジャンル実行（メール検出率 20% → 50% 目標）
-3. **他ジャンル実行**: 医療、製造、建設等での検証
-
-## Phase 3 段階 4: Google Forms メール完全除外（2026-04-11）
-
-### 問題発見・実装内容
-Google Forms メール除外ロジックが機能していなかった。原因：複数のメールパターン存在 + 複数 return 文でチェック未適用。
-修正：EXCLUDE_EMAIL_KEYWORDS に 'marketing-studio' 追加 + scrape_email_from_site() 末尾に最終フィルタリング追加。
-
-### 検証済み実績
-| ジャンル | チャンネル | メール取得 | 修正前 | Google Forms削減 |
-|---------|----------|---------|-------|-----------------|
-| 教育 | 106 | 17 | 49 | -32 |
-| IT | 66 | 9 | 24 | -15 |
-| 医療 | 110 | 28 | 40 | -12 |
-| 製造 | 72 | 16 | 50 | -34 |
-| **合計** | **354** | **70** | 163 | **-93** |
-
-メール品質：修正前 46.0% → 修正後 19.8% ✅（Google Forms 93 件完全除外）
-
-### Git コミット
-- **625a2e1**: fix: Google Forms メール完全除外（最終フィルタリング追加）
-
-### ファイル変更
-- email_extractor.py: EXCLUDE_EMAIL_KEYWORDS 拡張 + 最終フィルタリング追加
-- collect.py: Step 6 Google Forms 除外ロジック継続
-
-### 次のステップ
-1. 大規模実行：残り 8 ジャンル（建設、小売、飲食、サービス等）
-2. スケール目標：200+ チャンネル × 8 ジャンル = 1,600+ チャンネル処理
-3. 見込み：70 件 × 8 ジャンル = 560+ 正規メール抽出
-
-
-### ✅ 6. 複数通数メール送信機能（新規 - 2026-04-19）
-
-- **1～4通目の自動生成**: 通数に応じて異なる文面を Gemini で自動生成
-  - 1通目: 課題提示型（YouTube Insight テーマ分散の課題）
-  - 2通目: 事例紹介型（Insight 正規化による改善事例）
-  - 3通目: FAQ型（よくある質問）
-  - 4通目: 最終提案型（導入提案）
-
-- **配分機能**: 日次送信上限を自動配分
-  - 1回目: 70%（初めての企業を優先）
-  - 2回目以降: 30%（フォローアップを並行）
-  - 例: 15件枠 → 1回目 10件 + 2回目以降 5件
-
-- **送信間隔管理**: 前回送信から3日以上経過で次の通数へ自動移行
-  - config.EMAIL_INTERVAL_DAYS = 4 で制御
-
-- **スキップ企業の除外**: 送信タイミングではない企業はカウント対象外
-  - [1/10], [2/10]... と処理対象のみをカウント
-
----
-
-## 🔧 使用技術スタック
-
-| レイヤ | 技術 |
-|--------|------|
-| **データソース** | YouTube Data API v3 |
-| **クローリング** | requests + BeautifulSoup (Phase 5) |
-| **AI生成** | Google Gemini API (FutureWarning: google.generativeai → google.genai 移行予定) |
-| **メール送信** | SMTP (Xserver) |
-| **CRM** | Google Sheets API |
-| **スケジューラー** | Windows Task Scheduler (毎日 9:00) |
-| **データベース** | SQLite (send_log.db) |
-| **言語** | Python 3.13 |
-
----
-
-## 📊 パフォーマンス指標（2026-04-19 時点）
-
-| 指標 | 値 |
-|------|-----|
-| **全リード数** | 1,705 件 |
-| **送信対象リード** | 341 件（ランク A/B） |
-| **累計営業対象** | 3,986 件 |
-| **API クォータ削減** | 98.8%（キャッシュ活用） |
-| **メール抽出率** | 20% 前後 |
-| **電話番号抽出率** | 57.4%（Phase 5） |
-| **日次送信数** | 15 件/日（Week 2） |
-
----
-
-## 🚀 本番運用スケジュール
-
-### Week 1（2026-04-14 ～ 2026-04-20）
-- 送信上限: 10 件/日
-- メール形式: 1通目のみ
-
-### Week 2（2026-04-21 ～ 2026-04-27）
-- 送信上限: 15 件/日
-- メール形式: 1回目 70% + 2回目以降 30%（配分開始）
-- **実装完了日: 2026-04-19**
-
-### Week 3（2026-04-28 ～ 2026-05-04）
-- 送信上限: 20 件/日
-- メール形式: 1～4通目の完全自動化
-
-### Week 4（2026-05-05 ～）
-- 送信上限: 25 件/日
-- 返信追跡・ダッシュボード実装
-
----
-
-## 🛠️ ローカル実行方法
-
-### 本番メール送信
-\\\ash
-python send_email.py
-\\\
-- 実行上限: config.py の日次上限に準拠
-- 配分: EMAIL_FIRST_SEND_RATIO (70%) と EMAIL_FOLLOWUP_SEND_RATIO (30%) に基づく
-- 待機: 1200 秒 (±50% ランダム)
+# Video Sales Automation - Phase 1
+
+## プロジェクト概要
+YouTube チャンネル向けの営業自動化プロジェクト。
+日次で lead を収集し、メール送信を自動化します。
+
+## 最終更新
+- 日時: 2026-04-21 22:32
+- バージョン: v1.0.0
+- ステータス: Phase 1 運用中
+
+## 主要機能
+
+### Step 1: バウンスチェック (bounce_checker.py)
+- IMAP でメールボックスをスキャン
+- バウンスメール（エラー）を検出・ログ記録
+- 自動的に「バウンスフラグ」を CRM に反映
+
+### Step 2: メール送信 (send_email.py)
+- 初回メール: 候補の 70% を 1 通目で送信
+- リピート: 候補の 30% を 3 日以上経過後に 2 通目で送信
+- リピート不足時: 初回で補填（常に daily_limit 件を送信）
+- 送信間隔: 1200 秒 ± 50% のランダム間隔
+- 23:00 に自動停止（JSTC 営業時間外）
+
+## 設計・仕様書
+
+### email_extractor.py
+- 目的: YouTube チャンネルから公式サイト URL → メールアドレスを抽出
+- 機能: 
+  - yt-dlp で About URL を取得
+  - BeautifulSoup で HTML をスクレイピング
+  - JSON-LD、mailto:、正規表現で多段階抽出
+  - 成功率: 40% → 80% に改善
+- 詳細: email_extractor_SPECIFICATION.md 参照
+
+### Step 6b（フォーム自動送信）
+- 現状: 未実装（Phase 2 対応予定）
+- 理由: contact_form_extractor.py は実装完了だが、実運用テスト不足
+- 詳細: STEP6B_IMPLEMENTATION_SUSPENSION.md 参照
+
+## システム構成
+
+### コアスクリプト（ルート）
+- daily_operations.py - 日次運用のオーケストレーション
+- bounce_checker.py - バウンスメールチェック
+- send_email.py - メール送信エンジン
+- collect.py - lead 収集パイプライン（Phase 2）
+
+### ツール・ライブラリ（tools/）
+- email_extractor.py - メールアドレス抽出
+- email_generator.py - Gemini でメール生成
+- email_sender.py - SMTP でメール送信
+- crm_manager.py - Google Sheets CRM 操作
+- db_manager.py - SQLite 送信ログ管理
+- その他 103 ファイル
+
+### データベース
+- logs/send_log.db - メール送信・バウンスログ
+- html_cache.db - Web スクレイピングキャッシュ
+
+### Google Sheets CRM
+- シート: SNS動画活用企業向け営業CRM管理シート
+- 対象: YouTube チャンネル lead (1705 件)
+- メール対象: 341 件（A/B ランク、NG フラグ FALSE）
+
+## 実行方法
+
+### 日次運用（推奨）
+スケジュールタスク DailyEmailOperations が毎日 09:00 に自動実行。
+
+### 手動実行
+python daily_operations.py --limit 15
 
 ### ドライラン（テスト）
-\\\ash
-python send_email.py --limit 5 --dry-run
-\\\
-- メール生成のみ、実際の送信なし
-- スキップ判定ロジックのテスト可能
+python send_email.py --limit 15 --dry-run
 
-### 配分機能の確認
-\\\python
-from send_email import calculate_send_limits
-first_limit, followup_limit = calculate_send_limits(15)
-# → (10, 5)
-\\\
+## 本日の修正（2026-04-21）
 
----
+### send_email.py のロジック改善
 
-## 📝 ドキュメント
+問題点: 70/30 配分のはずが、実際には 10 件で停止していた。
 
-| ファイル | 用途 |
-|---------|------|
-| **CURRENT_STATUS.md** | 進捗状況（日次更新） |
-| **IMPLEMENTATION_LOG.md** | 実装ログ・テスト結果 |
-| **PROJECT_README.md** | プロジェクト全体設計書 |
-| **config.py** | 設定ファイル（メール上限、スケジュール等） |
+原因: 
+- リピート候補が「3 日経過していない」ため送信できず
+- リピート不足分を補填するロジックがなかった
 
+修正内容:
+1. 初回とリピートを明確に分離
+2. リピート不足分を初回で補填する設計
+3. 初回 15 件全て送信の仕様に統一
+4. dry-run で動作確認完了
 
+結果: 
+- 15 件の初回メール生成（エラーなし）
+- 補填ロジック正常動作
+- 本番環境への展開準備完了
 
-## 7. メールアドレス有効性チェック機能（2026-04-20 追加）
+## 設定値
 
-### 概要
-メールアドレス抽出時に、ドメインの有効性を自動チェックする機能を実装。無効なドメイン（MXレコード未確認）のメールアドレスは CRM に保存されない。
+| 項目 | 値 | 備考 |
+|------|-----|------|
+| daily_limit | 15 件 | 毎日の送信上限 |
+| EMAIL_FIRST_SEND_RATIO | 70% | 初回配分比率 |
+| EMAIL_FOLLOWUP_SEND_RATIO | 30% | リピート配分比率 |
+| EMAIL_INTERVAL_DAYS | 3 | リピート待機日数 |
+| EMAIL_MAX_SEQUENCE | 4 | 最大送信回数 |
+| WARMUP_SCHEDULE | 1:10, 2:15, 3:20, 4:25 | ウォーミング送信スケジュール |
 
-### 実装内容
-- 関数: is_valid_email(email) in email_extractor.py
-  - 形式チェック
-  - ドメイン実在確認: DNS MXレコード確認
-- 依存パッケージ: dnspython
+## 今後のロードマップ
 
-### テスト結果（2026-04-20）
-- ✅ info@google.com: 有効
-- ✅ support@microsoft.com: 有効
-- ❌ xxx@xx.com: 無効
-- ❌ aaaaa@bbbbb.com: 無効
-- ❌ invalid-domain-12345.com: 無効
+### Phase 1（現在）
+- lead 収集パイプライン構築 ✅
+- メール送信エンジン構築 ✅
+- 初回/リピート分離ロジック実装 ✅
+- 本番運用テスト（2026-04-22 以降）
 
-### 効果
-- CRM 登録時の無効メールアドレス率を削減
-- メール送信の失敗率低下
-- 次フェーズ: company_info_extractor.py への統合
+### Phase 2（予定）
+- Step 6b フォーム自動送信の実装
+- collect.py の Email 抽出率向上（現在 20% → 目標 50%）
+- リプライ率計測・分析
 
+### Phase 3+（将来）
+- Website Scraper v2（URL 抽出パイプライン拡張）
+- AI による返信内容解析
+- 営業ファネル可視化
+
+## トラブルシューティング
+
+### メール送信が 15 件未満で止まる場合
+1. CRM の「メール送信対象」件数を確認（get_pending_leads() で 341 件以上が必要）
+2. send_log.db の送信履歴を確認（同日 4 通以上は送信不可）
+3. バウンス率を確認（高い場合は対象から除外）
+
+### Google Sheets 接続エラー
+1. credentials.json の存在確認
+2. SPREADSHEET_ID の設定確認
+3. Google API のクォータ確認
+
+## ドキュメント一覧
+
+- README.md（本ファイル）
+- CHECKLIST.md - 実装チェックリスト
+- PROJECT_STATUS.md - 詳細進捗状況
+- email_extractor_SPECIFICATION.md - メール抽出仕様書
+- STEP6B_IMPLEMENTATION_SUSPENSION.md - Step 6b 延期理由
+- PHONE_EXTRACTION_DESIGN.md - 電話番号抽出パイプライン設計

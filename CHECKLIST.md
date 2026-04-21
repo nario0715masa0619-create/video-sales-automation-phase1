@@ -1,121 +1,157 @@
-# CHECKLIST.md - コミット前検証チェックリスト
+# Implementation Checklist - Video Sales Automation Phase 1
 
-## 概要
-このドキュメントは、デグレード防止のため Step 6 と Step 7 の依存関係を検証するチェックリストです。
-コード変更やテスト実行時に必ず確認してください。
+## Phase 1: Core Implementation
 
----
+### Step 1: バウンスチェック (bounce_checker.py)
+- [x] IMAP ログイン機能
+- [x] バウンスメール検出
+- [x] ログ記録
+- [x] 日次スケジュール実行
 
-## 重要: Step 6 と Step 7 の依存関係
+### Step 2: メール送信 (send_email.py)
+- [x] メール生成（Gemini API）
+- [x] SMTP 送信
+- [x] 送信履歴ログ（SQLite）
+- [x] 初回/リピート分離ロジック ✅ NEW (2026-04-21)
+- [x] リピート不足補填ロジック ✅ NEW (2026-04-21)
+- [x] dry-run モード
+- [x] 時間制限（23:00 停止）
+- [x] 送信間隔制御（ランダム遅延）
 
-**Step 7 → Step 6 の順序で実行する必要があります。逆順にするとメール情報が保存されません。**
+### Step 3: Lead 収集 (collect.py)
+- [x] YouTube API で動画検索
+- [x] チャンネル詳細情報取得
+- [x] ICP フィルタリング
+- [x] スコアリング（A/B/C ランク）
+- [x] CRM に upsert
+- [x] Step 6a: メールアドレス抽出 (email_extractor.py)
+- [ ] Step 6b: フォーム自動送信 (未実装、Phase 2 延期)
+- [x] Step 7: CRM 更新
 
-### Step 7: メールアドレス抽出（先に実行）
-- extractor.extract_email() でメール情報を取得
-- ch.contact_email と ch.contact_form_url に設定
+### Step 4: バウンス管理
+- [x] バウンス検出
+- [x] バウンスフラグ設定
+- [x] 送信対象から除外
 
-### Step 6: CRM 更新（後に実行）
-- ch.to_crm_dict() でメール情報を含めて辞書化
-- Google Sheets に保存
+### Step 5: スケジュール管理
+- [x] Windows タスクスケジューラ登録
+- [x] 毎日 09:00 自動実行
+- [x] ログファイル出力
 
----
+## 設計・仕様書
 
-## コード変更時チェックリスト
-
-### Step 6 または Step 7 を変更した場合
-- [ ] Step 7 で ch.contact_email = email if email else '' が実行されているか確認
-- [ ] Step 7 で ch.contact_form_url = contact_form_url if contact_form_url else '' が実行されているか確認
-- [ ] Step 6 が Step 7 の後に実行されているか確認
-- [ ] to_crm_dict() に メールアドレス と お問い合わせフォームURL が含まれているか確認
-
----
-
-## ドライラン検証
-
-実行コマンド: python collect.py --dry-run --keywords "テストキーワード"
-
-確認項目:
-- [ ] メール取得成功 が複数表示されている
-- [ ] Step 7 完了 が表示されている
-- [ ] Google Sheets のリード件数は変わっていない
-
----
-
-## 本番実行検証
-
-実行コマンド:
-Remove-Item cache -Recurse -Force -ErrorAction SilentlyContinue
-python collect.py
-
-メール情報確認スクリプト実行後、確認項目:
-- [ ] リード件数が増加している
-- [ ] 最新10件のうち8件以上がメール情報を持つ
-
----
-
-## コミット前チェックリスト（最終確認）
-
-- [ ] ユニットテストがすべてパス
-- [ ] ドライランにエラーがない
-- [ ] 本番実行後、メール情報が Google Sheets に保存されている
-- [ ] 最新10件のリードの80%以上がメール情報を持つ
-- [ ] コミットメッセージに Step 6/7 の依存関係 を明記
-
----
-
-## トラブルシューティング
-
-### メール情報が保存されていない場合
-
-1. Step の順序を確認
-   - Step 7 が Step 6 より前にあるか確認
-
-2. ch.contact_email への設定を確認
-   - ch.contact_email = email if email else が実行されているか
-
-3. to_crm_dict() でメール情報が含まれているか確認
-   - メールアドレス: self.contact_email が含まれているか
-
----
-
-## 参考資料
-
-- デグレード原因: コミット 9a32169 で Step 7 の実装が変更され、メール設定処理が削除された
-- 修正ポイント: Step 7 → Step 6 の順序、ch.contact_email への設定
-- テストファイル: tests/test_collect_integration.py
-
----
-
-## Phase 1 実装完了チェックリスト（2026-04-03）
-
-**✅ 実装完了項目:**
-- [x] YouTube チャンネル検索（575 件取得）
-- [x] ICP フィルタリング（222 件合格）
-- [x] スコアリング（A/B/C ランク分類）
-- [x] メール・公式サイト URL 自動抽出
-- [x] Google Sheets CRM 連携（212 件保存）
-- [x] API キーフェイルオーバー（KEY 1-6）
-- [x] キャッシュシステム
-- [x] エラーハンドリング & リトライ
-- [x] テストモード廃止 & 本番化
+### email_extractor.py
+- [x] 仕様書作成 (email_extractor_SPECIFICATION.md)
+- [x] HTML 変数参照順序バグ修正 ✅ NEW (2026-04-21)
+- [x] 戻り値統一（3 値）
 - [x] ドキュメント整備
 
-**📊 成果:**
-- チャンネル検索: 575 件
-- フィルタリング: 222 件
-- CRM 保存: 212 件（Google Sheets）
-- 公式サイト URL: 212 件（100%）
-- メール抽出: 36 件（17%）
+### Step 6b（フォーム自動送信）
+- [x] 実装延期決定
+- [x] 延期理由をドキュメント化 (STEP6B_IMPLEMENTATION_SUSPENSION.md)
+- [x] contact_form_extractor.py をコメントアウト
+- [ ] Phase 2 で実装予定
 
-**⚠️ 改善予定（Phase 2）:**
-- [ ] メール抽出成功率 17% → 80%+
-  - 短縮 URL 除外
-  - 日本語ドメイン対応
-  - JSON-LD & microdata 強化
-  - コンタクトフォーム検出改善
+### daily_operations.py
+- [x] argparse で引数処理対応 ✅ NEW (2026-04-21)
+- [x] --dry-run フラグ追加
+- [x] --limit パラメータ対応
 
-**コミット:** 63e9a38, 69246c0
+## テスト・動作確認
 
----
+### Step 1: バウンスチェック
+- [x] IMAP 接続テスト
+- [x] バウンス検出ロジック
+- [x] ログ出力確認
 
-**最終更新: 2026-04-03**
+### Step 2: メール送信
+- [x] Gemini API メール生成テスト
+- [x] SMTP 送信テスト
+- [x] 初回送信テスト（10 件）
+- [x] 初回/リピート分離テスト ✅ NEW (2026-04-21)
+- [x] リピート補填ロジックテスト ✅ NEW (2026-04-21)
+- [x] dry-run で 15 件メール生成確認 ✅ NEW (2026-04-21)
+- [ ] 本番実行テスト（2026-04-22 予定）
+
+### Step 3: Lead 収集
+- [x] YouTube API テスト
+- [x] チャンネル詳細情報取得テスト
+- [x] ICP フィルタテスト
+- [x] スコアリングテスト
+- [x] CRM upsert テスト
+- [x] メール抽出テスト（email_extractor）
+- [ ] Form 送信テスト（未実装）
+
+### Step 4: バウンス管理
+- [x] バウンス検出テスト
+- [x] フラグ設定テスト
+
+### Step 5: スケジュール
+- [x] タスクスケジューラ登録確認
+- [ ] 自動実行ログ確認（2026-04-22 予定）
+
+## バグ修正・改善
+
+### 2026-04-21
+- [x] email_extractor.py: HTML 変数参照順序バグ修正
+- [x] send_email.py: 初回/リピート分離ロジック追加
+- [x] send_email.py: リピート補填ロジック追加
+- [x] daily_operations.py: argparse 対応
+- [x] daily_operations.py: --dry-run フラグ追加
+
+### 2026-04-20
+- [x] db_manager.py: interval_days 条件修正（行 107）
+
+### 2026-04-18
+- [x] collect.py: Step 6b をコメントアウト
+
+### 2026-04-17
+- [x] email_extractor.py 仕様書作成
+
+## Git コミット履歴
+
+| 日付 | コミット | 内容 |
+|------|---------|------|
+| 2026-04-21 | TBD | send_email.py 初回/リピート分離、補填ロジック実装 |
+| 2026-04-21 | 0299222 | Step 6b コメントアウト、email_extractor 仕様書追加 |
+| 2026-04-20 | 99d2c1a | db_manager.py interval_days 修正 |
+| 2026-04-18 | (multiple) | collect.py Step 6 修正 |
+| 2026-04-17 | d7e795d | PHONE_EXTRACTION_DESIGN.md 作成 |
+| 2026-04-17 | ff2e5e1 | リポジトリ整理 |
+
+## 本番環境への展開
+
+### 準備完了
+- [x] 初回/リピート分離ロジック実装
+- [x] dry-run で動作確認
+- [x] ドキュメント更新
+- [x] Git コミット
+
+### 本番実行予定
+- [ ] 2026-04-22 09:00 スケジュール自動実行（DailyEmailOperations）
+- [ ] 送信ログ確認
+- [ ] CRM メール送信回数更新確認
+- [ ] 問題なければ運用継続
+
+## 今後の課題
+
+### Phase 2
+1. Step 6b フォーム自動送信実装
+   - contact_form_extractor.py の完全性確認
+   - 実運用テスト（Google Forms、Formspree など）
+   - エラーハンドリング強化
+
+2. collect.py メール抽出率向上（20% → 50%）
+   - email_extractor.py の精度改善
+   - 追加パターンマッチング
+   - キャッシュ戦略最適化
+
+3. リプライ率計測
+   - 返信メール自動分類
+   - リプライ率レポート生成
+   - AI による自動返信提案
+
+### 保留事項
+- interval_days テスト値（0）を本番値（3）に戻す手順書作成
+- CRM の email 抽出率 20% → 50% への改善計画
+- リポジトリのドキュメント整備（TROUBLESHOOTING.md など）
