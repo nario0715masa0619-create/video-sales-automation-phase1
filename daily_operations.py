@@ -20,7 +20,7 @@ def run_daily_operations(limit=15):
         
         # ステップ2: メール送信
         logger.info("[Step 2] メール送信開始...")
-        result = subprocess.run(['python', 'send_email.py', '--limit', str(limit), '--dry-run'], check=True)
+        result = subprocess.run(['python', 'send_email.py', '--limit', str(limit)], check=True)
         logger.info("✅ メール送信完了\n")
         
         logger.info("=" * 60)
