@@ -5,7 +5,7 @@ from email_generator import generate_email, EmailContent
 from email_sender import XserverSMTPSender
 from db_manager import init_send_log_db, log_send_event, get_todays_send_count, get_next_email_num
 from config import DOMAIN_LAUNCH_DATE, WARMUP_SCHEDULE, ENABLE_AGGRESSIVE_MODE, AGGRESSIVE_BOUNCE_THRESHOLD, EMAIL_FIRST_SEND_RATIO, EMAIL_FOLLOWUP_SEND_RATIO
-from crm_manager import get_pending_leads
+from crm_manager import get_pending_leads, CRMManager
 import argparse
 import uuid
 
@@ -174,9 +174,25 @@ def main():
                     message_id = f"msg_{datetime.now().strftime('%Y%m%d')}_{uuid.uuid4().hex[:8]}"
                     logger.info(f'✅ {ch_name} へメール送信成功 (MessageID: {message_id})')
                     log_send_event(to_address=email, message_id=message_id, status='sent')
+                    
+                    # CRM を更新（成功）
+                    try:
+                        crm = CRMManager()
+                        crm.update_after_email_send(lead_dict, success=True)
+                        logger.debug(f'✅ CRM 更新: {ch_name}')
+                    except Exception as e:
+                        logger.warning(f'⚠️ CRM 更新失敗 [{ch_name}]: {e}')
+                    
                     sent_count += 1
                 else:
                     logger.error(f'❌ {ch_name} へメール送信失敗')
+                    
+                    # CRM を更新（失敗フラグ）
+                    try:
+                        crm = CRMManager()
+                        crm.update_after_email_send(lead_dict, success=False)
+                    except Exception as e:
+                        logger.warning(f'⚠️ CRM 更新失敗（送信失敗時） [{ch_name}]: {e}')
 
             if not args.dry_run:
                 wait_between_sends(idx, total_leads, base_wait=args.wait)
