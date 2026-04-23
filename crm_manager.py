@@ -807,7 +807,7 @@ def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
         
         # Phase 5 用の別ファイルを開く
         spreadsheet = client.open_by_key(config.SPREADSHEET_ID_PHASE5)
-        worksheet = spreadsheet.worksheet("Phase5")
+        worksheet = spreadsheet.worksheet(config.SHEET_NAME_PHASE5)
         
         row_data = [company_name, phone_number, status, website_url, datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")]
         worksheet.append_row(row_data)
