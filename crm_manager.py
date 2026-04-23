@@ -800,20 +800,18 @@ def read_website_urls_from_crm(limit=None):
 
 
 def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
-    """Phase 5 Sheet に結果を追記"""
+    """Phase 5 Sheet（別ファイル）にデータを追記"""
     try:
         crm = get_crm()
-        spreadsheet = crm._get_spreadsheet()
+        client = crm._get_client()
         
-        try:
-            ws = spreadsheet.worksheet("Phase5")
-        except:
-            # Phase5 シートがない場合は作成
-            ws = spreadsheet.add_worksheet("Phase5", 1000, 5)
+        # Phase 5 用の別ファイルを開く
+        spreadsheet = client.open_by_key(config.SPREADSHEET_ID_PHASE5)
+        worksheet = spreadsheet.worksheet("Phase5")
         
-        row_data = [company_name, phone_number, status, website_url, datetime.now(JST).strftime('%Y-%m-%d %H:%M:%S')]
-        ws.append_row(row_data)
-        
+        row_data = [company_name, phone_number, status, website_url, datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")]
+        worksheet.append_row(row_data)
+
         logger.info(f"💾 Phase 5 に保存: {company_name} | {phone_number} | {status}")
         return True
     except Exception as e:
