@@ -799,7 +799,7 @@ def read_website_urls_from_crm(limit=None):
         return []
 
 
-def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
+def append_to_gsheet_phase5(company_name, phone_number, status, website_url, email=""):
     """Phase 5 Sheet（別ファイル）にデータを追記"""
     try:
         crm = get_crm()
@@ -825,5 +825,6 @@ def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
     except Exception as e:
         logger.error(f"❌ Phase 5 保存エラー: {e}")
         return False
+
 
 

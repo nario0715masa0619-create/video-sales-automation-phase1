@@ -6,14 +6,16 @@ website_scraper_v2.py
 import logging
 import sys
 from config import LOG_FILE
-from cache_manager import init_cache, get_cache_stats, clear_cache
+from cache_manager import CacheManager
 from crm_manager import read_website_urls_from_crm, append_to_gsheet_phase5
 from db_manager_phase5 import init_phase5_db, check_url_exists, append_phase5_data
-from phone_extractor import extract_phone
-from website_crawler import crawl_domain
-from company_info_extractor import extract_company_name
+from tools.phone_extractor import extract_phone
+from tools.email_extractor import extract_email
+from tools.website_crawler import crawl_domain
+from tools.company_info_extractor import extract_company_name
 
 logger = logging.getLogger(__name__)
+cache = CacheManager()
 
 def setup_logging():
     """ログ設定"""
@@ -101,16 +103,16 @@ def run_batch_scraping(limit=None):
     # 処理開始
     success_count = 0
     skipped_count = 0
-    
+
     for idx, url_data in enumerate(url_list, 1):
         website_url = url_data[1]
-        
+
         # DB で重複チェック
         if check_url_exists(website_url):
             logger.info(f"⏭️  既存 URL スキップ: {website_url}")
             skipped_count += 1
             continue
-        
+
         result = scrape_website(url_data)
 
         # DB に保存
@@ -142,15 +144,12 @@ def run_batch_scraping(limit=None):
     logger.info("=" * 80)
 
     # キャッシュ統計
-    cache_stats = get_cache_stats()
-    logger.info(f"💾 キャッシュ統計: {cache_stats[0]} URLs, {cache_stats[1]} MB")
+    cache.clear_expired_caches()
+    logger.info(f"💾 キャッシュをクリーンアップしました")
 
 def main():
     """メイン処理"""
     setup_logging()
-
-    # キャッシュを初期化
-    init_cache()
 
     # コマンドライン引数を解析
     limit = None
@@ -160,7 +159,7 @@ def main():
             logger.info(f"📋 オプション: limit={limit}")
         elif arg == '--clear-cache':
             logger.info("🧹 キャッシュをクリアします")
-            clear_cache()
+            cache.clear_expired_caches()
             return
 
     logger.info("=" * 80)
@@ -170,3 +169,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
