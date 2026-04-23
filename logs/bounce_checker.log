@@ -119,3 +119,43 @@
 2026-04-21 22:27:01.441 | INFO     | __main__:check_bounces:106 - 本日送信数: 0 件
 2026-04-21 22:27:01.441 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
 2026-04-21 22:27:01.441 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-22 09:00:06.668 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-22 09:00:06.678 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-22 09:00:07.836 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-22 09:00:08.167 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-22 09:00:08.364 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-22 09:00:08.365 | INFO     | __main__:check_bounces:106 - 本日送信数: 0 件
+2026-04-22 09:00:08.365 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-22 09:00:08.365 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-22 10:58:08.372 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-22 10:58:08.372 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-22 10:58:08.804 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-22 10:58:08.853 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-22 10:58:09.262 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-22 10:58:09.263 | INFO     | __main__:check_bounces:106 - 本日送信数: 0 件
+2026-04-22 10:58:09.263 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-22 10:58:09.263 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-22 18:33:39.370 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-22 18:33:39.370 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-22 18:33:39.812 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-22 18:33:39.859 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-22 18:33:40.298 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-22 18:33:40.299 | INFO     | __main__:check_bounces:106 - 本日送信数: 14 件
+2026-04-22 18:33:40.299 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-22 18:33:40.299 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-22 20:44:50.040 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-22 20:44:50.040 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-22 20:44:51.029 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-22 20:44:51.257 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:106 - 本日送信数: 17 件
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-23 09:00:07.137 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-23 09:00:07.149 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-23 09:00:08.604 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-23 09:00:08.770 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-23 09:00:08.936 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-23 09:00:08.936 | INFO     | __main__:check_bounces:106 - 本日送信数: 0 件
+2026-04-23 09:00:08.937 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-23 09:00:08.937 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%

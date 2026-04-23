@@ -1,0 +1,130 @@
+D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\email_generator.py:25: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-04-23 12:54:26.228 | INFO     | __main__:calculate_send_limits:51 - 送信配分: 1回目 10件 (70%), 2回目以降 5件 (30%)
+2026-04-23 12:54:26.230 | INFO     | __main__:main:73 - === メール送信開始 (limit=15, wait=1200秒, dry_run=True) ===
+2026-04-23 12:54:26.230 | INFO     | __main__:main:74 - 現在時刻: 2026-04-23 12:54:26
+2026-04-23 12:54:26.230 | INFO     | __main__:main:75 - 本日の送信上限: 15 件
+2026-04-23 12:54:26.230 | INFO     | __main__:main:76 - メール間隔: 1200 秒（ランダムばらつき: ±50%）
+2026-04-23 12:54:26.256 | INFO     | crm_manager:_get_client:156 - Google Sheets クライアント初期化完了
+2026-04-23 12:54:27.967 | INFO     | crm_manager:_get_spreadsheet:164 - スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-04-23 12:54:28.860 | DEBUG    | crm_manager:get_all_leads:192 - 全リード取得: 1705件
+2026-04-23 12:54:28.861 | INFO     | crm_manager:get_pending_leads:463 - 送信対象リード: 341件
+2026-04-23 12:54:28.862 | INFO     | __main__:main:83 - 対象リード: 15 件
+2026-04-23 12:54:28.862 | INFO     | __main__:main:88 -   → 初回: 15 件, リピート: 0 件
+2026-04-23 12:54:28.862 | INFO     | __main__:main:98 - 送信配分: 初回 15件, リピート 0件
+2026-04-23 12:54:28.862 | INFO     | __main__:main:117 - 
+--- 初回メール送信開始 (15 件) ---
+2026-04-23 12:54:28.862 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: kintone活用ちゃんねる (sample@xx.co.jp)
+2026-04-23 12:54:28.862 | INFO     | __main__:main:157 - [1/15] 1 通目を送信します: kintone活用ちゃんねる
+2026-04-23 12:54:28.862 | INFO     | email_generator:generate_email:509 - メール生成開始: kintone活用ちゃんねる - 1通目
+2026-04-23 12:54:35.430 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「kintone活用ちゃんねる」のテーマが168個に分散している課題...
+2026-04-23 12:54:35.430 | INFO     | __main__:main:162 - [DRY-RUN] kintone活用ちゃんねる へメール送信スキップ
+2026-04-23 12:54:35.430 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「kintone活用ちゃんねる」のテーマが168個に分散している課題
+2026-04-23 12:54:35.430 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:54:35.430 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: Web&AI活用術 WEBST8 ウェブストエイトチャンネル (info@webst8.com)
+2026-04-23 12:54:35.430 | INFO     | __main__:main:157 - [2/15] 1 通目を送信します: Web&AI活用術 WEBST8 ウェブストエイトチャンネル
+2026-04-23 12:54:35.430 | INFO     | email_generator:generate_email:509 - メール生成開始: Web&AI活用術 WEBST8 ウェブストエイトチャンネル - 1通目
+2026-04-23 12:54:42.358 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「Web&AI活用術 WEBST8 ウェブストエイトチャンネル」のテー...
+2026-04-23 12:54:42.358 | INFO     | __main__:main:162 - [DRY-RUN] Web&AI活用術 WEBST8 ウェブストエイトチャンネル へメール送信スキップ
+2026-04-23 12:54:42.358 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「Web&AI活用術 WEBST8 ウェブストエイトチャンネル」のテーマが168個に分散している課題
+2026-04-23 12:54:42.358 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:54:42.358 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: GUGA_生成AI活用普及協会 (membership@guga.or.jp)
+2026-04-23 12:54:42.358 | INFO     | __main__:main:157 - [3/15] 1 通目を送信します: GUGA_生成AI活用普及協会
+2026-04-23 12:54:42.358 | INFO     | email_generator:generate_email:509 - メール生成開始: GUGA_生成AI活用普及協会 - 1通目
+2026-04-23 12:54:48.791 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「GUGA_生成AI活用普及協会」のテーマが168個に分散している課題...
+2026-04-23 12:54:48.792 | INFO     | __main__:main:162 - [DRY-RUN] GUGA_生成AI活用普及協会 へメール送信スキップ
+2026-04-23 12:54:48.792 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「GUGA_生成AI活用普及協会」のテーマが168個に分散している課題
+2026-04-23 12:54:48.792 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:54:48.792 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 空き家活用隊 (lend_house-consulting@yahoo.co.jp)
+2026-04-23 12:54:48.792 | INFO     | __main__:main:157 - [4/15] 1 通目を送信します: 空き家活用隊
+2026-04-23 12:54:48.792 | INFO     | email_generator:generate_email:509 - メール生成開始: 空き家活用隊 - 1通目
+2026-04-23 12:54:58.623 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「空き家活用隊」のテーマが168個に分散している課題...
+2026-04-23 12:54:58.623 | INFO     | __main__:main:162 - [DRY-RUN] 空き家活用隊 へメール送信スキップ
+2026-04-23 12:54:58.623 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「空き家活用隊」のテーマが168個に分散している課題
+2026-04-23 12:54:58.623 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:54:58.623 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 40歳からのAI活用塾 (info@umino-ai.com)
+2026-04-23 12:54:58.623 | INFO     | __main__:main:157 - [5/15] 1 通目を送信します: 40歳からのAI活用塾
+2026-04-23 12:54:58.623 | INFO     | email_generator:generate_email:509 - メール生成開始: 40歳からのAI活用塾 - 1通目
+2026-04-23 12:55:05.607 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「40歳からのAI活用塾」のテーマが168個に分散している課題...
+2026-04-23 12:55:05.607 | INFO     | __main__:main:162 - [DRY-RUN] 40歳からのAI活用塾 へメール送信スキップ
+2026-04-23 12:55:05.607 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「40歳からのAI活用塾」のテーマが168個に分散している課題
+2026-04-23 12:55:05.607 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:05.607 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 経営者のkintone活用 (info@densanbanto.com)
+2026-04-23 12:55:05.607 | INFO     | __main__:main:157 - [6/15] 1 通目を送信します: 経営者のkintone活用
+2026-04-23 12:55:05.607 | INFO     | email_generator:generate_email:509 - メール生成開始: 経営者のkintone活用 - 1通目
+2026-04-23 12:55:12.377 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「経営者のkintone活用」のテーマが168個に分散している課題...
+2026-04-23 12:55:12.377 | INFO     | __main__:main:162 - [DRY-RUN] 経営者のkintone活用 へメール送信スキップ
+2026-04-23 12:55:12.377 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「経営者のkintone活用」のテーマが168個に分散している課題
+2026-04-23 12:55:12.377 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:12.377 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: AI搭載スライド自動生成サービス「イルシル」 (tarou@sample.com)
+2026-04-23 12:55:12.377 | INFO     | __main__:main:157 - [7/15] 1 通目を送信します: AI搭載スライド自動生成サービス「イルシル」
+2026-04-23 12:55:12.377 | INFO     | email_generator:generate_email:509 - メール生成開始: AI搭載スライド自動生成サービス「イルシル」 - 1通目
+2026-04-23 12:55:18.164 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「AI搭載スライド自動生成サービス「イルシル」」のテーマが168個に分...
+2026-04-23 12:55:18.164 | INFO     | __main__:main:162 - [DRY-RUN] AI搭載スライド自動生成サービス「イルシル」 へメール送信スキップ
+2026-04-23 12:55:18.164 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「AI搭載スライド自動生成サービス「イルシル」」のテーマが168個に分散している課題
+2026-04-23 12:55:18.164 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:18.164 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 太陽光 蓄電池の営業・提案支援ならエネがえる (info@enegaeru.com)
+2026-04-23 12:55:18.164 | INFO     | __main__:main:157 - [8/15] 1 通目を送信します: 太陽光 蓄電池の営業・提案支援ならエネがえる
+2026-04-23 12:55:18.164 | INFO     | email_generator:generate_email:509 - メール生成開始: 太陽光 蓄電池の営業・提案支援ならエネがえる - 1通目
+2026-04-23 12:55:24.338 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「太陽光 蓄電池の営業・提案支援ならエネがえる」のテーマが168個に分...
+2026-04-23 12:55:24.338 | INFO     | __main__:main:162 - [DRY-RUN] 太陽光 蓄電池の営業・提案支援ならエネがえる へメール送信スキップ
+2026-04-23 12:55:24.338 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「太陽光 蓄電池の営業・提案支援ならエネがえる」のテーマが168個に分散している課題
+2026-04-23 12:55:24.338 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:24.338 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: マーケティング研究所【雨と東京と株式会社】 (xxx@xx.com)
+2026-04-23 12:55:24.338 | INFO     | __main__:main:157 - [9/15] 1 通目を送信します: マーケティング研究所【雨と東京と株式会社】
+2026-04-23 12:55:24.339 | INFO     | email_generator:generate_email:509 - メール生成開始: マーケティング研究所【雨と東京と株式会社】 - 1通目
+2026-04-23 12:55:31.279 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「マーケティング研究所【雨と東京と株式会社】」のテーマが168個に分散...
+2026-04-23 12:55:31.280 | INFO     | __main__:main:162 - [DRY-RUN] マーケティング研究所【雨と東京と株式会社】 へメール送信スキップ
+2026-04-23 12:55:31.280 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「マーケティング研究所【雨と東京と株式会社】」のテーマが168個に分散している課題
+2026-04-23 12:55:31.280 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:31.280 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 越境EC・海外WEBマーケティング_世界へボカン (consulting@s-bokan.com)
+2026-04-23 12:55:31.280 | INFO     | __main__:main:157 - [10/15] 1 通目を送信します: 越境EC・海外WEBマーケティング_世界へボカン
+2026-04-23 12:55:31.280 | INFO     | email_generator:generate_email:509 - メール生成開始: 越境EC・海外WEBマーケティング_世界へボカン - 1通目
+2026-04-23 12:55:38.576 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「越境EC・海外WEBマーケティング_世界へボカン」のテーマが168個...
+2026-04-23 12:55:38.577 | INFO     | __main__:main:162 - [DRY-RUN] 越境EC・海外WEBマーケティング_世界へボカン へメール送信スキップ
+2026-04-23 12:55:38.577 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「越境EC・海外WEBマーケティング_世界へボカン」のテーマが168個に分散している課題
+2026-04-23 12:55:38.577 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:38.577 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 谷本理恵子の「女性」に売れる!プリンセス・マーケティング (xxx123@mail.com)
+2026-04-23 12:55:38.577 | INFO     | __main__:main:157 - [11/15] 1 通目を送信します: 谷本理恵子の「女性」に売れる!プリンセス・マーケティング
+2026-04-23 12:55:38.577 | INFO     | email_generator:generate_email:509 - メール生成開始: 谷本理恵子の「女性」に売れる!プリンセス・マーケティング - 1通目
+2026-04-23 12:55:44.252 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「谷本理恵子の「女性」に売れる!プリンセス・マーケティング」のテーマが...
+2026-04-23 12:55:44.252 | INFO     | __main__:main:162 - [DRY-RUN] 谷本理恵子の「女性」に売れる!プリンセス・マーケティング へメール送信スキップ
+2026-04-23 12:55:44.252 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「谷本理恵子の「女性」に売れる!プリンセス・マーケティング」のテーマが168個に分散している課題
+2026-04-23 12:55:44.252 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:44.252 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: YouTubeマーケティング研究所 by 株式会社アカシア (info@acacia-web.com)
+2026-04-23 12:55:44.252 | INFO     | __main__:main:157 - [12/15] 1 通目を送信します: YouTubeマーケティング研究所 by 株式会社アカシア
+2026-04-23 12:55:44.252 | INFO     | email_generator:generate_email:509 - メール生成開始: YouTubeマーケティング研究所 by 株式会社アカシア - 1通目
+2026-04-23 12:55:50.653 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「YouTubeマーケティング研究所 by 株式会社アカシア」のテーマ...
+2026-04-23 12:55:50.654 | INFO     | __main__:main:162 - [DRY-RUN] YouTubeマーケティング研究所 by 株式会社アカシア へメール送信スキップ
+2026-04-23 12:55:50.654 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「YouTubeマーケティング研究所 by 株式会社アカシア」のテーマが168個に分散している課題
+2026-04-23 12:55:50.654 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:50.654 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: イベントマーケティング (info@event-marketing.co.jp)
+2026-04-23 12:55:50.654 | INFO     | __main__:main:157 - [13/15] 1 通目を送信します: イベントマーケティング
+2026-04-23 12:55:50.654 | INFO     | email_generator:generate_email:509 - メール生成開始: イベントマーケティング - 1通目
+2026-04-23 12:55:57.102 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「イベントマーケティング」のテーマが168個に分散している課題...
+2026-04-23 12:55:57.102 | INFO     | __main__:main:162 - [DRY-RUN] イベントマーケティング へメール送信スキップ
+2026-04-23 12:55:57.102 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「イベントマーケティング」のテーマが168個に分散している課題
+2026-04-23 12:55:57.102 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:55:57.102 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 【動画経営】YouTubeマーケティングコンサル酒井大輔 (unison.sakai@gmail.com)
+2026-04-23 12:55:57.102 | INFO     | __main__:main:157 - [14/15] 1 通目を送信します: 【動画経営】YouTubeマーケティングコンサル酒井大輔
+2026-04-23 12:55:57.102 | INFO     | email_generator:generate_email:509 - メール生成開始: 【動画経営】YouTubeマーケティングコンサル酒井大輔 - 1通目
+2026-04-23 12:56:04.082 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「【動画経営】YouTubeマーケティングコンサル酒井大輔」のテーマが...
+2026-04-23 12:56:04.082 | INFO     | __main__:main:162 - [DRY-RUN] 【動画経営】YouTubeマーケティングコンサル酒井大輔 へメール送信スキップ
+2026-04-23 12:56:04.082 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「【動画経営】YouTubeマーケティングコンサル酒井大輔」のテーマが168個に分散している課題
+2026-04-23 12:56:04.082 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:56:04.082 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: CEO ONLINE (aaaaa@bbbbb.com)
+2026-04-23 12:56:04.082 | INFO     | __main__:main:157 - [15/15] 1 通目を送信します: CEO ONLINE
+2026-04-23 12:56:04.082 | INFO     | email_generator:generate_email:509 - メール生成開始: CEO ONLINE - 1通目
+2026-04-23 12:56:11.299 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「CEO ONLINE」のテーマが168個に分散している課題...
+2026-04-23 12:56:11.299 | INFO     | __main__:main:162 - [DRY-RUN] CEO ONLINE へメール送信スキップ
+2026-04-23 12:56:11.299 | DEBUG    | __main__:main:163 - 件名: YouTube Insight「CEO ONLINE」のテーマが168個に分散している課題
+2026-04-23 12:56:11.299 | INFO     | __main__:main:200 - [DRY-RUN] 待機をスキップ
+2026-04-23 12:56:11.299 | INFO     | __main__:main:207 - === メール送信完了: 0 件 ===
+2026-04-23 12:56:11.299 | INFO     | __main__:main:208 - 実行終了時刻: 2026-04-23 12:56:11

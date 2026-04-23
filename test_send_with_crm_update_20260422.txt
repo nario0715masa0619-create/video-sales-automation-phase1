@@ -1,0 +1,277 @@
+2026-04-22 20:44:49.947 | INFO     | __main__:run_daily_operations:10 - ============================================================
+2026-04-22 20:44:49.947 | INFO     | __main__:run_daily_operations:11 - \U0001f680 日次運用開始
+2026-04-22 20:44:49.947 | INFO     | __main__:run_daily_operations:12 - 実行時刻: 2026-04-22 20:44:49
+2026-04-22 20:44:49.947 | INFO     | __main__:run_daily_operations:13 - ============================================================
+2026-04-22 20:44:49.947 | INFO     | __main__:run_daily_operations:17 - 
+[Step 1] バウンスチェック開始...
+2026-04-22 20:44:50.040 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-22 20:44:50.040 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-22 20:44:51.029 | INFO     | __main__:check_bounces:35 - \u2705 IMAP ログイン成功
+2026-04-22 20:44:51.257 | INFO     | __main__:check_bounces:80 - \u2705 IMAP ログアウト
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:106 - 本日送信数: 17 件
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-22 20:44:51.328 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-22 20:44:51.342 | INFO     | __main__:run_daily_operations:19 - \u2705 バウンスチェック完了
+
+2026-04-22 20:44:51.343 | INFO     | __main__:run_daily_operations:22 - [Step 2] メール送信開始...
+D:\AI_スクリプト成果物\営業自動化プロジェクト\video-sales-automation-phase1\email_generator.py:25: FutureWarning: 
+
+All support for the `google.generativeai` package has ended. It will no longer be receiving 
+updates or bug fixes. Please switch to the `google.genai` package as soon as possible.
+See README for more details:
+
+https://github.com/google-gemini/deprecated-generative-ai-python/blob/main/README.md
+
+  import google.generativeai as genai
+2026-04-22 20:44:52.461 | INFO     | __main__:calculate_send_limits:51 - 送信配分: 1回目 3件 (70%), 2回目以降 2件 (30%)
+2026-04-22 20:44:52.461 | INFO     | __main__:main:73 - === メール送信開始 (limit=5, wait=1200秒, dry_run=False) ===
+2026-04-22 20:44:52.461 | INFO     | __main__:main:74 - 現在時刻: 2026-04-22 20:44:52
+2026-04-22 20:44:52.461 | INFO     | __main__:main:75 - 本日の送信上限: 5 件
+2026-04-22 20:44:52.461 | INFO     | __main__:main:76 - メール間隔: 1200 秒（ランダムばらつき: ±50%）
+2026-04-22 20:44:52.486 | INFO     | crm_manager:_get_client:156 - Google Sheets クライアント初期化完了
+2026-04-22 20:44:53.958 | INFO     | crm_manager:_get_spreadsheet:164 - スプレッドシート接続完了: SNS動画活用企業向け営業CRM管理シート
+2026-04-22 20:44:54.859 | DEBUG    | crm_manager:get_all_leads:192 - 全リード取得: 1705件
+2026-04-22 20:44:54.860 | INFO     | crm_manager:get_pending_leads:463 - 送信対象リード: 341件
+2026-04-22 20:44:54.860 | INFO     | __main__:main:83 - 対象リード: 5 件
+2026-04-22 20:44:54.860 | INFO     | __main__:main:88 -   → 初回: 5 件, リピート: 0 件
+2026-04-22 20:44:54.860 | INFO     | __main__:main:98 - 送信配分: 初回 5件, リピート 0件
+2026-04-22 20:44:54.860 | INFO     | __main__:main:117 - 
+--- 初回メール送信開始 (5 件) ---
+2026-04-22 20:44:54.860 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: kintone活用ちゃんねる (sample@xx.co.jp)
+2026-04-22 20:44:54.860 | INFO     | __main__:main:157 - [1/5] 1 通目を送信します: kintone活用ちゃんねる
+2026-04-22 20:44:54.860 | INFO     | email_generator:generate_email:509 - メール生成開始: kintone活用ちゃんねる - 1通目
+2026-04-22 20:45:01.181 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「kintone活用ちゃんねる」のテーマが168個に分散している課題...
+2026-04-22 20:45:05.824 | INFO     | email_sender:send_email:482 - メール送信成功 (SMTP): sample@xx.co.jp
+2026-04-22 20:45:05.825 | INFO     | __main__:main:175 - \u2705 kintone活用ちゃんねる へメール送信成功 (MessageID: msg_20260422_988e0c34)
+2026-04-22 20:45:05.894 | INFO     | crm_manager:upsert_lead:233 - [upsert_lead] 開始: kintone活用ちゃんねる
+2026-04-22 20:45:07.582 | INFO     | crm_manager:upsert_lead:293 - リード更新: kintone活用ちゃんねる (行5, 17セル)
+2026-04-22 20:45:07.582 | INFO     | crm_manager:upsert_lead:294 - [upsert_lead] 完了
+2026-04-22 20:45:11.583 | DEBUG    | __main__:main:182 - \u2705 CRM 更新: kintone活用ちゃんねる
+2026-04-22 20:45:11.584 | INFO     | __main__:wait_between_sends:35 - 次のメール送信まで 1366 秒（約 22 分）待機します...
+2026-04-22 20:45:11.584 | INFO     | __main__:wait_between_sends:36 -   (基本: 1200秒、ランダムばらつき: ±50%)
+2026-04-22 20:47:57.635 | INFO     | __main__:wait_between_sends:39 -   残り時間: 1200 秒（約 20 分）
+2026-04-22 20:52:57.746 | INFO     | __main__:wait_between_sends:39 -   残り時間: 900 秒（約 15 分）
+2026-04-22 20:57:57.869 | INFO     | __main__:wait_between_sends:39 -   残り時間: 600 秒（約 10 分）
+2026-04-22 21:02:57.995 | INFO     | __main__:wait_between_sends:39 -   残り時間: 300 秒（約 5 分）
+2026-04-22 21:06:58.110 | INFO     | __main__:wait_between_sends:39 -   残り時間: 60 秒（約 1 分）
+2026-04-22 21:06:59.111 | INFO     | __main__:wait_between_sends:39 -   残り時間: 59 秒（約 0 分）
+2026-04-22 21:07:00.112 | INFO     | __main__:wait_between_sends:39 -   残り時間: 58 秒（約 0 分）
+2026-04-22 21:07:01.112 | INFO     | __main__:wait_between_sends:39 -   残り時間: 57 秒（約 0 分）
+2026-04-22 21:07:02.113 | INFO     | __main__:wait_between_sends:39 -   残り時間: 56 秒（約 0 分）
+2026-04-22 21:07:03.114 | INFO     | __main__:wait_between_sends:39 -   残り時間: 55 秒（約 0 分）
+2026-04-22 21:07:04.114 | INFO     | __main__:wait_between_sends:39 -   残り時間: 54 秒（約 0 分）
+2026-04-22 21:07:05.115 | INFO     | __main__:wait_between_sends:39 -   残り時間: 53 秒（約 0 分）
+2026-04-22 21:07:06.116 | INFO     | __main__:wait_between_sends:39 -   残り時間: 52 秒（約 0 分）
+2026-04-22 21:07:07.117 | INFO     | __main__:wait_between_sends:39 -   残り時間: 51 秒（約 0 分）
+2026-04-22 21:07:08.117 | INFO     | __main__:wait_between_sends:39 -   残り時間: 50 秒（約 0 分）
+2026-04-22 21:07:09.118 | INFO     | __main__:wait_between_sends:39 -   残り時間: 49 秒（約 0 分）
+2026-04-22 21:07:10.118 | INFO     | __main__:wait_between_sends:39 -   残り時間: 48 秒（約 0 分）
+2026-04-22 21:07:11.119 | INFO     | __main__:wait_between_sends:39 -   残り時間: 47 秒（約 0 分）
+2026-04-22 21:07:12.120 | INFO     | __main__:wait_between_sends:39 -   残り時間: 46 秒（約 0 分）
+2026-04-22 21:07:13.120 | INFO     | __main__:wait_between_sends:39 -   残り時間: 45 秒（約 0 分）
+2026-04-22 21:07:14.121 | INFO     | __main__:wait_between_sends:39 -   残り時間: 44 秒（約 0 分）
+2026-04-22 21:07:15.122 | INFO     | __main__:wait_between_sends:39 -   残り時間: 43 秒（約 0 分）
+2026-04-22 21:07:16.123 | INFO     | __main__:wait_between_sends:39 -   残り時間: 42 秒（約 0 分）
+2026-04-22 21:07:17.123 | INFO     | __main__:wait_between_sends:39 -   残り時間: 41 秒（約 0 分）
+2026-04-22 21:07:18.125 | INFO     | __main__:wait_between_sends:39 -   残り時間: 40 秒（約 0 分）
+2026-04-22 21:07:19.126 | INFO     | __main__:wait_between_sends:39 -   残り時間: 39 秒（約 0 分）
+2026-04-22 21:07:20.126 | INFO     | __main__:wait_between_sends:39 -   残り時間: 38 秒（約 0 分）
+2026-04-22 21:07:21.127 | INFO     | __main__:wait_between_sends:39 -   残り時間: 37 秒（約 0 分）
+2026-04-22 21:07:22.128 | INFO     | __main__:wait_between_sends:39 -   残り時間: 36 秒（約 0 分）
+2026-04-22 21:07:23.129 | INFO     | __main__:wait_between_sends:39 -   残り時間: 35 秒（約 0 分）
+2026-04-22 21:07:24.130 | INFO     | __main__:wait_between_sends:39 -   残り時間: 34 秒（約 0 分）
+2026-04-22 21:07:25.130 | INFO     | __main__:wait_between_sends:39 -   残り時間: 33 秒（約 0 分）
+2026-04-22 21:07:26.132 | INFO     | __main__:wait_between_sends:39 -   残り時間: 32 秒（約 0 分）
+2026-04-22 21:07:27.133 | INFO     | __main__:wait_between_sends:39 -   残り時間: 31 秒（約 0 分）
+2026-04-22 21:07:28.135 | INFO     | __main__:wait_between_sends:39 -   残り時間: 30 秒（約 0 分）
+2026-04-22 21:07:29.135 | INFO     | __main__:wait_between_sends:39 -   残り時間: 29 秒（約 0 分）
+2026-04-22 21:07:30.136 | INFO     | __main__:wait_between_sends:39 -   残り時間: 28 秒（約 0 分）
+2026-04-22 21:07:31.137 | INFO     | __main__:wait_between_sends:39 -   残り時間: 27 秒（約 0 分）
+2026-04-22 21:07:32.149 | INFO     | __main__:wait_between_sends:39 -   残り時間: 26 秒（約 0 分）
+2026-04-22 21:07:33.150 | INFO     | __main__:wait_between_sends:39 -   残り時間: 25 秒（約 0 分）
+2026-04-22 21:07:34.151 | INFO     | __main__:wait_between_sends:39 -   残り時間: 24 秒（約 0 分）
+2026-04-22 21:07:35.151 | INFO     | __main__:wait_between_sends:39 -   残り時間: 23 秒（約 0 分）
+2026-04-22 21:07:36.152 | INFO     | __main__:wait_between_sends:39 -   残り時間: 22 秒（約 0 分）
+2026-04-22 21:07:37.153 | INFO     | __main__:wait_between_sends:39 -   残り時間: 21 秒（約 0 分）
+2026-04-22 21:07:38.154 | INFO     | __main__:wait_between_sends:39 -   残り時間: 20 秒（約 0 分）
+2026-04-22 21:07:39.154 | INFO     | __main__:wait_between_sends:39 -   残り時間: 19 秒（約 0 分）
+2026-04-22 21:07:40.155 | INFO     | __main__:wait_between_sends:39 -   残り時間: 18 秒（約 0 分）
+2026-04-22 21:07:41.155 | INFO     | __main__:wait_between_sends:39 -   残り時間: 17 秒（約 0 分）
+2026-04-22 21:07:42.156 | INFO     | __main__:wait_between_sends:39 -   残り時間: 16 秒（約 0 分）
+2026-04-22 21:07:43.158 | INFO     | __main__:wait_between_sends:39 -   残り時間: 15 秒（約 0 分）
+2026-04-22 21:07:44.159 | INFO     | __main__:wait_between_sends:39 -   残り時間: 14 秒（約 0 分）
+2026-04-22 21:07:45.160 | INFO     | __main__:wait_between_sends:39 -   残り時間: 13 秒（約 0 分）
+2026-04-22 21:07:46.161 | INFO     | __main__:wait_between_sends:39 -   残り時間: 12 秒（約 0 分）
+2026-04-22 21:07:47.161 | INFO     | __main__:wait_between_sends:39 -   残り時間: 11 秒（約 0 分）
+2026-04-22 21:07:48.162 | INFO     | __main__:wait_between_sends:39 -   残り時間: 10 秒（約 0 分）
+2026-04-22 21:07:49.163 | INFO     | __main__:wait_between_sends:39 -   残り時間: 9 秒（約 0 分）
+2026-04-22 21:07:50.163 | INFO     | __main__:wait_between_sends:39 -   残り時間: 8 秒（約 0 分）
+2026-04-22 21:07:51.164 | INFO     | __main__:wait_between_sends:39 -   残り時間: 7 秒（約 0 分）
+2026-04-22 21:07:52.165 | INFO     | __main__:wait_between_sends:39 -   残り時間: 6 秒（約 0 分）
+2026-04-22 21:07:53.166 | INFO     | __main__:wait_between_sends:39 -   残り時間: 5 秒（約 0 分）
+2026-04-22 21:07:54.167 | INFO     | __main__:wait_between_sends:39 -   残り時間: 4 秒（約 0 分）
+2026-04-22 21:07:55.167 | INFO     | __main__:wait_between_sends:39 -   残り時間: 3 秒（約 0 分）
+2026-04-22 21:07:56.168 | INFO     | __main__:wait_between_sends:39 -   残り時間: 2 秒（約 0 分）
+2026-04-22 21:07:57.169 | INFO     | __main__:wait_between_sends:39 -   残り時間: 1 秒（約 0 分）
+2026-04-22 21:07:58.169 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: Web&AI活用術 WEBST8 ウェブストエイトチャンネル (info@webst8.com)
+2026-04-22 21:07:58.170 | INFO     | __main__:main:157 - [2/5] 1 通目を送信します: Web&AI活用術 WEBST8 ウェブストエイトチャンネル
+2026-04-22 21:07:58.170 | INFO     | email_generator:generate_email:509 - メール生成開始: Web&AI活用術 WEBST8 ウェブストエイトチャンネル - 1通目
+2026-04-22 21:08:08.740 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「Web&AI活用術 WEBST8 ウェブストエイトチャンネル」のテー...
+2026-04-22 21:08:09.261 | INFO     | email_sender:send_email:482 - メール送信成功 (SMTP): info@webst8.com
+2026-04-22 21:08:09.261 | INFO     | __main__:main:175 - \u2705 Web&AI活用術 WEBST8 ウェブストエイトチャンネル へメール送信成功 (MessageID: msg_20260422_e106953c)
+2026-04-22 21:08:09.331 | INFO     | crm_manager:upsert_lead:233 - [upsert_lead] 開始: Web&AI活用術 WEBST8 ウェブストエイトチャンネル
+2026-04-22 21:08:12.067 | INFO     | crm_manager:upsert_lead:293 - リード更新: Web&AI活用術 WEBST8 ウェブストエイトチャンネル (行10, 17セル)
+2026-04-22 21:08:12.067 | INFO     | crm_manager:upsert_lead:294 - [upsert_lead] 完了
+2026-04-22 21:08:16.068 | DEBUG    | __main__:main:182 - \u2705 CRM 更新: Web&AI活用術 WEBST8 ウェブストエイトチャンネル
+2026-04-22 21:08:16.069 | INFO     | __main__:wait_between_sends:35 - 次のメール送信まで 1001 秒（約 16 分）待機します...
+2026-04-22 21:08:16.069 | INFO     | __main__:wait_between_sends:36 -   (基本: 1200秒、ランダムばらつき: ±50%)
+2026-04-22 21:09:57.100 | INFO     | __main__:wait_between_sends:39 -   残り時間: 900 秒（約 15 分）
+2026-04-22 21:14:57.191 | INFO     | __main__:wait_between_sends:39 -   残り時間: 600 秒（約 10 分）
+2026-04-22 21:19:57.290 | INFO     | __main__:wait_between_sends:39 -   残り時間: 300 秒（約 5 分）
+2026-04-22 21:23:57.357 | INFO     | __main__:wait_between_sends:39 -   残り時間: 60 秒（約 1 分）
+2026-04-22 21:23:58.357 | INFO     | __main__:wait_between_sends:39 -   残り時間: 59 秒（約 0 分）
+2026-04-22 21:23:59.358 | INFO     | __main__:wait_between_sends:39 -   残り時間: 58 秒（約 0 分）
+2026-04-22 21:24:00.359 | INFO     | __main__:wait_between_sends:39 -   残り時間: 57 秒（約 0 分）
+2026-04-22 21:24:01.360 | INFO     | __main__:wait_between_sends:39 -   残り時間: 56 秒（約 0 分）
+2026-04-22 21:24:02.361 | INFO     | __main__:wait_between_sends:39 -   残り時間: 55 秒（約 0 分）
+2026-04-22 21:24:03.362 | INFO     | __main__:wait_between_sends:39 -   残り時間: 54 秒（約 0 分）
+2026-04-22 21:24:04.364 | INFO     | __main__:wait_between_sends:39 -   残り時間: 53 秒（約 0 分）
+2026-04-22 21:24:05.364 | INFO     | __main__:wait_between_sends:39 -   残り時間: 52 秒（約 0 分）
+2026-04-22 21:24:06.365 | INFO     | __main__:wait_between_sends:39 -   残り時間: 51 秒（約 0 分）
+2026-04-22 21:24:07.366 | INFO     | __main__:wait_between_sends:39 -   残り時間: 50 秒（約 0 分）
+2026-04-22 21:24:08.366 | INFO     | __main__:wait_between_sends:39 -   残り時間: 49 秒（約 0 分）
+2026-04-22 21:24:09.367 | INFO     | __main__:wait_between_sends:39 -   残り時間: 48 秒（約 0 分）
+2026-04-22 21:24:10.367 | INFO     | __main__:wait_between_sends:39 -   残り時間: 47 秒（約 0 分）
+2026-04-22 21:24:11.368 | INFO     | __main__:wait_between_sends:39 -   残り時間: 46 秒（約 0 分）
+2026-04-22 21:24:12.368 | INFO     | __main__:wait_between_sends:39 -   残り時間: 45 秒（約 0 分）
+2026-04-22 21:24:13.369 | INFO     | __main__:wait_between_sends:39 -   残り時間: 44 秒（約 0 分）
+2026-04-22 21:24:14.370 | INFO     | __main__:wait_between_sends:39 -   残り時間: 43 秒（約 0 分）
+2026-04-22 21:24:15.370 | INFO     | __main__:wait_between_sends:39 -   残り時間: 42 秒（約 0 分）
+2026-04-22 21:24:16.370 | INFO     | __main__:wait_between_sends:39 -   残り時間: 41 秒（約 0 分）
+2026-04-22 21:24:17.371 | INFO     | __main__:wait_between_sends:39 -   残り時間: 40 秒（約 0 分）
+2026-04-22 21:24:18.372 | INFO     | __main__:wait_between_sends:39 -   残り時間: 39 秒（約 0 分）
+2026-04-22 21:24:19.373 | INFO     | __main__:wait_between_sends:39 -   残り時間: 38 秒（約 0 分）
+2026-04-22 21:24:20.374 | INFO     | __main__:wait_between_sends:39 -   残り時間: 37 秒（約 0 分）
+2026-04-22 21:24:21.374 | INFO     | __main__:wait_between_sends:39 -   残り時間: 36 秒（約 0 分）
+2026-04-22 21:24:22.375 | INFO     | __main__:wait_between_sends:39 -   残り時間: 35 秒（約 0 分）
+2026-04-22 21:24:23.376 | INFO     | __main__:wait_between_sends:39 -   残り時間: 34 秒（約 0 分）
+2026-04-22 21:24:24.376 | INFO     | __main__:wait_between_sends:39 -   残り時間: 33 秒（約 0 分）
+2026-04-22 21:24:25.377 | INFO     | __main__:wait_between_sends:39 -   残り時間: 32 秒（約 0 分）
+2026-04-22 21:24:26.378 | INFO     | __main__:wait_between_sends:39 -   残り時間: 31 秒（約 0 分）
+2026-04-22 21:24:27.379 | INFO     | __main__:wait_between_sends:39 -   残り時間: 30 秒（約 0 分）
+2026-04-22 21:24:28.380 | INFO     | __main__:wait_between_sends:39 -   残り時間: 29 秒（約 0 分）
+2026-04-22 21:24:29.380 | INFO     | __main__:wait_between_sends:39 -   残り時間: 28 秒（約 0 分）
+2026-04-22 21:24:30.381 | INFO     | __main__:wait_between_sends:39 -   残り時間: 27 秒（約 0 分）
+2026-04-22 21:24:31.382 | INFO     | __main__:wait_between_sends:39 -   残り時間: 26 秒（約 0 分）
+2026-04-22 21:24:32.388 | INFO     | __main__:wait_between_sends:39 -   残り時間: 25 秒（約 0 分）
+2026-04-22 21:24:33.389 | INFO     | __main__:wait_between_sends:39 -   残り時間: 24 秒（約 0 分）
+2026-04-22 21:24:34.390 | INFO     | __main__:wait_between_sends:39 -   残り時間: 23 秒（約 0 分）
+2026-04-22 21:24:35.390 | INFO     | __main__:wait_between_sends:39 -   残り時間: 22 秒（約 0 分）
+2026-04-22 21:24:36.391 | INFO     | __main__:wait_between_sends:39 -   残り時間: 21 秒（約 0 分）
+2026-04-22 21:24:37.392 | INFO     | __main__:wait_between_sends:39 -   残り時間: 20 秒（約 0 分）
+2026-04-22 21:24:38.393 | INFO     | __main__:wait_between_sends:39 -   残り時間: 19 秒（約 0 分）
+2026-04-22 21:24:39.393 | INFO     | __main__:wait_between_sends:39 -   残り時間: 18 秒（約 0 分）
+2026-04-22 21:24:40.394 | INFO     | __main__:wait_between_sends:39 -   残り時間: 17 秒（約 0 分）
+2026-04-22 21:24:41.395 | INFO     | __main__:wait_between_sends:39 -   残り時間: 16 秒（約 0 分）
+2026-04-22 21:24:42.395 | INFO     | __main__:wait_between_sends:39 -   残り時間: 15 秒（約 0 分）
+2026-04-22 21:24:43.396 | INFO     | __main__:wait_between_sends:39 -   残り時間: 14 秒（約 0 分）
+2026-04-22 21:24:44.397 | INFO     | __main__:wait_between_sends:39 -   残り時間: 13 秒（約 0 分）
+2026-04-22 21:24:45.398 | INFO     | __main__:wait_between_sends:39 -   残り時間: 12 秒（約 0 分）
+2026-04-22 21:24:46.398 | INFO     | __main__:wait_between_sends:39 -   残り時間: 11 秒（約 0 分）
+2026-04-22 21:24:47.399 | INFO     | __main__:wait_between_sends:39 -   残り時間: 10 秒（約 0 分）
+2026-04-22 21:24:48.400 | INFO     | __main__:wait_between_sends:39 -   残り時間: 9 秒（約 0 分）
+2026-04-22 21:24:49.401 | INFO     | __main__:wait_between_sends:39 -   残り時間: 8 秒（約 0 分）
+2026-04-22 21:24:50.401 | INFO     | __main__:wait_between_sends:39 -   残り時間: 7 秒（約 0 分）
+2026-04-22 21:24:51.402 | INFO     | __main__:wait_between_sends:39 -   残り時間: 6 秒（約 0 分）
+2026-04-22 21:24:52.403 | INFO     | __main__:wait_between_sends:39 -   残り時間: 5 秒（約 0 分）
+2026-04-22 21:24:53.403 | INFO     | __main__:wait_between_sends:39 -   残り時間: 4 秒（約 0 分）
+2026-04-22 21:24:54.404 | INFO     | __main__:wait_between_sends:39 -   残り時間: 3 秒（約 0 分）
+2026-04-22 21:24:55.406 | INFO     | __main__:wait_between_sends:39 -   残り時間: 2 秒（約 0 分）
+2026-04-22 21:24:56.407 | INFO     | __main__:wait_between_sends:39 -   残り時間: 1 秒（約 0 分）
+2026-04-22 21:24:57.407 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: GUGA_生成AI活用普及協会 (membership@guga.or.jp)
+2026-04-22 21:24:57.408 | INFO     | __main__:main:157 - [3/5] 1 通目を送信します: GUGA_生成AI活用普及協会
+2026-04-22 21:24:57.408 | INFO     | email_generator:generate_email:509 - メール生成開始: GUGA_生成AI活用普及協会 - 1通目
+2026-04-22 21:25:04.488 | INFO     | email_generator:generate_email:550 - メール生成完了: [1通目] 件名: YouTube Insight「GUGA_生成AI活用普及協会」のテーマが168個に分散している課題...
+2026-04-22 21:25:06.372 | INFO     | email_sender:send_email:482 - メール送信成功 (SMTP): membership@guga.or.jp
+2026-04-22 21:25:06.373 | INFO     | __main__:main:175 - \u2705 GUGA_生成AI活用普及協会 へメール送信成功 (MessageID: msg_20260422_a336c6dc)
+2026-04-22 21:25:06.449 | INFO     | crm_manager:upsert_lead:233 - [upsert_lead] 開始: GUGA_生成AI活用普及協会
+2026-04-22 21:25:09.054 | INFO     | crm_manager:upsert_lead:293 - リード更新: GUGA_生成AI活用普及協会 (行11, 17セル)
+2026-04-22 21:25:09.054 | INFO     | crm_manager:upsert_lead:294 - [upsert_lead] 完了
+2026-04-22 21:25:13.056 | DEBUG    | __main__:main:182 - \u2705 CRM 更新: GUGA_生成AI活用普及協会
+2026-04-22 21:25:13.056 | INFO     | __main__:wait_between_sends:35 - 次のメール送信まで 644 秒（約 10 分）待機します...
+2026-04-22 21:25:13.056 | INFO     | __main__:wait_between_sends:36 -   (基本: 1200秒、ランダムばらつき: ±50%)
+2026-04-22 21:25:57.068 | INFO     | __main__:wait_between_sends:39 -   残り時間: 600 秒（約 10 分）
+2026-04-22 21:30:57.157 | INFO     | __main__:wait_between_sends:39 -   残り時間: 300 秒（約 5 分）
+2026-04-22 21:34:57.248 | INFO     | __main__:wait_between_sends:39 -   残り時間: 60 秒（約 1 分）
+2026-04-22 21:34:58.249 | INFO     | __main__:wait_between_sends:39 -   残り時間: 59 秒（約 0 分）
+2026-04-22 21:34:59.250 | INFO     | __main__:wait_between_sends:39 -   残り時間: 58 秒（約 0 分）
+2026-04-22 21:35:00.250 | INFO     | __main__:wait_between_sends:39 -   残り時間: 57 秒（約 0 分）
+2026-04-22 21:35:01.251 | INFO     | __main__:wait_between_sends:39 -   残り時間: 56 秒（約 0 分）
+2026-04-22 21:35:02.252 | INFO     | __main__:wait_between_sends:39 -   残り時間: 55 秒（約 0 分）
+2026-04-22 21:35:03.252 | INFO     | __main__:wait_between_sends:39 -   残り時間: 54 秒（約 0 分）
+2026-04-22 21:35:04.254 | INFO     | __main__:wait_between_sends:39 -   残り時間: 53 秒（約 0 分）
+2026-04-22 21:35:05.255 | INFO     | __main__:wait_between_sends:39 -   残り時間: 52 秒（約 0 分）
+2026-04-22 21:35:06.256 | INFO     | __main__:wait_between_sends:39 -   残り時間: 51 秒（約 0 分）
+2026-04-22 21:35:07.256 | INFO     | __main__:wait_between_sends:39 -   残り時間: 50 秒（約 0 分）
+2026-04-22 21:35:08.257 | INFO     | __main__:wait_between_sends:39 -   残り時間: 49 秒（約 0 分）
+2026-04-22 21:35:09.257 | INFO     | __main__:wait_between_sends:39 -   残り時間: 48 秒（約 0 分）
+2026-04-22 21:35:10.258 | INFO     | __main__:wait_between_sends:39 -   残り時間: 47 秒（約 0 分）
+2026-04-22 21:35:11.259 | INFO     | __main__:wait_between_sends:39 -   残り時間: 46 秒（約 0 分）
+2026-04-22 21:35:12.260 | INFO     | __main__:wait_between_sends:39 -   残り時間: 45 秒（約 0 分）
+2026-04-22 21:35:13.261 | INFO     | __main__:wait_between_sends:39 -   残り時間: 44 秒（約 0 分）
+2026-04-22 21:35:14.262 | INFO     | __main__:wait_between_sends:39 -   残り時間: 43 秒（約 0 分）
+2026-04-22 21:35:15.262 | INFO     | __main__:wait_between_sends:39 -   残り時間: 42 秒（約 0 分）
+2026-04-22 21:35:16.263 | INFO     | __main__:wait_between_sends:39 -   残り時間: 41 秒（約 0 分）
+2026-04-22 21:35:17.264 | INFO     | __main__:wait_between_sends:39 -   残り時間: 40 秒（約 0 分）
+2026-04-22 21:35:18.264 | INFO     | __main__:wait_between_sends:39 -   残り時間: 39 秒（約 0 分）
+2026-04-22 21:35:19.265 | INFO     | __main__:wait_between_sends:39 -   残り時間: 38 秒（約 0 分）
+2026-04-22 21:35:20.266 | INFO     | __main__:wait_between_sends:39 -   残り時間: 37 秒（約 0 分）
+2026-04-22 21:35:21.266 | INFO     | __main__:wait_between_sends:39 -   残り時間: 36 秒（約 0 分）
+2026-04-22 21:35:22.267 | INFO     | __main__:wait_between_sends:39 -   残り時間: 35 秒（約 0 分）
+2026-04-22 21:35:23.268 | INFO     | __main__:wait_between_sends:39 -   残り時間: 34 秒（約 0 分）
+2026-04-22 21:35:24.268 | INFO     | __main__:wait_between_sends:39 -   残り時間: 33 秒（約 0 分）
+2026-04-22 21:35:25.269 | INFO     | __main__:wait_between_sends:39 -   残り時間: 32 秒（約 0 分）
+2026-04-22 21:35:26.269 | INFO     | __main__:wait_between_sends:39 -   残り時間: 31 秒（約 0 分）
+2026-04-22 21:35:27.270 | INFO     | __main__:wait_between_sends:39 -   残り時間: 30 秒（約 0 分）
+2026-04-22 21:35:28.271 | INFO     | __main__:wait_between_sends:39 -   残り時間: 29 秒（約 0 分）
+2026-04-22 21:35:29.271 | INFO     | __main__:wait_between_sends:39 -   残り時間: 28 秒（約 0 分）
+2026-04-22 21:35:30.272 | INFO     | __main__:wait_between_sends:39 -   残り時間: 27 秒（約 0 分）
+2026-04-22 21:35:31.273 | INFO     | __main__:wait_between_sends:39 -   残り時間: 26 秒（約 0 分）
+2026-04-22 21:35:32.273 | INFO     | __main__:wait_between_sends:39 -   残り時間: 25 秒（約 0 分）
+2026-04-22 21:35:33.275 | INFO     | __main__:wait_between_sends:39 -   残り時間: 24 秒（約 0 分）
+2026-04-22 21:35:34.276 | INFO     | __main__:wait_between_sends:39 -   残り時間: 23 秒（約 0 分）
+2026-04-22 21:35:35.278 | INFO     | __main__:wait_between_sends:39 -   残り時間: 22 秒（約 0 分）
+2026-04-22 21:35:36.279 | INFO     | __main__:wait_between_sends:39 -   残り時間: 21 秒（約 0 分）
+2026-04-22 21:35:37.280 | INFO     | __main__:wait_between_sends:39 -   残り時間: 20 秒（約 0 分）
+2026-04-22 21:35:38.280 | INFO     | __main__:wait_between_sends:39 -   残り時間: 19 秒（約 0 分）
+2026-04-22 21:35:39.281 | INFO     | __main__:wait_between_sends:39 -   残り時間: 18 秒（約 0 分）
+2026-04-22 21:35:40.281 | INFO     | __main__:wait_between_sends:39 -   残り時間: 17 秒（約 0 分）
+2026-04-22 21:35:41.282 | INFO     | __main__:wait_between_sends:39 -   残り時間: 16 秒（約 0 分）
+2026-04-22 21:35:42.283 | INFO     | __main__:wait_between_sends:39 -   残り時間: 15 秒（約 0 分）
+2026-04-22 21:35:43.283 | INFO     | __main__:wait_between_sends:39 -   残り時間: 14 秒（約 0 分）
+2026-04-22 21:35:44.284 | INFO     | __main__:wait_between_sends:39 -   残り時間: 13 秒（約 0 分）
+2026-04-22 21:35:45.285 | INFO     | __main__:wait_between_sends:39 -   残り時間: 12 秒（約 0 分）
+2026-04-22 21:35:46.286 | INFO     | __main__:wait_between_sends:39 -   残り時間: 11 秒（約 0 分）
+2026-04-22 21:35:47.286 | INFO     | __main__:wait_between_sends:39 -   残り時間: 10 秒（約 0 分）
+2026-04-22 21:35:48.287 | INFO     | __main__:wait_between_sends:39 -   残り時間: 9 秒（約 0 分）
+2026-04-22 21:35:49.288 | INFO     | __main__:wait_between_sends:39 -   残り時間: 8 秒（約 0 分）
+2026-04-22 21:35:50.288 | INFO     | __main__:wait_between_sends:39 -   残り時間: 7 秒（約 0 分）
+2026-04-22 21:35:51.289 | INFO     | __main__:wait_between_sends:39 -   残り時間: 6 秒（約 0 分）
+2026-04-22 21:35:52.290 | INFO     | __main__:wait_between_sends:39 -   残り時間: 5 秒（約 0 分）
+2026-04-22 21:35:53.290 | INFO     | __main__:wait_between_sends:39 -   残り時間: 4 秒（約 0 分）
+2026-04-22 21:35:54.292 | INFO     | __main__:wait_between_sends:39 -   残り時間: 3 秒（約 0 分）
+2026-04-22 21:35:55.293 | INFO     | __main__:wait_between_sends:39 -   残り時間: 2 秒（約 0 分）
+2026-04-22 21:35:56.294 | INFO     | __main__:wait_between_sends:39 -   残り時間: 1 秒（約 0 分）
+2026-04-22 21:35:57.295 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 空き家活用隊 (lend_house-consulting@yahoo.co.jp)
+2026-04-22 21:35:57.296 | INFO     | __main__:main:153 - スキップ: 2通目データなし (空き家活用隊)
+2026-04-22 21:35:57.296 | INFO     | __main__:main:131 - [CANDIDATE] 処理中: 40歳からのAI活用塾 (info@umino-ai.com)
+2026-04-22 21:35:57.296 | INFO     | __main__:main:153 - スキップ: 2通目データなし (40歳からのAI活用塾)
+2026-04-22 21:35:57.296 | INFO     | __main__:main:207 - === メール送信完了: 3 件 ===
+2026-04-22 21:35:57.296 | INFO     | __main__:main:208 - 実行終了時刻: 2026-04-22 21:35:57
+2026-04-22 21:35:59.372 | INFO     | __main__:run_daily_operations:24 - \u2705 メール送信完了
+
+2026-04-22 21:35:59.372 | INFO     | __main__:run_daily_operations:26 - ============================================================
+2026-04-22 21:35:59.372 | INFO     | __main__:run_daily_operations:27 - \U0001f389 日次運用完了
+2026-04-22 21:35:59.372 | INFO     | __main__:run_daily_operations:28 - 終了時刻: 2026-04-22 21:35:59
+2026-04-22 21:35:59.372 | INFO     | __main__:run_daily_operations:29 - ============================================================
