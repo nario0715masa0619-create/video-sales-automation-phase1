@@ -30,3 +30,36 @@ tools/email_extractor.py で実装
 ## パフォーマンス
 1 URL あたり 10-30 秒
 全 1,589 URL で約 4-8 時間（シングルスレッド）
+
+
+## Phase 5 実行結果（2026-04-24 完了）
+
+✅ **ミッション完了**
+
+### 統計サマリー
+
+| 項目 | 結果 |
+|------|------|
+| 入力 URL | 1,589 件 |
+| 電話番号検出 | 866 件（67.4%） |
+| invalid | 415 件 |
+| skipped | 4 件 |
+| 実行時間 | 約 7 時間 |
+| 保存先 | Google Sheet Phase 5 + phase5_data.db |
+
+### 処理内容
+
+- ✅ 1,589 件の企業ウェブサイトをクロール
+- ✅ 優先度順で電話番号を抽出（tel リンク → JSON‑LD → meta タグ → regex）
+- ✅ メールアドレスも同様に抽出
+- ✅ 866 件を phase5_data.db に永続化
+- ✅ Google Sheet Phase 5 に同期完了
+- ✅ ステータス「ready_to_contact」でマーク
+
+### 成果物
+
+- 📊 **Google Sheet Phase 5**：866 行
+- 💾 **Database**：logs/phase5_data.db（866 レコード）
+- 📝 **ログ**：logs/website_scraper.log
+- 📚 **ドキュメント**：docs/ フォルダ（11 ファイル）
+

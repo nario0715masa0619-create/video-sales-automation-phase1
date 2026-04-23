@@ -103,3 +103,67 @@ Q: メモリ不足
 A: --limit オプションで分割実行してください
    例: python website_scraper.py --limit=100
 
+
+
+## Phase 5 関連 Q&A
+
+### Q: Phase 5 の実行時間はどのくらい？
+
+A: 1,589 URL で約 7 時間（シングルスレッド）。1 URL あたり平均 15.9 秒。ネットワーク遅延により変動します。
+
+### Q: 電話番号が検出されない場合は？
+
+A: 以下を確認してください：
+- config.PHONE_PATTERNS を確認
+- tools/phone_extractor.py の is_valid_phone() ロジックを確認
+- サンプル HTML で動作テスト
+- MAX_CRAWL_PAGES を増やす（デフォルト 20 ページ）
+- ウェブサイトに公開電話番号がない可能性
+
+### Q: メールアドレスが検出されない場合は？
+
+A: 以下を確認してください：
+- サイトに公開メールアドレスがあるか確認
+- tools/email_extractor.py の invalid_domains リストを確認
+- ドメイン検証を一時的に無効化してテスト
+- regex パターンを拡張
+
+### Q: 電話番号が複数ある場合、どれが保存される？
+
+A: 最初に見つかった 1 つのみ保存されます。複数抽出は未実装。
+
+### Q: Phase 5 を再実行する場合は？
+
+A: DB に存在する URL は自動的にスキップされます。すべてを再処理したい場合：
+- rm logs/phase5_data.db で DB を削除
+- python website_scraper.py で再実行
+
+### Q: Google Sheet Phase 5 のカラムを変更したい場合は？
+
+A: config.py と crm_manager.py の append_to_gsheet_phase5() を編集してください。現在の順序：
+A=company_name, B=website_url, C=phone, D=email, E=source_page, F=status, G=scraped_at
+
+### Q: Phase 5 データをバックアップしたい場合は？
+
+A: 以下をバックアップしてください：
+- logs/phase5_data.db（メインデータ）
+- Google Sheet Phase 5（自動保存）
+- logs/website_scraper.log（処理履歴）
+
+### Q: 古いデータを削除したい場合は？
+
+A: 以下の手順で削除：
+1. Google Sheet Phase 5 から該当行を削除（ヘッダは保持）
+2. rm logs/phase5_data.db で DB をリセット
+3. rm logs/html_cache.db でキャッシュをリセット
+4. python website_scraper.py で再実行
+
+### Q: status が "invalid" の理由は？
+
+A: 電話番号が見つからなかった場合。メール検出状況は status に影響しません。
+
+### Q: 特定の URL だけ再処理したい場合は？
+
+A: その URL を DB から削除してから再実行：
+python -c "import sqlite3; conn = sqlite3.connect('logs/phase5_data.db'); conn.execute('DELETE FROM phase5_data WHERE url=\"https://example.com\"'); conn.commit(); conn.close()"
+

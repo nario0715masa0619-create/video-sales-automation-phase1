@@ -150,3 +150,34 @@ video-sales-automation-phase1/
 │   └── TROUBLESHOOTING.md
 └── README.md
 
+
+
+## Phase 5 ステータス
+
+✅ **完了**（2026-04-24）
+
+### 実行結果
+
+- 1,589 URL をクロール
+- 866 件の電話番号を抽出
+- Google Sheet Phase 5 に同期
+- DB に永続化（status: ready_to_contact）
+
+### 統計
+
+| ステータス | 件数 |
+|-----------|------|
+| ready_to_contact | 866 |
+| invalid | 415 |
+| skipped | 4 |
+
+### 出力データ
+
+- Google Sheet Phase 5：866 行（企業名、電話、メール付き）
+- Database：logs/phase5_data.db（866 レコード）
+- ログ：logs/website_scraper.log（全処理履歴）
+
+### 次フェーズ
+
+Phase 6 を同一リポジトリ内で準備予定
+
