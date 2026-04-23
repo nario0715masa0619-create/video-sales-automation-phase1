@@ -8,7 +8,7 @@ import asyncio
 import warnings
 from playwright.async_api import async_playwright
 from config import DEFAULT_HEADERS, REQUEST_TIMEOUT, CRAWL_TIMEOUT
-from cache_manager import get_cached_html, set_cached_html
+from db_manager_html_cache import init_html_cache_db, get_cached_html, set_cached_html
 
 # SSL警告を抑制
 warnings.filterwarnings('ignore', message='Unverified HTTPS request')
@@ -26,14 +26,14 @@ def fetch_html_requests(url):
             allow_redirects=True,
             verify=False
         )
-        
+
         if response.status_code == 404:
             logger.warning(f"⚠️  HTTP 404: {url}")
             return None
         elif response.status_code != 200:
             logger.warning(f"⚠️  HTTP {response.status_code}: {url}")
             return None
-        
+
         return response.text
     except requests.exceptions.Timeout:
         logger.warning(f"⏱️  タイムアウト: {url}")
@@ -60,22 +60,26 @@ async def fetch_html_playwright(url):
         return None
 
 def fetch_html(url, use_playwright=False, use_cache=True):
-    """HTML を取得（キャッシュ対応）"""
+    """HTML を取得（DB キャッシュ対応）"""
+    # DB キャッシュを初期化
+    init_html_cache_db()
+    
     # キャッシュから取得
     if use_cache:
-        cached_html = get_cached_html(url, ttl=24)
+        cached_html = get_cached_html(url, ttl_hours=24)
         if cached_html:
             logger.debug(f"💾 キャッシュから取得: {url}")
             return cached_html
-    
+
     # HTML を取得
     if use_playwright:
         html = asyncio.run(fetch_html_playwright(url))
     else:
         html = fetch_html_requests(url)
-    
+
     # キャッシュに保存
     if html and use_cache:
-        set_cached_html(url, html, ttl=24)
-    
+        set_cached_html(url, html, ttl_hours=24)
+        logger.debug(f"💾 キャッシュに保存: {url}")
+
     return html

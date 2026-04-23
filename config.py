@@ -304,7 +304,7 @@ IMAP_PASSWORD = os.getenv("IMAP_PASSWORD")
 SPREADSHEET_ID_PHASE5: str = os.getenv("SPREADSHEET_ID_PHASE5", "")
 
 SHEET_NAME_CRM: str = os.getenv("SHEET_NAME_CRM", "Leads")
-SHEET_NAME_PHASE5: str = os.getenv("SHEET_NAME_PHASE5", "Phase5")
+SHEET_NAME_PHASE5: str = os.getenv("SHEET_NAME_PHASE5", "leads")
 CREDENTIALS_FILE: str = os.getenv("CREDENTIALS_FILE", "credentials/service_account.json")
 
 
