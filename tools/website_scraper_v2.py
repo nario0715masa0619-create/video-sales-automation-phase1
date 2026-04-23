@@ -7,7 +7,7 @@ import logging
 import sys
 from config import LOG_FILE
 from cache_manager import init_cache, get_cache_stats, clear_cache
-from crm_manager import read_website_urls_from_crm, append_to_gsheet_phase5
+from crm_manager import read_website_urls_from_crm
 from phone_extractor import extract_phone
 from website_crawler import crawl_domain
 from company_info_extractor import extract_company_name
@@ -99,12 +99,12 @@ def run_batch_scraping(limit=None):
         result = scrape_website(url_data)
         
         # Phase 5 に保存
-        append_to_gsheet_phase5(
+        # append_to_gsheet_phase5(
             result['company_name'],
             result['phone_number'],
             result['status'],
             result['url']
-        )
+        # )
         
         if result['status'] == 'ready_to_contact':
             success_count += 1
