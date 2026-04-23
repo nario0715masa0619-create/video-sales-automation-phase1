@@ -8,6 +8,7 @@ import sys
 from config import LOG_FILE
 from cache_manager import init_cache, get_cache_stats, clear_cache
 from crm_manager import read_website_urls_from_crm, append_to_gsheet_phase5
+from db_manager_phase5 import init_phase5_db, check_url_exists, append_phase5_data
 from phone_extractor import extract_phone
 from website_crawler import crawl_domain
 from company_info_extractor import extract_company_name
@@ -37,9 +38,9 @@ def should_skip_url(url):
 def scrape_website(url_data):
     """単一の Website をスクレイピング"""
     row_index, website_url, email, crm_company_name = url_data
-    
+
     logger.info(f"Row {row_index} → {website_url}")
-    
+
     # スキップ判定
     if should_skip_url(website_url):
         logger.info(f"   ⏭️  スキップ（短縮URL等）")
@@ -49,10 +50,10 @@ def scrape_website(url_data):
             'status': 'skipped',
             'url': website_url
         }
-    
+
     # クロール実行
     html_list = crawl_domain(website_url)
-    
+
     if not html_list:
         logger.info(f"   ❌ HTML 取得失敗")
         return {
@@ -61,10 +62,10 @@ def scrape_website(url_data):
             'status': 'invalid',
             'url': website_url
         }
-    
+
     # 企業名抽出
     company_name = extract_company_name(html_list[0], website_url, crm_company_name)
-    
+
     # 電話番号抽出（複数ページから試す）
     phone_number = None
     for html in html_list:
@@ -72,10 +73,10 @@ def scrape_website(url_data):
         if phone:
             phone_number = phone
             break
-    
+
     # Status 判定
     status = 'ready_to_contact' if phone_number else 'invalid'
-    
+
     return {
         'company_name': company_name,
         'phone_number': phone_number,
@@ -88,35 +89,58 @@ def run_batch_scraping(limit=None):
     logger.info("=" * 80)
     logger.info("🚀 batch scraping 開始")
     logger.info("=" * 80)
-    
+
+    # DB 初期化
+    init_phase5_db()
+    logger.info("📦 Phase 5 DB を初期化しました")
+
     # CRM から URL リストを読み込み
     url_list = read_website_urls_from_crm(limit)
     logger.info(f"📋 CRM から {len(url_list)} 件の URL を読み込みました")
-    
+
     # 処理開始
     success_count = 0
+    skipped_count = 0
+    
     for idx, url_data in enumerate(url_list, 1):
-        result = scrape_website(url_data)
+        website_url = url_data[1]
         
-        # Phase 5 に保存
+        # DB で重複チェック
+        if check_url_exists(website_url):
+            logger.info(f"⏭️  既存 URL スキップ: {website_url}")
+            skipped_count += 1
+            continue
+        
+        result = scrape_website(url_data)
+
+        # DB に保存
+        append_phase5_data(
+            result['company_name'],
+            result['phone_number'],
+            result['status'],
+            result['url']
+        )
+        logger.info(f"💾 DB に保存: {result['company_name']}")
+
+        # Google Sheets にも保存（同期用）
         append_to_gsheet_phase5(
             result['company_name'],
             result['phone_number'],
             result['status'],
             result['url']
         )
-        
+
         if result['status'] == 'ready_to_contact':
             success_count += 1
-        
+
         # 進捗表示
-        logger.info(f"Progress: {idx}/{len(url_list)}")
-    
+        logger.info(f"Progress: {idx}/{len(url_list)} (既存スキップ: {skipped_count})")
+
     # 統計情報
     logger.info("=" * 80)
-    logger.info(f"Completed: {len(url_list)} items, {success_count} with phone numbers")
+    logger.info(f"Completed: {len(url_list)} items, {success_count} with phone numbers, {skipped_count} skipped")
     logger.info("=" * 80)
-    
+
     # キャッシュ統計
     cache_stats = get_cache_stats()
     logger.info(f"💾 キャッシュ統計: {cache_stats[0]} URLs, {cache_stats[1]} MB")
@@ -124,10 +148,10 @@ def run_batch_scraping(limit=None):
 def main():
     """メイン処理"""
     setup_logging()
-    
+
     # キャッシュを初期化
     init_cache()
-    
+
     # コマンドライン引数を解析
     limit = None
     for arg in sys.argv[1:]:
@@ -138,9 +162,9 @@ def main():
             logger.info("🧹 キャッシュをクリアします")
             clear_cache()
             return
-    
+
     logger.info("=" * 80)
-    
+
     # バッチ処理実行
     run_batch_scraping(limit)
 
