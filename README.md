@@ -145,3 +145,15 @@ python send_email.py --limit 15 --dry-run
 - email_extractor_SPECIFICATION.md - メール抽出仕様書
 - STEP6B_IMPLEMENTATION_SUSPENSION.md - Step 6b 延期理由
 - PHONE_EXTRACTION_DESIGN.md - 電話番号抽出パイプライン設計
+
+### website_scraper_v2.py - Web スクレイピング & 電話番号抽出
+- 目的: CRM の公式サイト URL から企業情報（電話番号等）を抽出
+- 機能:
+  - HTML クロール（複数ページを自動検索）
+  - 企業名抽出（OG タグ、JSON-LD、title タグから優先度順に抽出）
+  - 電話番号抽出（tel リンク、JSON-LD、メタタグ、正規表現から多段階抽出）
+  - キャッシング機能（HTML キャッシュで API 効率化）
+- 出力先: Google Sheets Phase 5 ファイル（SPREADSHEET_ID_PHASE5）
+- 状態: 実装済み（2026-04-18）、現在修正中（出力先の正規化）
+- 詳細: PHONE_EXTRACTION_DESIGN.md 参照
+
