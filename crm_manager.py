@@ -809,7 +809,15 @@ def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
         spreadsheet = client.open_by_key(config.SPREADSHEET_ID_PHASE5)
         worksheet = spreadsheet.worksheet(config.SHEET_NAME_PHASE5)
         
-        row_data = [company_name, phone_number, status, website_url, datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")]
+        row_data = [
+            company_name,          # column 1: company_name
+            website_url,           # column 2: website_url
+            phone_number,          # column 3: phone
+            "",                    # column 4: email
+            "",                    # column 5: source_page
+            status,                # column 6: status
+            datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")  # column 7: scraped_at
+        ]
         worksheet.append_row(row_data)
 
         logger.info(f"💾 Phase 5 に保存: {company_name} | {phone_number} | {status}")
@@ -817,4 +825,5 @@ def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
     except Exception as e:
         logger.error(f"❌ Phase 5 保存エラー: {e}")
         return False
+
 
