@@ -817,3 +817,4 @@ def append_to_gsheet_phase5(company_name, phone_number, status, website_url):
     except Exception as e:
         logger.error(f"❌ Phase 5 保存エラー: {e}")
         return False
+
