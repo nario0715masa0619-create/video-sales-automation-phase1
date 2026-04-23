@@ -144,7 +144,7 @@ def main():
             processed_count += 1
 
             # 1回目と2回目以降の切り替え判定
-            if processed_count <= first_send_limit:
+            if processed_count <= actual_first:
                 email_num = 1  # 1回目は必ず1通目
             else:
                 # 2回目以降：データがあれば2通目、なければスキップ
