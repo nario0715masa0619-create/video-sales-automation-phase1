@@ -133,7 +133,7 @@ def run_batch_scraping(limit=None):
         append_phase5_data(
             result['company_name'],
             result['phone_number'],
-            result['email'],
+            None,
             result['status'],
             result['url']
         )
@@ -141,9 +141,9 @@ def run_batch_scraping(limit=None):
 
         # Google Sheets にも保存（email を含む）
         append_to_gsheet_phase5(
-            result['company_name'],
-            result['phone_number'],
-            result['email'],
+              result['company_name'],
+              result['phone_number'],
+              None,
             result['status'],
             result['url']
         )
