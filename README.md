@@ -227,3 +227,15 @@ Get-Content logs/send_email.log | Select-String "error"
 
 **最終更新:** 2026‑04‑24
 **ステータス:** ✅ Phase 1～7 完成、本番運用準備完了
+
+## ドキュメント
+
+全ドキュメント管理ガイドは以下をご参照ください:
+
+- **[docs/DOCUMENTATION_MAP.md](docs/DOCUMENTATION_MAP.md)** - ドキュメント全体管理ガイド（全 7 章）
+  - ロール別推奨読み順
+  - タスク・ドキュメント マッピング
+  - 更新手順・品質チェック
+  - 自動化計画
+
+その他のドキュメント: docs/INDEX.md を参照
