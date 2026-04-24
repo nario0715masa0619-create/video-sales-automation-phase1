@@ -181,3 +181,45 @@ video-sales-automation-phase1/
 
 Phase 6 を同一リポジトリ内で準備予定
 
+
+
+## Phase 6 ドキュメント
+
+### PHASE6_PLAN.md
+
+Phase 6 実装計画書。仕様、処理フロー、マッチングロジック、テストケースを記載。
+
+内容:
+- ミッション: Phase 5 メール反映 & 送信履歴リセット
+- 入力: Phase 5 から 45～100 件のメールアドレス
+- 処理: company_name + website_url で突合、Column C 上書き、Column Z リセット、Column AA～AE クリア
+- マッチング: 完全一致のみ
+- リセット条件: Column Z > 0 の場合
+- テスト: 5 パターン（基本、既営業、混合、一致なし、email=None）
+
+### PHASE6_GUIDE.md
+
+Phase 6 実装ガイド。関数リファレンス、設定項目、実行フローを記載。
+
+内容:
+- 関数: get_google_sheets_client, read_phase5_emails, read_crm_leads, match_and_update, reset_send_history, main
+- 設定: SPREADSHEET_ID_PHASE5, SHEET_NAME_PHASE5, CRM_SPREADSHEET_ID, CRM_SHEET_NAME
+- ログ: logs/phase6_crm_updater.log に記録
+- パフォーマンス: 5～10 秒（推定）
+- 既存パイプライン連携: daily_operations.py が自動メール送信開始
+- トラブルシューティング: credentials.json, Sheet not found, Access Denied, Network Error
+
+## クイックリファレンス
+
+### Phase 6 実行
+
+python crm_updater.py
+
+### ログ確認
+
+Get-Content logs/phase6_crm_updater.log -Tail 50
+
+### 処理の順序
+
+Phase 5 完了 → Phase 6 実行 → CRM 更新 → daily_operations 自動実行 → メール送信開始
+

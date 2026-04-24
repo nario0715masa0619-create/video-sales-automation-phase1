@@ -63,3 +63,55 @@ tools/email_extractor.py で実装
 - 📝 **ログ**：logs/website_scraper.log
 - 📚 **ドキュメント**：docs/ フォルダ（11 ファイル）
 
+
+
+## Phase 6 準備中
+
+### 役割
+
+Phase 5 で抽出したメールアドレスを CRM Sheet に反映し、既営業企業の送信履歴をリセットするパイプラインです。
+
+### 処理フロー
+
+Phase 5 Google Sheet → crm_updater.py → CRM Sheet Leads
+  ↓
+Column C: メールアドレス上書き
+Column Z: 送信回数リセット（Z>0 の場合）
+Column AA～AE: 送信日時クリア（Z>0 の場合）
+
+### マッチング方式
+
+company_name + website_url の組合せで完全一致
+
+### 処理内容
+
+1. Phase 5 から有効メールを読込
+2. CRM Leads と突合
+3. 一致する企業のメールを上書き
+4. Column Z を確認
+   - Z == 0: 何もしない
+   - Z > 0: Z を 0 にリセット & AA～AE をクリア
+5. ログに記録
+
+### 統計出力例
+
+処理完了: 45 件
+  ✅ 上書き: 40 件
+    → うち リセット: 25 件
+    → うち 上書きのみ: 15 件
+  ⏭️  スキップ: 5 件（一致なし）
+  ❌ エラー: 0 件
+
+### 実行コマンド
+
+python crm_updater.py
+
+### ログ確認
+
+Get-Content logs/phase6_crm_updater.log -Tail 50
+
+### ドキュメント
+
+- docs/PHASE6_PLAN.md
+- docs/PHASE6_GUIDE.md
+
