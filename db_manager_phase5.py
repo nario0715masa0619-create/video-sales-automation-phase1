@@ -20,13 +20,13 @@ def init_phase5_db():
         company_name TEXT NOT NULL,
         website_url TEXT UNIQUE NOT NULL,
         phone_number TEXT,
+        email TEXT,
         status TEXT,
         scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
     """)
 
-    # インデックス作成（重複チェック高速化）
     c.execute("""
     CREATE INDEX IF NOT EXISTS idx_website_url ON phase5_data(website_url)
     """)
@@ -45,16 +45,16 @@ def check_url_exists(website_url):
 
     return result is not None
 
-def append_phase5_data(company_name, phone_number, status, website_url):
+def append_phase5_data(company_name, phone_number, email, status, website_url):
     """Phase 5 データを DB に保存"""
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     c.execute("""
-    INSERT OR REPLACE INTO phase5_data 
-    (company_name, website_url, phone_number, status, updated_at)
-    VALUES (?, ?, ?, ?, CURRENT_TIMESTAMP)
-    """, (company_name, website_url, phone_number, status))
+    INSERT OR REPLACE INTO phase5_data
+    (company_name, website_url, phone_number, email, status, updated_at)
+    VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+    """, (company_name, website_url, phone_number, email, status))
 
     conn.commit()
     conn.close()
@@ -69,4 +69,3 @@ def get_phase5_count():
     conn.close()
 
     return count
-

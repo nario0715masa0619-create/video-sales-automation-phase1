@@ -8,9 +8,34 @@ from config import DOMAIN_LAUNCH_DATE, WARMUP_SCHEDULE, ENABLE_AGGRESSIVE_MODE, 
 from crm_manager import get_pending_leads, CRMManager
 import argparse
 import uuid
+import sqlite3
 
 logger.add('logs/send_email.log', rotation='500 MB')
 
+# ===== Phase 6 検証結果チェック =====
+def get_validation_status(email):
+    """DB から Phase 6 の検証結果を取得"""
+    try:
+        conn = sqlite3.connect('logs/phase5_data.db')
+        cur = conn.cursor()
+        cur.execute('SELECT validation_status FROM phase5_data WHERE email = ? LIMIT 1', (email,))
+        result = cur.fetchone()
+        conn.close()
+        return result[0] if result else None
+    except Exception as e:
+        logger.warning(f"検証ステータス取得失敗 ({email}): {e}")
+        return None
+
+def is_sendable_email(validation_status):
+    """送信可能か判定"""
+    if validation_status is None:
+        # 未検証の場合は送信許可（Phase 6 実行待ち）
+        return True
+    if validation_status in ["valid", "catch-all"]:
+        return True
+    return False  # invalid, do_not_mail, abuse, test_email は送信NG
+
+# ===== 既存の関数 =====
 def get_daily_limit():
     launch = datetime.fromisoformat(DOMAIN_LAUNCH_DATE)
     days_elapsed = (datetime.now() - launch).days
@@ -69,7 +94,7 @@ def main():
 
     # 配分比率に基づいて1回目と2回目以降の送信上限を計算
     first_send_limit, followup_send_limit = calculate_send_limits(daily_limit)
-    
+
     logger.info(f'=== メール送信開始 (limit={daily_limit}, wait={args.wait}秒, dry_run={args.dry_run}) ===')
     logger.info(f'現在時刻: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
     logger.info(f'本日の送信上限: {daily_limit} 件')
@@ -81,36 +106,38 @@ def main():
 
     leads = get_pending_leads()[:daily_limit]
     logger.info(f'対象リード: {len(leads)} 件')
-    
+
     # 初回とリピートを分離
     first_send_leads = [lead for lead in leads if int(lead.get('メール送信回数', 0) or 0) == 0]
     followup_leads = [lead for lead in leads if int(lead.get('メール送信回数', 0) or 0) >= 1]
     logger.info(f'  → 初回: {len(first_send_leads)} 件, リピート: {len(followup_leads)} 件')
-    
+
     # 送信数を計算（リピート不足分を初回で補填）
     first_send_limit = int(daily_limit * EMAIL_FIRST_SEND_RATIO)
     followup_send_limit = daily_limit - first_send_limit
-    
+
     actual_followup = min(len(followup_leads), followup_send_limit)
     additional_first = followup_send_limit - actual_followup
     actual_first = min(len(first_send_leads), first_send_limit + additional_first)
-    
+
     logger.info(f'送信配分: 初回 {actual_first}件, リピート {actual_followup}件')
-    
+
     # リストを制限
     first_send_leads = first_send_leads[:actual_first]
     followup_leads = followup_leads[:actual_followup]
-    
+
     # カウンター初期化
     processed_count = 0
     email_count = 0
-    
+
     if not leads:
         logger.warning('メール対象リードなし')
         return
 
     sender = XserverSMTPSender()
     sent_count = 0
+    skipped_count = 0
+    bounced_count = 0
     total_leads = len(leads)
 
     # 初回リストを処理
@@ -127,7 +154,16 @@ def main():
             # メールアドレスがなければスキップ
             if not email or not email.strip():
                 logger.warning(f"[SKIP] スキップ: メールアドレスなし ({ch_name})")
+                skipped_count += 1
                 continue
+            
+            # ===== Phase 6 検証結果をチェック =====
+            validation_status = get_validation_status(email)
+            if not is_sendable_email(validation_status):
+                logger.warning(f"[SKIP] バウンスリスク: {ch_name} (validation: {validation_status})")
+                bounced_count += 1
+                continue
+            
             logger.info(f"[CANDIDATE] 処理中: {ch_name} ({email})")
 
             # タプルを辞書に変換 (idx, website_url, email, company_name)
@@ -139,7 +175,7 @@ def main():
                 }
             else:
                 lead_dict = lead
-            
+
             # スキップされなかった企業だけカウント
             processed_count += 1
 
@@ -151,8 +187,9 @@ def main():
                 email_num = get_next_email_num(email)
                 if not email_num:
                     logger.info(f'スキップ: 2通目データなし ({ch_name})')
+                    skipped_count += 1
                     continue
-            
+
 
             logger.info(f'[{processed_count}/{daily_limit}] {email_num} 通目を送信します: {ch_name}')
 
@@ -174,7 +211,7 @@ def main():
                     message_id = f"msg_{datetime.now().strftime('%Y%m%d')}_{uuid.uuid4().hex[:8]}"
                     logger.info(f'✅ {ch_name} へメール送信成功 (MessageID: {message_id})')
                     log_send_event(to_address=email, message_id=message_id, status='sent')
-                    
+
                     # CRM を更新（成功）
                     try:
                         crm = CRMManager()
@@ -182,11 +219,12 @@ def main():
                         logger.debug(f'✅ CRM 更新: {ch_name}')
                     except Exception as e:
                         logger.warning(f'⚠️ CRM 更新失敗 [{ch_name}]: {e}')
-                    
+
                     sent_count += 1
                 else:
                     logger.error(f'❌ {ch_name} へメール送信失敗')
-                    
+                    bounced_count += 1
+
                     # CRM を更新（失敗フラグ）
                     try:
                         crm = CRMManager()
@@ -204,15 +242,11 @@ def main():
             import traceback
             traceback.print_exc()
 
-    logger.info(f'=== メール送信完了: {sent_count} 件 ===')
+    logger.info(f'=== メール送信完了 ===')
+    logger.info(f'送信成功: {sent_count} 件')
+    logger.info(f'バウンスリスク除外: {bounced_count} 件')
+    logger.info(f'その他スキップ: {skipped_count} 件')
     logger.info(f'実行終了時刻: {datetime.now().strftime("%Y-%m-%d %H:%M:%S")}')
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-

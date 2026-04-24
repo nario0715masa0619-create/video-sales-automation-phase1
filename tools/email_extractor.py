@@ -13,17 +13,22 @@ def is_valid_email(email_str):
     """メールアドレスの妥当性チェック"""
     if not email_str:
         return False
-    
+
     # 基本的なメールアドレス正規表現
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    
+
     if not re.match(pattern, email_str):
         logger.debug(f"❌ 無効なメールアドレス形式: {email_str}")
         return False
-    
+
     # ドメイン部分を抽出
     domain = email_str.split('@')[1].lower()
-    
+
+    # localhost を除外
+    if 'localhost' in domain:
+        logger.debug(f"❌ localhost アドレス除外: {email_str}")
+        return False
+
     # テスト用ドメインを除外
     invalid_domains = [
         'example.com',
@@ -34,11 +39,11 @@ def is_valid_email(email_str):
         'example.org',
         'example.net',
     ]
-    
+
     if domain in invalid_domains:
         logger.debug(f"❌ テスト用ドメイン除外: {email_str}")
         return False
-    
+
     # よくある誤字ドメインを除外
     common_typos = {
         'gmial.com': 'gmail.com',
@@ -46,11 +51,11 @@ def is_valid_email(email_str):
         'yahooo.com': 'yahoo.com',
         'hotmial.com': 'hotmail.com',
     }
-    
+
     if domain in common_typos:
         logger.debug(f"❌ 誤字ドメイン除外: {email_str} (正: {common_typos[domain]})")
         return False
-    
+
     logger.debug(f"✅ 有効なメールアドレス: {email_str}")
     return True
 
@@ -63,12 +68,22 @@ def extract_email_from_mailto_link(soup):
     return None
 
 def extract_email_from_regex(html_text):
-    """正規表現で抽出"""
+    """正規表現で抽出（画像ファイルを除外）"""
     pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}'
     matches = re.findall(pattern, html_text)
+    
+    # 画像拡張子リスト
+    image_extensions = ['png', 'jpg', 'jpeg', 'gif', 'webp', 'svg', 'bmp', 'ico']
+    
     for email in matches:
+        # 画像ファイルを除外（例：button-only@2x.png）
+        if any(email.lower().endswith(f'.{ext}') for ext in image_extensions):
+            logger.debug(f"❌ 画像ファイル除外: {email}")
+            continue
+        
         if is_valid_email(email):
             return email
+    
     return None
 
 def extract_email_from_jsonld(soup):

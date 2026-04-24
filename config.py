@@ -351,3 +351,9 @@ SKIP_URL_PATTERNS = [
 ]
 
 
+
+# ==================================================
+# ZeroBounce API 設定（Phase 6）
+# ==================================================
+ZEROBOUNCE_API_KEY: str = os.getenv("ZEROBOUNCE_API_KEY", "")
+ZEROBOUNCE_API_URL: str = "https://api.zerobounce.net/v2/validate"

@@ -431,6 +431,18 @@ class CRMManager:
             if not is_valid_email_for_send(email):
                 continue
 
+            # ===== Phase 6 の検証結果をチェック =====
+            validation_status = lead.get("validation_status", None)
+            
+            if validation_status == "insufficient_credits":
+                # クレジット切れで検証中断 → 送信対象から除外（再検証待ち）
+                logger.warning(f"クレジット切れ検証待ち: {email}")
+                continue
+            elif validation_status and validation_status not in ["valid", "catch-all"]:
+                # その他の無効（invalid, do_not_mail, abuse, test_email, error） → 除外
+                logger.debug(f"検証結果で除外: {email} (status: {validation_status})")
+                continue
+
             # メール送信回数チェック
             email_count = int(lead.get("メール送信回数", 0) or 0)
 
@@ -799,32 +811,30 @@ def read_website_urls_from_crm(limit=None):
         return []
 
 
-def append_to_gsheet_phase5(company_name, phone_number, status, website_url, email=""):
+
+def append_to_gsheet_phase5(company_name, phone_number, email, status, website_url):
     """Phase 5 Sheet（別ファイル）にデータを追記"""
     try:
         crm = get_crm()
         client = crm._get_client()
-        
+
         # Phase 5 用の別ファイルを開く
         spreadsheet = client.open_by_key(config.SPREADSHEET_ID_PHASE5)
         worksheet = spreadsheet.worksheet(config.SHEET_NAME_PHASE5)
-        
+
         row_data = [
-            company_name,          # column 1: company_name
-            website_url,           # column 2: website_url
-            phone_number,          # column 3: phone
-            "",                    # column 4: email
-            "",                    # column 5: source_page
-            status,                # column 6: status
-            datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")  # column 7: scraped_at
+            company_name,
+            website_url,
+            phone_number,
+            email if email else "None",
+            "",
+            status,
+            datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
         ]
         worksheet.append_row(row_data)
 
-        logger.info(f"💾 Phase 5 に保存: {company_name} | {phone_number} | {status}")
+        logger.info(f"💾 Phase 5 に保存: {company_name} | {phone_number} | {email if email else 'None'} | {status}")
         return True
     except Exception as e:
         logger.error(f"❌ Phase 5 保存エラー: {e}")
         return False
-
-
-

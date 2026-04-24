@@ -49,6 +49,7 @@ def scrape_website(url_data):
         return {
             'company_name': crm_company_name,
             'phone_number': None,
+            'email': None,
             'status': 'skipped',
             'url': website_url
         }
@@ -61,6 +62,7 @@ def scrape_website(url_data):
         return {
             'company_name': crm_company_name,
             'phone_number': None,
+            'email': None,
             'status': 'invalid',
             'url': website_url
         }
@@ -76,15 +78,26 @@ def scrape_website(url_data):
             phone_number = phone
             break
 
-    # Status 判定
+    # メールアドレス抽出（複数ページから試す）
+    extracted_email = None
+    for html in html_list:
+        email_found = extract_email(html)
+        if email_found:
+            extracted_email = email_found
+            break
+
+    # Status 判定（電話番号が基準）
     status = 'ready_to_contact' if phone_number else 'invalid'
 
     return {
         'company_name': company_name,
         'phone_number': phone_number,
+        'email': extracted_email,
         'status': status,
         'url': website_url
     }
+
+
 
 def run_batch_scraping(limit=None):
     """バッチ処理でスクレイピング実行"""
@@ -102,6 +115,7 @@ def run_batch_scraping(limit=None):
 
     # 処理開始
     success_count = 0
+    email_count = 0
     skipped_count = 0
 
     for idx, url_data in enumerate(url_list, 1):
@@ -115,32 +129,37 @@ def run_batch_scraping(limit=None):
 
         result = scrape_website(url_data)
 
-        # DB に保存
+        # DB に保存（email を含む）
         append_phase5_data(
             result['company_name'],
             result['phone_number'],
+            result['email'],
             result['status'],
             result['url']
         )
         logger.info(f"💾 DB に保存: {result['company_name']}")
 
-        # Google Sheets にも保存（同期用）
+        # Google Sheets にも保存（email を含む）
         append_to_gsheet_phase5(
             result['company_name'],
             result['phone_number'],
+            result['email'],
             result['status'],
             result['url']
         )
 
         if result['status'] == 'ready_to_contact':
             success_count += 1
+        
+        if result['email']:
+            email_count += 1
 
         # 進捗表示
         logger.info(f"Progress: {idx}/{len(url_list)} (既存スキップ: {skipped_count})")
 
     # 統計情報
     logger.info("=" * 80)
-    logger.info(f"Completed: {len(url_list)} items, {success_count} with phone numbers, {skipped_count} skipped")
+    logger.info(f"Completed: {len(url_list)} items, {success_count} with phone numbers, {email_count} with emails, {skipped_count} skipped")
     logger.info("=" * 80)
 
     # キャッシュ統計
@@ -150,25 +169,28 @@ def run_batch_scraping(limit=None):
 def main():
     """メイン処理"""
     setup_logging()
-
-    # コマンドライン引数を解析
+    
     limit = None
+    clear_cache = False
+    
     for arg in sys.argv[1:]:
         if arg.startswith('--limit='):
             limit = int(arg.split('=')[1])
             logger.info(f"📋 オプション: limit={limit}")
         elif arg == '--clear-cache':
+            clear_cache = True
             logger.info("🧹 キャッシュをクリアします")
-            cache.clear_expired_caches()
-            return
-
+    
+    if clear_cache:
+        cache.clear_expired_caches()
+    
     logger.info("=" * 80)
-
+    
     # バッチ処理実行
     run_batch_scraping(limit)
 
+
 if __name__ == '__main__':
     main()
-
 
 

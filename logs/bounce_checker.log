@@ -159,3 +159,11 @@
 2026-04-23 09:00:08.936 | INFO     | __main__:check_bounces:106 - 本日送信数: 0 件
 2026-04-23 09:00:08.937 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
 2026-04-23 09:00:08.937 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
+2026-04-24 09:00:02.209 | INFO     | __main__:check_bounces:19 - === バウンスチェック開始 ===
+2026-04-24 09:00:02.210 | INFO     | __main__:check_bounces:27 - 接続情報: sv16675.xserver.jp:993 / marketing@luvira-biz.jp
+2026-04-24 09:00:04.677 | INFO     | __main__:check_bounces:35 - ✅ IMAP ログイン成功
+2026-04-24 09:00:05.536 | INFO     | __main__:check_bounces:80 - ✅ IMAP ログアウト
+2026-04-24 09:00:05.596 | INFO     | __main__:check_bounces:105 - === バウンス集計完了 ===
+2026-04-24 09:00:05.596 | INFO     | __main__:check_bounces:106 - 本日送信数: 0 件
+2026-04-24 09:00:05.596 | INFO     | __main__:check_bounces:107 - 本日バウンス数: 0 件
+2026-04-24 09:00:05.597 | INFO     | __main__:check_bounces:108 - バウンス率: 0.00%
