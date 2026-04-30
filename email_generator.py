@@ -22,7 +22,7 @@ from dataclasses import dataclass
 from typing import Optional
 from loguru import logger
 
-import google.generativeai as genai
+from openai import OpenAI
 from tenacity import (
     retry,
     stop_after_attempt,
@@ -33,7 +33,6 @@ from tenacity import (
 import config
 
 # Gemini API の初期化
-genai.configure(api_key=config.GEMINI_API_KEY)
 
 
 # ==================================================
@@ -61,14 +60,17 @@ class EmailContent:
 # Gemini によるパーソナライズコンテンツ生成
 # ==================================================
 
+# Gemini クライアント初期化
+client = OpenAI(api_key=config.OPENAI_API_KEY)
+
 @retry(
     stop=stop_after_attempt(3),
     wait=wait_exponential(multiplier=1, min=2, max=10),
-    retry=retry_if_exception_type(Exception),
+    retry=retry_if_exception_type((Exception,))
 )
 def _call_gemini(prompt: str, max_tokens: int = 1024) -> str:
     """
-    Gemini API を呼び出してテキストを生成する。
+    OpenAI API を呼び出してテキストを生成する。
 
     Args:
         prompt: 送信するプロンプト
@@ -77,16 +79,17 @@ def _call_gemini(prompt: str, max_tokens: int = 1024) -> str:
     Returns:
         str: 生成されたテキスト
     """
-    model = genai.GenerativeModel(
-        model_name=config.GEMINI_MODEL,
-        generation_config=genai.types.GenerationConfig(
-            max_output_tokens=max_tokens,
-            temperature=0.7,      # 適度な創造性
-            top_p=0.95,
-        )
+    response = client.chat.completions.create(
+        model=config.OPENAI_MODEL,
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant that generates sales email content in Japanese."},
+            {"role": "user", "content": prompt}
+        ],
+        max_tokens=max_tokens,
+        temperature=0.7,
+        top_p=0.95,
     )
-    response = model.generate_content(prompt)
-    return response.text.strip()
+    return response.choices[0].message.content.strip()
 
 
 
@@ -115,7 +118,7 @@ def _generate_video_comment(
 - 他のチャンネル名や別の動画タイトルの例を出さないこと
 - 箇条書きや「---」「##」などの記号は使わないこと
 - 「ためになりました」「勉強になりました」などの過度な褒め言葉は避けること
-- 30〜60文字程度の日本語で書くこと
+- 100〜150文字程度の日本語で書くこと
 - 文末は「〜という点で、Insight データの活用価値があると感じました」のような形にすること
 
 出力フォーマット：
@@ -124,7 +127,7 @@ def _generate_video_comment(
 """.strip()
 
     try:
-        comment = _call_gemini(prompt, max_tokens=128)
+        comment = _call_gemini(prompt, max_tokens=512)
         comment = re.sub(r'[\n\r]+', ' ', comment).strip()
         return comment
     except Exception as e:
@@ -592,4 +595,18 @@ if __name__ == "__main__":
         content = generate_email(test_lead, num)
         print(f"件名: {content.subject}")
         print(f"本文:\n{content.body[:300]}...")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

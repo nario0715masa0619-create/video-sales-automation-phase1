@@ -357,3 +357,7 @@ SKIP_URL_PATTERNS = [
 # ==================================================
 ZEROBOUNCE_API_KEY: str = os.getenv("ZEROBOUNCE_API_KEY", "")
 ZEROBOUNCE_API_URL: str = "https://api.zerobounce.net/v2/validate"
+
+# OpenAI API 設定
+OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
+OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4-turbo")
