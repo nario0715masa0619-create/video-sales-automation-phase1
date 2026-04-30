@@ -277,7 +277,7 @@ def _build_email_1(lead: dict, personalized: dict) -> EmailContent:
     channel_name = lead.get('チャンネル名', '')
     latest_title = (lead.get('最新動画タイトル') or "").strip()
     company_name = (lead.get('会社名') or channel_name or '御社').strip()
-    
+
     subject = (
         f"YouTube Insight「{channel_name}」のテーマが"
         f"168個に分散している課題"
@@ -306,17 +306,27 @@ YouTube Studio から取得できる Insight データって、
 という質問にすぐ答えられない状態になってます。
 
 当社は「日本語に特化した AI」で、
-この 168 個を「6 つに完全整理」するサービスを提供しています。
+この 168 個を経営判断に使える 6カテゴリに「言語化して整理」するサービスを提供しています。
 
 ✅ 完全正規化（Unmapped = 0%）
 ✅ Semantic Purity 0.54 → 0.61（+13%）
 ✅ 毎月 2～3 時間の手作業が削減
+✅ 「どのテーマに何本・何％投資しているか」を一言で説明できるようになる
 
 {personalized.get('video_comment', '')}
 
 {personalized.get('improvement_hint', '')}
 
-デモ分析（無料）で、実際の分類結果を見てみませんか？
+「YouTubeの"もやっとした感覚"を、言語化された数字とコメントで見たい」
+というニーズがあれば、
+
+まずは 3 本分だけ、無料のデモ分析をお試しいただけませんか？
+
+・チャンネルURL
+・診断してほしい動画のURL（3本まで）
+
+をこのメールへのご返信でお送りいただければ、
+実際の分類結果と、言語化した分析コメントを添えてご提出します。
 
 {config.EMAIL_SIGNATURE}
 """.strip()
@@ -328,6 +338,7 @@ YouTube Studio から取得できる Insight データって、
         personalized_comment=personalized.get('video_comment', ''),
         improvement_hint=personalized.get('improvement_hint', ''),
     )
+
 
 
 def _build_email_2(lead: dict, personalized: dict) -> EmailContent:
@@ -581,3 +592,4 @@ if __name__ == "__main__":
         content = generate_email(test_lead, num)
         print(f"件名: {content.subject}")
         print(f"本文:\n{content.body[:300]}...")
+
