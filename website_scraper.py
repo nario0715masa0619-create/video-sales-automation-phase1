@@ -5,12 +5,14 @@ website_scraper_v2.py
 
 import logging
 import sys
+from datetime import datetime
 from config import LOG_FILE
 from cache_manager import CacheManager
 from crm_manager import read_website_urls_from_crm, append_to_gsheet_phase5
 from db_manager_phase5 import init_phase5_db, check_url_exists, append_phase5_data
 from tools.phone_extractor import extract_phone
-from tools.email_extractor import extract_email
+from tools.email_extractor import extract_email, is_valid_email
+from bounce_checker import validate_email_with_zerobounce
 from tools.website_crawler import crawl_domain
 from tools.company_info_extractor import extract_company_name
 
@@ -83,8 +85,44 @@ def scrape_website(url_data):
     for html in html_list:
         email_found = extract_email(html)
         if email_found:
-            extracted_email = email_found
-            break
+            # 1. アグレッシブなロジックフィルタ
+            if not is_valid_email(email_found):
+                logger.info(f"   ❌ ロジック判定により除外: {email_found}")
+                continue
+            
+            # 2. ZeroBounce API 検証
+            logger.info(f"   🔍 ZeroBounce API で検証中: {email_found}")
+            try:
+                api_result = validate_email_with_zerobounce(email_found)
+                if api_result.get("is_valid"):
+                    logger.info(f"   ✅ ZeroBounce API 検証合格: {email_found} ({api_result.get('status')})")
+                    extracted_email = email_found
+                    break
+                else:
+                    logger.info(f"   ❌ ZeroBounce API 検証不合格: {email_found} ({api_result.get('status')})")
+            except Exception as e:
+                logger.error(f"   ⚠️ ZeroBounce API 検証中にエラー: {e}")
+
+    # 問い合わせフォームURL抽出
+    from bs4 import BeautifulSoup
+    from urllib.parse import urljoin
+    import re
+    
+    contact_form_url = 'None'
+    if re.search(r'contact|inquiry|form|お問い合わせ', website_url, re.I):
+        contact_form_url = website_url
+    else:
+        for html in html_list:
+            soup = BeautifulSoup(html, 'html.parser')
+            for a in soup.find_all('a', href=True):
+                href = a['href']
+                text = a.get_text()
+                if re.search(r'contact|inquiry|form', href, re.I) or re.search(r'お問い合わせ|お問合せ|お見積もり', text, re.I):
+                    contact_form_url = urljoin(website_url, href)
+                    contact_form_url = contact_form_url.split('#')[0]
+                    break
+            if contact_form_url != 'None':
+                break
 
     # Status 判定（電話番号が基準）
     status = 'ready_to_contact' if phone_number else 'invalid'
@@ -94,7 +132,8 @@ def scrape_website(url_data):
         'phone_number': phone_number,
         'email': extracted_email,
         'status': status,
-        'url': website_url
+        'url': website_url,
+        'contact_form_url': contact_form_url
     }
 
 
@@ -119,6 +158,7 @@ def run_batch_scraping(limit=None):
     skipped_count = 0
 
     for idx, url_data in enumerate(url_list, 1):
+        logger.info(f"🔍 【{idx}/{len(url_list)}】 ループ開始: {url_data}")
         website_url = url_data[1]
 
         # DB で重複チェック
@@ -129,29 +169,35 @@ def run_batch_scraping(limit=None):
 
         result = scrape_website(url_data)
 
-        # DB に保存（email を含む）
+        # DB に保存（email を含む、新カラムにも対応）
         append_phase5_data(
             result['company_name'],
             result['phone_number'],
-            None,
+            result.get('email'),
             result['status'],
-            result['url']
+            result['url'],
+            result.get('contact_form_url', 'None'),
+            result.get('remarks', '')
         )
         logger.info(f"💾 DB に保存: {result['company_name']}")
 
         # Google Sheets にも保存（email を含む）
         append_to_gsheet_phase5(
-              result['company_name'],
-              result['phone_number'],
-              None,
+            result['company_name'],
+            result['url'],
+            result['phone_number'],
+            result.get('email', ''),
+            result['url'],
             result['status'],
-            result['url']
+            datetime.now().isoformat(),
+            result.get('contact_form_url', 'None'),
+            result.get('remarks', '')
         )
 
         if result['status'] == 'ready_to_contact':
             success_count += 1
         
-        if result['email']:
+        if result.get('email'):
             email_count += 1
 
         # 進捗表示
@@ -192,5 +238,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-

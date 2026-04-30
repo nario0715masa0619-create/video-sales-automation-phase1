@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+1: def scrape_website(url_data):
+2:     """単一の Website をスクレイピング"""
+3:     row_index, website_url, email, crm_company_name = url_data
+4: 
+5:     logger.info(f"Row {row_index} → {website_url}")
+6: 
+7:     # スキップ判定
+8:     if should_skip_url(website_url):
+  File "<string>", line 11, in <module>
+    print(f'{i}: {line}')
+    ~~~~~^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'cp932' codec can't encode character '\u23ed' in position 28: illegal multibyte sequence

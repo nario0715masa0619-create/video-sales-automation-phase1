@@ -23,7 +23,12 @@ def init_phase5_db():
         email TEXT,
         status TEXT,
         scraped_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        validation_status TEXT,
+        validation_score INTEGER,
+        validation_at TIMESTAMP,
+        contact_form_url TEXT,
+        remarks TEXT
     )
     """)
 
@@ -45,16 +50,16 @@ def check_url_exists(website_url):
 
     return result is not None
 
-def append_phase5_data(company_name, phone_number, email, status, website_url):
+def append_phase5_data(company_name, phone_number, email, status, website_url, contact_form_url=None, remarks=None):
     """Phase 5 データを DB に保存"""
     conn = sqlite3.connect(DB_PATH)
     c = conn.cursor()
 
     c.execute("""
     INSERT OR REPLACE INTO phase5_data
-    (company_name, website_url, phone_number, email, status, updated_at)
-    VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
-    """, (company_name, website_url, phone_number, email, status))
+    (company_name, website_url, phone_number, email, status, updated_at, contact_form_url, remarks)
+    VALUES (?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?)
+    """, (company_name, website_url, phone_number, email, status, contact_form_url, remarks))
 
     conn.commit()
     conn.close()

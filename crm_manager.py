@@ -812,7 +812,7 @@ def read_website_urls_from_crm(limit=None):
 
 
 
-def append_to_gsheet_phase5(company_name, phone_number, email, status, website_url):
+def append_to_gsheet_phase5(company_name, website_url, phone_number, email, source_page, status, scraped_at, contact_form_url='', notes=''):
     """Phase 5 Sheet（別ファイル）にデータを追記"""
     try:
         crm = get_crm()
@@ -827,9 +827,11 @@ def append_to_gsheet_phase5(company_name, phone_number, email, status, website_u
             website_url,
             phone_number,
             email if email else "None",
-            "",
+            source_page,
             status,
-            datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S")
+            datetime.now(JST).strftime("%Y-%m-%d %H:%M:%S"),
+            contact_form_url,
+            notes
         ]
         worksheet.append_row(row_data)
 
@@ -838,3 +840,6 @@ def append_to_gsheet_phase5(company_name, phone_number, email, status, website_u
     except Exception as e:
         logger.error(f"❌ Phase 5 保存エラー: {e}")
         return False
+
+
+

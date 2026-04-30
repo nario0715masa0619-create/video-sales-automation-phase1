@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 # config.py から設定を読込
 try:
-    from config import SPREADSHEET_ID_PHASE5, SHEET_NAME_PHASE5, CRM_SPREADSHEET_ID, CRM_SHEET_NAME
+    from config import SPREADSHEET_ID_PHASE5, SHEET_NAME_PHASE5, SPREADSHEET_ID as CRM_SPREADSHEET_ID, SHEET_NAME_CRM
 except ImportError:
     logger.error("config.py が見つかりません")
     sys.exit(1)
@@ -26,7 +26,7 @@ def get_google_sheets_client():
     """Google Sheets クライアントを取得"""
     try:
         creds = Credentials.from_service_account_file(
-            'credentials.json',
+            'credentials/service_account.json',
             scopes=['https://www.googleapis.com/auth/spreadsheets']
         )
         return gspread.authorize(creds)
@@ -74,7 +74,7 @@ def read_crm_leads():
     try:
         client = get_google_sheets_client()
         sheet = client.open_by_key(CRM_SPREADSHEET_ID)
-        worksheet = sheet.worksheet(CRM_SHEET_NAME)
+        worksheet = sheet.worksheet(SHEET_NAME_CRM)
         
         rows = worksheet.get_all_values()
         crm_data = []

@@ -10,9 +10,11 @@ from bs4 import BeautifulSoup
 logger = logging.getLogger(__name__)
 
 def is_valid_email(email_str):
-    """メールアドレスの妥当性チェック"""
+    """メールアドレスの妥当性チェック（アグレッシブなフィルタリング版）"""
     if not email_str:
         return False
+
+    email_str = email_str.strip()
 
     # 基本的なメールアドレス正規表現
     pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
@@ -21,27 +23,36 @@ def is_valid_email(email_str):
         logger.debug(f"❌ 無効なメールアドレス形式: {email_str}")
         return False
 
-    # ドメイン部分を抽出
-    domain = email_str.split('@')[1].lower()
+    # ドメイン部分とローカル部分を抽出
+    local_part, domain = email_str.split('@')
+    local_part = local_part.lower()
+    domain = domain.lower()
 
     # localhost を除外
     if 'localhost' in domain:
         logger.debug(f"❌ localhost アドレス除外: {email_str}")
         return False
 
-    # テスト用ドメインを除外
+    # 除外キーワード（ローカル部およびドメイン部全体）
+    exclude_keywords = [
+        'example', 'test', 'sample', 'dummy', 'demo',
+        'noreply', 'no-reply', 'sentry', 'wixpress',
+        'wordpress', 'schema', 'googlegroups',
+        'marketing-studio', 'accounts-noreply'
+    ]
+    if any(keyword in email_str.lower() for keyword in exclude_keywords):
+        logger.debug(f"❌ 除外キーワード合致: {email_str}")
+        return False
+
+    # テスト用・プラットフォームドメインを除外
     invalid_domains = [
-        'example.com',
-        'test.com',
-        'sample.com',
-        'localhost',
-        'invalid.com',
-        'example.org',
-        'example.net',
+        'example.com', 'test.com', 'sample.com', 'invalid.com',
+        'example.org', 'example.net', 'amazon.com', 'google.com',
+        'youtube.com', 'facebook.com', 'twitter.com', 'instagram.com'
     ]
 
     if domain in invalid_domains:
-        logger.debug(f"❌ テスト用ドメイン除外: {email_str}")
+        logger.debug(f"❌ 除外ドメイン: {email_str}")
         return False
 
     # よくある誤字ドメインを除外
@@ -54,6 +65,12 @@ def is_valid_email(email_str):
 
     if domain in common_typos:
         logger.debug(f"❌ 誤字ドメイン除外: {email_str} (正: {common_typos[domain]})")
+        return False
+
+    # 画像やプログラム等の拡張子と誤認したゴミデータ（Astro等のフレームワークによる生成物）を除外
+    file_extensions = ('.css', '.js', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.mp4', '.json', '.xml', '.pdf')
+    if email_str.lower().endswith(file_extensions):
+        logger.debug(f"❌ ファイル拡張子(ゴミデータ)除外: {email_str}")
         return False
 
     logger.debug(f"✅ 有効なメールアドレス: {email_str}")

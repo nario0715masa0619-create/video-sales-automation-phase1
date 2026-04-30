@@ -40,13 +40,32 @@ class InsufficientCreditsError(Exception):
     pass
 
 def is_test_email(email: str) -> bool:
-    """テスト用メールアドレスかどうか判定"""
+    """テスト用メールアドレスやダミーアドレスかどうか判定（ZeroBounceAPIのクレジット節約のため）"""
     if not email:
         return False
     email_lower = email.lower()
+    
+    # 既存のテストドメイン
     for test_domain in TEST_DOMAINS:
         if test_domain in email_lower:
             return True
+
+    # プレースホルダー（ダミー文字）を除外
+    import re
+    dummy_patterns = [
+        r'xxx', r'yyy', r'zzz', r'abc', r'def',
+        r'yourdomain', r'yourname', 
+        r'sample', r'dummy', r'^email@', r'^test@', r'^info@info\.'
+    ]
+    for dp in dummy_patterns:
+        if re.search(dp, email_lower):
+            return True
+
+    # ローカル部（@より前）が「すべて同じ1種類の文字の反復（3文字以上）」で構成されている場合を除外
+    local_part = email_lower.split('@')[0]
+    if re.fullmatch(r'([a-zA-Z0-9])\1{2,}', local_part):
+        return True
+
     return False
 
 def validate_email_with_zerobounce(email: str) -> dict:
@@ -76,10 +95,22 @@ def validate_email_with_zerobounce(email: str) -> dict:
         
         # 結果を標準化
         status = data.get("status")
-        score = data.get("confidence_score", 0)
+        # confidence_score が文字列で返ってくる場合があるため数値に変換
+        try:
+            score = int(data.get("confidence_score", 0))
+        except (TypeError, ValueError):
+            score = 0
         
-        # catch-all は有効扱い、valid も有効、それ以外は無効
-        is_valid = status in ["valid", "catch-all"]
+        # 判定ロジックの強化：
+        # 1. 'valid' は常に有効
+        # 2. 'catch-all' はスコアが 80 以上なら有効（不達リスク低減）
+        # 3. それ以外は無効
+        if status == "valid":
+            is_valid = True
+        elif status == "catch-all" and score >= 80:
+            is_valid = True
+        else:
+            is_valid = False
         
         return {
             "status": status,
