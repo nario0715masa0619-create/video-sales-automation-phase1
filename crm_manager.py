@@ -278,6 +278,8 @@ class CRMManager:
                 "問い合わせフォームURL": lead_data.get("問い合わせフォームURL", old_record.get("問い合わせフォームURL")),
                 "送信ステータス": lead_data.get("送信ステータス", old_record.get("送信ステータス", "")),
                 "最終送信日": lead_data.get("最終送信日", old_record.get("最終送信日", "")),
+                "メール送信回数": lead_data.get("メール送信回数", old_record.get("メール送信回数", 0)),
+                "営業ステータス": lead_data.get("営業ステータス", old_record.get("営業ステータス", "")),
                 "最終更新日": now,
             }
 

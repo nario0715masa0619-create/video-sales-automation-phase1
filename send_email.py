@@ -215,11 +215,15 @@ def main():
                     # CRM を更新（成功）
                     try:
                         crm = CRMManager()
-                        crm.update_after_email_send(lead_dict, success=True)
+                        
                         # メール送信回数をインクリメント
-                        current_count = int(lead_dict.get("メール送信回数", 0) or 0)
-                        lead_dict["メール送信回数"] = current_count + 1
-                        logger.debug(f'✅ CRM 更新: {ch_name}')
+                        old_count = int(lead_dict.get("メール送信回数", 0) or 0)
+                        new_count = old_count + 1
+                        lead_dict["メール送信回数"] = new_count
+                        logger.info(f'📈 メール送信回数インクリメント: {old_count} -> {new_count} ({ch_name})')
+
+                        crm.update_after_email_send(lead_dict, success=True)
+                        logger.debug(f'✅ CRM 更新完了: {ch_name}')
                     except Exception as e:
                         logger.warning(f'⚠️ CRM 更新失敗 [{ch_name}]: {e}')
 
