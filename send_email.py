@@ -216,6 +216,9 @@ def main():
                     try:
                         crm = CRMManager()
                         crm.update_after_email_send(lead_dict, success=True)
+                        # メール送信回数をインクリメント
+                        current_count = int(lead_dict.get("メール送信回数", 0) or 0)
+                        lead_dict["メール送信回数"] = current_count + 1
                         logger.debug(f'✅ CRM 更新: {ch_name}')
                     except Exception as e:
                         logger.warning(f'⚠️ CRM 更新失敗 [{ch_name}]: {e}')
