@@ -520,33 +520,30 @@ def generate_email(lead: dict, email_num: int) -> EmailContent:
     industry = lead.get("業種", "")
     videos_3m = int(lead.get("投稿数（直近3ヶ月）", 0) or 0)
 
-    logger.info(f"メール生成開始: {company_name} - {email_num}通目")
+    logger.info(f"[FIXED TEMPLATE MODE] メール生成開始 (AI無効化): {company_name} - {email_num}通目")
 
-    # Gemini を使ったパーソナライズコンテンツの生成
+    # Gemini / OpenAI API の呼び出しを完全に無効化し、固定テンプレートを使用する (応急措置)
     personalized: dict = {}
 
     if email_num == 1:
-        # 1通目: 動画コメント + 改善ポイント が必要
-        personalized["video_comment"] = _generate_video_comment(
-            channel_name, latest_title, channel_description
-        )
-        personalized["improvement_hint"] = _generate_improvement_hint(
-            channel_name, videos_3m, avg_view, avg_engagement, trend, rank
-        )
+        # 1通目: 固定の動画コメント + 改善ポイントを設定
+        if latest_title:
+            personalized["video_comment"] = f"「{latest_title}」で取り上げられていたテーマが、Insight データの分類という観点で活用価値があると感じました"
+        else:
+            personalized["video_comment"] = "動画で取り上げられていたテーマが、Insight データの活用という観点で興味深いと感じました"
+        personalized["improvement_hint"] = "Insight データでこれらのテーマがどう分類されているか分析することで、改善余地があると考えています"
 
     elif email_num == 2:
-        # 2通目: 事例の具体的な指摘が必要
-        personalized["case_study_detail"] = _generate_case_study_detail(
-            channel_name, industry, rank, videos_3m
-        )
+        # 2通目: 固定の事例指摘を設定
+        personalized["case_study_detail"] = "御社のチャンネルも Insight データを正規化することで、テーマの分散問題を解決し、経営層への報告がより具体的になると考えています"
 
     elif email_num == 3:
-        # 3通目: 効果予測が必要
-        personalized["effect_prediction"] = _generate_effect_prediction(
-            channel_name, avg_view, avg_engagement
-        )
+        # 3通目: 固定の効果予測を設定
+        personalized["effect_prediction"] = "Insight データを正規化することで、テーマの分散問題を解決でき、経営層への報告精度向上という観点で改善可能性があると判断しています"
 
     # 4通目はパーソナライズ不要（定型文でOK）
+
+    logger.info(f"[FIXED TEMPLATE MODE] 固定テンプレート適用完了 (AI呼び出しスキップ): {company_name}")
 
     # テンプレートビルダーで組み立て
     builders = {
@@ -595,6 +592,7 @@ if __name__ == "__main__":
         content = generate_email(test_lead, num)
         print(f"件名: {content.subject}")
         print(f"本文:\n{content.body[:300]}...")
+
 
 
 
