@@ -108,8 +108,8 @@ def main():
     logger.info(f'対象リード: {len(leads)} 件')
 
     # 初回とリピートを分離
-    first_send_leads = [lead for lead in leads if int(lead.get('メール送信回数', 0) or 0) == 0]
-    followup_leads = [lead for lead in leads if int(lead.get('メール送信回数', 0) or 0) >= 1]
+    first_send_leads = [lead for lead in leads if int(lead.get('送信回数', 0) or 0) == 0]
+    followup_leads = [lead for lead in leads if int(lead.get('送信回数', 0) or 0) >= 1]
     logger.info(f'  → 初回: {len(first_send_leads)} 件, リピート: {len(followup_leads)} 件')
 
     # 送信数を計算（リピート不足分を初回で補填）
@@ -216,11 +216,11 @@ def main():
                     try:
                         crm = CRMManager()
                         
-                        # メール送信回数をインクリメント
-                        old_count = int(lead_dict.get("メール送信回数", 0) or 0)
+                        # 送信回数をインクリメント
+                        old_count = int(lead_dict.get("送信回数", 0) or 0)
                         new_count = old_count + 1
-                        lead_dict["メール送信回数"] = new_count
-                        logger.info(f'📈 メール送信回数インクリメント: {old_count} -> {new_count} ({ch_name})')
+                        lead_dict["送信回数"] = new_count
+                        logger.info(f'📈 送信回数インクリメント: {old_count} -> {new_count} ({ch_name})')
 
                         crm.update_after_email_send(lead_dict, success=True)
                         logger.debug(f'✅ CRM 更新完了: {ch_name}')

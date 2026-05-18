@@ -361,3 +361,5 @@ ZEROBOUNCE_API_URL: str = "https://api.zerobounce.net/v2/validate"
 # OpenAI API 設定
 OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
 OPENAI_MODEL: str = os.getenv("OPENAI_MODEL", "gpt-4-turbo")
+
+GOOGLE_DRIVE_FOLDER_ID = '1J_ajYy48_NnQ_ylb2yI7SLABz8tZRXwH'

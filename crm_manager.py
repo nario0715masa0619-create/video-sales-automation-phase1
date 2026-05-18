@@ -68,7 +68,7 @@ LEADS_COLUMNS = {
     "総合スコア": 23,
     "ランク": 24,
     "営業ステータス": 25,
-    "メール送信回数": 26,          # 送信回数列
+    "送信回数": 26,          # 送信回数列
     "1通目送信日": 27,
     "2通目送信日": 28,
     "3通目送信日": 29,
@@ -278,7 +278,7 @@ class CRMManager:
                 "問い合わせフォームURL": lead_data.get("問い合わせフォームURL", old_record.get("問い合わせフォームURL")),
                 "送信ステータス": lead_data.get("送信ステータス", old_record.get("送信ステータス", "")),
                 "最終送信日": lead_data.get("最終送信日", old_record.get("最終送信日", "")),
-                "メール送信回数": lead_data.get("メール送信回数", old_record.get("メール送信回数", 0)),
+                "送信回数": lead_data.get("送信回数", old_record.get("送信回数", 0)),
                 "営業ステータス": lead_data.get("営業ステータス", old_record.get("営業ステータス", "")),
                 "最終更新日": now,
             }
@@ -307,7 +307,7 @@ class CRMManager:
             # デフォルト値の設定
             defaults = {
                 "営業ステータス": STATUS_UNTOUCHED,
-                "メール送信回数": 0,
+                "送信回数": 0,
                 "開封フラグ": "FALSE",
                 "クリックフラグ": "FALSE",
                 "返信フラグ": "FALSE",
@@ -393,7 +393,7 @@ class CRMManager:
         3. バウンスフラグが FALSE であること
         4. 営業ステータスが "失注" / "成約" / "NG" でないこと
         5. 以下のいずれか:
-           - メール送信回数 = 0（未接触）
+           - 送信回数 = 0（未接触）
            - 最終送信日から config.EMAIL_INTERVAL_DAYS 日以上経過 かつ
              送信回数 < config.EMAIL_MAX_SEQUENCE
 
@@ -445,8 +445,8 @@ class CRMManager:
                 logger.debug(f"検証結果で除外: {email} (status: {validation_status})")
                 continue
 
-            # メール送信回数チェック
-            email_count = int(lead.get("メール送信回数", 0) or 0)
+            # 送信回数チェック
+            email_count = int(lead.get("送信回数", 0) or 0)
 
             # 最大送信数に達している場合はスキップ
             if email_count >= config.EMAIL_MAX_SEQUENCE:
@@ -505,7 +505,7 @@ class CRMManager:
         now_str = (sent_at or datetime.now(JST)).strftime("%Y-%m-%d %H:%M:%S")
 
         # 送信回数の更新
-        sheet.update_cell(row_num, LEADS_COLUMNS["メール送信回数"], email_num)
+        sheet.update_cell(row_num, LEADS_COLUMNS["送信回数"], email_num)
 
         # 通数ごとの送信日を更新
         date_col_map = {
