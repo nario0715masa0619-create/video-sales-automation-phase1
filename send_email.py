@@ -249,6 +249,90 @@ def main():
             import traceback
             traceback.print_exc()
 
+
+    # ===== リピートメール送信 =====
+    logger.info(f"\n--- リピートメール送信開始 ({len(followup_leads)} 件) ---")
+    for idx, lead in enumerate(followup_leads, 1):
+        try:
+            if not args.dry_run and not is_sending_allowed():
+                logger.warning(f'23:00に到達したため、残り {len(followup_leads) - idx + 1} 件の送信を中止します')
+                break
+
+            ch_name = lead.get('チャンネル名', 'Unknown') if isinstance(lead, dict) else lead[3]
+            email = lead.get('メールアドレス') if isinstance(lead, dict) else lead[2]
+
+            if not email or not email.strip():
+                logger.warning(f"[SKIP] スキップ: メールアドレスなし ({ch_name})")
+                skipped_count += 1
+                continue
+
+            validation_status = get_validation_status(email)
+            if not is_sendable_email(validation_status):
+                logger.warning(f"[SKIP] バウンスリスク: {ch_name} (validation: {validation_status})")
+                bounced_count += 1
+                continue
+
+            lead_dict = lead if isinstance(lead, dict) else {
+                'チャンネル名': lead[3],
+                'メールアドレス': lead[2],
+                'サイトURL': lead[1],
+            }
+
+            current_count = int(lead_dict.get("送信回数", 0) or 0)
+            email_num = current_count + 1
+
+            logger.info(f'[{sent_count + 1}/{daily_limit}] {email_num} 通目を送信します: {ch_name}')
+
+            email_content = generate_email(lead_dict, email_num=email_num)
+
+            if args.dry_run:
+                logger.info(f"[DRY-RUN] {ch_name} へメール送信スキップ")
+                logger.debug(f"件名: {email_content.subject}")
+            else:
+                result = sender.send_email(
+                    to=email,
+                    subject=email_content.subject,
+                    body=email_content.body,
+                    from_name='営業自動化',
+                    company_name='会社名',
+                    email_count=sent_count + 1
+                )
+                if result.success:
+                    message_id = f"msg_{datetime.now().strftime('%Y%m%d')}_{uuid.uuid4().hex[:8]}"
+                    logger.info(f"✅ {ch_name} へメール送信成功 (MessageID: {message_id})")
+                    log_send_event(to_address=email, message_id=message_id, status='sent')
+
+                    try:
+                        crm = CRMManager()
+                        old_count = int(lead_dict.get("送信回数", 0) or 0)
+                        new_count = old_count + 1
+                        lead_dict["送信回数"] = new_count
+                        logger.info(f"📈 送信回数インクリメント: {old_count} -> {new_count} ({ch_name})")
+                        crm.update_after_email_send(lead_dict, success=True)
+                        logger.debug(f"✅ CRM 更新完了: {ch_name}")
+                    except Exception as e:
+                        logger.warning(f"⚠️ CRM 更新失敗 [{ch_name}]: {e}")
+
+                    sent_count += 1
+                else:
+                    logger.error(f"❌ {ch_name} へメール送信失敗")
+                    bounced_count += 1
+
+                    try:
+                        crm = CRMManager()
+                        crm.update_after_email_send(lead_dict, success=False)
+                    except Exception as e:
+                        logger.warning(f"⚠️ CRM 更新失敗（送信失敗時） [{ch_name}]: {e}")
+
+            if not args.dry_run:
+                wait_between_sends(idx, len(followup_leads), base_wait=args.wait)
+            else:
+                logger.info(f"[DRY-RUN] 待機をスキップ")
+
+        except Exception as e:
+            logger.error(f"例外発生（リピート）: {e}")
+            import traceback
+            traceback.print_exc()
     logger.info(f'=== メール送信完了 ===')
     logger.info(f'送信成功: {sent_count} 件')
     logger.info(f'バウンスリスク除外: {bounced_count} 件')
