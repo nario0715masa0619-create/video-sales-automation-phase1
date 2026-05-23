@@ -193,7 +193,7 @@ def main():
 
             logger.info(f'[{processed_count}/{daily_limit}] {email_num} 通目を送信します: {ch_name}')
 
-            email_content = generate_email(lead_dict, email_num=email_num)
+            email_content = generate_email(lead_dict, email_num)
 
             if args.dry_run:
                 logger.info(f'[DRY-RUN] {ch_name} へメール送信スキップ')
@@ -283,7 +283,7 @@ def main():
 
             logger.info(f'[{sent_count + 1}/{daily_limit}] {email_num} 通目を送信します: {ch_name}')
 
-            email_content = generate_email(lead_dict, email_num=email_num)
+            email_content = generate_email(lead_dict, email_num)
 
             if args.dry_run:
                 logger.info(f"[DRY-RUN] {ch_name} へメール送信スキップ")
